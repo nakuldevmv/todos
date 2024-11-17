@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Task Links</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #24292e; /* Dark background similar to GitHub */
+            color: #ffffff; /* Light text color */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        header {
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            color: #58a6ff; /* GitHub blue for the title */
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #c9d1d9; /* Softer color for the description */
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .link-item {
+            display: block;
+            padding: 15px 25px;
+            text-decoration: none;
+            color: #ffffff; /* White text for links */
+            background-color: #444d56; /* Dark gray background for links */
+            border-radius: 6px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .link-item:hover {
+            background-color: #586069; /* Lighter gray on hover */
+            transform: translateY(-2px); /* Slight lift effect on hover */
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #c9d1d9; /* Softer color for footer */
+        }
+    </style>
+</head>
+
+<body>
+    
+    <main>
+        <section class="links">
+            <a href="https://example1.com" class="link-item" target="_blank">Project Management</a>
+            <a href="https://example2.com" class="link-item" target="_blank">Documentation</a>
+            <a href="https://example3.com" class="link-item" target="_blank">Research</a>
+            <a href="https://example4.com" class="link-item" target="_blank">Design Tools</a>
+        </section>
+    </main>
+   
+</body>
+
+</html>

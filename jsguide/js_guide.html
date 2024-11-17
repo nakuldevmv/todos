@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Guide for Beginners</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+        :root {
+    --background-primary: #ffffff;
+    --background-secondary: #f4f4f4;
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    --accent-color: #3498db;
+    --border-color: #e0e0e0;
+    --shadow-subtle: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-primary: #121212;
+        --background-secondary: #1e1e1e;
+        --text-primary: #ffffff;
+        --text-secondary: #b0b0b0;
+        --accent-color: #4ecdc4;
+        --border-color: #333333;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--background-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.5rem;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+}
+
+h3 {
+    font-size: 1.4rem;
+    color: var(--text-secondary);
+}
+
+/* Code Blocks */
+pre {
+    background-color: var(--background-secondary);
+    border-radius: 8px;
+    padding: 1.5rem;
+    overflow-x: auto;
+    border-left: 4px solid var(--accent-color);
+    margin: 1rem 0;
+    box-shadow: var(--shadow-subtle);
+    transition: var(--transition-smooth);
+}
+
+pre:hover {
+    transform: translateX(5px);
+}
+
+code {
+    font-family: 'Fira Code', 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+}
+
+/* Lists */
+ul, ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+/* Buttons */
+button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition-smooth);
+    box-shadow: var(--shadow-subtle);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Solution Sections */
+.show-solution {
+    margin-top: 1rem;
+    background-color: var(--background-secondary);
+    color: var(--text-secondary);
+}
+
+.solution {
+    background-color: var(--background-secondary);
+    border-left: 4px solid var(--accent-color);
+    padding: 1rem;
+    margin-top: 0.5rem;
+    border-radius: 6px;
+    transition: var(--transition-smooth);
+}
+
+.solution:hover {
+    background-color: rgba(52, 152, 219, 0.05);
+}
+
+/* Responsive Typography */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+}
+
+/* Scroll Bar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 4px;
+}
+
+/* Accessibility and Focus States */
+*:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Smooth Reveal Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.solution {
+    animation: fadeIn 0.5s ease;
+}
+
+/* Interactive Hover Effects */
+.solution, pre, button {
+    transition: var(--transition-smooth);
+}
+
+.solution:hover, pre:hover {
+    transform: scale(1.02);
+}
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll(".show-solution").forEach(button => {
+                button.addEventListener("click", function () {
+                    const solution = this.nextElementSibling;
+                    if (solution.style.display === "none" || solution.style.display === "") {
+                        solution.style.display = "block";
+                        this.textContent = "Hide Solution";
+                    } else {
+                        solution.style.display = "none";
+                        this.textContent = "Show Solution";
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>JavaScript Guide for Beginners</h1>
+
+        <section id="setup">
+            <h2>1. Setting Up JavaScript</h2>
+            <h3>How to Run JavaScript:</h3>
+            <ul>
+                <li><strong>Browser Console</strong>: Open your browser, press <code>Ctrl + Shift + J</code> (or
+                    <code>Cmd + Option + J</code> on Mac).
+                </li>
+                <li><strong>HTML File</strong>: Use the <code>&lt;script&gt;</code> tag.</li>
+            </ul>
+            <h3>Example HTML with JavaScript:</h3>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;JavaScript Basics&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello, JavaScript!&lt;/h1&gt;
+    &lt;script&gt;
+        console.log("Welcome to JavaScript!");
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </section>
+
+        <section id="variables">
+            <h2>2. Variables and Constants</h2>
+            <ul>
+                <li><code>let</code>: Block-scoped, can be updated.</li>
+                <li><code>const</code>: Block-scoped, cannot be reassigned.</li>
+                <li><code>var</code>: Function-scoped, avoid in modern JS.</li>
+            </ul>
+            <h3>Examples:</h3>
+            <pre><code>let username = "Alice";
+const age = 25;
+// age = 26; // Error: const variables cannot be reassigned
+var isAdmin = true;
+
+console.log(username, age, isAdmin);</code></pre>
+        </section>
+
+        <section id="data-types">
+            <h2>3. Data Types</h2>
+            <h3>Primitive Types:</h3>
+            <ul>
+                <li>String: <code>"Hello"</code></li>
+                <li>Number: <code>42</code></li>
+                <li>Boolean: <code>true</code> / <code>false</code></li>
+                <li>Undefined: Variable not initialized</li>
+                <li>Null: Explicitly nothing</li>
+                <li>Symbol: Unique values (advanced use case)</li>
+            </ul>
+            <h3>Non-Primitive:</h3>
+            <ul>
+                <li>Objects: Key-value pairs</li>
+                <li>Arrays: Ordered list of elements</li>
+            </ul>
+            <h3>Example:</h3>
+            <pre><code>let name = "John"; // String
+let age = 30;      // Number
+let isLoggedIn = true; // Boolean
+let user = null;   // Null
+let items = ["apple", "banana", "cherry"]; // Array
+let person = { name: "Alice", age: 25 }; // Object
+
+console.log(name, age, isLoggedIn, user, items, person);</code></pre>
+        </section>
+
+        <section id="operators">
+            <h2>4. Operators</h2>
+            <ul>
+                <li><strong>Arithmetic:</strong> <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>,
+                    <code>%</code>
+                </li>
+                <li><strong>Comparison:</strong> <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>,
+                    <code>&lt;=</code>, <code>==</code>, <code>===</code>
+                </li>
+                <li><strong>Logical:</strong> <code>&&</code>, <code>||</code>, <code>!</code></li>
+                <li><strong>Assignment:</strong> <code>=</code>, <code>+=</code>, <code>-=</code>, <code>*=</code></li>
+            </ul>
+            <h3>Example:</h3>
+            <pre><code>let a = 10, b = 20;
+console.log(a + b); // 30
+console.log(a &gt; b); // false
+console.log(true && false); // false</code></pre>
+        </section>
+
+        <section id="conditional-statements">
+            <h2>5. Conditional Statements</h2>
+            <h3>If-Else:</h3>
+            <pre><code>let score = 85;
+
+if (score &gt;= 90) {
+    console.log("Excellent");
+} else if (score &gt;= 50) {
+    console.log("Good");
+} else {
+    console.log("Fail");
+}</code></pre>
+            <h3>Switch:</h3>
+            <pre><code>let grade = "A";
+
+switch (grade) {
+    case "A":
+        console.log("Great job!");
+        break;
+    case "B":
+        console.log("Good effort!");
+        break;
+    default:
+        console.log("Keep trying!");
+}</code></pre>
+        </section>
+
+        <section id="loops">
+            <h2>6. Loops</h2>
+            <h3>For Loop:</h3>
+            <pre><code>for (let i = 1; i &lt;= 5; i++) {
+    console.log("Count:", i);
+}</code></pre>
+            <h3>While Loop:</h3>
+            <pre><code>let count = 0;
+while (count &lt; 3) {
+    console.log("Count:", count);
+    count++;
+}</code></pre>
+            <h3>For...of (Arrays):</h3>
+            <pre><code>let fruits = ["apple", "banana", "cherry"];
+for (let fruit of fruits) {
+    console.log(fruit);
+}</code></pre>
+            <h3>For...in (Objects):</h3>
+            <pre><code>let person = { name: "Alice", age: 25 };
+for (let key in person) {
+    console.log(key, ":", person[key]);
+}</code></pre>
+        </section>
+
+        <section id="functions">
+            <h2>7. Functions</h2>
+            <h3>Basic Functions:</h3>
+            <pre><code>function greet(name) {
+    return `Hello, ${name}!`;
+}
+console.log(greet("John"));</code></pre>
+            <h3>Arrow Functions:</h3>
+            <pre><code>const add = (a, b) => a + b;
+console.log(add(5, 10)); // 15</code></pre>
+            <h3>Default Parameters:</h3>
+            <pre><code>function sayHi(name = "Guest") {
+    console.log(`Hi, ${name}!`);
+}
+sayHi(); // Hi, Guest!</code></pre>
+        </section>
+
+        <section id="arrays">
+            <h2>8. Arrays</h2>
+            <h3>Methods to Know:</h3>
+            <ul>
+                <li><strong>Add/Remove:</strong> <code>push()</code>, <code>pop()</code>, <code>shift()</code>,
+                    <code>unshift()</code>
+                </li>
+                <li><strong>Iterate:</strong> <code>forEach()</code>, <code>map()</code>, <code>filter()</code></li>
+                <li><strong>Search:</strong> <code>find()</code>, <code>includes()</code></li>
+                <li><strong>Combine:</strong> <code>concat()</code>, <code>join()</code></li>
+            </ul>
+            <h3>Example:</h3>
+            <pre><code>let numbers = [1, 2, 3, 4];
+numbers.push(5); // Add at end
+numbers.pop();   // Remove last element
+numbers = numbers.filter(n => n &gt; 2); // [3, 4]
+
+console.log(numbers);</code></pre>
+        </section>
+
+        <section id="objects">
+            <h2>9. Objects</h2>
+            <h3>Example:</h3>
+            <pre><code>let car = {
+    brand: "Tesla",
+    model : "Model X",
+    year: 2023,
+    getDetails() {
+        return `${this.brand} ${this.model}, Year: ${this.year}`;
+    }
+};
+console.log(car.getDetails());</code></pre>
+        </section>
+
+        <section id="dom-manipulation">
+            <h2>10. DOM Manipulation</h2>
+            <h3>Select Elements:</h3>
+            <pre><code>let title = document.getElementById("title");
+let buttons = document.querySelectorAll(".btn");</code></pre>
+            <h3>Modify Content:</h3>
+            <pre><code>title.textContent = "Updated Title!";</code></pre>
+            <h3>Event Handling:</h3>
+            <pre><code>document.getElementById("btn").addEventListener("click", () => {
+    alert("Button clicked!");
+});</code></pre>
+        </section>
+
+        <section id="es6-features">
+            <h2>11. ES6 Features</h2>
+            <h3>Template Literals:</h3>
+            <pre><code>let name = "Alice";
+console.log(`Hello, ${name}!`);</code></pre>
+            <h3>Destructuring:</h3>
+            <pre><code>let user = { name: "John", age: 30 };
+let { name, age } = user;
+console.log(name, age);</code></pre>
+            <h3>Spread/Rest Operator:</h3>
+            <pre><code>let arr = [1, 2, 3];
+let newArr = [...arr, 4, 5];
+console.log(newArr);</code></pre>
+        </section>
+
+        <section id="asynchronous-javascript">
+            <h2>12. Asynchronous JavaScript</h2>
+            <h3>Callback Example:</h3>
+            <pre><code>setTimeout(() => {
+    console.log("This runs after 2 seconds");
+}, 2000);</code></pre>
+            <h3>Promise Example:</h3>
+            <pre><code>fetch("https://jsonplaceholder.typicode.com/posts")
+    .then(response => response.json())
+    .then(data => console.log(data));</code></pre>
+            <h3>Async/Await:</h3>
+            <pre><code>async function fetchData() {
+    let response = await fetch("https://jsonplaceholder.typicode.com/posts");
+    let data = await response.json();
+    console.log(data);
+}
+fetchData();</code></pre>
+        </section>
+
+    </div>
+
+    <div class="container">
+        <h1>JavaScript Practice Challenges</h1>
+        <p>These programming exercises are organized by difficulty levels, helping you solidify your JavaScript
+            knowledge and progress step by step.</p>
+
+        <h2>Beginner Level</h2>
+        <h3>1. Variables and Data Types</h3>
+        <p>Write a program to swap two numbers without using a third variable.</p>
+        <button class="show-solution">Show Solution</button>
+        <div class="solution" style="display: none;">
+            <pre><code>let a = 5, b = 10;
+a = a + b; // a now becomes 15
+b = a - b; // b becomes 5
+a = a - b; // a becomes 10
+console.log(a, b); // Outputs: 10, 5</code></pre>
+        </div>
+
+        <p>Create a program to calculate the area of a rectangle given its length and width.</p>
+        <button class="show-solution">Show Solution</button>
+        <div class="solution" style="display: none;">
+            <pre><code>function calculateArea(length, width) {
+    return length * width;
+}
+console.log(calculateArea(5, 10)); // Outputs: 50</code></pre>
+        </div>
+
+        <h3>2. Control Flow</h3>
+        <p>Write a program to check whether a given number is even or odd.</p>
+        <button class="show-solution">Show Solution</button>
+        <div class="solution" style="display: none;">
+            <pre><code>function isEven(num) {
+    return num % 2 === 0;
+}
+console.log(isEven(4)); // Outputs: true</code></pre>
+        </div>
+
+        <p>Create a program to find the largest of three numbers.</p>
+        <button class="show-solution">Show Solution</button>
+        <div class="solution" style="display: none;">
+            <pre><code>function findLargest(a, b, c) {
+    return Math.max(a, b, c);
+}
+console.log(findLargest(1, 5, 3)); // Outputs: 5</code></pre>
+        </div>
+
+        <h3>3. Loops</h3>
+        <p>Print all numbers from 1 to 100. Replace:</p>
+        <ul>
+            <li>Multiples of 3 with "Fizz"</li>
+            <li>Multiples of 5 with "Buzz"</li>
+            <li>Multiples of both with "FizzBuzz"</li>
+        </ul>
+        <button class="show-solution">Show Solution</button>
+        <div class="solution" style="display: none;">
+            <pre><code>for (let i = 1; i &lt;= 100; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+        console.log("FizzBuzz");
+    } else if (i % 3 === 0) {
+        console.log("Fizz");
+    } else if (i % 5 === 0) {
+        console.log("Buzz");
+    } else {
+        console.log(i);
+    }
+}</code></pre>
+        </div>
+
+        <p>Write a program to generate the Fibonacci sequence up to n terms.</p>
+        <button class="show-solution">Show Solution</button>
+        <div class="solution" style="display: none;">
+            <pre><code>function fibonacci(n) {
+    let fib = [0, 1];
+    for (let i = 2; i &lt; n; i++) {
+        fib[i] = fib[i - 1] + fib[i - 2];
+    }
+    return fib;
+}
+console.log(fibonacci(10)); // Outputs: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]</code></pre>
+        </div>
+
+        <h3>4. Strings</h3>
+        <p>Reverse a string without using built-in methods.</p>
+        <button class="show-solution">Show Solution</button>
+        <div class="solution" style="display: none;">
+            <pre><code>function reverseString(str) {
+    let reversed = '';
+    for (let i = str.length - 1; i &gt;= 0; i--) {
+        reversed += str[i];
+    }
+    return reversed;
+}
+console.log(reverseString("hello")); // Outputs: "olleh"</code></pre>
+        </div>
+
+        <p>Count the number of vowels in a given string.</p>
+        <button class="show-solution">Show Solution</button>
+        <div class="solution" style="display: none;">
+            <pre><code>function countVowels(str) {
+    return str.match(/[aeiou]/gi)?.length || 0;
+}
+console.log(countVowels("hello world")); // Outputs: 3</code></pre>
+        </div>
+
+        <h3>5. Arrays</h3>
+        <p>Write a program to find the maximum and minimum values in an array.</p>
+        <button class="show-solution">Show Solution</button>
+        <div class="solution" style="display: none;">
+            <pre><code>let numbers = [5, 3, 8, 1, 2];
+let max = Math.max(...numbers);
+let min = Math.min(...numbers);
+console.log(max, min); // Outputs: 8, 1</code></pre>
+        </div>
+
+        <p>Remove duplicate values from an array.</p>
+        <button class="show-solution">Show Solution</button>
+        <div class="solution" style="display: none;">
+            <pre><code>let arr = [1, 2, 2, 3, 4, 4, 5];
+let uniqueArr = [...new Set(arr)];
+console.log(uniqueArr); // Outputs: [1, 2, 3, 4, 5]</code></pre>
+        </div>
+
+        <h2>Intermediate Level</h2>
+        <h3>1. Functions and Recursion</h3>
+        <p>Create a function to check if a string is a palindrome.</p>
+        <button class="show-solution">Show Solution</button>
+        <div class="solution" style="display: none;">
+            <pre><code>function isPalindrome(str) {
+    return str === str.split('').reverse().join('');
+}
+console.log(isPalindrome("racecar")); // Outputs: true</code></pre>
+        </div>
+
+        <p>Write a recursive function to calculate the factorial of a number.</p>
+        <button class="show-solution">Show Solution</button>
+        <div class="solution" style="display: none;">
+            <pre><code>function factorial(n) {
+    return n === 0 ? 1 : n * factorial(n - 1);
+}
+console.log(factorial(5)); // Outputs: 120</code></pre>
+        </div>
+
+        <h3>2. Objects</h3>
+        <p>Create an object representing a student and add a method to calculate the average grade.</p>
+        <button class="show-solution">Show Solution</button>
+        <div class="solution" style="display: none;">
+            <pre><code>let student = {
+    name: "John",
+    grades: [90, 80, 85],
+    average() {
+        return this.grades.reduce((a, b) => a + b) / this.grades.length;
+    }
+};
+console.log(student.average()); // Outputs: 85</code></pre>
+        </div>
+
+        <p>Merge two objects and handle cases where they have conflicting keys.</p>
+        <button class="show-solution">Show Solution</button>
+        <div class="solution" style="display: none;">
+            <pre><code>let obj1 = { a: 1, b: 2 };
+let obj2 = { b: 3, c: 4 };
+let merged = { ...obj1, ...obj2 };
+console.log(merged); // Outputs: { a: 1, b: 3, c: 4 }</code></pre>
+        </div>
+
+        <h3>3. Higher-Order Functions</h3>
+        <p>Use map() to create a new array with all elements squared.</p>
+        <button class="show-solution">Show Solution</button>
+        <div class="solution" style="display: none;">
+            <pre><code >let numbers = [1, 2, 3, 4];
+let squared = numbers.map(num => num * num);
+console.log(squared); // Outputs: [1, 4, 9, 16]</code></pre>
+        </div>
+
+        <p>Use filter() to extract numbers greater than 50 from an array.</p>
+        <button class="show-solution">Show Solution</button>
+        <div class="solution" style="display: none;">
+            <pre><code>let nums = [10, 55, 30, 75, 20];
+let filtered = nums.filter(num => num > 50);
+console.log(filtered); // Outputs: [55, 75]</code></pre>
+        </div>
+
+        <h3>4. DOM Manipulation</h3>
+        <p>Build a counter app with three buttons to increment, decrement, and reset the counter.</p>
+        <button class="show-solution">Show Solution</button>
+        <div class="solution" style="display: none;">
+            <pre><code>let count = 0;
+function updateDisplay() {
+    document.getElementById("counter").textContent = count;
+}
+document.getElementById("increment").onclick = () => { count++; updateDisplay(); };
+document.getElementById("decrement").onclick = () => { count--; updateDisplay(); };
+document.getElementById("reset").onclick = () => { count = 0; updateDisplay(); };
+updateDisplay();</code></pre>
+        </div>
+
+        <p>Create a to-do list app where users can add items, mark items as complete, and delete items.</p>
+        <button class="show-solution">Show Solution</button>
+        <div class="solution" style="display: none;">
+            <pre><code>let todos = [];
+function addTodo(todo) {
+    todos.push({ text: todo, completed: false });
+}
+function toggleComplete(index) {
+    todos[index].completed = !todos[index].completed;
+}
+function deleteTodo(index) {
+    todos.splice(index, 1);
+}</code></pre>
+        </div>
+
+        <h3>5. Asynchronous Programming</h3>
+        <p>Fetch data from an API and log the response to the console.</p>
+        <button class="show-solution">Show Solution</button>
+        <div class="solution" style="display: none;">
+            <pre><code>fetch("https://jsonplaceholder.typicode.com/posts")
+    .then(response => response.json())
+    .then(data => console.log(data));</code></pre>
+        </div>
+
+        <p>Implement a countdown timer using setTimeout.</p>
+        <button class="show-solution">Show Solution</button>
+        <div class="solution" style="display: none;">
+            <pre><code>function countdown(seconds) {
+    let timer = setInterval(() => {
+        console.log(seconds);
+        seconds--;
+        if (seconds < 0) {
+            clearInterval(timer);
+        }
+    }, 1000);
+}
+countdown(5); // Counts down from 5</code></pre>
+        </div>
+
+        <h2>Advanced Level</h2>
+        <h3>1. Closures</h3>
+        <p>Create a function that keeps track of how many times it has been called and returns the count.</p>
+        <button class="show-solution">Show Solution</button>
+        <div class="solution" style="display: none;">
+            <pre><code>function createCounter() {
+    let count = 0;
+    return function() {
+        count++;
+        return count;
+    };
+}
+const counter = createCounter();
+console.log(counter()); // Outputs: 1
+console.log(counter()); // Outputs: 2</code></pre>
+        </div>
+
+        <p>Write a curried function that allows adding numbers one at a time.</p>
+        <button class="show-solution">Show Solution</button>
+        <div class="solution" style="display: none;">
+            <pre><code>function add(a) {
+    return function(b) {
+        return function(c) {
+            return a + b + c;
+        };
+    };
+}
+console.log(add(2)(3)(5)()); // Outputs: 10</code></pre>
+        </div>
+
+        <h3>2. Promises and Async/Await</h3>
+        <p>Write a program to fetch data from multiple APIs simultaneously using Promise.all.</p>
+        <button class="show-solution">Show Solution</button>
+        <div class="solution" style="display: none;">
+            <pre><code>Promise.all([
+    fetch("https://jsonplaceholder.typicode.com /posts"),
+    fetch("https://jsonplaceholder.typicode.com/comments")
+])
+.then(responses => Promise.all(responses.map(res => res.json())))
+.then(data => console.log(data));</code></pre>
+        </div>
+
+        <p>Simulate an API call with a delay using setTimeout and Promise.</p>
+        <button class="show-solution">Show Solution</button>
+        <div class="solution" style="display: none;">
+            <pre><code>function fakeApiCall() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve("Data received");
+        }, 2000);
+    });
+}
+fakeApiCall().then(data => console.log(data)); // Outputs: "Data received" after 2 seconds</code></pre>
+        </div>
+
+        <h3>3. Error Handling</h3>
+        <p>Create a function to perform division between two numbers and handle divide-by-zero errors
+            gracefully.
+        </p>
+        <button class="show-solution">Show Solution</button>
+        <div class="solution" style="display: none;">
+            <pre><code>function safeDivide(a, b) {
+    if (b === 0) {
+        return "Error: Cannot divide by zero";
+    }
+    return a / b;
+}
+console.log(safeDivide(10, 2)); // Outputs: 5
+console.log(safeDivide(10, 0)); // Outputs: "Error: Cannot divide by zero"</code></pre>
+        </div>
+
+        <h3>4. Data Structures</h3>
+        <p>Implement a stack or queue using JavaScript arrays.</p>
+        <button class="show-solution">Show Solution</button>
+        <div class="solution" style="display: none;">
+            <pre><code>class Stack {
+    constructor() {
+        this.items = [];
+    }
+    push(element) {
+        this.items.push(element);
+    }
+    pop() {
+        return this.items.pop();
+    }
+    peek() {
+        return this.items[this.items.length - 1];
+    }
+}
+const stack = new Stack();
+stack.push(1);
+stack.push(2);
+console.log(stack.pop()); // Outputs: 2</code></pre>
+        </div>
+
+        <p>Write a function to sort an array of objects by a specific property (e.g., age).</p>
+        <button class="show-solution">Show Solution</button>
+        <div class="solution" style="display: none;">
+            <pre><code>let people = [{ name: "Alice", age: 25 }, { name: "Bob", age: 20 }];
+people.sort((a, b) => a.age - b.age);
+console.log(people); // Outputs: [{ name: "Bob", age: 20 }, { name: "Alice", age: 25 }]</code></pre>
+        </div>
+
+        <h3>5. Advanced DOM Manipulation</h3>
+        <p>Build a dynamic table from a JSON array, where users can sort columns and search rows.</p>
+        <button class="show-solution">Show Solution</button>
+        <div class="solution" style="display: none;">
+            <pre><code>function createTable(data) {
+    const table = document.createElement("table");
+    data.forEach(item => {
+        const row = table.insertRow();
+        Object.values(item).forEach(text => {
+            const cell = row.insertCell();
+            cell.textContent = text;
+        });
+    });
+    document.body.appendChild(table);
+}
+createTable([{ name: "Alice", age: 25 }, { name: "Bob", age: 20 }]);</code></pre>
+        </div>
+
+        <p>Create a simple calculator app with a fully interactive UI for addition, subtraction, multiplication,
+            and
+            division.</p>
+        <button class="show-solution">Show Solution</button>
+        <div class="solution" style="display: none;">
+            <pre><code>function calculate(a, b, operation) {
+    switch (operation) {
+        case "add":
+            return a + b;
+        case "subtract":
+            return a - b;
+        case "multiply":
+            return a * b;
+        case "divide":
+            return b !== 0 ? a / b : "Error: Cannot divide by zero";
+    }
+}
+console.log(calculate(10, 5, "add")); // Outputs: 15</code></pre>
+        </div>
+
+    </div>
+</body>
+
+</html>

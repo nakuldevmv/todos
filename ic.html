@@ -284,7 +284,8 @@
     </script>
 </body>
 </html> -->
-<!DOCTYPE html>
+<!-- ------------------------------------------------------------------------------------------------------------------- -->
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <style>
@@ -751,6 +752,410 @@
                 <span>2 shared calendars</span>
             </div>
             <button class="card-button">View Calendar</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            document.body.dataset.theme = 
+                document.body.dataset.theme === 'dark' ? 'light' : 'dark';
+        }
+    </script>
+</body>
+</html> -->
+<!-- ------------------------------------------------------------------------------------------------------------------- -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        :root {
+            --bg-color: #f5f5f7;
+            --text-color: #1d1d1f;
+            --card-bg: rgba(255, 255, 255, 0.8);
+            --card-hover: rgba(255, 255, 255, 0.9);
+            --accent-color: #007AFF;
+            --subtitle-color: #86868b;
+            --shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            --button-bg: rgba(0, 122, 255, 0.1);
+            --gradient-1: #007AFF;
+            --gradient-2: #00c7be;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #1d1d1f;
+            --text-color: #f5f5f7;
+            --card-bg: rgba(44, 44, 46, 0.8);
+            --card-hover: rgba(44, 44, 46, 0.9);
+            --accent-color: #0A84FF;
+            --subtitle-color: #86868b;
+            --shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+            --button-bg: rgba(10, 132, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background-color: var(--card-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--gradient-1), var(--gradient-2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            opacity: 0.8;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+            color: var(--accent-color);
+        }
+
+        .theme-toggle {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            background-color: var(--button-bg);
+            color: var(--accent-color);
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--card-hover);
+        }
+
+        .header {
+            text-align: center;
+            margin: 80px 0 40px;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, var(--gradient-1), var(--gradient-2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header p {
+            color: var(--subtitle-color);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            padding: 25px;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow), 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: var(--subtitle-color);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .tech-tag {
+            background-color: var(--button-bg);
+            color: var(--accent-color);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 60px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-btn {
+            background-color: var(--button-bg);
+            color: var(--accent-color);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 500;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .social-btn:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .project-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(134, 134, 139, 0.2);
+        }
+
+        .span-2 {
+            grid-column: span 2;
+        }
+
+        .span-3 {
+            grid-column: span 3;
+        }
+
+        .span-4 {
+            grid-column: span 4;
+        }
+
+        .experience-item {
+            display: flex;
+            gap: 10px;
+            padding: 10px;
+            background-color: var(--button-bg);
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 1200px) {
+            .bento-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .span-3, .span-4 {
+                grid-column: span 3;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .bento-grid {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 0 20px;
+            }
+
+            .span-2, .span-3, .span-4 {
+                grid-column: span 2;
+            }
+
+            .nav-bar {
+                padding: 0 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .bento-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .span-2, .span-3, .span-4 {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="logo">X</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <button class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Theme</button>
+    </nav>
+
+    <div class="header">
+        <h1>Hey, I'm X</h1>
+        <p>Senior Software Engineer passionate about building scalable systems and creating exceptional user experiences</p>
+    </div>
+
+    <div class="bento-grid">
+        <div class="card span-2">
+            <img src="/api/placeholder/120/120" alt="Profile" class="profile-img" />
+            <h2>About Me</h2>
+            <p>Full-stack developer with 6+ years of experience. Currently focused on building cloud-native applications and distributed systems.</p>
+            <div class="social-links">
+                <a href="#" class="social-btn">GitHub</a>
+                <a href="#" class="social-btn">LinkedIn</a>
+                <a href="#" class="social-btn">Twitter</a>
+            </div>
+        </div>
+
+        <div class="card span-4">
+            <div class="card-icon">💻</div>
+            <h2>Featured Project</h2>
+            <p>CloudScale - A distributed system monitoring platform</p>
+            <div class="tech-stack">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">GraphQL</span>
+                <span class="tech-tag">AWS</span>
+                <span class="tech-tag">Kubernetes</span>
+            </div>
+            <div class="project-stats">
+                <span>⭐️ 1.2k Stars</span>
+                <span>🔄 156 Forks</span>
+                <span>👥 12 Contributors</span>
+            </div>
+        </div>
+
+        <div class="card span-3">
+            <div class="card-icon">🚀</div>
+            <h2>Technical Skills</h2>
+            <div class="tech-stack">
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Go</span>
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Vue.js</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Docker</span>
+                <span class="tech-tag">AWS</span>
+                <span class="tech-tag">GCP</span>
+            </div>
+        </div>
+
+        <div class="card span-3">
+            <div class="card-icon">🏢</div>
+            <h2>Experience</h2>
+            <div class="experience-item">
+                <span>🌟</span>
+                <div>
+                    <strong>Senior Software Engineer at Tech Corp</strong>
+                    <p>2021 - Present</p>
+                </div>
+            </div>
+            <div class="experience-item">
+                <span>💼</span>
+                <div>
+                    <strong>Software Engineer at StartupX</strong>
+                    <p>2018 - 2021</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card span-2">
+            <div class="card-icon">🎓</div>
+            <h2>Education</h2>
+            <p>M.S. Computer Science</p>
+            <p>Stanford University</p>
+            <p>2016 - 2018</p>
+        </div>
+
+        <div class="card span-2">
+            <div class="card-icon">📈</div>
+            <h2>Latest Blog</h2>
+            <p>Scaling Microservices: Lessons Learned</p>
+            <div class="project-stats">
+                <span>📅 2 days ago</span>
+                <span>👁️ 3.2k views</span>
+            </div>
+        </div>
+
+        <div class="card span-2">
+            <div class="card-icon">📫</div>
+            <h2>Get in Touch</h2>
+            <p>Open for interesting projects and collaborations</p>
+            <a href="mailto:x@example.com" class="social-btn">Email Me</a>
         </div>
     </div>
 

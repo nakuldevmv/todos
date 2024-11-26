@@ -1,0 +1,764 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        :root {
+            --bg-color: #f5f5f7;
+            --text-color: #1d1d1f;
+            --card-bg: rgba(255, 255, 255, 0.8);
+            --card-hover: rgba(255, 255, 255, 0.9);
+            --accent-color: #007AFF;
+            --subtitle-color: #86868b;
+            --shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            --button-bg: rgba(0, 122, 255, 0.1);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #1d1d1f;
+            --text-color: #f5f5f7;
+            --card-bg: rgba(44, 44, 46, 0.8);
+            --card-hover: rgba(44, 44, 46, 0.9);
+            --accent-color: #0A84FF;
+            --subtitle-color: #86868b;
+            --shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+            --button-bg: rgba(10, 132, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            background-color: var(--button-bg);
+            color: var(--accent-color);
+            cursor: pointer;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--card-hover);
+        }
+
+        .header {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, var(--accent-color), #00c7be);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header p {
+            color: var(--subtitle-color);
+            font-size: 1.1rem;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            padding: 25px;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow), 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: var(--subtitle-color);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+
+        .card-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--subtitle-color);
+            opacity: 0.7;
+        }
+
+        .card-button {
+            background-color: var(--button-bg);
+            color: var(--accent-color);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 15px;
+            margin-top: 15px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .card-button:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .span-2 {
+            grid-column: span 2;
+        }
+
+        .span-2-row {
+            grid-row: span 2;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background-color: var(--button-bg);
+            border-radius: 3px;
+            margin-top: 15px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: var(--accent-color);
+            width: 75%;
+        }
+
+        @media (max-width: 1024px) {
+            .bento-grid {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 0 20px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .bento-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .card {
+                min-height: 150px;
+                padding: 20px;
+            }
+
+            /* Keep some cards spanning 2 columns on mobile for visual interest */
+            .span-2 {
+                grid-column: 1;
+                min-height: 200px;
+            }
+
+            .span-2-row {
+                grid-row: span 1;
+                min-height: 200px;
+            }
+
+            .theme-toggle {
+                top: 10px;
+                right: 10px;
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Theme</button>
+    
+    <div class="header">
+        <h1>iCloud Dashboard</h1>
+        <p>Manage your storage and apps in one place</p>
+    </div>
+
+    <div class="bento-grid">
+        <div class="card span-2">
+            <div class="card-icon">☁️</div>
+            <h2>iCloud Storage</h2>
+            <p>75% of 2TB used</p>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <button class="card-button">Manage Storage</button>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">📱</div>
+            <h2>Devices</h2>
+            <p>3 devices connected</p>
+            <div class="card-stats">
+                <span>iPhone</span>
+                <span>iPad</span>
+                <span>Mac</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🔒</div>
+            <h2>Security</h2>
+            <p>Password & Security</p>
+            <button class="card-button">Review</button>
+        </div>
+
+        <div class="card span-2-row">
+            <div class="card-icon">📸</div>
+            <h2>Photos</h2>
+            <p>Access and manage your photos across all devices</p>
+            <div class="card-stats">
+                <span>12,542 items</span>
+                <span>324GB</span>
+            </div>
+            <button class="card-button">View Library</button>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">📝</div>
+            <h2>Notes</h2>
+            <p>Quick access to your notes</p>
+            <button class="card-button">Open Notes</button>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">📍</div>
+            <h2>Find My</h2>
+            <p>Locate your devices</p>
+            <button class="card-button">Track Now</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            document.body.dataset.theme = 
+                document.body.dataset.theme === 'dark' ? 'light' : 'dark';
+        }
+    </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        :root {
+            --bg-color: #f5f5f7;
+            --text-color: #1d1d1f;
+            --card-bg: rgba(255, 255, 255, 0.8);
+            --card-hover: rgba(255, 255, 255, 0.9);
+            --accent-color: #007AFF;
+            --subtitle-color: #86868b;
+            --shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            --button-bg: rgba(0, 122, 255, 0.1);
+            --danger-color: #ff3b30;
+            --success-color: #34c759;
+            --warning-color: #ff9500;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #1d1d1f;
+            --text-color: #f5f5f7;
+            --card-bg: rgba(44, 44, 46, 0.8);
+            --card-hover: rgba(44, 44, 46, 0.9);
+            --accent-color: #0A84FF;
+            --subtitle-color: #86868b;
+            --shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+            --button-bg: rgba(10, 132, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background-color: var(--card-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            opacity: 0.8;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+            color: var(--accent-color);
+        }
+
+        .theme-toggle {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            background-color: var(--button-bg);
+            color: var(--accent-color);
+            cursor: pointer;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--card-hover);
+        }
+
+        .header {
+            text-align: center;
+            margin: 80px 0 40px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, var(--accent-color), #00c7be);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header p {
+            color: var(--subtitle-color);
+            font-size: 1.1rem;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            padding: 25px;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow), 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: var(--subtitle-color);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+
+        .card-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(134, 134, 139, 0.2);
+            opacity: 0.7;
+        }
+
+        .card-button {
+            background-color: var(--button-bg);
+            color: var(--accent-color);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 15px;
+            margin-top: 15px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .card-button:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .span-2 {
+            grid-column: span 2;
+        }
+
+        .span-3 {
+            grid-column: span 3;
+        }
+
+        .span-4 {
+            grid-column: span 4;
+        }
+
+        .span-2-row {
+            grid-row: span 2;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background-color: var(--button-bg);
+            border-radius: 3px;
+            margin-top: 15px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: var(--accent-color);
+            width: 75%;
+        }
+
+        .storage-detail {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .storage-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--danger-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+        }
+
+        .device-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .device-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px;
+            background-color: var(--button-bg);
+            border-radius: 10px;
+        }
+
+        .device-item.active::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--success-color);
+            margin-right: 5px;
+        }
+
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .quick-action-btn {
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: var(--button-bg);
+            color: var(--accent-color);
+            cursor: pointer;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .quick-action-btn:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        @media (max-width: 1200px) {
+            .bento-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .span-3, .span-4 {
+                grid-column: span 3;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .bento-grid {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 0 20px;
+            }
+
+            .span-2, .span-3, .span-4 {
+                grid-column: span 2;
+            }
+
+            .nav-bar {
+                padding: 0 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .bento-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .card {
+                min-height: 150px;
+                padding: 20px;
+            }
+
+            .span-2, .span-3, .span-4 {
+                grid-column: span 1;
+            }
+
+            .span-2-row {
+                grid-row: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="nav-links">
+            <a href="#">Overview</a>
+            <a href="#">Photos</a>
+            <a href="#">Drive</a>
+            <a href="#">Mail</a>
+            <a href="#">Calendar</a>
+        </div>
+        <button class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Theme</button>
+    </nav>
+
+    <div class="header">
+        <h1>iCloud Dashboard</h1>
+        <p>Manage your storage and apps in one place</p>
+    </div>
+
+    <div class="bento-grid">
+        <div class="card span-4">
+            <div class="card-icon">☁️</div>
+            <h2>iCloud Storage</h2>
+            <p>75% of 2TB used (1.5TB available)</p>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <div class="storage-detail">
+                <div class="storage-icon" style="background-color: var(--button-bg)">📸</div>
+                <div>
+                    <p>Photos & Videos</p>
+                    <small>845 GB</small>
+                </div>
+            </div>
+            <div class="storage-detail">
+                <div class="storage-icon" style="background-color: var(--button-bg)">📱</div>
+                <div>
+                    <p>Device Backups</p>
+                    <small>425 GB</small>
+                </div>
+            </div>
+            <button class="card-button">Manage Storage</button>
+        </div>
+
+        <div class="card span-2">
+            <div class="card-icon">📱</div>
+            <h2>Devices</h2>
+            <p>3 devices connected</p>
+            <div class="device-list">
+                <div class="device-item active">
+                    iPhone 14 Pro
+                </div>
+                <div class="device-item active">
+                    MacBook Pro
+                </div>
+                <div class="device-item">
+                    iPad Air
+                </div>
+            </div>
+        </div>
+
+        <div class="card span-3">
+            <div class="card-icon">📸</div>
+            <h2>Photos</h2>
+            <p>Access and manage your photos across all devices</p>
+            <div class="card-stats">
+                <span>12,542 items</span>
+                <span>324GB</span>
+                <span>Last sync: 2 min ago</span>
+            </div>
+            <div class="quick-actions">
+                <button class="quick-action-btn">🔄 Sync Now</button>
+                <button class="quick-action-btn">📤 Share Album</button>
+            </div>
+        </div>
+
+        <div class="card span-3">
+            <div class="notification-badge">2</div>
+            <div class="card-icon">🔒</div>
+            <h2>Security Recommendations</h2>
+            <p>2 important security updates available</p>
+            <div class="quick-actions">
+                <button class="quick-action-btn">🔑 Password Check</button>
+                <button class="quick-action-btn">🔐 2FA Setup</button>
+            </div>
+        </div>
+
+        <div class="card span-2">
+            <div class="card-icon">📝</div>
+            <h2>Notes</h2>
+            <p>Quick access to your notes</p>
+            <div class="card-stats">
+                <span>256 notes</span>
+                <span>12 shared</span>
+            </div>
+            <button class="card-button">Open Notes</button>
+        </div>
+
+        <div class="card span-2">
+            <div class="card-icon">📍</div>
+            <h2>Find My</h2>
+            <p>Locate your devices and items</p>
+            <div class="device-list">
+                <div class="device-item active">
+                    AirPods Pro
+                </div>
+                <div class="device-item active">
+                    AirTag - Keys
+                </div>
+            </div>
+        </div>
+
+        <div class="card span-2">
+            <div class="card-icon">📅</div>
+            <h2>Calendar</h2>
+            <p>Upcoming events</p>
+            <div class="card-stats">
+                <span>3 events today</span>
+                <span>2 shared calendars</span>
+            </div>
+            <button class="card-button">View Calendar</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            document.body.dataset.theme = 
+                document.body.dataset.theme === 'dark' ? 'light' : 'dark';
+        }
+    </script>
+</body>
+</html>

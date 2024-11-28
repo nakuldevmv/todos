@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todos</title>
+    <style>
+        :root {
+            --bg-primary: #1e1e1e;
+            /* VSCode-like dark background */
+            --bg-secondary: #252526;
+            /* Slightly lighter shade for elements */
+            --accent-primary: #569cd6;
+            /* Blue like TypeScript blue */
+            --accent-secondary: #4ec9b0;
+            /* Teal like C# class names */
+            --text-primary: #d4d4d4;
+            /* Light gray for main text */
+            --comment-color: #6A9955;
+            /* Green like comments */
+            --line-color: #333333;
+            /* Color for lines/borders */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        main {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 400px;
+            padding: 1rem;
+            position: relative;
+        }
+
+        .links::before {
+            content: "// Navigation Links";
+            position: absolute;
+            top: -2rem;
+            left: 0;
+            color: var(--comment-color);
+            font-size: 0.9rem;
+        }
+
+        .link-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2rem;
+            width: 80%;
+            text-decoration: none;
+            color: var(--text-primary);
+            background: var(--bg-secondary);
+            border: 1px solid var(--line-color);
+            border-radius: 4px;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-item::before {
+            content: '>';
+            position: absolute;
+            left: 1rem;
+            color: var(--accent-primary);
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .link-item:hover {
+            transform: translateX(10px);
+            background: var(--bg-secondary);
+            border-color: var(--accent-primary);
+            padding-left: 2.5rem;
+            color: var(--accent-secondary);
+        }
+
+        .link-item:hover::before {
+            opacity: 1;
+        }
+
+        /* Terminal-like blinking cursor effect */
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .link-item::after {
+            content: '_';
+            margin-left: 0.5rem;
+            animation: blink 1s infinite;
+            opacity: 0;
+        }
+
+        .link-item:hover::after {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .link-item {
+                width: 90%;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Code-like loading animation */
+        @keyframes typeIn {
+            from {
+                clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+                opacity: 0;
+            }
+
+            to {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+                opacity: 1;
+            }
+        }
+
+        .links {
+            animation: typeIn 0.6s ease-out forwards;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section class="links">
+            <a href="https://github.com/nakuldevmv/Calculator-app" class="link-item" target="_blank">Calculator App</a>
+            <a href="https://github.com/nakuldevmv/To-Do-App" class="link-item" target="_blank">To-Do App</a>
+            <a href="https://github.com/nakuldevmv/Tic-Tac-Toe-Game" class="link-item" target="_blank">Tic-Tac-Toe
+                Game</a>
+            <a href="https://github.com/nakuldevmv/QR-Code-Scanner" class="link-item" target="_blank">QR Code
+                Scanner</a>
+        </section>
+    </main>
+</body>
+
+</html>

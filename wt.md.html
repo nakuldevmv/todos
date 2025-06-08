@@ -1,331 +1,1047 @@
-<style>
-  body {
-    background-color: #121212;
-    color: #E0E0E0;
-    font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
-    line-height: 1.75;
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 2rem;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    color: #FFFFFF;
-    border-bottom: 1px solid #2A2A2A;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    font-weight: 600;
-  }
-  h2{
-    color: #A7FFEB;
-  }
-
-  a {
-    color: #80CBC4;
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-    color: #A7FFEB;
-  }
-
-  code, pre {
-    background-color: #1E1E1E;
-    color: #DCDCDC;
-    border-radius: 6px;
-    padding: 4px 8px;
-    font-family: 'Courier New', monospace;
-    font-size: 0.95em;
-  }
-
-  pre {
-    overflow-x: auto;
-    padding: 1rem;
-    margin: 1rem 0;
-  }
-
-  table {
-    border-collapse: collapse;
-    width: 100%;
-    margin-top: 1rem;
-    background-color: #1C1C1C;
-  }
-  th, td {
-    border: 1px solid #333333;
-    padding: 0.75rem;
-    text-align: left;
-    color: #E0E0E0;
-  }
-  th {
-    background-color: #2A2A2A;
-  }
-
-  blockquote {
-    border-left: 4px solid #555555;
-    margin: 1rem 0;
-    padding-left: 1rem;
-    color: #B0B0B0;
-    font-style: italic;
-  }
-
-  hr {
-    border: none;
-    border-top: 1px solid #2A2A2A;
-    margin: 2rem 0;
-  }
-</style>
-<script src="https://morgan3d.github.io/markdeep/latest/markdeep.min.js"></script>
----
-# 🌐 UNIT I: Website Basics, HTML5, CSS3 & Web 2.0
-
-## ✅ Web Essentials
-
-* **Client**: The browser you use (like Chrome, Firefox, or Edge) to open and interact with websites. It sends out requests and receives responses.
-* **Server**: A powerful remote computer that stores and serves web pages and data. It listens for requests and sends resources back.
-* **Communication**: They talk using **HTTP**, a protocol that powers all web requests. Think of it like digital mail exchange.
-
-## ✅ Internet & WWW
-
-* **Internet**: A global system of interconnected computer networks that communicate through standard protocols like TCP/IP. It is the infrastructure for all online services.
-* **WWW (World Wide Web)**: A service on top of the internet, made up of millions of websites and multimedia linked together using hyperlinks.
-* **URL**: Uniform Resource Locator – the unique address of any resource on the web (like `https://example.com`). It identifies the location and protocol.
-
-## ✅ HTTP Request & Response
-
-* **Request**: The browser sends a message asking the server for a webpage. Contains method, headers, and data.
-* **Response**: The server sends back the required files (HTML, CSS, JS, etc.). Includes status code and content.
-* **diagram: true** (Google: `HTTP request response cycle diagram`)
-
-## ✅ Web Clients & Web Servers
-
-* **Clients**: Devices or applications (browsers) that send requests to servers. They act as the interface for users.
-* **Servers**: Systems that process those requests and deliver responses. They store files, databases, and backend logic.
-
-## ✅ HTML5
-
-* Defines the structure of a webpage using elements and tags.
-* New semantic tags: `<article>`, `<section>`, `<nav>`, `<footer>`, etc., make pages more readable by humans and machines.
-* Supports **tables**, **lists**, **images** for organizing and displaying content.
-* **Form Controls**: `<input>`, `<button>`, `<select>` elements for user input. Includes new types like date, email, range.
-* **Drag & Drop**: Allows moving elements within the page with native support.
-* **Audio/Video**: Native support to embed and control multimedia like podcasts or MP4s.
-* **diagram: true** (Google: `HTML5 form elements`)
-
-## ✅ CSS3
-
-* Adds style and visual formatting to HTML elements using selectors and properties.
-* Applied via Inline, Embedded, or External stylesheets for modular styling.
-* **Cascading**: Rules are prioritized based on origin and specificity.
-* **Inheritance**: Styles pass down from parent to child elements unless overridden.
-* Includes properties like **backgrounds**, **borders**, **colors**, **shadows**, **text effects**.
-* **Transformations**: Rotate, scale, skew elements with properties like `transform`.
-* **Transitions**: Animate changes smoothly using `transition` properties.
-* **Animations**: Loop or sequence animations using `@keyframes`.
-* **diagram: true** (Google: `CSS3 properties cheat sheet`)
-
-## ✅ Bootstrap Framework
-
-* A popular CSS framework for responsive, mobile-first sites that scales across devices.
-* Pre-built components: grid systems, buttons, modals, navbars, cards, etc.
-* Speeds up design and layout with ready-to-use classes and JavaScript plugins.
-
----
-
-# 💻 UNIT II: Client Side Programming (JavaScript, JSON)
-
-## ✅ JavaScript Introduction
-
-* A high-level, interpreted scripting language that brings interactivity to web pages.
-* Runs in the browser and powers features like sliders, popups, form checks, etc.
-* Reacts to events like clicks, typing, scrolling, and hovering.
-
-## ✅ DOM (Document Object Model)
-
-* Represents page structure as a tree of elements that JS can interact with.
-* JS can read and manipulate the DOM in real time to update content or styling.
-* **diagram: true** (Google: `DOM tree structure html`)
-
-## ✅ Exception Handling
-
-* Manages errors using `try`, `catch`, and `finally` blocks to avoid crashes.
-* Ensures smoother user experience by handling invalid inputs and failures.
-
-## ✅ Form Validation
-
-* JS checks form fields before submission to ensure correctness.
-* Example: Ensures email field has `@` character and no blank fields.
-* Improves UX and reduces unnecessary server load.
-
-## ✅ Built-in Objects
-
-* Powerful built-ins like `Math`, `Date`, `Array`, `String`, `JSON`, etc.
-* Provide utility methods for calculations, string manipulation, data storage, etc.
-
-## ✅ Event Handling
-
-* Detects and responds to user actions: `onclick`, `onchange`, `onmouseover`, etc.
-* Enables dynamic content updates and rich interactions.
-
-## ✅ DHTML
-
-* A mix of HTML, CSS, JS, and DOM for interactive web pages.
-* Enables animations, real-time changes, and effects without page reloads.
-
-## ✅ JSON (JavaScript Object Notation)
-
-* A lightweight format to store and exchange data.
-* Easy to read, write, and parse.
-* Widely used in APIs and AJAX calls.
-* Example: `{ "name": "Alex", "age": 21 }`
-
----
-
-# 🖥 UNIT III: Server Side Programming (Servlets & JDBC)
-
-## ✅ Java Servlets
-
-* Java classes that run on a web server to generate dynamic web content.
-* Process user input, handle forms, interact with databases, and control flow.
-
-## ✅ Servlet Life Cycle
-
-1. **init()** – Initializes the servlet; runs once when servlet is created.
-2. **service()** – Called each time a request is received.
-3. **destroy()** – Cleans up before servlet is unloaded.
-
-* **diagram: true** (Google: `Java servlet life cycle`)
-
-## ✅ Form Submission Methods
-
-* **GET**: Data is appended to the URL; useful for queries; visible and limited.
-* **POST**: Data is sent securely in the request body; suitable for sensitive or large data.
-
-## ✅ Session Handling
-
-* Tracks user data across multiple pages using `HttpSession`.
-* Useful for shopping carts, login sessions, and user preferences.
-
-## ✅ Cookies
-
-* Small text files stored in user's browser.
-* Stores preferences, session info, and helps personalize experiences.
-
-## ✅ JDBC (Java Database Connectivity)
-
-* Connects Java apps to relational databases like MySQL or Oracle.
-* Steps:
-
-  1. Load JDBC driver.
-  2. Establish a DB connection.
-  3. Create and execute SQL queries.
-  4. Handle ResultSet.
-  5. Close connection properly.
-
----
-
-# 🧩 UNIT IV: PHP & XML
-
-## ✅ PHP Basics
-
-* A server-side scripting language for backend logic.
-* Embeds seamlessly into HTML to build dynamic sites.
-* Processes form data, interacts with DBs, and handles sessions.
-
-## ✅ Key PHP Concepts
-
-* **Variables**: Store values (`$name = "Alex"`)
-* **Control Flow**: Logic using `if`, `else`, `switch`, `for`, `while` statements.
-* **Functions**: Reusable blocks; built-in like `strlen()` or user-defined.
-* **Form Validation**: Ensures submitted data is valid and safe.
-
-## ✅ XML Basics
-
-* Markup language to structure and transport data.
-* Tags describe data – machine and human readable.
-
-## ✅ DTD (Document Type Definition)
-
-* Declares rules and structure of XML to validate documents.
-* **diagram: true** (Google: `XML DTD example`)
-
-## ✅ XSD (XML Schema Definition)
-
-* Defines allowed elements, attributes, and data types.
-* Ensures stricter validation than DTD.
-* **diagram: true** (Google: `XSD schema example`)
-
-## ✅ Namespaces
-
-* Prevent tag name conflicts by qualifying names.
-* Declared using `xmlns` attributes.
-* Example:
-
-
-## ✅ XML Parsers
-
-* **DOM**: Loads entire XML into memory; easy navigation.
-* **SAX**: Parses XML sequentially; memory efficient.
-* **StAX**: Offers programmer control with event-driven parsing.
-
-## ✅ XSL
-
-* Styles or transforms XML to formats like HTML.
-* Makes XML readable or suitable for presentation.
-
----
-
-# ⚙️ UNIT V: AngularJS & Modern Web Frameworks
-
-## ✅ AngularJS Overview
-
-* JavaScript framework by Google to build dynamic SPAs (Single Page Applications).
-* Uses **MVC** to separate data, presentation, and control logic.
-* **diagram: true** (Google: `angularjs mvc diagram`)
-
-## ✅ AngularJS Features
-
-* **ng-attributes**: Add behavior like `ng-model`, `ng-show`, etc.
-* **Expressions**: Bind and display data dynamically with `{{ }}` syntax.
-* **Two-Way Data Binding**: Syncs model and view in real time.
-* **Directives**: Add custom logic – `ng-if`, `ng-repeat`, `ng-switch`.
-* **Controllers**: JS functions managing data and behavior of views.
-* **Filters**: Format data output (like currency, date).
-* **Forms**: Built-in validation and real-time error detection.
-* **Modules/Services**: Organize code and reuse functionality.
-* **Routing**: Navigate within a SPA without full reload.
-
-Sure thing, mate. Here's that info converted to a clean, no-table, plain-text format—easy on the eyes and smooth for notes or brain-download sessions:
-
----
-
-## ✅ Web Application Frameworks & Tools
-
-**Firebase**
-
-Used for real-time databases, user authentication, hosting, and app analytics. Basically your all-in-one backend service without much setup.
-
-**Docker**
-
-Helps you package your app in containers so it runs the same everywhere—local, dev, or production. Makes deployments hella smooth.
-
-**Node.js**
-
-A JavaScript runtime that runs on the server side. Great for building scalable and fast web applications, especially APIs.
-
-**React**
-
-A frontend library by Meta. Lets you build interactive and dynamic user interfaces with reusable components. Perfect for single-page apps.
-
-**Django**
-
-A Python web framework. Comes with powerful tools like Object-Relational Mapping (ORM) and a built-in admin panel, which speeds up development like crazy.
-
----
-
-## ✅ UI & UX
-
-* **UI (User Interface)**: Layout, buttons, colors, typography – everything users see.
-* **UX (User Experience)**: Flow, speed, satisfaction – how users feel using the app.
-* Great UI + excellent UX = user retention and success.
-
----
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* General Styles */
+    body {
+      background-color: #121212;
+      color: #e0e0e0;
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: #ffffff;
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: 2rem;
+      border-bottom: 2px solid #333;
+      padding-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      border-bottom: 1px solid #333;
+      padding-bottom: 0.5rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    a {
+      color: #64b5f6;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    p {
+      margin: 1rem 0;
+    }
+
+    ul {
+      margin: 1rem 0;
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    code,
+    pre {
+      background-color: #1e1e1e;
+      color: #ff79c6;
+      border-radius: 4px;
+      padding: 0.25rem 0.5rem;
+      font-family: 'Courier New', monospace;
+      font-size: 0.95em;
+    }
+
+    pre {
+      overflow-x: auto;
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+
+    blockquote {
+      border-left: 4px solid #64b5f6;
+      margin: 1rem 0;
+      padding-left: 1rem;
+      color: #b0bec5;
+      font-style: italic;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #333;
+      margin: 2rem 0;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 1rem;
+      background-color: #1e1e1e;
+    }
+
+    th,
+    td {
+      border: 1px solid #333;
+      padding: 0.75rem;
+      text-align: left;
+    }
+
+    th {
+      background-color: #333;
+      font-weight: bold;
+    }
+
+    /* Navigation Styles */
+    .longTOC {
+      background-color: #64b5f6;
+      color: #121212;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+
+    .longTOC a {
+      color: #121212;
+      font-weight: bold;
+    }
+
+    .longTOC a:hover {
+      text-decoration: underline;
+    }
+
+    .tocHeader {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Footer Styles */
+    .markdeepFooter {
+      font-size: 0.85rem;
+      text-align: center;
+      color: #757575;
+      margin-top: 2rem;
+    }
+
+    /* Context Menu */
+    #mdContextMenu {
+      position: absolute;
+      background: #333;
+      color: #e0e0e0;
+      padding: 0.5rem;
+      border-radius: 4px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    #mdContextMenu div {
+      padding: 0.5rem;
+      cursor: pointer;
+    }
+
+    #mdContextMenu div:hover {
+      background: #64b5f6;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  </p>
+  <hr>
+
+  <p></p>
+  <div class="longTOC">
+    <div class="tocHeader">Contents</div>
+    <p><a href="#" class="tocTop" target="_self"></a><br>
+      <a href="#%F0%9F%8C%90uniti:websitebasics,html5,css3&amp;web2.0" target="_self" class="level1"><span
+          class="tocNumber">1&nbsp; </span>🌐 UNIT I: Website Basics, HTML5, CSS3 &amp; Web 2.0</a><br>
+      &nbsp;&nbsp;<a href="#%F0%9F%8C%90uniti:websitebasics,html5,css3&amp;web2.0/%E2%9C%85webessentials" target="_self"
+        class="level2"><span class="tocNumber">1.1&nbsp; </span>✅ Web Essentials</a><br>
+      &nbsp;&nbsp;<a href="#%F0%9F%8C%90uniti:websitebasics,html5,css3&amp;web2.0/%E2%9C%85internet&amp;www"
+        target="_self" class="level2"><span class="tocNumber">1.2&nbsp; </span>✅ Internet &amp; WWW</a><br>
+      &nbsp;&nbsp;<a href="#%F0%9F%8C%90uniti:websitebasics,html5,css3&amp;web2.0/%E2%9C%85httprequest&amp;response"
+        target="_self" class="level2"><span class="tocNumber">1.3&nbsp; </span>✅ HTTP Request &amp; Response</a><br>
+      &nbsp;&nbsp;<a href="#%F0%9F%8C%90uniti:websitebasics,html5,css3&amp;web2.0/%E2%9C%85webclients&amp;webservers"
+        target="_self" class="level2"><span class="tocNumber">1.4&nbsp; </span>✅ Web Clients &amp; Web Servers</a><br>
+      &nbsp;&nbsp;<a href="#%F0%9F%8C%90uniti:websitebasics,html5,css3&amp;web2.0/%E2%9C%85html5" target="_self"
+        class="level2"><span class="tocNumber">1.5&nbsp; </span>✅ HTML5</a><br>
+      &nbsp;&nbsp;<a href="#%F0%9F%8C%90uniti:websitebasics,html5,css3&amp;web2.0/%E2%9C%85css3" target="_self"
+        class="level2"><span class="tocNumber">1.6&nbsp; </span>✅ CSS3</a><br>
+      &nbsp;&nbsp;<a href="#%F0%9F%8C%90uniti:websitebasics,html5,css3&amp;web2.0/%E2%9C%85bootstrapframework"
+        target="_self" class="level2"><span class="tocNumber">1.7&nbsp; </span>✅ Bootstrap Framework</a><br>
+      <a href="#%F0%9F%92%BBunitii:clientsideprogramming(javascript,json)" target="_self" class="level1"><span
+          class="tocNumber">2&nbsp; </span>💻 UNIT II: Client Side Programming (JavaScript, JSON)</a><br>
+      &nbsp;&nbsp;<a href="#%F0%9F%92%BBunitii:clientsideprogramming(javascript,json)/%E2%9C%85javascriptintroduction"
+        target="_self" class="level2"><span class="tocNumber">2.1&nbsp; </span>✅ JavaScript Introduction</a><br>
+      &nbsp;&nbsp;<a href="#%F0%9F%92%BBunitii:clientsideprogramming(javascript,json)/%E2%9C%85dom(documentobjectmodel)"
+        target="_self" class="level2"><span class="tocNumber">2.2&nbsp; </span>✅ DOM (Document Object Model)</a><br>
+      &nbsp;&nbsp;<a href="#%F0%9F%92%BBunitii:clientsideprogramming(javascript,json)/%E2%9C%85exceptionhandling"
+        target="_self" class="level2"><span class="tocNumber">2.3&nbsp; </span>✅ Exception Handling</a><br>
+      &nbsp;&nbsp;<a href="#%F0%9F%92%BBunitii:clientsideprogramming(javascript,json)/%E2%9C%85formvalidation"
+        target="_self" class="level2"><span class="tocNumber">2.4&nbsp; </span>✅ Form Validation</a><br>
+      &nbsp;&nbsp;<a href="#%F0%9F%92%BBunitii:clientsideprogramming(javascript,json)/%E2%9C%85built-inobjects"
+        target="_self" class="level2"><span class="tocNumber">2.5&nbsp; </span>✅ Built-in Objects</a><br>
+      &nbsp;&nbsp;<a href="#%F0%9F%92%BBunitii:clientsideprogramming(javascript,json)/%E2%9C%85eventhandling"
+        target="_self" class="level2"><span class="tocNumber">2.6&nbsp; </span>✅ Event Handling</a><br>
+      &nbsp;&nbsp;<a href="#%F0%9F%92%BBunitii:clientsideprogramming(javascript,json)/%E2%9C%85dhtml" target="_self"
+        class="level2"><span class="tocNumber">2.7&nbsp; </span>✅ DHTML</a><br>
+      &nbsp;&nbsp;<a
+        href="#%F0%9F%92%BBunitii:clientsideprogramming(javascript,json)/%E2%9C%85json(javascriptobjectnotation)"
+        target="_self" class="level2"><span class="tocNumber">2.8&nbsp; </span>✅ JSON (JavaScript Object
+        Notation)</a><br>
+      <a href="#%F0%9F%96%A5unitiii:serversideprogramming(servlets&amp;jdbc)" target="_self" class="level1"><span
+          class="tocNumber">3&nbsp; </span>🖥 UNIT III: Server Side Programming (Servlets &amp; JDBC)</a><br>
+      &nbsp;&nbsp;<a href="#%F0%9F%96%A5unitiii:serversideprogramming(servlets&amp;jdbc)/%E2%9C%85javaservlets"
+        target="_self" class="level2"><span class="tocNumber">3.1&nbsp; </span>✅ Java Servlets</a><br>
+      &nbsp;&nbsp;<a href="#%F0%9F%96%A5unitiii:serversideprogramming(servlets&amp;jdbc)/%E2%9C%85servletlifecycle"
+        target="_self" class="level2"><span class="tocNumber">3.2&nbsp; </span>✅ Servlet Life Cycle</a><br>
+      &nbsp;&nbsp;<a href="#%F0%9F%96%A5unitiii:serversideprogramming(servlets&amp;jdbc)/%E2%9C%85formsubmissionmethods"
+        target="_self" class="level2"><span class="tocNumber">3.3&nbsp; </span>✅ Form Submission Methods</a><br>
+      &nbsp;&nbsp;<a href="#%F0%9F%96%A5unitiii:serversideprogramming(servlets&amp;jdbc)/%E2%9C%85sessionhandling"
+        target="_self" class="level2"><span class="tocNumber">3.4&nbsp; </span>✅ Session Handling</a><br>
+      &nbsp;&nbsp;<a href="#%F0%9F%96%A5unitiii:serversideprogramming(servlets&amp;jdbc)/%E2%9C%85cookies"
+        target="_self" class="level2"><span class="tocNumber">3.5&nbsp; </span>✅ Cookies</a><br>
+      &nbsp;&nbsp;<a
+        href="#%F0%9F%96%A5unitiii:serversideprogramming(servlets&amp;jdbc)/%E2%9C%85jdbc(javadatabaseconnectivity)"
+        target="_self" class="level2"><span class="tocNumber">3.6&nbsp; </span>✅ JDBC (Java Database
+        Connectivity)</a><br>
+      <a href="#%F0%9F%A7%A9unitiv:php&amp;xml" target="_self" class="level1"><span class="tocNumber">4&nbsp; </span>🧩
+        UNIT IV: PHP &amp; XML</a><br>
+      &nbsp;&nbsp;<a href="#%F0%9F%A7%A9unitiv:php&amp;xml/%E2%9C%85phpbasics" target="_self" class="level2"><span
+          class="tocNumber">4.1&nbsp; </span>✅ PHP Basics</a><br>
+      &nbsp;&nbsp;<a href="#%F0%9F%A7%A9unitiv:php&amp;xml/%E2%9C%85keyphpconcepts" target="_self" class="level2"><span
+          class="tocNumber">4.2&nbsp; </span>✅ Key PHP Concepts</a><br>
+      &nbsp;&nbsp;<a href="#%F0%9F%A7%A9unitiv:php&amp;xml/%E2%9C%85xmlbasics" target="_self" class="level2"><span
+          class="tocNumber">4.3&nbsp; </span>✅ XML Basics</a><br>
+      &nbsp;&nbsp;<a href="#%F0%9F%A7%A9unitiv:php&amp;xml/%E2%9C%85dtd(documenttypedefinition)" target="_self"
+        class="level2"><span class="tocNumber">4.4&nbsp; </span>✅ DTD (Document Type Definition)</a><br>
+      &nbsp;&nbsp;<a href="#%F0%9F%A7%A9unitiv:php&amp;xml/%E2%9C%85xsd(xmlschemadefinition)" target="_self"
+        class="level2"><span class="tocNumber">4.5&nbsp; </span>✅ XSD (XML Schema Definition)</a><br>
+      &nbsp;&nbsp;<a href="#%F0%9F%A7%A9unitiv:php&amp;xml/%E2%9C%85namespaces" target="_self" class="level2"><span
+          class="tocNumber">4.6&nbsp; </span>✅ Namespaces</a><br>
+      &nbsp;&nbsp;<a href="#%F0%9F%A7%A9unitiv:php&amp;xml/%E2%9C%85xmlparsers" target="_self" class="level2"><span
+          class="tocNumber">4.7&nbsp; </span>✅ XML Parsers</a><br>
+      &nbsp;&nbsp;<a href="#%F0%9F%A7%A9unitiv:php&amp;xml/%E2%9C%85xsl" target="_self" class="level2"><span
+          class="tocNumber">4.8&nbsp; </span>✅ XSL</a><br>
+      <a href="#%E2%9A%99%EF%B8%8Funitv:angularjs&amp;modernwebframeworks" target="_self" class="level1"><span
+          class="tocNumber">5&nbsp; </span>⚙️ UNIT V: AngularJS &amp; Modern Web Frameworks</a><br>
+      &nbsp;&nbsp;<a href="#%E2%9A%99%EF%B8%8Funitv:angularjs&amp;modernwebframeworks/%E2%9C%85angularjsoverview"
+        target="_self" class="level2"><span class="tocNumber">5.1&nbsp; </span>✅ AngularJS Overview</a><br>
+      &nbsp;&nbsp;<a href="#%E2%9A%99%EF%B8%8Funitv:angularjs&amp;modernwebframeworks/%E2%9C%85angularjsfeatures"
+        target="_self" class="level2"><span class="tocNumber">5.2&nbsp; </span>✅ AngularJS Features</a><br>
+      &nbsp;&nbsp;<a
+        href="#%E2%9A%99%EF%B8%8Funitv:angularjs&amp;modernwebframeworks/%E2%9C%85webapplicationframeworks&amp;tools"
+        target="_self" class="level2"><span class="tocNumber">5.3&nbsp; </span>✅ Web Application Frameworks &amp;
+        Tools</a><br>
+      &nbsp;&nbsp;<a href="#%E2%9A%99%EF%B8%8Funitv:angularjs&amp;modernwebframeworks/%E2%9C%85ui&amp;ux" target="_self"
+        class="level2"><span class="tocNumber">5.4&nbsp; </span>✅ UI &amp; UX</a><br>
+    </p>
+  </div><a class="target" name="%F0%9F%8C%90uniti:websitebasics,html5,css3&amp;web2.0">&nbsp;</a><a class="target"
+    name="%F0%9F%8C%90uniti:websitebasics,html5,css3&amp;web2.0">&nbsp;</a><a class="target" name="toc1">&nbsp;</a>
+  <h1>🌐 UNIT I: Website Basics, HTML5, CSS3 &amp; Web 2.0</h1>
+
+  <a class="target" name="%E2%9C%85webessentials">&nbsp;</a><a class="target"
+    name="%F0%9F%8C%90uniti:websitebasics,html5,css3&amp;web2.0/%E2%9C%85webessentials">&nbsp;</a><a class="target"
+    name="toc1.1">&nbsp;</a>
+  <h2>✅ Web Essentials</h2>
+  <p>
+
+
+
+  </p>
+  <ul>
+    <li class="asterisk"><strong class="asterisk">Client</strong>: The browser you use (like Chrome, Firefox, or Edge)
+      to open and interact with websites. It sends out requests and receives responses.
+    </li>
+    <li class="asterisk"><strong class="asterisk">Server</strong>: A powerful remote computer that stores and serves web
+      pages and data. It listens for requests and sends resources back.
+    </li>
+    <li class="asterisk"><strong class="asterisk">Communication</strong>: They talk using <strong
+        class="asterisk">HTTP</strong>, a protocol that powers all web requests. Think of it like digital mail exchange.
+    </li>
+  </ul>
+
+  <p></p>
+  <a class="target" name="%E2%9C%85internet&amp;www">&nbsp;</a><a class="target"
+    name="%F0%9F%8C%90uniti:websitebasics,html5,css3&amp;web2.0/%E2%9C%85internet&amp;www">&nbsp;</a><a class="target"
+    name="toc1.2">&nbsp;</a>
+  <h2>✅ Internet &amp; WWW</h2>
+  <p>
+
+
+
+  </p>
+  <ul>
+    <li class="asterisk"><strong class="asterisk">Internet</strong>: A global system of interconnected computer networks
+      that communicate through standard protocols like TCP/IP. It is the infrastructure for all online services.
+    </li>
+    <li class="asterisk"><strong class="asterisk">WWW (World Wide Web)</strong>: A service on top of the internet, made
+      up of millions of websites and multimedia linked together using hyperlinks.
+    </li>
+    <li class="asterisk"><strong class="asterisk">URL</strong>: Uniform Resource Locator – the unique address of any
+      resource on the web (like <code>https://example.com</code>). It identifies the location and protocol.</li>
+  </ul>
+
+  <p></p>
+  <a class="target" name="%E2%9C%85httprequest&amp;response">&nbsp;</a><a class="target"
+    name="%F0%9F%8C%90uniti:websitebasics,html5,css3&amp;web2.0/%E2%9C%85httprequest&amp;response">&nbsp;</a><a
+    class="target" name="toc1.3">&nbsp;</a>
+  <h2>✅ HTTP Request &amp; Response</h2>
+  <p>
+
+
+
+  </p>
+  <ul>
+    <li class="asterisk"><strong class="asterisk">Request</strong>: The browser sends a message asking the server for a
+      webpage. Contains method, headers, and data.
+    </li>
+    <li class="asterisk"><strong class="asterisk">Response</strong>: The server sends back the required files (HTML,
+      CSS, JS, etc.). Includes status code and content.
+    </li>
+    <li class="asterisk"><strong class="asterisk">diagram: true</strong> (Google:
+      <code>HTTP request response cycle diagram</code>)
+    </li>
+  </ul>
+
+  <p></p>
+  <a class="target" name="%E2%9C%85webclients&amp;webservers">&nbsp;</a><a class="target"
+    name="%F0%9F%8C%90uniti:websitebasics,html5,css3&amp;web2.0/%E2%9C%85webclients&amp;webservers">&nbsp;</a><a
+    class="target" name="toc1.4">&nbsp;</a>
+  <h2>✅ Web Clients &amp; Web Servers</h2>
+  <p>
+
+
+
+  </p>
+  <ul>
+    <li class="asterisk"><strong class="asterisk">Clients</strong>: Devices or applications (browsers) that send
+      requests to servers. They act as the interface for users.
+    </li>
+    <li class="asterisk"><strong class="asterisk">Servers</strong>: Systems that process those requests and deliver
+      responses. They store files, databases, and backend logic.</li>
+  </ul>
+
+  <p></p>
+  <a class="target" name="%E2%9C%85html5">&nbsp;</a><a class="target"
+    name="%F0%9F%8C%90uniti:websitebasics,html5,css3&amp;web2.0/%E2%9C%85html5">&nbsp;</a><a class="target"
+    name="toc1.5">&nbsp;</a>
+  <h2>✅ HTML5</h2>
+  <p>
+
+
+
+  </p>
+  <ul>
+    <li class="asterisk">Defines the structure of a webpage using elements and tags.
+    </li>
+    <li class="asterisk">New semantic tags: <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>,
+      <code>&lt;nav&gt;</code>, <code>&lt;footer&gt;</code>, etc., make pages more readable by humans and machines.
+    </li>
+    <li class="asterisk">Supports <strong class="asterisk">tables</strong>, <strong class="asterisk">lists</strong>,
+      <strong class="asterisk">images</strong> for organizing and displaying content.
+    </li>
+    <li class="asterisk"><strong class="asterisk">Form Controls</strong>: <code>&lt;input&gt;</code>,
+      <code>&lt;button&gt;</code>, <code>&lt;select&gt;</code> elements for user input. Includes new types like date,
+      email, range.
+    </li>
+    <li class="asterisk"><strong class="asterisk">Drag &amp; Drop</strong>: Allows moving elements within the page with
+      native support.
+    </li>
+    <li class="asterisk"><strong class="asterisk">Audio/Video</strong>: Native support to embed and control multimedia
+      like podcasts or MP4s.
+    </li>
+    <li class="asterisk"><strong class="asterisk">diagram: true</strong> (Google: <code>HTML5 form elements</code>)</li>
+  </ul>
+
+  <p></p>
+  <a class="target" name="%E2%9C%85css3">&nbsp;</a><a class="target"
+    name="%F0%9F%8C%90uniti:websitebasics,html5,css3&amp;web2.0/%E2%9C%85css3">&nbsp;</a><a class="target"
+    name="toc1.6">&nbsp;</a>
+  <h2>✅ CSS3</h2>
+  <p>
+
+
+
+  </p>
+  <ul>
+    <li class="asterisk">Adds style and visual formatting to HTML elements using selectors and properties.
+    </li>
+    <li class="asterisk">Applied via Inline, Embedded, or External stylesheets for modular styling.
+    </li>
+    <li class="asterisk"><strong class="asterisk">Cascading</strong>: Rules are prioritized based on origin and
+      specificity.
+    </li>
+    <li class="asterisk"><strong class="asterisk">Inheritance</strong>: Styles pass down from parent to child elements
+      unless overridden.
+    </li>
+    <li class="asterisk">Includes properties like <strong class="asterisk">backgrounds</strong>, <strong
+        class="asterisk">borders</strong>, <strong class="asterisk">colors</strong>, <strong
+        class="asterisk">shadows</strong>, <strong class="asterisk">text effects</strong>.
+    </li>
+    <li class="asterisk"><strong class="asterisk">Transformations</strong>: Rotate, scale, skew elements with properties
+      like <code>transform</code>.
+    </li>
+    <li class="asterisk"><strong class="asterisk">Transitions</strong>: Animate changes smoothly using
+      <code>transition</code> properties.
+    </li>
+    <li class="asterisk"><strong class="asterisk">Animations</strong>: Loop or sequence animations using
+      <code>@keyframes</code>.
+    </li>
+    <li class="asterisk"><strong class="asterisk">diagram: true</strong> (Google:
+      <code>CSS3 properties cheat sheet</code>)
+    </li>
+  </ul>
+
+  <p></p>
+  <a class="target" name="%E2%9C%85bootstrapframework">&nbsp;</a><a class="target"
+    name="%F0%9F%8C%90uniti:websitebasics,html5,css3&amp;web2.0/%E2%9C%85bootstrapframework">&nbsp;</a><a class="target"
+    name="toc1.7">&nbsp;</a>
+  <h2>✅ Bootstrap Framework</h2>
+  <p>
+
+
+
+  </p>
+  <ul>
+    <li class="asterisk">A popular CSS framework for responsive, mobile-first sites that scales across devices.
+    </li>
+    <li class="asterisk">Pre-built components: grid systems, buttons, modals, navbars, cards, etc.
+    </li>
+    <li class="asterisk">Speeds up design and layout with ready-to-use classes and JavaScript plugins.</li>
+  </ul>
+
+  <p></p>
+  <p>
+
+  </p>
+  <hr>
+
+  <p></p>
+  <a class="target" name="%F0%9F%92%BBunitii:clientsideprogramming(javascript,json)">&nbsp;</a><a class="target"
+    name="%F0%9F%92%BBunitii:clientsideprogramming(javascript,json)">&nbsp;</a><a class="target" name="toc2">&nbsp;</a>
+  <h1>💻 UNIT II: Client Side Programming (JavaScript, JSON)</h1>
+
+  <a class="target" name="%E2%9C%85javascriptintroduction">&nbsp;</a><a class="target"
+    name="%F0%9F%92%BBunitii:clientsideprogramming(javascript,json)/%E2%9C%85javascriptintroduction">&nbsp;</a><a
+    class="target" name="toc2.1">&nbsp;</a>
+  <h2>✅ JavaScript Introduction</h2>
+  <p>
+
+
+
+  </p>
+  <ul>
+    <li class="asterisk">A high-level, interpreted scripting language that brings interactivity to web pages.
+    </li>
+    <li class="asterisk">Runs in the browser and powers features like sliders, popups, form checks, etc.
+    </li>
+    <li class="asterisk">Reacts to events like clicks, typing, scrolling, and hovering.</li>
+  </ul>
+
+  <p></p>
+  <a class="target" name="%E2%9C%85dom(documentobjectmodel)">&nbsp;</a><a class="target"
+    name="%F0%9F%92%BBunitii:clientsideprogramming(javascript,json)/%E2%9C%85dom(documentobjectmodel)">&nbsp;</a><a
+    class="target" name="toc2.2">&nbsp;</a>
+  <h2>✅ DOM (Document Object Model)</h2>
+  <p>
+
+
+
+  </p>
+  <ul>
+    <li class="asterisk">Represents page structure as a tree of elements that JS can interact with.
+    </li>
+    <li class="asterisk">JS can read and manipulate the DOM in real time to update content or styling.
+    </li>
+    <li class="asterisk"><strong class="asterisk">diagram: true</strong> (Google: <code>DOM tree structure html</code>)
+    </li>
+  </ul>
+
+  <p></p>
+  <a class="target" name="%E2%9C%85exceptionhandling">&nbsp;</a><a class="target"
+    name="%F0%9F%92%BBunitii:clientsideprogramming(javascript,json)/%E2%9C%85exceptionhandling">&nbsp;</a><a
+    class="target" name="toc2.3">&nbsp;</a>
+  <h2>✅ Exception Handling</h2>
+  <p>
+
+
+
+  </p>
+  <ul>
+    <li class="asterisk">Manages errors using <code>try</code>, <code>catch</code>, and <code>finally</code> blocks to
+      avoid crashes.
+    </li>
+    <li class="asterisk">Ensures smoother user experience by handling invalid inputs and failures.</li>
+  </ul>
+
+  <p></p>
+  <a class="target" name="%E2%9C%85formvalidation">&nbsp;</a><a class="target"
+    name="%F0%9F%92%BBunitii:clientsideprogramming(javascript,json)/%E2%9C%85formvalidation">&nbsp;</a><a class="target"
+    name="toc2.4">&nbsp;</a>
+  <h2>✅ Form Validation</h2>
+  <p>
+
+
+
+  </p>
+  <ul>
+    <li class="asterisk">JS checks form fields before submission to ensure correctness.
+    </li>
+    <li class="asterisk">Example: Ensures email field has <code>@</code> character and no blank fields.
+    </li>
+    <li class="asterisk">Improves UX and reduces unnecessary server load.</li>
+  </ul>
+
+  <p></p>
+  <a class="target" name="%E2%9C%85built-inobjects">&nbsp;</a><a class="target"
+    name="%F0%9F%92%BBunitii:clientsideprogramming(javascript,json)/%E2%9C%85built-inobjects">&nbsp;</a><a
+    class="target" name="toc2.5">&nbsp;</a>
+  <h2>✅ Built-in Objects</h2>
+  <p>
+
+
+
+  </p>
+  <ul>
+    <li class="asterisk">Powerful built-ins like <code>Math</code>, <code>Date</code>, <code>Array</code>,
+      <code>String</code>, <code>JSON</code>, etc.
+    </li>
+    <li class="asterisk">Provide utility methods for calculations, string manipulation, data storage, etc.</li>
+  </ul>
+
+  <p></p>
+  <a class="target" name="%E2%9C%85eventhandling">&nbsp;</a><a class="target"
+    name="%F0%9F%92%BBunitii:clientsideprogramming(javascript,json)/%E2%9C%85eventhandling">&nbsp;</a><a class="target"
+    name="toc2.6">&nbsp;</a>
+  <h2>✅ Event Handling</h2>
+  <p>
+
+
+
+  </p>
+  <ul>
+    <li class="asterisk">Detects and responds to user actions: <code>onclick</code>, <code>onchange</code>,
+      <code>onmouseover</code>, etc.
+    </li>
+    <li class="asterisk">Enables dynamic content updates and rich interactions.</li>
+  </ul>
+
+  <p></p>
+  <a class="target" name="%E2%9C%85dhtml">&nbsp;</a><a class="target"
+    name="%F0%9F%92%BBunitii:clientsideprogramming(javascript,json)/%E2%9C%85dhtml">&nbsp;</a><a class="target"
+    name="toc2.7">&nbsp;</a>
+  <h2>✅ DHTML</h2>
+  <p>
+
+
+
+  </p>
+  <ul>
+    <li class="asterisk">A mix of HTML, CSS, JS, and DOM for interactive web pages.
+    </li>
+    <li class="asterisk">Enables animations, real-time changes, and effects without page reloads.</li>
+  </ul>
+
+  <p></p>
+  <a class="target" name="%E2%9C%85json(javascriptobjectnotation)">&nbsp;</a><a class="target"
+    name="%F0%9F%92%BBunitii:clientsideprogramming(javascript,json)/%E2%9C%85json(javascriptobjectnotation)">&nbsp;</a><a
+    class="target" name="toc2.8">&nbsp;</a>
+  <h2>✅ JSON (JavaScript Object Notation)</h2>
+  <p>
+
+
+
+  </p>
+  <ul>
+    <li class="asterisk">A lightweight format to store and exchange data.
+    </li>
+    <li class="asterisk">Easy to read, write, and parse.
+    </li>
+    <li class="asterisk">Widely used in APIs and AJAX calls.
+    </li>
+    <li class="asterisk">Example: <code>{ "name": "Alex", "age": 21 }</code></li>
+  </ul>
+
+  <p></p>
+  <p>
+
+  </p>
+  <hr>
+
+  <p></p>
+  <a class="target" name="%F0%9F%96%A5unitiii:serversideprogramming(servlets&amp;jdbc)">&nbsp;</a><a class="target"
+    name="%F0%9F%96%A5unitiii:serversideprogramming(servlets&amp;jdbc)">&nbsp;</a><a class="target"
+    name="toc3">&nbsp;</a>
+  <h1>🖥 UNIT III: Server Side Programming (Servlets &amp; JDBC)</h1>
+
+  <a class="target" name="%E2%9C%85javaservlets">&nbsp;</a><a class="target"
+    name="%F0%9F%96%A5unitiii:serversideprogramming(servlets&amp;jdbc)/%E2%9C%85javaservlets">&nbsp;</a><a
+    class="target" name="toc3.1">&nbsp;</a>
+  <h2>✅ Java Servlets</h2>
+  <p>
+
+
+
+  </p>
+  <ul>
+    <li class="asterisk">Java classes that run on a web server to generate dynamic web content.
+    </li>
+    <li class="asterisk">Process user input, handle forms, interact with databases, and control flow.</li>
+  </ul>
+
+  <p></p>
+  <a class="target" name="%E2%9C%85servletlifecycle">&nbsp;</a><a class="target"
+    name="%F0%9F%96%A5unitiii:serversideprogramming(servlets&amp;jdbc)/%E2%9C%85servletlifecycle">&nbsp;</a><a
+    class="target" name="toc3.2">&nbsp;</a>
+  <h2>✅ Servlet Life Cycle</h2>
+  <p>
+
+
+
+  </p>
+  <ol start="1">
+    <li class="number"><strong class="asterisk">init()</strong> – Initializes the servlet; runs once when servlet is
+      created.
+    </li>
+    <li class="number"><strong class="asterisk">service()</strong> – Called each time a request is received.
+    </li>
+    <li class="number"><strong class="asterisk">destroy()</strong> – Cleans up before servlet is unloaded.
+
+      <p></p>
+      <p>
+
+      </p>
+    </li>
+    <li class="asterisk"><strong class="asterisk">diagram: true</strong> (Google: <code>Java servlet life cycle</code>)
+    </li>
+  </ol>
+
+  <p></p>
+  <a class="target" name="%E2%9C%85formsubmissionmethods">&nbsp;</a><a class="target"
+    name="%F0%9F%96%A5unitiii:serversideprogramming(servlets&amp;jdbc)/%E2%9C%85formsubmissionmethods">&nbsp;</a><a
+    class="target" name="toc3.3">&nbsp;</a>
+  <h2>✅ Form Submission Methods</h2>
+  <p>
+
+
+
+  </p>
+  <ul>
+    <li class="asterisk"><strong class="asterisk">GET</strong>: Data is appended to the URL; useful for queries; visible
+      and limited.
+    </li>
+    <li class="asterisk"><strong class="asterisk">POST</strong>: Data is sent securely in the request body; suitable for
+      sensitive or large data.</li>
+  </ul>
+
+  <p></p>
+  <a class="target" name="%E2%9C%85sessionhandling">&nbsp;</a><a class="target"
+    name="%F0%9F%96%A5unitiii:serversideprogramming(servlets&amp;jdbc)/%E2%9C%85sessionhandling">&nbsp;</a><a
+    class="target" name="toc3.4">&nbsp;</a>
+  <h2>✅ Session Handling</h2>
+  <p>
+
+
+
+  </p>
+  <ul>
+    <li class="asterisk">Tracks user data across multiple pages using <code>HttpSession</code>.
+    </li>
+    <li class="asterisk">Useful for shopping carts, login sessions, and user preferences.</li>
+  </ul>
+
+  <p></p>
+  <a class="target" name="%E2%9C%85cookies">&nbsp;</a><a class="target"
+    name="%F0%9F%96%A5unitiii:serversideprogramming(servlets&amp;jdbc)/%E2%9C%85cookies">&nbsp;</a><a class="target"
+    name="toc3.5">&nbsp;</a>
+  <h2>✅ Cookies</h2>
+  <p>
+
+
+
+  </p>
+  <ul>
+    <li class="asterisk">Small text files stored in user's browser.
+    </li>
+    <li class="asterisk">Stores preferences, session info, and helps personalize experiences.</li>
+  </ul>
+
+  <p></p>
+  <a class="target" name="%E2%9C%85jdbc(javadatabaseconnectivity)">&nbsp;</a><a class="target"
+    name="%F0%9F%96%A5unitiii:serversideprogramming(servlets&amp;jdbc)/%E2%9C%85jdbc(javadatabaseconnectivity)">&nbsp;</a><a
+    class="target" name="toc3.6">&nbsp;</a>
+  <h2>✅ JDBC (Java Database Connectivity)</h2>
+  <p>
+
+
+
+  </p>
+  <ul>
+    <li class="asterisk">Connects Java apps to relational databases like MySQL or Oracle.
+    </li>
+    <li class="asterisk">Steps:
+
+      <p></p>
+      <p>
+
+      </p>
+      <ol start="1">
+        <li class="number">Load JDBC driver.
+        </li>
+        <li class="number">Establish a DB connection.
+        </li>
+        <li class="number">Create and execute SQL queries.
+        </li>
+        <li class="number">Handle ResultSet.
+        </li>
+        <li class="number">Close connection properly.</li>
+      </ol>
+    </li>
+  </ul>
+
+  <p></p>
+  <p>
+
+  </p>
+  <hr>
+
+  <p></p>
+  <a class="target" name="%F0%9F%A7%A9unitiv:php&amp;xml">&nbsp;</a><a class="target"
+    name="%F0%9F%A7%A9unitiv:php&amp;xml">&nbsp;</a><a class="target" name="toc4">&nbsp;</a>
+  <h1>🧩 UNIT IV: PHP &amp; XML</h1>
+
+  <a class="target" name="%E2%9C%85phpbasics">&nbsp;</a><a class="target"
+    name="%F0%9F%A7%A9unitiv:php&amp;xml/%E2%9C%85phpbasics">&nbsp;</a><a class="target" name="toc4.1">&nbsp;</a>
+  <h2>✅ PHP Basics</h2>
+  <p>
+
+
+
+  </p>
+  <ul>
+    <li class="asterisk">A server-side scripting language for backend logic.
+    </li>
+    <li class="asterisk">Embeds seamlessly into HTML to build dynamic sites.
+    </li>
+    <li class="asterisk">Processes form data, interacts with DBs, and handles sessions.</li>
+  </ul>
+
+  <p></p>
+  <a class="target" name="%E2%9C%85keyphpconcepts">&nbsp;</a><a class="target"
+    name="%F0%9F%A7%A9unitiv:php&amp;xml/%E2%9C%85keyphpconcepts">&nbsp;</a><a class="target" name="toc4.2">&nbsp;</a>
+  <h2>✅ Key PHP Concepts</h2>
+  <p>
+
+
+
+  </p>
+  <ul>
+    <li class="asterisk"><strong class="asterisk">Variables</strong>: Store values (<code>$name = "Alex"</code>)
+    </li>
+    <li class="asterisk"><strong class="asterisk">Control Flow</strong>: Logic using <code>if</code>, <code>else</code>,
+      <code>switch</code>, <code>for</code>, <code>while</code> statements.
+    </li>
+    <li class="asterisk"><strong class="asterisk">Functions</strong>: Reusable blocks; built-in like
+      <code>strlen()</code> or user-defined.
+    </li>
+    <li class="asterisk"><strong class="asterisk">Form Validation</strong>: Ensures submitted data is valid and safe.
+    </li>
+  </ul>
+
+  <p></p>
+  <a class="target" name="%E2%9C%85xmlbasics">&nbsp;</a><a class="target"
+    name="%F0%9F%A7%A9unitiv:php&amp;xml/%E2%9C%85xmlbasics">&nbsp;</a><a class="target" name="toc4.3">&nbsp;</a>
+  <h2>✅ XML Basics</h2>
+  <p>
+
+
+
+  </p>
+  <ul>
+    <li class="asterisk">Markup language to structure and transport data.
+    </li>
+    <li class="asterisk">Tags describe data – machine and human readable.</li>
+  </ul>
+
+  <p></p>
+  <a class="target" name="%E2%9C%85dtd(documenttypedefinition)">&nbsp;</a><a class="target"
+    name="%F0%9F%A7%A9unitiv:php&amp;xml/%E2%9C%85dtd(documenttypedefinition)">&nbsp;</a><a class="target"
+    name="toc4.4">&nbsp;</a>
+  <h2>✅ DTD (Document Type Definition)</h2>
+  <p>
+
+
+
+  </p>
+  <ul>
+    <li class="asterisk">Declares rules and structure of XML to validate documents.
+    </li>
+    <li class="asterisk"><strong class="asterisk">diagram: true</strong> (Google: <code>XML DTD example</code>)</li>
+  </ul>
+
+  <p></p>
+  <a class="target" name="%E2%9C%85xsd(xmlschemadefinition)">&nbsp;</a><a class="target"
+    name="%F0%9F%A7%A9unitiv:php&amp;xml/%E2%9C%85xsd(xmlschemadefinition)">&nbsp;</a><a class="target"
+    name="toc4.5">&nbsp;</a>
+  <h2>✅ XSD (XML Schema Definition)</h2>
+  <p>
+
+
+
+  </p>
+  <ul>
+    <li class="asterisk">Defines allowed elements, attributes, and data types.
+    </li>
+    <li class="asterisk">Ensures stricter validation than DTD.
+    </li>
+    <li class="asterisk"><strong class="asterisk">diagram: true</strong> (Google: <code>XSD schema example</code>)</li>
+  </ul>
+
+  <p></p>
+  <a class="target" name="%E2%9C%85namespaces">&nbsp;</a><a class="target"
+    name="%F0%9F%A7%A9unitiv:php&amp;xml/%E2%9C%85namespaces">&nbsp;</a><a class="target" name="toc4.6">&nbsp;</a>
+  <h2>✅ Namespaces</h2>
+  <p>
+
+
+
+  </p>
+  <ul>
+    <li class="asterisk">Prevent tag name conflicts by qualifying names.
+    </li>
+    <li class="asterisk">Declared using <code>xmlns</code> attributes.
+    </li>
+    <li class="asterisk">Example:</li>
+  </ul>
+
+  <p></p>
+  <a class="target" name="%E2%9C%85xmlparsers">&nbsp;</a><a class="target"
+    name="%F0%9F%A7%A9unitiv:php&amp;xml/%E2%9C%85xmlparsers">&nbsp;</a><a class="target" name="toc4.7">&nbsp;</a>
+  <h2>✅ XML Parsers</h2>
+  <p>
+
+
+
+  </p>
+  <ul>
+    <li class="asterisk"><strong class="asterisk">DOM</strong>: Loads entire XML into memory; easy navigation.
+    </li>
+    <li class="asterisk"><strong class="asterisk">SAX</strong>: Parses XML sequentially; memory efficient.
+    </li>
+    <li class="asterisk"><strong class="asterisk">StAX</strong>: Offers programmer control with event-driven parsing.
+    </li>
+  </ul>
+
+  <p></p>
+  <a class="target" name="%E2%9C%85xsl">&nbsp;</a><a class="target"
+    name="%F0%9F%A7%A9unitiv:php&amp;xml/%E2%9C%85xsl">&nbsp;</a><a class="target" name="toc4.8">&nbsp;</a>
+  <h2>✅ XSL</h2>
+  <p>
+
+
+
+  </p>
+  <ul>
+    <li class="asterisk">Styles or transforms XML to formats like HTML.
+    </li>
+    <li class="asterisk">Makes XML readable or suitable for presentation.</li>
+  </ul>
+
+  <p></p>
+  <p>
+
+  </p>
+  <hr>
+
+  <p></p>
+  <a class="target" name="%E2%9A%99%EF%B8%8Funitv:angularjs&amp;modernwebframeworks">&nbsp;</a><a class="target"
+    name="%E2%9A%99%EF%B8%8Funitv:angularjs&amp;modernwebframeworks">&nbsp;</a><a class="target" name="toc5">&nbsp;</a>
+  <h1>⚙️ UNIT V: AngularJS &amp; Modern Web Frameworks</h1>
+
+  <a class="target" name="%E2%9C%85angularjsoverview">&nbsp;</a><a class="target"
+    name="%E2%9A%99%EF%B8%8Funitv:angularjs&amp;modernwebframeworks/%E2%9C%85angularjsoverview">&nbsp;</a><a
+    class="target" name="toc5.1">&nbsp;</a>
+  <h2>✅ AngularJS Overview</h2>
+  <p>
+
+
+
+  </p>
+  <ul>
+    <li class="asterisk">JavaScript framework by Google to build dynamic SPAs (Single Page Applications).
+    </li>
+    <li class="asterisk">Uses <strong class="asterisk">MVC</strong> to separate data, presentation, and control logic.
+    </li>
+    <li class="asterisk"><strong class="asterisk">diagram: true</strong> (Google: <code>angularjs mvc diagram</code>)
+    </li>
+  </ul>
+
+  <p></p>
+  <a class="target" name="%E2%9C%85angularjsfeatures">&nbsp;</a><a class="target"
+    name="%E2%9A%99%EF%B8%8Funitv:angularjs&amp;modernwebframeworks/%E2%9C%85angularjsfeatures">&nbsp;</a><a
+    class="target" name="toc5.2">&nbsp;</a>
+  <h2>✅ AngularJS Features</h2>
+  <p>
+
+
+
+  </p>
+  <ul>
+    <li class="asterisk"><strong class="asterisk">ng-attributes</strong>: Add behavior like <code>ng-model</code>,
+      <code>ng-show</code>, etc.
+    </li>
+    <li class="asterisk"><strong class="asterisk">Expressions</strong>: Bind and display data dynamically with
+      <code>{{ }}</code> syntax.
+    </li>
+    <li class="asterisk"><strong class="asterisk">Two-Way Data Binding</strong>: Syncs model and view in real time.
+    </li>
+    <li class="asterisk"><strong class="asterisk">Directives</strong>: Add custom logic – <code>ng-if</code>,
+      <code>ng-repeat</code>, <code>ng-switch</code>.
+    </li>
+    <li class="asterisk"><strong class="asterisk">Controllers</strong>: JS functions managing data and behavior of
+      views.
+    </li>
+    <li class="asterisk"><strong class="asterisk">Filters</strong>: Format data output (like currency, date).
+    </li>
+    <li class="asterisk"><strong class="asterisk">Forms</strong>: Built-in validation and real-time error detection.
+    </li>
+    <li class="asterisk"><strong class="asterisk">Modules/Services</strong>: Organize code and reuse functionality.
+    </li>
+    <li class="asterisk"><strong class="asterisk">Routing</strong>: Navigate within a SPA without full reload.</li>
+  </ul>
+
+  <p></p>
+  <p>
+
+    Sure thing, mate. Here's that info converted to a clean, no-table, plain-text format—easy on the eyes and smooth for
+    notes or brain-download sessions:
+
+  </p>
+  <p>
+
+  </p>
+  <hr>
+
+  <p></p>
+  <a class="target" name="%E2%9C%85webapplicationframeworks&amp;tools">&nbsp;</a><a class="target"
+    name="%E2%9A%99%EF%B8%8Funitv:angularjs&amp;modernwebframeworks/%E2%9C%85webapplicationframeworks&amp;tools">&nbsp;</a><a
+    class="target" name="toc5.3">&nbsp;</a>
+  <h2>✅ Web Application Frameworks &amp; Tools</h2>
+  <p>
+
+
+    <strong class="asterisk">Firebase</strong>
+
+  </p>
+  <p>
+
+    Used for real-time databases, user authentication, hosting, and app analytics. Basically your all-in-one backend
+    service without much setup.
+
+  </p>
+  <p>
+
+    <strong class="asterisk">Docker</strong>
+
+  </p>
+  <p>
+
+    Helps you package your app in containers so it runs the same everywhere—local, dev, or production. Makes deployments
+    hella smooth.
+
+  </p>
+  <p>
+
+    <strong class="asterisk">Node.js</strong>
+
+  </p>
+  <p>
+
+    A JavaScript runtime that runs on the server side. Great for building scalable and fast web applications, especially
+    APIs.
+
+  </p>
+  <p>
+
+    <strong class="asterisk">React</strong>
+
+  </p>
+  <p>
+
+    A frontend library by Meta. Lets you build interactive and dynamic user interfaces with reusable components. Perfect
+    for single-page apps.
+
+  </p>
+  <p>
+
+    <strong class="asterisk">Django</strong>
+
+  </p>
+  <p>
+
+    A Python web framework. Comes with powerful tools like Object-Relational Mapping (ORM) and a built-in admin panel,
+    which speeds up development like crazy.
+
+  </p>
+  <p>
+
+  </p>
+  <hr>
+
+  <p></p>
+  <a class="target" name="%E2%9C%85ui&amp;ux">&nbsp;</a><a class="target"
+    name="%E2%9A%99%EF%B8%8Funitv:angularjs&amp;modernwebframeworks/%E2%9C%85ui&amp;ux">&nbsp;</a><a class="target"
+    name="toc5.4">&nbsp;</a>
+  <h2>✅ UI &amp; UX</h2>
+  <p>
+
+
+
+  </p>
+  <ul>
+    <li class="asterisk"><strong class="asterisk">UI (User Interface)</strong>: Layout, buttons, colors, typography –
+      everything users see.
+    </li>
+    <li class="asterisk"><strong class="asterisk">UX (User Experience)</strong>: Flow, speed, satisfaction – how users
+      feel using the app.
+    </li>
+    <li class="asterisk">Great UI + excellent UX = user retention and success.</li>
+  </ul>
+
+  <p></p>
+  <p>
+
+  </p>
+  <hr>
+  <p></p></span>
+
+
+
+</body>
+
+</html>

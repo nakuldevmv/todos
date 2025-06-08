@@ -163,7 +163,11 @@ Used to **style** HTML elements. Types:
 ```
 
 ---
-
+---
+---
+---
+---
+---
 
 ## ✅ **UNIT II**
 
@@ -377,10 +381,14 @@ function greet() {
 **Advantage**: Clean code, reusable functions, easy maintenance.
 
 ---
+---
+---
+---
+---
+---
 
 # 🌐 **UNIT III**
 
----
 
 ## 1. Java Servlet Architecture
 
@@ -634,3 +642,368 @@ public class RegisterServlet extends HttpServlet {
 ```
 
 ---
+---
+---
+---
+---
+---
+
+
+# 🐘 **UNIT IV**
+
+
+## Part A – PHP (Server-Side Scripting)
+
+### 1. **Introduction to PHP**
+
+* **Definition:** PHP (Hypertext Preprocessor) is a **server-side scripting language** embedded within HTML to create **dynamic** web pages.
+* **Execution Flow (diagram: true):**
+
+  1. Client requests `page.php`
+  2. Web server (Apache/Nginx) hands it to PHP interpreter
+  3. PHP executes code & outputs HTML
+  4. Server returns HTML to client
+* **Features:**
+
+  * Free & Open Source
+  * Cross-platform (Windows, Linux, macOS)
+  * Built-in support for databases (MySQL, PostgreSQL, SQLite)
+  * Vast standard library of built-in functions
+
+---
+
+### 2. **Embedding PHP in HTML**
+
+```html
+<!DOCTYPE html>
+<html>
+<head><title>PHP Demo</title></head>
+<body>
+  <h1><?php echo "Hello, " . htmlspecialchars($_GET['name'] ?? 'Guest'); ?>!</h1>
+</body>
+</html>
+```
+
+* **`<?php … ?>`** tags denote PHP code.
+* **`echo`** outputs text.
+* Always **sanitize** user inputs (e.g. `htmlspecialchars`) to prevent XSS.
+
+---
+
+### 3. **PHP Variables**
+
+* Begin with `$`, e.g. `$age`, `$userName`.
+* **Dynamic Typing:** No need to declare type.
+* **Data Types:**
+
+  * **Scalar:** `int`, `float`, `string`, `bool`
+  * **Compound:** `array`, `object`
+  * **Special:** `resource`, `NULL`
+
+```php
+<?php
+$name   = "X";
+$age    = 21; 
+$salary = 50000.75;
+$isEmp  = true;
+$hobbies = ["coding", "gaming", "reading"];
+?>
+```
+
+---
+
+### 4. **Program Control Structures**
+
+#### 4.1 Conditional Statements
+
+```php
+if ($age < 18) {
+  echo "Minor";
+} elseif ($age < 65) {
+  echo "Adult";
+} else {
+  echo "Senior";
+}
+```
+
+#### 4.2 Switch
+
+```php
+switch ($role) {
+  case 'admin':   echo "Full Access"; break;
+  case 'editor':  echo "Edit Access"; break;
+  default:        echo "View Only";
+}
+```
+
+#### 4.3 Loops
+
+* **for**
+
+  ```php
+  for ($i = 0; $i < 5; $i++) {
+    echo $i;
+  }
+  ```
+* **while**
+
+  ```php
+  $i = 0;
+  while ($i < 5) {
+    echo $i++;
+  }
+  ```
+* **foreach** (arrays)
+
+  ```php
+  foreach ($hobbies as $hobby) {
+    echo $hobby;
+  }
+  ```
+
+---
+
+### 5. **Built-In Functions**
+
+PHP ships with thousands of functions. Key categories:
+
+| Category      | Functions Examples                         | Usage                              |
+| ------------- | ------------------------------------------ | ---------------------------------- |
+| **String**    | `strlen()`, `strpos()`, `str_replace()`    | Text processing                    |
+| **Array**     | `count()`, `array_push()`, `sort()`        | Data structure manipulation        |
+| **Math**      | `abs()`, `round()`, `pow()`                | Arithmetic operations              |
+| **Date/Time** | `date()`, `strtotime()`, `time()`          | Handling dates & timestamps        |
+| **File I/O**  | `fopen()`, `fread()`, `fwrite()`, `file()` | Reading/writing files              |
+| **Filter**    | `filter_var()`, `filter_input()`           | Validating & sanitizing user input |
+
+**Example:**
+
+```php
+<?php
+$str = "Hello World";
+echo strlen($str);                // 11
+echo str_replace("World", "X", $str); // Hello X
+$arr = [3, 1, 2];
+sort($arr);
+print_r($arr); // [1,2,3]
+?>
+```
+
+---
+
+### 6. **Form Handling & Validation**
+
+#### 6.1 HTML Form (form.php)
+
+```html
+<form method="POST" action="process.php">
+  Name: <input type="text" name="name"><br>
+  Email: <input type="text" name="email"><br>
+  Age: <input type="number" name="age"><br>
+  <input type="submit" value="Submit">
+</form>
+```
+
+#### 6.2 PHP Processing (process.php)
+
+```php
+<?php
+// Initialize
+$errors = [];
+$name = $email = $age = "";
+
+// Check submission
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // Name validation
+  if (empty($_POST["name"])) {
+    $errors['name'] = "Name is required";
+  } else {
+    $name = test_input($_POST["name"]);
+    if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
+      $errors['name'] = "Only letters and spaces allowed";
+    }
+  }
+
+  // Email validation
+  if (empty($_POST["email"])) {
+    $errors['email'] = "Email is required";
+  } else {
+    $email = test_input($_POST["email"]);
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $errors['email'] = "Invalid email format";
+    }
+  }
+
+  // Age validation
+  if (empty($_POST["age"])) {
+    $errors['age'] = "Age is required";
+  } else {
+    $age = (int)$_POST["age"];
+    if ($age < 1 || $age > 120) {
+      $errors['age'] = "Age must be 1–120";
+    }
+  }
+
+  // Output or show errors
+  if (empty($errors)) {
+    echo "Welcome, $name. Your email is $email and you are $age years old.";
+  } else {
+    foreach ($errors as $err) {
+      echo "<p style='color:red;'>$err</p>";
+    }
+  }
+}
+
+// Sanitization helper
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  return htmlspecialchars($data);
+}
+?>
+```
+
+> **Exam Tip:** Emphasize **server-side security**, preventing XSS and invalid data.
+
+---
+
+## Part B – XML (Data Representation & Validation)
+
+---
+
+### 7. **Basic XML Structure**
+
+* Plain text, hierarchical, self-descriptive.
+* **Well-formed** rules: single root, nested properly, tags closed, case-sensitive, attribute values quoted.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<bookstore>
+  <book id="b1">
+    <title>Web Tech</title>
+    <author>X</author>
+    <price>299</price>
+  </book>
+</bookstore>
+```
+
+---
+
+### 8. **Document Type Definition (DTD)**
+
+* **Purpose:** Define valid element names, order, and attributes.
+* **Internal DTD** (inside the XML):
+
+  ```xml
+  <!DOCTYPE bookstore [
+    <!ELEMENT bookstore (book+)>
+    <!ELEMENT book (title,author,price)>
+    <!ATTLIST book id ID #REQUIRED>
+    <!ELEMENT title (#PCDATA)>
+    <!ELEMENT author (#PCDATA)>
+    <!ELEMENT price (#PCDATA)>
+  ]>
+  ```
+* **External DTD** (in `bookstore.dtd`):
+
+  ```dtd
+  <!ELEMENT bookstore (book+)>
+  …
+  ```
+
+  Reference in XML:
+
+  ```xml
+  <!DOCTYPE bookstore SYSTEM "bookstore.dtd">
+  ```
+
+> **Exam Tip:** Distinguish between **well-formed** (syntax) vs **valid** (DTD/XSD).
+
+---
+
+### 9. **XML Schema Definition (XSD)**
+
+* **More powerful** than DTD: typed data, namespaces, min/max occurrences.
+
+```xml
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="bookstore">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="book" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="title"   type="xs:string"/>
+              <xs:element name="author"  type="xs:string"/>
+              <xs:element name="price"   type="xs:decimal"/>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:ID" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+```
+
+Attach via:
+
+```xml
+<bookstore xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="bookstore.xsd">
+```
+
+---
+
+### 10. **XML Parsers & Validation**
+
+| Parser Type | Description                                        | Use Case                   |
+| ----------- | -------------------------------------------------- | -------------------------- |
+| **DOM**     | Loads whole document as tree; random access        | Small to medium XML        |
+| **SAX**     | Event-driven; reads sequentially; low memory usage | Large XML/log files        |
+| **StAX**    | Pull-based; programmer-controlled; read/write      | Streaming & transformation |
+
+```java
+// Java DOM parsing example
+DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+DocumentBuilder db = dbf.newDocumentBuilder();
+Document doc = db.parse("bookstore.xml");
+NodeList books = doc.getElementsByTagName("book");
+for (int i = 0; i < books.getLength(); i++) {
+  Element book = (Element) books.item(i);
+  String title = book.getElementsByTagName("title").item(0).getTextContent();
+}
+```
+
+> **Validation:**
+>
+> * **Well-formed** checked by any parser by default.
+> * **Valid** only if DTD/XSD is associated and parser is set to validate.
+
+---
+
+### 11. **XSL & XSLT (Transformations)**
+
+* **Purpose:** Transform XML documents into HTML, text, or other XML.
+* **XSLT Template Example:**
+
+  ```xml
+  <?xml version="1.0"?>
+  <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+    <xsl:output method="html"/>
+    <xsl:template match="/bookstore">
+      <html><body><h2>Books</h2>
+        <ul>
+          <xsl:for-each select="book">
+            <li><xsl:value-of select="title"/> by <xsl:value-of select="author"/></li>
+          </xsl:for-each>
+        </ul>
+      </body></html>
+    </xsl:template>
+  </xsl:stylesheet>
+  ```
+* Apply in Java/PHP or via browser’s XSLT processor.
+
+---
+

@@ -1,0 +1,328 @@
+<style>
+  body {
+    background-color: #121212;
+    color: #E0E0E0;
+    font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+    line-height: 1.75;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #FFFFFF;
+    border-bottom: 1px solid #2A2A2A;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  a {
+    color: #80CBC4;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+    color: #A7FFEB;
+  }
+
+  code, pre {
+    background-color: #1E1E1E;
+    color: #DCDCDC;
+    border-radius: 6px;
+    padding: 4px 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95em;
+  }
+
+  pre {
+    overflow-x: auto;
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 1rem;
+    background-color: #1C1C1C;
+  }
+  th, td {
+    border: 1px solid #333333;
+    padding: 0.75rem;
+    text-align: left;
+    color: #E0E0E0;
+  }
+  th {
+    background-color: #2A2A2A;
+  }
+
+  blockquote {
+    border-left: 4px solid #555555;
+    margin: 1rem 0;
+    padding-left: 1rem;
+    color: #B0B0B0;
+    font-style: italic;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid #2A2A2A;
+    margin: 2rem 0;
+  }
+</style>
+<script src="https://morgan3d.github.io/markdeep/latest/markdeep.min.js"></script>
+---
+# 🌐 UNIT I: Website Basics, HTML5, CSS3 & Web 2.0
+
+## ✅ Web Essentials
+
+* **Client**: The browser you use (like Chrome, Firefox, or Edge) to open and interact with websites. It sends out requests and receives responses.
+* **Server**: A powerful remote computer that stores and serves web pages and data. It listens for requests and sends resources back.
+* **Communication**: They talk using **HTTP**, a protocol that powers all web requests. Think of it like digital mail exchange.
+
+## ✅ Internet & WWW
+
+* **Internet**: A global system of interconnected computer networks that communicate through standard protocols like TCP/IP. It is the infrastructure for all online services.
+* **WWW (World Wide Web)**: A service on top of the internet, made up of millions of websites and multimedia linked together using hyperlinks.
+* **URL**: Uniform Resource Locator – the unique address of any resource on the web (like `https://example.com`). It identifies the location and protocol.
+
+## ✅ HTTP Request & Response
+
+* **Request**: The browser sends a message asking the server for a webpage. Contains method, headers, and data.
+* **Response**: The server sends back the required files (HTML, CSS, JS, etc.). Includes status code and content.
+* **diagram: true** (Google: `HTTP request response cycle diagram`)
+
+## ✅ Web Clients & Web Servers
+
+* **Clients**: Devices or applications (browsers) that send requests to servers. They act as the interface for users.
+* **Servers**: Systems that process those requests and deliver responses. They store files, databases, and backend logic.
+
+## ✅ HTML5
+
+* Defines the structure of a webpage using elements and tags.
+* New semantic tags: `<article>`, `<section>`, `<nav>`, `<footer>`, etc., make pages more readable by humans and machines.
+* Supports **tables**, **lists**, **images** for organizing and displaying content.
+* **Form Controls**: `<input>`, `<button>`, `<select>` elements for user input. Includes new types like date, email, range.
+* **Drag & Drop**: Allows moving elements within the page with native support.
+* **Audio/Video**: Native support to embed and control multimedia like podcasts or MP4s.
+* **diagram: true** (Google: `HTML5 form elements`)
+
+## ✅ CSS3
+
+* Adds style and visual formatting to HTML elements using selectors and properties.
+* Applied via Inline, Embedded, or External stylesheets for modular styling.
+* **Cascading**: Rules are prioritized based on origin and specificity.
+* **Inheritance**: Styles pass down from parent to child elements unless overridden.
+* Includes properties like **backgrounds**, **borders**, **colors**, **shadows**, **text effects**.
+* **Transformations**: Rotate, scale, skew elements with properties like `transform`.
+* **Transitions**: Animate changes smoothly using `transition` properties.
+* **Animations**: Loop or sequence animations using `@keyframes`.
+* **diagram: true** (Google: `CSS3 properties cheat sheet`)
+
+## ✅ Bootstrap Framework
+
+* A popular CSS framework for responsive, mobile-first sites that scales across devices.
+* Pre-built components: grid systems, buttons, modals, navbars, cards, etc.
+* Speeds up design and layout with ready-to-use classes and JavaScript plugins.
+
+---
+
+# 💻 UNIT II: Client Side Programming (JavaScript, JSON)
+
+## ✅ JavaScript Introduction
+
+* A high-level, interpreted scripting language that brings interactivity to web pages.
+* Runs in the browser and powers features like sliders, popups, form checks, etc.
+* Reacts to events like clicks, typing, scrolling, and hovering.
+
+## ✅ DOM (Document Object Model)
+
+* Represents page structure as a tree of elements that JS can interact with.
+* JS can read and manipulate the DOM in real time to update content or styling.
+* **diagram: true** (Google: `DOM tree structure html`)
+
+## ✅ Exception Handling
+
+* Manages errors using `try`, `catch`, and `finally` blocks to avoid crashes.
+* Ensures smoother user experience by handling invalid inputs and failures.
+
+## ✅ Form Validation
+
+* JS checks form fields before submission to ensure correctness.
+* Example: Ensures email field has `@` character and no blank fields.
+* Improves UX and reduces unnecessary server load.
+
+## ✅ Built-in Objects
+
+* Powerful built-ins like `Math`, `Date`, `Array`, `String`, `JSON`, etc.
+* Provide utility methods for calculations, string manipulation, data storage, etc.
+
+## ✅ Event Handling
+
+* Detects and responds to user actions: `onclick`, `onchange`, `onmouseover`, etc.
+* Enables dynamic content updates and rich interactions.
+
+## ✅ DHTML
+
+* A mix of HTML, CSS, JS, and DOM for interactive web pages.
+* Enables animations, real-time changes, and effects without page reloads.
+
+## ✅ JSON (JavaScript Object Notation)
+
+* A lightweight format to store and exchange data.
+* Easy to read, write, and parse.
+* Widely used in APIs and AJAX calls.
+* Example: `{ "name": "Alex", "age": 21 }`
+
+---
+
+# 🖥 UNIT III: Server Side Programming (Servlets & JDBC)
+
+## ✅ Java Servlets
+
+* Java classes that run on a web server to generate dynamic web content.
+* Process user input, handle forms, interact with databases, and control flow.
+
+## ✅ Servlet Life Cycle
+
+1. **init()** – Initializes the servlet; runs once when servlet is created.
+2. **service()** – Called each time a request is received.
+3. **destroy()** – Cleans up before servlet is unloaded.
+
+* **diagram: true** (Google: `Java servlet life cycle`)
+
+## ✅ Form Submission Methods
+
+* **GET**: Data is appended to the URL; useful for queries; visible and limited.
+* **POST**: Data is sent securely in the request body; suitable for sensitive or large data.
+
+## ✅ Session Handling
+
+* Tracks user data across multiple pages using `HttpSession`.
+* Useful for shopping carts, login sessions, and user preferences.
+
+## ✅ Cookies
+
+* Small text files stored in user's browser.
+* Stores preferences, session info, and helps personalize experiences.
+
+## ✅ JDBC (Java Database Connectivity)
+
+* Connects Java apps to relational databases like MySQL or Oracle.
+* Steps:
+
+  1. Load JDBC driver.
+  2. Establish a DB connection.
+  3. Create and execute SQL queries.
+  4. Handle ResultSet.
+  5. Close connection properly.
+
+---
+
+# 🧩 UNIT IV: PHP & XML
+
+## ✅ PHP Basics
+
+* A server-side scripting language for backend logic.
+* Embeds seamlessly into HTML to build dynamic sites.
+* Processes form data, interacts with DBs, and handles sessions.
+
+## ✅ Key PHP Concepts
+
+* **Variables**: Store values (`$name = "Alex"`)
+* **Control Flow**: Logic using `if`, `else`, `switch`, `for`, `while` statements.
+* **Functions**: Reusable blocks; built-in like `strlen()` or user-defined.
+* **Form Validation**: Ensures submitted data is valid and safe.
+
+## ✅ XML Basics
+
+* Markup language to structure and transport data.
+* Tags describe data – machine and human readable.
+
+## ✅ DTD (Document Type Definition)
+
+* Declares rules and structure of XML to validate documents.
+* **diagram: true** (Google: `XML DTD example`)
+
+## ✅ XSD (XML Schema Definition)
+
+* Defines allowed elements, attributes, and data types.
+* Ensures stricter validation than DTD.
+* **diagram: true** (Google: `XSD schema example`)
+
+## ✅ Namespaces
+
+* Prevent tag name conflicts by qualifying names.
+* Declared using `xmlns` attributes.
+* Example:
+
+
+## ✅ XML Parsers
+
+* **DOM**: Loads entire XML into memory; easy navigation.
+* **SAX**: Parses XML sequentially; memory efficient.
+* **StAX**: Offers programmer control with event-driven parsing.
+
+## ✅ XSL
+
+* Styles or transforms XML to formats like HTML.
+* Makes XML readable or suitable for presentation.
+
+---
+
+# ⚙️ UNIT V: AngularJS & Modern Web Frameworks
+
+## ✅ AngularJS Overview
+
+* JavaScript framework by Google to build dynamic SPAs (Single Page Applications).
+* Uses **MVC** to separate data, presentation, and control logic.
+* **diagram: true** (Google: `angularjs mvc diagram`)
+
+## ✅ AngularJS Features
+
+* **ng-attributes**: Add behavior like `ng-model`, `ng-show`, etc.
+* **Expressions**: Bind and display data dynamically with `{{ }}` syntax.
+* **Two-Way Data Binding**: Syncs model and view in real time.
+* **Directives**: Add custom logic – `ng-if`, `ng-repeat`, `ng-switch`.
+* **Controllers**: JS functions managing data and behavior of views.
+* **Filters**: Format data output (like currency, date).
+* **Forms**: Built-in validation and real-time error detection.
+* **Modules/Services**: Organize code and reuse functionality.
+* **Routing**: Navigate within a SPA without full reload.
+
+Sure thing, mate. Here's that info converted to a clean, no-table, plain-text format—easy on the eyes and smooth for notes or brain-download sessions:
+
+---
+
+## ✅ Web Application Frameworks & Tools
+
+**Firebase**
+
+Used for real-time databases, user authentication, hosting, and app analytics. Basically your all-in-one backend service without much setup.
+
+**Docker**
+
+Helps you package your app in containers so it runs the same everywhere—local, dev, or production. Makes deployments hella smooth.
+
+**Node.js**
+
+A JavaScript runtime that runs on the server side. Great for building scalable and fast web applications, especially APIs.
+
+**React**
+
+A frontend library by Meta. Lets you build interactive and dynamic user interfaces with reusable components. Perfect for single-page apps.
+
+**Django**
+
+A Python web framework. Comes with powerful tools like Object-Relational Mapping (ORM) and a built-in admin panel, which speeds up development like crazy.
+
+---
+
+## ✅ UI & UX
+
+* **UI (User Interface)**: Layout, buttons, colors, typography – everything users see.
+* **UX (User Experience)**: Flow, speed, satisfaction – how users feel using the app.
+* Great UI + excellent UX = user retention and success.
+
+---

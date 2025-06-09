@@ -807,62 +807,30 @@ print_r($arr); // [1,2,3]
 #### 6.2 PHP Processing (process.php)
 
 ```php
-<?php
-// Initialize
-$errors = [];
-$name = $email = $age = "";
-
-// Check submission
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  // Name validation
-  if (empty($_POST["name"])) {
-    $errors['name'] = "Name is required";
-  } else {
-    $name = test_input($_POST["name"]);
-    if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
-      $errors['name'] = "Only letters and spaces allowed";
-    }
-  }
-
-  // Email validation
-  if (empty($_POST["email"])) {
-    $errors['email'] = "Email is required";
-  } else {
-    $email = test_input($_POST["email"]);
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      $errors['email'] = "Invalid email format";
-    }
-  }
-
-  // Age validation
-  if (empty($_POST["age"])) {
-    $errors['age'] = "Age is required";
-  } else {
-    $age = (int)$_POST["age"];
-    if ($age < 1 || $age > 120) {
-      $errors['age'] = "Age must be 1–120";
-    }
-  }
-
-  // Output or show errors
-  if (empty($errors)) {
-    echo "Welcome, $name. Your email is $email and you are $age years old.";
-  } else {
-    foreach ($errors as $err) {
-      echo "<p style='color:red;'>$err</p>";
-    }
-  }
+if (empty($name)) {
+  echo "❌ Name is required<br>";
+} elseif (!preg_match("/^[a-zA-Z ]*$/", $name)) {
+  echo "❌ Only letters and spaces allowed in name<br>";
+} else {
+  echo "✅ Name: $name<br>";
 }
 
-// Sanitization helper
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  return htmlspecialchars($data);
+if (empty($email)) {
+  echo "❌ Email is required<br>";
+} elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+  echo "❌ Invalid email format<br>";
+} else {
+  echo "✅ Email: $email<br>";
 }
-?>
+
+if (empty($age)) {
+  echo "❌ Age is required<br>";
+} elseif (!is_numeric($age) || $age < 0 || $age > 120) {
+  echo "❌ Enter a valid age (0-120)<br>";
+} else {
+  echo "✅ Age: $age<br>";
+}
 ```
-
 > **Exam Tip:** Emphasize **server-side security**, preventing XSS and invalid data.
 
 ---

@@ -1006,4 +1006,251 @@ for (int i = 0; i < books.getLength(); i++) {
 * Apply in Java/PHP or via browser’s XSLT processor.
 
 ---
+---
+---
+---
+---
+---
 
+# 🌐 **UNIT V**
+
+---
+
+## Part A – AngularJS
+
+### 1. **Introduction to AngularJS**
+
+* **Definition:** AngularJS is a **JavaScript-based MVC (or MVVM) framework** by Google for building **single-page applications (SPAs)**.
+* **Key Features:**
+
+  * **Two-way data binding**
+  * **Dependency injection**
+  * **Directives** for extending HTML
+  * **Modularity** via modules/controllers/services
+* **Diagram:** *Draw a high-level SPA architecture showing HTML+Angular front end → REST API back end.*
+
+---
+
+### 2. **MVC Architecture in AngularJS**
+
+| Component      | AngularJS Equivalent                      |
+| -------------- | ----------------------------------------- |
+| **Model**      | `$scope` / Services                       |
+| **View**       | HTML with `{{ }}` bindings and directives |
+| **Controller** | JS functions attached to `$scope`         |
+
+**Flow Diagram (diagram: true):**
+
+```
+[View (HTML+Directives)] ↔ [$scope (Model)] ←→ [Controller (Logic)]
+```
+
+---
+
+### 3. **Understanding ng- Directives**
+
+AngularJS directives extend HTML. Common ones:
+
+| Directive         | Purpose                                       |
+| ----------------- | --------------------------------------------- |
+| `ng-app`          | Bootstraps AngularJS application              |
+| `ng-controller`   | Attaches controller to a DOM element          |
+| `ng-model`        | Two-way binds input to `$scope` variable      |
+| `ng-bind`         | Replaces element’s innerHTML with model value |
+| `ng-repeat`       | Loops over array to generate elements         |
+| `ng-if`           | Conditionally includes element in DOM         |
+| `ng-show/ng-hide` | Toggles visibility                            |
+| `ng-class`        | Dynamically applies CSS classes               |
+| `ng-style`        | Dynamically applies inline styles             |
+
+```html
+<div ng-app="myApp" ng-controller="MainCtrl">
+  <input ng-model="username" placeholder="Enter name">
+  <p ng-bind="username"></p>
+  <ul>
+    <li ng-repeat="item in items">{{item}}</li>
+  </ul>
+</div>
+```
+
+---
+
+### 4. **Expressions & Data Binding**
+
+* **Expressions:** Written as `{{ expression }}`; evaluated against `$scope`.
+* **Two-way Binding:** Changing the model updates the view and vice versa.
+
+```html
+<input ng-model="count">
+<p>Count: {{count}}</p>
+```
+
+---
+
+### 5. **Conditional & Style Directives**
+
+* **Conditional Rendering:**
+
+  * `ng-if="condition"` removes/adds element
+  * `ng-show="condition"` toggles CSS `display`
+* **Dynamic Styling:**
+
+  * `ng-class="{active: isActive}"`
+  * `ng-style="{'color': textColor}"`
+
+```html
+<button ng-class="{'btn-primary': isPrimary}" ng-style="{'font-size': fontSize+'px'}">
+  Styled Button
+</button>
+```
+
+---
+
+### 6. **Controllers**
+
+* Defined via `module.controller('Name', function($scope){ … })`
+* Attach properties and methods to `$scope` for use in the view
+
+```js
+var app = angular.module('myApp', []);
+app.controller('MainCtrl', function($scope) {
+  $scope.greet = function() {
+    $scope.message = "Hello, " + $scope.username;
+  };
+});
+```
+
+---
+
+### 7. **Filters**
+
+* Used to **format** data in views.
+* Built-in: `uppercase`, `lowercase`, `currency`, `date`, `limitTo`, `filter`, `orderBy`.
+
+```html
+<p>{{ price | currency }}</p>
+<p ng-repeat="item in items | limitTo:3">{{ item }}</p>
+```
+
+---
+
+### 8. **Forms & Validation**
+
+* AngularJS tracks form and field state: `$dirty`, `$valid`, `$invalid`, `$error`.
+* Use `ng-model`, `required`, `ng-minlength`, `ng-pattern`.
+
+```html
+<form name="userForm" ng-submit="submit()" novalidate>
+  <input name="email" ng-model="user.email" required ng-pattern="/^.+@.+\..+$/">
+  <span ng-show="userForm.email.$error.required">Email required.</span>
+  <span ng-show="userForm.email.$error.pattern">Invalid email.</span>
+  <button type="submit" ng-disabled="userForm.$invalid">Submit</button>
+</form>
+```
+
+---
+
+### 9. **Routers**
+
+* Use `ngRoute` or **UI-Router** for SPA navigation.
+* Map URLs to templates and controllers.
+
+```js
+app.config(function($routeProvider) {
+  $routeProvider
+    .when('/home', { templateUrl: 'home.html', controller: 'HomeCtrl' })
+    .when('/about', { templateUrl: 'about.html', controller: 'AboutCtrl' })
+    .otherwise({ redirectTo: '/home' });
+});
+```
+
+---
+
+### 10. **Modules & Services**
+
+* **Modules:** Containers for different parts (`angular.module('app', ['ngRoute'])`).
+* **Services:** Singleton objects for sharing data/logic (`app.service('DataService', function(){…})`).
+
+```js
+app.service('AuthService', function($http) {
+  this.login = function(credentials) {
+    return $http.post('/api/login', credentials);
+  };
+});
+```
+
+---
+
+## Part B – Modern Web Frameworks & Tools
+
+| Framework/Tool | Purpose                                      | Key Features                                |
+| -------------- | -------------------------------------------- | ------------------------------------------- |
+| **Firebase**   | Backend-as-a-Service (BaaS)                  | Realtime DB, Auth, Hosting, Functions       |
+| **Docker**     | Containerization for consistent environments | Images, Containers, Dockerfile              |
+| **Node.js**    | Server-side JS runtime                       | Non-blocking I/O, npm ecosystem             |
+| **React**      | UI Library (component-based)                 | Virtual DOM, JSX, one-way data flow         |
+| **Django**     | Full-stack Python framework                  | MTV pattern, ORM, Admin UI, Security        |
+| **UI/UX**      | Design principles                            | Usability, accessibility, responsive design |
+
+---
+
+### Firebase (BaaS)
+
+* **Realtime Database**: `firebase.database().ref(...).on('value', callback)`
+* **Authentication**: `firebase.auth().signInWithEmailAndPassword(...)`
+* **Hosting & Functions**: Deploy static assets & serverless code.
+
+---
+
+### Docker
+
+* **Dockerfile** to define environment
+* Build image: `docker build -t myapp .`
+* Run container: `docker run -p 80:3000 myapp`
+* Ensures **“works on my machine”** consistency.
+
+---
+
+### Node.js
+
+* **Express** for web APIs:
+
+  ```js
+  const express = require('express');
+  const app = express();
+  app.get('/', (req, res) => res.send('Hello'));
+  app.listen(3000);
+  ```
+* **npm** for packages
+* **Asynchronous** event loop for high concurrency.
+
+---
+
+### React
+
+* **Component** example:
+
+  ```jsx
+  function Greeting(props) {
+    return <h1>Hello, {props.name}</h1>;
+  }
+  ```
+* **State & Props**, **Lifecycle methods**, **Hooks**
+* Use with **Redux** for state management, **Next.js** for SSR.
+
+---
+
+### Django
+
+* **Models** in `models.py` map to DB tables
+* **Views** handle requests in `views.py`
+* **Templates** for HTML
+* **Admin** auto-generated interface.
+
+```python
+# models.py
+class Book(models.Model):
+    title = models.CharField(max_length=100)
+```
+
+---

@@ -807,28 +807,35 @@ print_r($arr); // [1,2,3]
 #### 6.2 PHP Processing (process.php)
 
 ```php
-if (empty($name)) {
-  echo "❌ Name is required<br>";
-} elseif (!preg_match("/^[a-zA-Z ]*$/", $name)) {
-  echo "❌ Only letters and spaces allowed in name<br>";
-} else {
-  echo "✅ Name: $name<br>";
-}
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  
+  $name = trim($_POST["name"]);
+  $email = trim($_POST["email"]);
+  $age = trim($_POST["age"]);
 
-if (empty($email)) {
-  echo "❌ Email is required<br>";
-} elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-  echo "❌ Invalid email format<br>";
-} else {
-  echo "✅ Email: $email<br>";
-}
+  if (empty($name)) {
+    echo "❌ Name is required<br>";
+  } elseif (!preg_match("/^[a-zA-Z ]*$/", $name)) {
+    echo "❌ Only letters and spaces allowed in name<br>";
+  } else {
+    echo "✅ Name: $name<br>";
+  }
 
-if (empty($age)) {
-  echo "❌ Age is required<br>";
-} elseif (!is_numeric($age) || $age < 0 || $age > 120) {
-  echo "❌ Enter a valid age (0-120)<br>";
-} else {
-  echo "✅ Age: $age<br>";
+  if (empty($email)) {
+    echo "❌ Email is required<br>";
+  } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo "❌ Invalid email format<br>";
+  } else {
+    echo "✅ Email: $email<br>";
+  }
+
+  if (empty($age)) {
+    echo "❌ Age is required<br>";
+  } elseif (!is_numeric($age) || $age < 0 || $age > 120) {
+    echo "❌ Enter a valid age (0-120)<br>";
+  } else {
+    echo "✅ Age: $age<br>";
+  }
 }
 ```
 > **Exam Tip:** Emphasize **server-side security**, preventing XSS and invalid data.

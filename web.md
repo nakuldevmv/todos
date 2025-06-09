@@ -1411,3 +1411,153 @@ class Book(models.Model):
 
 57. **Q:** Mention one difference between Node.js and Django.
     **A:** Node.js uses JavaScript runtime on server; Django is a Python web framework.
+
+---
+---
+---
+---
+---
+## 📜 **Extras**
+
+#### a) Signup Form (HTML + basic PHP processing)
+
+```html
+<!-- signup.html -->
+<!DOCTYPE html>
+<html>
+<head><title>Signup</title></head>
+<body>
+  <h2>Sign Up</h2>
+  <form action="signup.php" method="POST">
+    Username: <input type="text" name="username" required><br>
+    Email:    <input type="email" name="email" required><br>
+    Password: <input type="password" name="password" required><br>
+    <input type="submit" value="Sign Up">
+  </form>
+</body>
+</html>
+```
+
+```php
+<?php // signup.php
+$username = $_POST['username'];
+$email    = $_POST['email'];
+$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+echo "Registered $username with email $email.";
+// Here you’d normally insert into a database
+?>
+```
+
+---
+
+#### b) Arithmetic Operations in HTML + JavaScript
+
+```html
+<!DOCTYPE html>
+<html>
+<head><title>Arithmetic</title></head>
+<body>
+  <h2>Simple Calculator</h2>
+  <input id="a" type="number" placeholder="A">
+  <input id="b" type="number" placeholder="B">
+  <button onclick="calc()">Compute A + B</button>
+  <p>Result: <span id="res"></span></p>
+
+  <script>
+    function calc() {
+      const a = parseFloat(document.getElementById('a').value);
+      const b = parseFloat(document.getElementById('b').value);
+      document.getElementById('res').innerText = a + b;
+    }
+  </script>
+</body>
+</html>
+```
+
+---
+
+#### c) Webpage for a College Event
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>College Tech Fest 2025</title>
+  <style>
+    header { background:#004080; color:#fff; padding:10px; text-align:center; }
+    .event { margin:20px; border:1px solid #ccc; padding:10px; }
+  </style>
+</head>
+<body>
+  <header><h1>College Tech Fest 2025</h1></header>
+  <div class="event">
+    <h2>Hackathon</h2>
+    <p>Date: July 15–16, 2025</p>
+    <p>Register at <a href="signup.html">signup page</a></p>
+  </div>
+  <div class="event">
+    <h2>Robotics Workshop</h2>
+    <p>Date: July 17, 2025</p>
+    <p>Fee: ₹500</p>
+  </div>
+</body>
+</html>
+```
+
+---
+
+#### d) Webpage for Displaying Your Profile
+
+```html
+<!DOCTYPE html>
+<html>
+<head><title>My Profile</title></head>
+<body>
+  <h1>John Doe</h1>
+  <img src="profile.jpg" alt="John Doe" width="150">
+  <h3>About Me</h3>
+  <p>Computer Science student at XYZ University. Passionate about web development and AI.</p>
+  <h3>Contact</h3>
+  <ul>
+    <li>Email: john.doe@example.com</li>
+    <li>Phone: +91 98765 43210</li>
+  </ul>
+</body>
+</html>
+```
+
+---
+
+#### a) PHP Code to Read from and Write to a File
+
+```php
+<?php
+$filename = "data.txt";
+
+// Write to file
+file_put_contents($filename, "Hello, PHP File!\n", FILE_APPEND);
+
+// Read from file
+$content = file_get_contents($filename);
+echo "<pre>$content</pre>";
+?>
+```
+
+---
+
+#### b) HTML5 Code Snippet to Embed Video
+
+```html
+<!DOCTYPE html>
+<html>
+<head><title>Video Embed</title></head>
+<body>
+  <h2>Sample Video</h2>
+  <video width="640" height="360" controls>
+    <source src="sample.mp4" type="video/mp4">
+    <source src="sample.webm" type="video/webm">
+    Your browser does not support the video tag.
+  </video>
+</body>
+</html>
+```

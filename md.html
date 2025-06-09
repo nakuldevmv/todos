@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Markdown Viewer 📜</title>
 
-  <!-- Font + Base Styling -->
+  <!-- Inter font for that clean look -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- PrismJS for Syntax Highlighting -->
+  <!-- Prism Tomorrow theme -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.min.css"/>
 
   <style>
@@ -28,7 +28,7 @@
       color: var(--fg);
       line-height: 1.7;
     }
-    h1, h2, h3, h4 {
+    h1,h2,h3,h4 {
       color: var(--accent);
       margin-top: 2rem;
     }
@@ -53,7 +53,7 @@
       width: 100%;
       margin: 1rem 0;
     }
-    th, td {
+    th,td {
       border: 1px solid #444;
       padding: 0.5rem;
       text-align: left;
@@ -78,50 +78,68 @@
       color: red;
       font-weight: bold;
     }
+    .toggle-btn {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: var(--accent);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      color: var(--bg);
+    }
   </style>
 </head>
 <body>
 
+  <button class="toggle-btn">Toggle Light Mode</button>
+
   <div id="content">Loading markdown... please wait 🔄</div>
 
-  <!-- Marked.js -->
+  <!-- Marked.js for Markdown parsing -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
-  <!-- PrismJS for syntax highlighting -->
+  <!-- PrismJS core + Autoloader plugin -->
   <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-javascript.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-markup.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-css.min.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/autoloader/prism-autoloader.min.js"></script>
   <script>
-    const markdownUrl = 'https://dkbz.vercel.app/web.md'
-    const contentDiv = document.getElementById('content')
+    // Autoloader config - loads whatever language you need
+    Prism.plugins.autoloader.languages_path = 'https://cdn.jsdelivr.net/npm/prismjs/components/';
+
+    const markdownUrl = 'https://dkbz.vercel.app/web.md';
+    const contentDiv = document.getElementById('content');
+    const toggleBtn = document.querySelector('.toggle-btn');
+    let light = false;
 
     async function loadMarkdown() {
       try {
-        const res = await fetch(markdownUrl)
-        if (!res.ok) throw new Error('File not found: ' + res.status)
+        const res = await fetch(markdownUrl);
+        if (!res.ok) throw new Error('File not found: ' + res.status);
         
-        const markdownText = await res.text()
-        const html = marked.parse(markdownText, {
+        const md = await res.text();
+        const html = marked.parse(md, {
           breaks: true,
-          smartypants: true,
-          highlight: function(code, lang) {
-            const language = Prism.languages[lang] || Prism.languages.markup
-            return Prism.highlight(code, language, lang)
-          }
-        })
+          smartypants: true
+        });
 
-        contentDiv.innerHTML = html
-        Prism.highlightAll()
-
-      } catch (err) {
-        contentDiv.innerHTML = `<div id="error">⚠️ Failed to load Markdown file: ${err.message}</div>`
+        contentDiv.innerHTML = html;
+        Prism.highlightAll();
+      } catch (e) {
+        contentDiv.innerHTML = `<div id="error">⚠️ Failed to load Markdown file: ${e.message}</div>`;
       }
     }
 
-    loadMarkdown()
+    // Light/Dark toggle
+    toggleBtn.addEventListener('click', () => {
+      light = !light;
+      document.body.style.backgroundColor = light ? '#f4f4f4' : 'var(--bg)';
+      document.body.style.color = light ? '#111' : 'var(--fg)';
+      toggleBtn.textContent = light ? 'Toggle Dark Mode' : 'Toggle Light Mode';
+    });
+
+    loadMarkdown();
   </script>
 
 </body>

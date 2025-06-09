@@ -808,7 +808,7 @@ print_r($arr); // [1,2,3]
 
 ```php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  
+
   $name = trim($_POST["name"]);
   $email = trim($_POST["email"]);
   $age = trim($_POST["age"]);
@@ -1229,3 +1229,185 @@ class Book(models.Model):
 ```
 
 ---
+---
+---
+---
+---
+## 📜 **2 Marks Questions**
+
+1. **Q:** Define client and server in web communication.
+   **A:** A client is a user-agent (e.g., browser) that sends HTTP requests. A server is software (e.g., Apache) that listens for requests and returns responses.
+
+2. **Q:** What is the role of communication protocols in client-server interaction?
+   **A:** Protocols (like HTTP) define rules for data exchange—how requests/responses are formatted, transmitted, and parsed.
+
+3. **Q:** Differentiate between Internet and World Wide Web.
+   **A:** The Internet is a global network of interconnected computers. The WWW is a system of interconnected hypertext documents accessed via the Internet using HTTP.
+
+4. **Q:** What is a URL? Give an example.
+   **A:** A URL (Uniform Resource Locator) specifies the address of a web resource, e.g., `https://example.com/index.html`.
+
+5. **Q:** What is the purpose of an HTTP request message?
+   **A:** To ask a web server for a resource or to send data; it contains method, URL, headers, and optional body.
+
+6. **Q:** List any two elements of an HTTP response message.
+   **A:** Status line (e.g., `HTTP/1.1 200 OK`) and headers (e.g., `Content-Type: text/html`).
+
+7. **Q:** List two features of HTML5.
+   **A:** New semantic tags (`<article>`, `<section>`) and native multimedia support (`<audio>`, `<video>`).
+
+8. **Q:** Write an HTML5 tag to embed an image.
+   **A:** `<img src="image.jpg" alt="Description">`
+
+9. **Q:** Mention any two HTML5 control elements.
+   **A:** `<input type="date">` and `<input type="range">`.
+
+10. **Q:** What is the use of `<audio>` and `<video>` tags in HTML5?
+    **A:** To natively embed and control audio and video playback without external plugins.
+
+11. **Q:** Define inline and external stylesheets in CSS3.
+    **A:** Inline uses the `style` attribute on an element. External uses a separate `.css` file linked via `<link>`.
+
+12. **Q:** What do you mean by CSS inheritance? Give an example.
+    **A:** Child elements inherit certain properties from parent. E.g., if `body { color: red; }`, all text inside inherits red.
+
+13. **Q:** What is rule cascading in CSS?
+    **A:** The process by which conflicting CSS rules are resolved based on specificity, origin, and order.
+
+14. **Q:** Mention any two features of CSS3 transitions.
+    **A:** Smooth property changes via `transition-duration` and easing via `transition-timing-function`.
+
+15. **Q:** Mention two components of the Bootstrap framework.
+    **A:** Grid system (`.container`, `.row`, `.col-*`) and prebuilt components like `.btn` and `.card`.
+
+16. **Q:** What is JavaScript? Mention one of its uses.
+    **A:** A client-side scripting language used to add interactivity, e.g., form validation.
+
+17. **Q:** Mention two features of JavaScript.
+    **A:** Dynamic typing and first-class functions.
+
+18. **Q:** Define the DOM in JavaScript.
+    **A:** The Document Object Model is a tree representation of an HTML document, manipulable via JS.
+
+19. **Q:** Mention any two mouse-related DOM events.
+    **A:** `click` and `mouseover`.
+
+20. **Q:** What is exception handling in JS?
+    **A:** Using `try…catch` blocks to catch and handle runtime errors without crashing the script.
+
+21. **Q:** Write a simple JavaScript validation check for empty input.
+    **A:**
+
+    ```js
+    if (document.getElementById('name').value === '') {
+      alert('Name required');
+    }
+    ```
+
+22. **Q:** What is JSON? Write a simple example.
+    **A:** JavaScript Object Notation, a lightweight data format. Example: `{"name":"X","age":21}`.
+
+23. **Q:** What is client-side programming?
+    **A:** Writing code (usually JS) that runs in the browser to control UI and behavior.
+
+24. **Q:** Mention any two built-in objects in JavaScript.
+    **A:** `Math` and `Date`.
+
+25. **Q:** What is the use of function files in JavaScript?
+    **A:** To organize and reuse code by placing functions in external `.js` files.
+
+26. **Q:** What is an event in JavaScript? Give an example.
+    **A:** An action that occurs (e.g., `onclick` when a button is clicked) that JS can respond to.
+
+27. **Q:** What is DHTML in JavaScript?
+    **A:** Dynamic HTML: combining HTML, CSS, and JS to create interactive, animated web pages.
+
+28. **Q:** What is a Java Servlet?
+    **A:** A Java class that handles HTTP requests/responses on a server to generate dynamic content.
+
+29. **Q:** Mention the phases of servlet life cycle.
+    **A:** `init()`, `service()` (doGet/doPost), and `destroy()`.
+
+30. **Q:** What is the difference between GET and POST methods?
+    **A:** GET appends data in URL (visible, length-limited); POST sends data in the request body (hidden, no size limit).
+
+31. **Q:** How is session tracking done in servlets?
+    **A:** Using `HttpSession` objects and cookies (JSESSIONID) to maintain user state.
+
+32. **Q:** Define cookies. Mention one use.
+    **A:** Small key-value pairs stored in the browser. Used for session tracking or user preferences.
+
+33. **Q:** What is JDBC used for in web applications?
+    **A:** To connect Java applications/servlets to relational databases and execute SQL.
+
+34. **Q:** What is the purpose of a firewall in web systems?
+    **A:** To filter and control incoming/outgoing network traffic based on security rules.
+
+35. **Q:** Define a proxy server.
+    **A:** An intermediary server that forwards client requests to other servers, often for caching or anonymity.
+
+36. **Q:** What is PHP? Mention one application.
+    **A:** A server-side scripting language used for dynamic web pages, e.g., form processing.
+
+37. **Q:** What is a variable in PHP? Give an example.
+    **A:** A storage container for data. Example: `$name = "X";`
+
+38. **Q:** What is form validation in PHP?
+    **A:** Server-side checking of user form inputs for correctness and security before processing.
+
+39. **Q:** Mention any one built-in function in PHP.
+    **A:** `strlen()` returns the length of a string.
+
+40. **Q:** What is XML? Write a sample XML tag to define a book title.
+    **A:** eXtensible Markup Language, for structured data. Example: `<title>Web Tech</title>`
+
+41. **Q:** What is the purpose of XML in web development?
+    **A:** To store and transport structured data between systems in a platform-independent way.
+
+42. **Q:** What is a DTD in XML?
+    **A:** Document Type Definition: defines allowed elements and attributes in an XML.
+
+43. **Q:** Define XML Schema.
+    **A:** An XML-based language for defining structure, content, and data types of an XML document.
+
+44. **Q:** Define XSL in XML.
+    **A:** eXtensible Stylesheet Language used to transform XML into other formats (e.g., HTML) via XSLT.
+
+45. **Q:** What is an XML parser?
+    **A:** A software component that reads an XML document and provides access to its structure and data.
+
+46. **Q:** What is AngularJS? Mention one feature.
+    **A:** A JS framework for single-page apps. Feature: two-way data binding.
+
+47. **Q:** What is MVC architecture?
+    **A:** A design pattern dividing an app into Model (data), View (UI), and Controller (logic).
+
+48. **Q:** How is MVC implemented in AngularJS?
+    **A:** Models are `$scope` data, views are templates with directives, controllers are JS functions on `$scope`.
+
+49. **Q:** Define UI and UX.
+    **A:** UI is the look and layout of an application; UX is the user’s overall experience and satisfaction.
+
+50. **Q:** What is data binding in AngularJS?
+    **A:** Automatic synchronization of data between model and view.
+
+51. **Q:** Mention any two conditional directives in AngularJS.
+    **A:** `ng-if` and `ng-show`.
+
+52. **Q:** What is a router in Angular?
+    **A:** A component that manages navigation between views in a single-page application.
+
+53. **Q:** What is a filter in AngularJS?
+    **A:** A function that formats or transforms data for display in templates (e.g., `currency`).
+
+54. **Q:** Mention any two ng-attributes.
+    **A:** `ng-model` and `ng-repeat`.
+
+55. **Q:** Name any two web application frameworks.
+    **A:** React and Django.
+
+56. **Q:** What is the purpose of Firebase in web development?
+    **A:** A BaaS offering real-time database, authentication, and hosting.
+
+57. **Q:** Mention one difference between Node.js and Django.
+    **A:** Node.js uses JavaScript runtime on server; Django is a Python web framework.

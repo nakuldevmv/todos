@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Markdown Viewer 📜</title>
 
   <!-- Inter font for that clean look -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
   <!-- Prism Tomorrow theme -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.min.css" />
 
   <style>
     :root {
       --bg: #0e0e0e;
       --fg: #f0f0f0;
-      --accent: #00ffe7;
+      --accent: #944a4b;
     }
+
     * {
       box-sizing: border-box;
     }
+
     body {
       margin: 0;
       padding: 2rem;
@@ -28,14 +31,20 @@
       color: var(--fg);
       line-height: 1.7;
     }
-    h1,h2,h3,h4 {
+
+    h1,
+    h2,
+    h3,
+    h4 {
       color: var(--accent);
       margin-top: 2rem;
     }
+
     a {
       color: #42a5f5;
       text-decoration: underline;
     }
+
     pre {
       background: #1e1e1e;
       padding: 1rem;
@@ -43,26 +52,32 @@
       overflow-x: auto;
       font-size: 0.9rem;
     }
+
     code {
       background: #1e1e1e;
       padding: 0.2rem 0.4rem;
       border-radius: 4px;
     }
+
     table {
       border-collapse: collapse;
       width: 100%;
       margin: 1rem 0;
     }
-    th,td {
+
+    th,
+    td {
       border: 1px solid #444;
       padding: 0.5rem;
       text-align: left;
     }
+
     img {
       max-width: 100%;
       border-radius: 8px;
       margin: 1rem 0;
     }
+
     blockquote {
       border-left: 4px solid var(--accent);
       padding-left: 1rem;
@@ -70,31 +85,41 @@
       color: #ccc;
       font-style: italic;
     }
+
     #content {
       max-width: 900px;
       margin: auto;
     }
+
     #error {
       color: red;
       font-weight: bold;
     }
+
     .toggle-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #ffffff;
+      text-shadow: #0e0e0e 0px 0px 15px;
+      font-size: larger;
+      height: 40px;
+      width: 50px;
       position: fixed;
       top: 1rem;
       right: 1rem;
-      background: var(--accent);
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
+      background: #bebebe;
+      border-radius: 100px;
       cursor: pointer;
       font-weight: bold;
       color: var(--bg);
     }
   </style>
 </head>
+
 <body>
 
-  <button class="toggle-btn">Toggle Light Mode</button>
+  <button class="toggle-btn">☀️</button>
 
   <div id="content">Loading markdown... please wait 🔄</div>
 
@@ -117,7 +142,7 @@
       try {
         const res = await fetch(markdownUrl);
         if (!res.ok) throw new Error('File not found: ' + res.status);
-        
+
         const md = await res.text();
         const html = marked.parse(md, {
           breaks: true,
@@ -136,11 +161,15 @@
       light = !light;
       document.body.style.backgroundColor = light ? '#f4f4f4' : 'var(--bg)';
       document.body.style.color = light ? '#111' : 'var(--fg)';
-      toggleBtn.textContent = light ? 'Toggle Dark Mode' : 'Toggle Light Mode';
+      toggleBtn.style.backgroundColor = light ? '#333' : '#bebebe';
+      toggleBtn.textContent = light ? '🌒' : '☀️';
+      toggleBtn.style.textShadow = light ? '0px 0px 15px #f4f4f4' : '0px 0px 15px var(--bg)';
+      toggleBtn.style.borderColor = light ? 'black' : '#ffffff';
     });
 
     loadMarkdown();
   </script>
 
 </body>
+
 </html>

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Markdown Viewer 📜</title>
 
-  <!-- Inter font for that clean look -->
+  <!-- Inter font for a clean look -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
   <!-- Prism Tomorrow theme -->
@@ -14,13 +14,20 @@
 
   <style>
     :root {
-      --bg: #0e0e0e;
-      --fg: #f0f0f0;
-      --accent: #944a4b;
+      --bg: #211A1D;
+      --fg: #f8f0fb;
+      --accent: #8075ff;
+      --link-hover: #64b5f6;
+      --error: #ff5252;
+      --light-bg: #f4f4f4;
+      --light-fg: #111;
+      --light-accent: #333;
     }
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
@@ -30,6 +37,7 @@
       background-color: var(--bg);
       color: var(--fg);
       line-height: 1.7;
+      transition: background-color 0.3s, color 0.3s;
     }
 
     h1,
@@ -38,11 +46,17 @@
     h4 {
       color: var(--accent);
       margin-top: 2rem;
+      margin-bottom: 1rem;
     }
 
     a {
       color: #42a5f5;
       text-decoration: underline;
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      color: var(--link-hover);
     }
 
     pre {
@@ -51,18 +65,22 @@
       border-radius: 8px;
       overflow-x: auto;
       font-size: 0.9rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     }
 
     code {
+      color: #f8f0fb;
       background: #1e1e1e;
       padding: 0.2rem 0.4rem;
       border-radius: 4px;
+      font-family: 'Courier New', Courier, monospace;
     }
 
     table {
       border-collapse: collapse;
       width: 100%;
       margin: 1rem 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     th,
@@ -72,10 +90,16 @@
       text-align: left;
     }
 
+    th {
+      background-color: var(--accent);
+      color: var(--fg);
+    }
+
     img {
       max-width: 100%;
       border-radius: 8px;
       margin: 1rem 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     }
 
     blockquote {
@@ -84,16 +108,22 @@
       margin-left: 0;
       color: #ccc;
       font-style: italic;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1rem;
+      border-radius: 4px;
     }
 
     #content {
       max-width: 900px;
       margin: auto;
+      padding: 1rem;
     }
 
     #error {
-      color: red;
+      color: var(--error);
       font-weight: bold;
+      text-align: center;
+      margin-top: 2rem;
     }
 
     .toggle-btn {
@@ -103,25 +133,40 @@
       border: 1px solid #ffffff;
       text-shadow: #0e0e0e 0px 0px 15px;
       font-size: larger;
-      height: 40px;
+      height: 50px;
       width: 50px;
       position: fixed;
       top: 1rem;
       right: 1rem;
       background: #bebebe;
-      border-radius: 100px;
+      border-radius: 50%;
       cursor: pointer;
       font-weight: bold;
       color: var(--bg);
+      transition: background-color 0.3s, color 0.3s, transform 0.2s;
+      z-index: 1000;
+    }
+
+    .toggle-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .loading-spinner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-size: 1.5rem;
+      color: var(--accent);
     }
   </style>
 </head>
 
 <body>
 
-  <button class="toggle-btn">☀️</button>
+  <button class="toggle-btn" aria-label="Toggle Light/Dark Mode">☀️</button>
 
-  <div id="content">Loading markdown... please wait 🔄</div>
+  <div id="content" aria-live="polite">Loading markdown... please wait 🔄</div>
 
   <!-- Marked.js for Markdown parsing -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -133,9 +178,7 @@
     // Autoloader config - loads whatever language you need
     Prism.plugins.autoloader.languages_path = 'https://cdn.jsdelivr.net/npm/prismjs/components/';
 
-    // const markdownUrl = 'https://dkbz.vercel.app/job.md';
     const markdownUrl = 'https://dkbz.vercel.app/uiux.md';
-
     const contentDiv = document.getElementById('content');
     const toggleBtn = document.querySelector('.toggle-btn');
     let light = false;
@@ -161,11 +204,11 @@
     // Light/Dark toggle
     toggleBtn.addEventListener('click', () => {
       light = !light;
-      document.body.style.backgroundColor = light ? '#f4f4f4' : 'var(--bg)';
-      document.body.style.color = light ? '#111' : 'var(--fg)';
-      toggleBtn.style.backgroundColor = light ? '#333' : '#bebebe';
+      document.body.style.backgroundColor = light ? 'var(--light-bg)' : 'var(--bg)';
+      document.body.style.color = light ? 'var(--light-fg)' : 'var(--fg)';
+      toggleBtn.style.backgroundColor = light ? 'var(--light-accent)' : '#bebebe';
       toggleBtn.textContent = light ? '🌒' : '☀️';
-      toggleBtn.style.textShadow = light ? '0px 0px 15px #f4f4f4' : '0px 0px 15px var(--bg)';
+      toggleBtn.style.textShadow = light ? '0px 0px 15px var(--light-bg)' : '0px 0px 15px var(--bg)';
       toggleBtn.style.borderColor = light ? 'black' : '#ffffff';
     });
 

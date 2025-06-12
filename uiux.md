@@ -2,7 +2,6 @@
 
 <br>
 
-
 # 🎨 **UNIT I – FOUNDATIONS OF DESIGN**
 
 `diagram: true`
@@ -14,7 +13,6 @@
 
 1. UI vs UX Design
 2. Core Stages of Design Thinking
-
    * Empathize
    * Define
    * Ideate
@@ -169,8 +167,3 @@ This is the heart of **Empathize phase** in Design Thinking.
 
 ---
 
-## 📚 Final Summary (Use for 13-mark questions)
-
-> “Unit I introduces the **core mindset** of design. It explains the difference between **UI (visual interface)** and **UX (overall experience)**. It details the **5 stages of Design Thinking**: Empathize, Define, Ideate, Prototype, and Test — each using **divergent or convergent thinking** to explore and refine ideas. The unit also explains **brainstorming and gamestorming** as creative ideation techniques and emphasizes the role of **observational empathy** in understanding real user needs.”
-
----

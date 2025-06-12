@@ -13,6 +13,14 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.min.css" />
 
   <style>
+    * {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    *::-webkit-scrollbar {
+      display: none;
+    }
+
     :root {
       --bg: #211A1D;
       --fg: #f8f0fb;
@@ -113,12 +121,14 @@
       border-radius: 4px;
     }
 
-    ul, ol {
+    ul,
+    ol {
       margin: 1rem 0;
       padding-left: 2rem;
     }
 
-    ul li, ol li {
+    ul li,
+    ol li {
       margin-bottom: 0.5rem;
     }
 

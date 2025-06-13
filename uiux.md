@@ -679,3 +679,147 @@ Types:
 This unit is all about turning a good idea into a *great*, usable, user-loved design — step-by-step, with structure, testing, and improvements baked in.
 
 ---
+
+<br><br>
+
+# 📚 **UNIT V – RESEARCH, DESIGNING, IDEATING & INFORMATION ARCHITECTURE**
+
+`diagram: true` (for most topics)
+
+---
+
+## 🧩 1. Identifying and Writing Problem Statements
+
+* This is the **foundation** of any UX project.
+* You're spotting **what’s wrong** or **what’s missing** in the user journey.
+* Then, you write it down in a **clear, focused sentence**.
+
+### ✍️ Format of a Good Problem Statement:
+
+> “Users need a way to \_\_\_ because \_\_\_.”
+
+✅ **Exam Tip:** Mention user, their need, and the impact.
+
+---
+
+## 🔬 2. Identifying Appropriate Research Methods
+
+Once you know the problem, you pick the **best way to study the user**.
+
+### 🧪 Types of Methods:
+
+* **Qualitative:** Interviews, observations
+* **Quantitative:** Surveys, analytics
+* **Generative:** Explore new ideas (e.g., brainstorming)
+* **Evaluative:** Test existing designs (e.g., usability testing)
+
+✅ **Exam Tip:** Define each method + when to use it
+
+---
+
+## 🧙 3. Creating Personas
+
+Personas are **fictional characters** based on real data.
+They represent different types of **users**.
+
+### 👤 What to Include:
+
+* Name, age, background
+* Goals
+* Frustrations
+* Device preferences
+
+✅ **Google it:** `UX persona example`
+✅ **Diagram: true**
+
+---
+
+## 💡 4. Solution Ideation
+
+Ideation = pure **brainstorming energy** ⚡
+You're **coming up with creative solutions** to solve the problem.
+
+### 🧠 Techniques:
+
+* Brainstorming
+* Gamestorming
+* Crazy 8s
+* Worst idea method
+
+✅ Mention divergent → convergent flow (generate → narrow)
+
+---
+
+## 📓 5. Creating User Stories
+
+User stories describe a **feature from the user’s perspective**.
+
+### 📄 Format:
+
+> “As a \[user], I want to \[do something] so I can \[achieve goal].”
+
+They help developers/designers **build features that actually matter**.
+
+✅ Short, simple, straight to the point.
+
+---
+
+## 🎭 6. Creating Scenarios
+
+Scenarios are like **mini-stories** of a user doing something in real life.
+They build on **personas and user stories**.
+
+### 🔍 What to Include:
+
+* Context
+* Emotions
+* Task
+* Outcome
+
+✅ Use scenarios to imagine problems before they happen.
+
+---
+
+## 🔁 7. Flow Diagrams
+
+This shows the **step-by-step flow** a user takes to complete one task.
+
+### 📊 Example: Login Flow
+
+Login Page → Enter Details → Submit → Dashboard or Error
+
+✅ Shapes: Rectangle (screen), Diamond (decision), Arrow (flow)
+✅ **Google it:** `UX user flow diagram example`
+
+---
+
+## 🗺️ 8. Flow Mapping
+
+Goes **beyond a single task** – shows **entire navigation structure**.
+
+### 📌 Think:
+
+* Pages
+* Links
+* Menu structure
+* Where each path leads
+
+✅ **Google it:** `UX flow map vs user flow diagram example`
+
+---
+
+## 🧠 9. Information Architecture (IA)
+
+This is **how you organize and label content** in your app/site.
+
+### 🔨 It Includes:
+
+* **Organization**: Categories
+* **Labeling**: Clear names
+* **Navigation**: Menus, links
+* **Search**: Findability
+
+✅ Helps users **find info easily** without thinking too much.
+✅ **Google it:** `Information architecture sitemap UX example`
+
+---

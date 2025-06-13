@@ -1144,3 +1144,312 @@ You structure the app like a boss:
 > “**Research. Imagine. Storyboard. Map. Organize.**”
 > That’s the whole jam. 🛒📱
 
+<br>
+<br>
+<br>
+
+# 2 Marks Questions
+
+
+### UNIT I
+
+**1. What is the key difference between UI and UX design?**
+UI focuses on the product’s visual layout and interactive elements; UX focuses on the overall user journey, satisfaction, and usability.
+
+**2. Define design (from the perspective of usefulness).**
+Design is the purposeful planning of form and function to create solutions that are both useful and usable for target users.
+
+**3. List any two stages of the design thinking process.**
+Empathize and Define.
+
+**4. What is the primary goal of the “Ideate” stage in Design Thinking?**
+To generate a wide range of creative solutions without judgment.
+
+**5. Define divergent thinking with an example.**
+Divergent thinking is expanding the idea space—for example, brainstorming 50 app features in 10 minutes.
+
+**6. What is convergent thinking used for in design?**
+To narrow and select the most feasible ideas from a larger set.
+
+**7. What does the ideation phase focus on in design thinking?**
+Generating and exploring multiple solution concepts.
+
+**8. What is the purpose of the ‘define’ stage in design thinking?**
+To synthesize user insights into a clear problem statement.
+
+**9. State any two benefits of brainstorming in UX design.**
+Encourages diverse ideas and fosters team collaboration.
+
+**10. What is Brainstorming?**
+A group ideation method where participants freely generate ideas.
+
+**11. Define gamestorming.**
+A structured, game‑like set of activities used to spark creative thinking.
+
+**12. Mention one difference between brainstorming and gamestorming.**
+Brainstorming is free‑form idea generation; gamestorming uses rules and games to guide creativity.
+
+**13. What is observational empathy?**
+Observing users in their real context to understand unspoken needs and pain points.
+
+**14. Why is empathy important in UX design?**
+It uncovers real user needs, leading to more relevant and user‑centered solutions.
+
+**15. List two standards for effective empathy interviewing.**
+Use open‑ended questions and practice active listening.
+
+**16. Give an example of a situation where observational empathy would help.**
+Watching grocery shoppers fill carts to identify confusion in aisle signage.
+
+**17. Mention two activities done during the ‘empathize’ stage.**
+User interviews and contextual field observations.
+
+**18. What is the role of a facilitator during brainstorming sessions?**
+To enforce rules, keep discussion on track, and encourage all voices.
+
+---
+
+### UNIT II
+
+**1. Define visual hierarchy.**
+The arrangement of elements to signal their relative importance.
+
+**2. What are UI elements? Give two examples.**
+Basic interactive components such as buttons and input fields.
+
+**3. List two common UI patterns used in mobile apps.**
+Hamburger menu and bottom navigation bar.
+
+**4. What is the significance of branding in UI design?**
+It provides a consistent identity and emotional connection across touchpoints.
+
+**5. Define affordance in interaction design.**
+Visual cues that indicate how an interface element can be used.
+
+**6. What is feedback in interaction behavior?**
+System responses (e.g., animations or messages) that confirm user actions.
+
+**7. Mention two key UI principles.**
+Consistency and contrast.
+
+**8. Why is consistency important in UI design?**
+It reduces learning curve and builds user trust.
+
+**9. What are the components of a UI style guide?**
+Typography rules and color palette specifications.
+
+**10. Define skeuomorphic design with one example.**
+UI that mimics real‑world objects, e.g., a digital notepad that looks like paper.
+
+**11. What is the difference between a UI pattern and a UI component?**
+A component is a standalone element (e.g., button); a pattern is a reusable solution combining components (e.g., form layout).
+
+**12. Name two tools used to create a style guide.**
+Figma and Sketch.
+
+**13. What does “responsive typography” refer to?**
+Adjusting font sizes and line lengths for different screen sizes.
+
+**14. Define “call to action” in UI design.**
+A button or link prompting the user to take a specific action.
+
+**15. Mention two interaction principles that improve user engagement.**
+Immediate feedback and clear affordances.
+
+**16. List out UI design elements.**
+Icons, cards, modals, sliders, and form fields.
+
+**17. State any two ways to implement branding into the UX design process.**
+Incorporate brand colors into the UI and use tone‑of‑voice guidelines in microcopy.
+
+**18. Name one benefit of using a design system in conjunction with a style guide.**
+Accelerates development by reusing standardized components.
+
+**19. State the role consistency plays in brand identity.**
+It reinforces recognition and builds user trust over time.
+
+---
+
+### UNIT III
+
+**1. Define UX in one sentence.**
+The holistic experience a user has when interacting with a product or service.
+
+**2. What are user needs in UX design?**
+The functional and emotional requirements users must fulfill.
+
+**3. List two methods used in UX research.**
+Interviews and usability testing.
+
+**4. What is a persona in UX design?**
+A fictional representation of a user segment based on research.
+
+**5. What is the goal of UX design?**
+To create useful, usable, and enjoyable experiences.
+
+**6. Define usability in context of UX.**
+The ease with which users can achieve their goals using a product.
+
+**7. Mention one business goal UX design can support.**
+Increasing user retention.
+
+**8. What is heuristic evaluation?**
+Expert review against established usability principles.
+
+**9. List two qualitative research methods in UX.**
+Contextual inquiry and card sorting.
+
+**10. Mention one difference between UX and UI.**
+UX covers the entire user journey; UI focuses on visual and interactive components.
+
+**11. What is the use of journey mapping in UX?**
+To visualize and analyze the user’s end‑to‑end process.
+
+**12. Name two tools used for UX research.**
+Hotjar and Google Forms.
+
+**13. Define context of use in UX research.**
+The environment and conditions under which users interact with a product.
+
+**14. Mention one reason why UX design is critical for mobile apps.**
+Mobile users have limited screen space and high expectations for speed.
+
+**15. What is A/B testing?**
+Comparing two versions of a design to see which performs better.
+
+**16. Why should you care about user experience?**
+Because it directly impacts user satisfaction and business success.
+
+**17. Mention the tools used for user experience design.**
+Maze for testing prototypes and UserTesting for remote sessions.
+
+**18. Why is aligning UX goals with business goals important?**
+It ensures that user needs and company objectives are both met.
+
+**19. Define User Experience (UX). Give an example.**
+UX is the overall feel of a user’s interaction, e.g., a fast‑loading site reduces frustration.
+
+---
+
+###  UNIT IV
+
+**1. What is a wireframe?**
+A low‑fidelity layout showing the structure of a page or screen.
+
+**2. List two characteristics of a low‑fidelity prototype.**
+Simple shapes and no interaction details.
+
+**3. Define red route in UX.**
+A critical user journey that must be optimized for efficiency.
+
+**4. Mention any two principles of sketching.**
+Keep it quick and focus on layout over detail.
+
+**5. What is a wireflow?**
+A combination of wireframes and flowchart arrows showing navigation.
+
+**6. What is the purpose of mockups in UX design?**
+To present high‑fidelity visual designs for stakeholder approval.
+
+**7. Mention two tools used for high‑fidelity mockups.**
+Figma and Adobe Photoshop.
+
+**8. Define interaction pattern with an example.**
+A recurring design solution, e.g., infinite scroll for feeds.
+
+**9. What is usability testing?**
+Evaluating a product by observing real users as they perform tasks.
+
+**10. List two types of usability tests.**
+Moderated in‑person and unmoderated remote.
+
+**11. What is responsive design?**
+Design that adapts layout and content to various screen sizes.
+
+**12. What is meant by prototype iteration?**
+Repeated cycles of testing and refining a prototype.
+
+**13. Mention one advantage of using design tools like Figma.**
+Real‑time collaboration across distributed teams.
+
+**14. What is a pain point in UX testing?**
+A specific usability issue where users struggle.
+
+**15. Define “synthesizing test findings.”**
+Organizing and prioritizing feedback into actionable insights.
+
+**16. Write the importance of wireframing and prototyping in UI/UX design.**
+They identify layout and interaction issues early at low cost.
+
+**17. How will you perform usability testing?**
+Recruit target users, assign tasks, observe interactions, collect feedback.
+
+**18. Name a common method for gathering quantitative data in usability tests.**
+Task completion rates.
+
+**19. How does sketching red routes contribute to prioritizing design efforts?**
+It highlights the most critical user journeys that need optimization first.
+
+---
+
+### UNIT V
+
+**1. What is information architecture?**
+The organization and labeling of content to support usability and findability.
+
+**2. Define flow mapping.**
+Visual representation of all possible paths a user can take through a product.
+
+**3. What is a user story?**
+A concise description of a functionality from the user’s perspective.
+
+**4. List two appropriate research methods used in UX.**
+Interviews and analytics.
+
+**5. What is solution ideation?**
+Generating and exploring potential solutions to a defined problem.
+
+**6. Mention two goals of persona creation.**
+Humanize data and guide design decisions.
+
+**7. What is the use of flow diagrams in UX design?**
+To map step‑by‑step user tasks and decision points.
+
+**8. Define card sorting.**
+A method where users group content into categories to inform IA.
+
+**9. What is a scenario in UX?**
+A narrative describing how a persona achieves a goal using the product.
+
+**10. What does qualitative research focus on?**
+Understanding user motivations, feelings, and behaviors.
+
+**11. Mention two steps in conducting user interviews.**
+Prepare open‑ended questions and build rapport.
+
+**12. Define empathy map.**
+A visualization of what users say, think, do, and feel.
+
+**13. What is the benefit of structuring content using IA?**
+Improves findability and reduces user confusion.
+
+**14. What does a sitemap represent in IA?**
+The hierarchical structure of pages or sections in a product.
+
+**15. Mention one difference between persona and user story.**
+A persona is a user profile; a user story is a specific task the user wants to accomplish.
+
+**16. Formulate the steps involved in a persona creation process.**
+Collect user data → Identify patterns → Define demographics/goals → Create persona profiles.
+
+**17. What is a flow diagram?**
+A schematic showing the sequence of actions users take to complete a task.
+
+**18. In user stories, what does the “As a” component represent?**
+The type of user or user role.
+
+**19. State the role a problem statement plays in stakeholder communication.**
+It clarifies the user’s core issue and aligns team understanding.
+
+---
+

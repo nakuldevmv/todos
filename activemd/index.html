@@ -13,15 +13,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.min.css" />
 
     <style>
-        * {
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-
-        *::-webkit-scrollbar {
-            display: none;
-        }
-
         :root {
             --bg: #211A1D;
             --fg: #f8f0fb;
@@ -32,8 +23,32 @@
             --light-fg: #111;
             --light-accent: #333;
         }
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+            /* Dark background */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: var(--bg);
+            /* Slightly lighter thumb */
+            border-radius: 4px;
+            border: 1px solid var(--bg);
+            /* Subtle border */
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: var(--bg);
+            /* Brighter on hover */
+        }
 
         * {
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent) var(--bg);
             box-sizing: border-box;
             margin: 0;
             padding: 0;

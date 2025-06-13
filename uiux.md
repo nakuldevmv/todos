@@ -1,8 +1,6 @@
 # CCS370 - UI and UX Design
 
-A comprehensive, exam-ready guide covering all five units with consistent formatting, enriched subtopics, and expanded content to cement your understanding.
-
----
+<br>
 
 # 🎨 **UNIT I – FOUNDATIONS OF DESIGN**
 

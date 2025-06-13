@@ -488,6 +488,194 @@ Just a table of *weapons you can use as a UX researcher*:
 📝 **Exam Line:**
 
 > Business goals are strategic targets set by an organization. UX design must align with these to ensure both user satisfaction and commercial success.
+---
+
+<br><br>
+
+
+# 🧾 UNIT IV – WIREFRAMING, PROTOTYPING & TESTING
+
+`diagram: true (multiple topics)`
+**Search queries to explore diagrams:**
+
+* `wireframe vs prototype diagram`
+* `red routes UX sketching`
+* `responsive design examples`
+* `UX wireflows diagram`
+* `usability testing UX steps`
 
 ---
 
+## 🔹 1. **Sketching Principles**
+
+* Sketching is quick & dirty — no perfection, just *visual thinking*
+* Helps brainstorm UI ideas early
+* Boosts creativity, especially in teams
+* Tools: Pen & paper, whiteboards, Figma jamboard, Balsamiq
+* Keep it simple: avoid color, focus on structure
+
+✅ **Exam Tip:** “Sketching helps in visualizing early design ideas and encourages collaboration.”
+
+---
+
+## 🔹 2. **Sketching Red Routes**
+
+* **Red Routes** = high-priority user tasks (eg: booking a cab, placing an order)
+* Sketching Red Routes means **designing flows** for these critical tasks
+* Focus on:
+
+  * Speed
+  * Ease of use
+  * No distractions or blockers
+
+✅ **Common question:** *Explain Red Routes with example scenarios.*
+
+---
+
+## 🔹 3. **Responsive Design**
+
+* Design adapts to all screen sizes 📱💻🖥️
+* Think flex layouts, fluid images, media queries
+* Helps provide consistent UX across devices
+* Tools: CSS Grid, Flexbox, Bootstrap
+
+✅ **Exam definition:** “Responsive Design ensures a UI works well on multiple devices by adjusting layout and elements dynamically.”
+
+---
+
+## 🔹 4. **Wireframing**
+
+* Blueprint of your design — no color, no content
+* Focuses on layout, spacing, element placement
+* Helps teams understand structure before styling
+
+Types:
+
+* **Low-fidelity**: basic sketches
+* **Mid-fidelity**: greyscale mockups with real UI elements
+
+✅ “Wireframes help in planning layout and interface without getting distracted by visuals.”
+
+---
+
+## 🔹 5. **Creating Wireflows**
+
+* Mix of **wireframes + flowcharts**
+* Show how users move through screens (interactions)
+* Combines UI layout **with navigation flow**
+
+✅ Useful in explaining **task flows** during presentations.
+
+---
+
+## 🔹 6. **Building a Prototype**
+
+* Simulated version of the final product
+* Can be:
+
+  * **Low-fi**: clickable wireframes
+  * **High-fi**: with visuals, animations, interactions
+* Tools: Figma, Adobe XD, InVision
+
+✅ Prototypes are used to test usability **before real development**.
+
+---
+
+## 🔹 7. **Building High-Fidelity Mockups**
+
+* Visually polished, pixel-perfect designs
+* Includes colors, fonts, real content, icons
+* Looks just like the final product
+* Doesn’t need full backend — just simulates experience
+
+✅ **Exam Tip:** “High-fidelity mockups help in presenting design to stakeholders and clients.”
+
+---
+
+## 🔹 8. **Designing Efficiently with Tools**
+
+* Use design systems, components, auto-layouts
+* Reuse elements = less time, more consistency
+* Common tools: Figma, Sketch, Adobe XD
+
+✅ “Efficient design tooling ensures scalability and reduces repetition in UX workflows.”
+
+---
+
+## 🔹 9. **Interaction Patterns**
+
+* Reusable UX solutions to common problems
+* Examples:
+
+  * Login/signup flows
+  * Accordions
+  * Hamburger menus
+  * Infinite scroll
+* Ensures **consistency + predictability**
+
+✅ “Interaction patterns improve usability by offering familiar UI behaviors.”
+
+---
+
+## 🔹 10. **Conducting Usability Tests**
+
+* Real users perform tasks to reveal flaws
+* Steps:
+
+  * Plan test
+  * Create tasks
+  * Recruit users
+  * Observe & record
+  * Analyze feedback
+* Types: moderated, unmoderated, remote, in-person
+
+✅ “Usability testing helps identify UX issues through real user behavior.”
+
+---
+
+## 🔹 11. **Other Evaluative User Research Methods**
+
+* 👀 A/B Testing
+* 📋 Surveys & Forms
+* 🧠 Heuristic Evaluation
+* 🧩 Card Sorting
+* 🔥 Heatmaps
+* 👁️ Eye-tracking
+
+✅ These help analyze performance **beyond just testing the interface.**
+
+---
+
+## 🔹 12. **Synthesizing Test Findings**
+
+* Take messy feedback → organize → find patterns → turn into insights
+* Group issues by:
+
+  * Type (UI/UX bug)
+  * Severity (critical/minor)
+* Use findings to fix & refine prototype
+
+✅ “Synthesizing helps prioritize what needs to change based on user input.”
+
+---
+
+## 🔹 13. **Prototype Iteration**
+
+* The holy loop 🔁: Test → Get Feedback → Improve → Test Again
+* You keep tweaking till:
+
+  * Tasks get easier
+  * Errors reduce
+  * Satisfaction rises
+
+✅ “Iteration is central to UX design — no design is perfect on the first try.”
+
+---
+
+### ✅ Overall Flow of Unit IV:
+
+**Sketch ➡️ Wireframe ➡️ Wireflow ➡️ Prototype ➡️ Test ➡️ Refine ➡️ Repeat**
+
+This unit is all about turning a good idea into a *great*, usable, user-loved design — step-by-step, with structure, testing, and improvements baked in.
+
+---

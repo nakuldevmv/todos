@@ -23,6 +23,7 @@
             --light-fg: #111;
             --light-accent: #333;
         }
+
         ::-webkit-scrollbar {
             width: 8px;
             height: 8px;
@@ -534,7 +535,6 @@
     <!-- PrismJS core + Autoloader plugin -->
     <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/autoloader/prism-autoloader.min.js"></script>
-    <script defer src="https://vercel.com/analytics/script.js"></script>
     <script>
         // Autoloader config - loads whatever language you need
         Prism.plugins.autoloader.languages_path = 'https://cdn.jsdelivr.net/npm/prismjs/components/';
@@ -588,6 +588,8 @@
             applyTheme(useLight);
         });
     </script>
+    <!-- vercel analytics -->
+    <script defer src="https://vercel.com/analytics/script.js"></script>
 
 
 </body>

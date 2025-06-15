@@ -82,6 +82,8 @@ India is a **global leader in renewable energy adoption**.
 
 > *“Write a short note on the present status of renewable energy in India.”*
 
+![](https://cdn.statcdn.com/Infographic/images/normal/33732.jpeg)
+
 ---
 
 ## 🔹 5. **Future Potential of Renewable Energy & Tech Development**
@@ -500,5 +502,393 @@ Wind → Blades spin → Shaft → Gearbox → Generator → Output → Controll
   * Street lighting
   * Charging batteries
   * Telecom towers
+
+---
+
+<br><br>
+
+
+## ✅ UNIT IV – BIO-ENERGY
+
+### 🔹 1. **Energy from Biomass**
+
+#### 🔸 What is Biomass?
+
+* Biomass = Organic material from plants and animals, used as a **renewable fuel** source.
+* Examples:
+
+  * Crop residues 🌾
+  * Wood chips 🌲
+  * Animal dung 💩
+  * Food waste 🍲
+
+#### 🔸 Why Biomass?
+
+* Reduces fossil fuel usage 🌍
+* Available abundantly in rural areas
+* Can generate heat, electricity, and biofuels
+
+---
+
+### 🔹 2. **Biomass Conversion Technologies & Classification**
+
+✅ diagram: true
+🔍 Search: `biomass conversion process diagram`
+
+#### 🔸 A. **Thermo-chemical Processes** (Uses heat)
+
+* **Combustion**: Biomass burnt to produce heat/steam.
+* **Gasification**: Biomass + limited O₂ → Syngas (CO, H₂).
+* **Pyrolysis**: Biomass heated in absence of O₂ → Charcoal, oil, gas.
+
+#### 🔸 B. **Bio-chemical Processes** (Uses microbes)
+
+* **Anaerobic digestion**: Organic waste → Biogas.
+* **Fermentation**: Sugar/starch-rich crops → Ethanol.
+
+#### 🔸 C. **Classification of Conversion Methods**
+
+| Type            | Output          | Process Used     |
+| --------------- | --------------- | ---------------- |
+| Thermo-chemical | Gas, heat       | High-temp burn   |
+| Bio-chemical    | Biogas, ethanol | Microbial action |
+
+---
+
+### 🔹 3. **Biogas Generation**
+
+Biogas = **Methane (CH₄)** + CO₂, made when organic matter decomposes anaerobically (no oxygen).
+
+#### 🔸 Biogas Composition:
+
+* CH₄: 50–70%
+* CO₂: 30–50%
+* Trace: H₂S, water vapor
+
+#### 🔸 Feed Materials:
+
+* Cow dung, kitchen waste, sewage, agro waste
+
+#### 🔸 Output:
+
+* Gas used for cooking, heating, electricity
+* Slurry used as organic fertilizer
+
+---
+
+### 🔹 4. **Types of Biogas Plants**
+
+✅ diagram: true
+🔍 Search: `types of biogas plant diagrams`
+
+#### 🔸 A. **Fixed Dome Type**:
+
+* Dome-shaped chamber built underground
+* Durable, low maintenance
+* Common in India 🇮🇳 (ex: Janata Model)
+
+#### 🔸 B. **Floating Drum Type**:
+
+* Gas collects in steel drum that floats on slurry
+* Easy to check gas level
+* Higher maintenance (drum can rust)
+
+#### 🔸 C. **Other Types**:
+
+* **Balloon plant** (cheap, flexible)
+* **Horizontal plant** (for hilly areas)
+
+---
+
+### 🔹 5. **Site Selection for Biogas Plant**
+
+**Factors to consider:**
+
+* Proximity to cattle/feedstock 🐄
+* Adequate water supply 💧
+* Near energy usage point
+* Good sunlight & drainage
+* Easy access for maintenance
+
+---
+
+### 🔹 6. **Classification of Biogas Plants (Based on Feeding)**
+
+#### 🔸 A. **Batch Type**:
+
+* Filled once, sealed, emptied after gas production ends
+* Good for small-scale use
+
+#### 🔸 B. **Continuous Type**:
+
+* Waste added daily
+* Continuous gas supply
+* Commonly used in farms
+
+#### 🔸 C. **Semi-batch**:
+
+* Combination of both
+
+| Type       | Feeding | Output  | Use Case         |
+| ---------- | ------- | ------- | ---------------- |
+| Batch      | Once    | Limited | Low demand areas |
+| Continuous | Daily   | Stable  | Farms & villages |
+
+---
+
+### 🔹 7. **Advantages & Disadvantages of Biogas**
+
+| ✅ Advantages                           | ❌ Disadvantages                       |
+| -------------------------------------- | ------------------------------------- |
+| Free fuel from waste                   | Initial setup cost is high 💸         |
+| Reduces deforestation and pollution    | Inefficient in cold climates ❄️       |
+| Produces organic manure as by-product  | Skilled maintenance may be needed     |
+| Energy self-sufficiency in rural areas | Corrosion in metal parts (H₂S effect) |
+
+---
+
+### 🔹 8. **Thermal Gasification of Biomass**
+
+✅ diagram: true
+🔍 Search: `biomass gasification diagram`
+
+#### 🔸 What is it?
+
+Converts solid biomass into **producer gas (CO, H₂, CH₄)** by reacting at **800–1000°C** with limited oxygen.
+
+#### 🔸 Process Steps:
+
+1. Drying
+2. Pyrolysis
+3. Oxidation
+4. Reduction → Gas output
+
+#### 🔸 Uses:
+
+* Electricity generation
+* Cooking fuel
+* Industrial heating
+
+---
+
+### 🔹 9. **Biomass Gasifiers**
+
+Device used for biomass gasification.
+
+#### 🔸 Types:
+
+* **Updraft Gasifier**: Air enters from below, gas exits top
+* **Downdraft Gasifier**: Air and gas flow downwards
+* **Fluidized Bed Gasifier**: Biomass floats in hot air for uniform conversion
+
+#### 🔸 Applications:
+
+* Small power plants
+* Village microgrids
+* Backup fuel for diesel engines
+
+---
+
+### 🔹 10. **Applications of Biomass & Biogas Plants**
+
+✅ diagram: true
+🔍 Search: `applications of biomass and biogas`
+
+#### 🔸 A. Biomass Applications:
+
+* Thermal energy for industries
+* Electricity for rural microgrids
+* Briquettes for cooking
+* Production of ethanol/biodiesel
+
+#### 🔸 B. Biogas Applications:
+
+* Cooking gas in homes
+* Street lighting & electricity
+* Engine fuel (dual-fuel use)
+* Organic farming (slurry used as manure)
+
+---
+
+### 💰 Economics of Biomass & Biogas
+
+#### 🔸 Cost Factors:
+
+* Size of plant
+* Availability of feedstock
+* Labour & maintenance
+
+#### 🔸 Benefits:
+
+* Fast payback (2–4 years)
+* Government subsidies 💰
+* Employment generation (rural jobs)
+
+#### 🔸 Government Schemes:
+
+* **GOBAR-Dhan Yojana**
+* **MNRE Biogas Support Program**
+* **State-level renewable policies**
+
+---
+
+<br><br>
+
+
+
+# ✅ UNIT V – OTHER TYPES OF ENERGY
+
+
+
+## ⚗️ 1. **Hydrogen Energy and Fuel Cells**
+
+### 🔹 What is Hydrogen Energy?
+
+* **Hydrogen** is an **energy carrier**, not a primary source.
+* Can be produced via:
+
+  * **Electrolysis of water**
+  * **Steam reforming of natural gas**
+* Clean fuel when used — no CO₂, only water vapor.
+
+### 🔹 Fuel Cells: Principle & Operation
+
+* Converts **chemical energy of hydrogen + oxygen** → **electrical energy + water**
+* No combustion involved, it's an **electrochemical reaction**.
+
+### 🔹 Types of Fuel Cells:
+
+| Type  | Electrolyte      | Common Use                 |
+| ----- | ---------------- | -------------------------- |
+| PEMFC | Polymer Membrane | Vehicles, portable devices |
+| SOFC  | Solid oxide      | Stationary power plants    |
+| AFC   | Alkaline         | Space missions             |
+
+### 🔹 Pros ✅ / Cons ❌
+
+* ✅ High efficiency (60–70%)
+* ✅ Zero emissions
+* ❌ High cost
+* ❌ Hydrogen storage is complex
+
+> **diagram: true** – Search: `working of hydrogen fuel cell`, `PEMFC diagram`
+
+---
+
+## 🌋 2. **Geothermal Energy**
+
+### 🔹 What Is It?
+
+* Energy from **heat inside Earth’s crust**
+* Used for heating, electricity generation, direct applications (like greenhouses)
+
+### 🔹 Types of Geothermal Resources
+
+* **Dry steam**
+* **Wet steam**
+* **Hot dry rock**
+
+### 🔹 Types of Wells
+
+* **Production Well**: Extracts steam/hot water
+* **Injection Well**: Returns used fluid to maintain pressure
+
+### 🔹 Methods of Harnessing
+
+* **Dry steam plant** – oldest, uses natural steam
+* **Flash steam plant** – converts hot water into steam
+* **Binary cycle** – transfers heat to secondary fluid (used when temp is low)
+
+### 🔹 Potential in India
+
+* **Puga (Ladakh), Manikaran (HP), Tattapani (Chhattisgarh)**
+
+> **diagram: true** – Search: `geothermal power plant types`, `flash steam geothermal plant`
+
+---
+
+## 🌊 3. **OTEC – Ocean Thermal Energy Conversion**
+
+### 🔹 What is OTEC?
+
+* Generates power using **temperature difference** between **warm surface water** (\~25°C) and **cold deep water** (\~5°C)
+* Only works in **tropical oceans** 🌴
+
+### 🔹 Working Principles
+
+* Heat from warm surface water boils a **working fluid** → drives turbine → power.
+
+### 🔹 Thermodynamic Cycles:
+
+* **Closed Cycle**: Uses fluid like ammonia.
+* **Open Cycle**: Uses sea water directly.
+* **Hybrid Cycle**: Mix of both.
+
+### 🔹 Site Conditions
+
+* Minimum temp difference = **20°C**
+* Best for **coastal and island regions**
+
+> **diagram: true** – Search: `OTEC plant working`, `closed cycle OTEC system diagram`
+
+---
+
+## 🌊 4. **Tidal and Wave Energy**
+
+### 🔹 Tidal Energy
+
+* Caused by **gravitational pull** of the moon + sun 🌕🌊
+* Types:
+
+  * **Tidal barrage** (dam-like)
+  * **Tidal stream** (uses underwater turbines)
+  * **Dynamic tidal power**
+
+### 🔹 Wave Energy
+
+* Comes from **surface waves** formed by wind
+* Conversion Devices:
+
+  * **Oscillating water column**
+  * **Point absorbers**
+  * **Overtopping devices**
+
+### 🔹 Comparison
+
+| Aspect         | Tidal  | Wave       |
+| -------------- | ------ | ---------- |
+| Predictability | High   | Moderate   |
+| Tech Maturity  | Higher | Developing |
+| Cost           | High   | Very high  |
+
+> **diagram: true** – Search: `tidal barrage diagram`, `wave energy converter diagram`
+
+---
+
+## 💧 5. **Mini-Hydel Power Plants and Their Economics**
+
+### 🔹 What Is Mini-Hydel?
+
+* Small hydroelectric power systems **(<25 MW)**
+* No large dams needed; **run-of-river** most common.
+
+### 🔹 Types of Mini-Hydel:
+
+* **Canal-based**
+* **Dam-toe**
+* **Diversion-type**
+
+### 🔹 Components:
+
+* **Intake → Penstock → Turbine → Generator → Tailrace**
+
+### 🔹 Economic Aspects:
+
+* Initial cost: ₹7–10 Cr per MW
+* O\&M cost: Very low
+* Life span: 30+ years
+* Suitable for **rural electrification**
+
+> **diagram: true** – Search: `mini hydel plant layout`, `run-of-river hydro system diagram`
 
 ---

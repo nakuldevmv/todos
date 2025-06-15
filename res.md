@@ -106,6 +106,10 @@ India is a **global leader in renewable energy adoption**.
 
 📌 **diagram: true**
 **Google search:** `india renewable energy potential graph`
+![](https://www.statista.com/graphic/1/1401414/india-solar-power-generation.jpg)
+![](res\nonre.png)
+![](res\re.png)
+
 
 ---
 

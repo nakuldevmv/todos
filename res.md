@@ -178,6 +178,10 @@ India is a **global leader in renewable energy adoption**.
 🔍 `diagram: true`
 **Google Search**: "Solar radiation measurement instruments diagram"
 
+![Pyreliometer](https://www.electroniclinic.com/wp-content/uploads/2021/01/pyreliometer.jpg)
+Pyreliometer
+![pyranometer](https://www.researchgate.net/profile/Joakim-Munkhammar-2/publication/332606005/figure/fig5/AS:751130078371844@1556094774809/A-schematic-illustration-of-a-pyranometer-a-and-a-pyrheliometer-b-based-on-9-and.png)
+pyranometer
 ---
 
 ### 🔶 Solar Thermal Energy Conversion from Flat Plate Collectors (FPC)
@@ -198,6 +202,7 @@ India is a **global leader in renewable energy adoption**.
 
 🔍 `diagram: true`
 **Google Search**: "Flat Plate Solar Collector working diagram"
+![Flat PLate collector](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj8GP2ohWUJWZMZj9AjaLnKJqe9_9u8-KuUjMJ9uFu1S-gU12xhnkqHxxx8tnNywXFMMYT3uLr-KB1YPLIGz_HqiJZQ3CP-HJzffdXmC2CAEFDCXkkolZzBJFq-xiY4mVd49pDJ8uE1kviG45ycZoeAupvn2-KL3MaaqBaT7flsqs6d7VAl_Fy9o3mY/s1571/ink%20(3).png)
 
 ---
 
@@ -215,7 +220,9 @@ India is a **global leader in renewable energy adoption**.
 
 🔍 `diagram: true`
 **Google Search**: "Types of concentrating solar collectors diagram"
-
+![alt text](https://energypedia.info/images/thumb/1/11/Greenpeace_International_Technologies_CSP.png/500px-Greenpeace_International_Technologies_CSP.png)
+![](res\fren.png)
+![](res\1.png)
 ---
 
 ### 🔶 Efficiency & Performance of Collectors
@@ -255,6 +262,9 @@ India is a **global leader in renewable energy adoption**.
 
 🔍 `diagram: true`
 **Google Search**: "Solar photovoltaic working diagram"
+![alt text](https://www.electroniclinic.com/wp-content/uploads/2022/04/Solar-Cell-or-Photo-Voltaic-Cell-768x547.jpg)
+![alt text](https://cdn-jiihh.nitrocdn.com/okWzVIlsOZmwuKilUhYZsewvVnPbusQb/assets/images/optimized/rev-aa3e572/www.solarctrl.com/wp-content/uploads/2024/03/From-Solar-Cells-to-Solar-Panels1.png)
+![](res\2.png)
 
 ---
 
@@ -267,6 +277,7 @@ India is a **global leader in renewable energy adoption**.
 
 🔍 `diagram: true`
 **Google Search**: "Types of solar cells chart"
+![alt text](https://frontend-cdn.solarreviews.com/solar-cell-types-compared.png)
 
 ---
 
@@ -283,6 +294,14 @@ India is a **global leader in renewable energy adoption**.
 
 🔍 `diagram: true`
 **Google Search**: "Solar PV applications diagram"
+![alt text](https://media.geeksforgeeks.org/wp-content/uploads/20240206170916/ppdrawio.png)
+![](res\3.png)
+![](res\4.png)
+![](res\5.png)
+![](res\6.png)
+![](res\7.png)
+
+
 
 ---
 
@@ -302,7 +321,9 @@ India is a **global leader in renewable energy adoption**.
 
 🔍 `diagram: true`
 **Google Search**: "Building integrated PV system diagram"
+![alt text](https://www.maysunsolar.com/wp-content/uploads/2022/10/%E5%B9%B6%E7%BD%91%E7%A6%BB%E7%BD%91%E4%BF%AE%E6%94%B9-1024x465.jpg)
 **Google Search**: "Grid connected solar PV system diagram"
+
 
 ---
 
@@ -407,6 +428,9 @@ Understanding these helps in better **site planning** and **performance predicti
 
 📌 **diagram: true**
 🔍 *Search:* `wind turbine components labeled diagram`
+![alt text](https://sciencediagrams.com/wp-content/uploads/2021/02/wind_turbine_diagram1.jpg)
+![](res\windturbine.png)
+![](res\wt.png)
 
 ---
 
@@ -459,6 +483,7 @@ Wind → Blades spin → Shaft → Gearbox → Generator → Output → Controll
 
 📌 **diagram: true**
 🔍 *Search:* `HAWT vs VAWT comparison diagram`
+![alt text](https://www.solarlightsmanufacturer.com/wp-content/uploads/2017/05/Vertical-and-Horizontal-axis-wind-turbines.png)
 
 ---
 
@@ -538,6 +563,7 @@ Wind → Blades spin → Shaft → Gearbox → Generator → Output → Controll
 
 ✅ diagram: true
 🔍 Search: `biomass conversion process diagram`
+![alt text](https://cdn.prod.website-files.com/667a682f9a0b9ad54a31a427/66b17b74b011381238fad46f_Nexus-PMG-Industry-Overview-graphic-a-05-1024x819.jpeg)
 
 #### 🔸 A. **Thermo-chemical Processes** (Uses heat)
 
@@ -584,6 +610,10 @@ Biogas = **Methane (CH₄)** + CO₂, made when organic matter decomposes anaero
 
 ✅ diagram: true
 🔍 Search: `types of biogas plant diagrams`
+![alt text](https://www.funscience.in/wp-content/uploads/2020/08/FixedDomeTypeBioGasPlant.png)
+Fixed Dome
+![alt text](https://www.researchgate.net/publication/232285040/figure/fig1/AS%3A393343138844678%401470791720575/Schematic-sketch-of-a-floating-drum-digester.png)
+Floating Drum
 
 #### 🔸 A. **Fixed Dome Type**:
 
@@ -655,6 +685,7 @@ Biogas = **Methane (CH₄)** + CO₂, made when organic matter decomposes anaero
 
 ✅ diagram: true
 🔍 Search: `biomass gasification diagram`
+![alt text](https://ars.els-cdn.com/content/image/3-s2.0-B9780081026311000158-f15-03-9780081026311.jpg)
 
 #### 🔸 What is it?
 
@@ -697,6 +728,7 @@ Device used for biomass gasification.
 
 ✅ diagram: true
 🔍 Search: `applications of biomass and biogas`
+![alt text](https://www.researchgate.net/publication/373203800/figure/fig2/AS:11431281182510886@1692408536039/Overview-of-applications-of-biomass.png)
 
 #### 🔸 A. Biomass Applications:
 
@@ -776,6 +808,7 @@ Device used for biomass gasification.
 * ❌ Hydrogen storage is complex
 
 > **diagram: true** – Search: `working of hydrogen fuel cell`, `PEMFC diagram`
+![](res\hfc.png)
 
 ---
 
@@ -808,6 +841,7 @@ Device used for biomass gasification.
 * **Puga (Ladakh), Manikaran (HP), Tattapani (Chhattisgarh)**
 
 > **diagram: true** – Search: `geothermal power plant types`, `flash steam geothermal plant`
+![alt text](https://img.machinedesign.com/files/base/ebm/machinedesign/image/2018/04/www_machinedesign_com_sites_machinedesign.com_files_Plant_Designs.png?auto=format,compress&fit=max&q=45&w=640&width=640)
 
 ---
 
@@ -834,6 +868,11 @@ Device used for biomass gasification.
 * Best for **coastal and island regions**
 
 > **diagram: true** – Search: `OTEC plant working`, `closed cycle OTEC system diagram`
+![text](https://www.researchgate.net/profile/S-Sadeghzadeh/publication/316784198/figure/fig1/AS:568798835953664@1512623618003/OTEC-open-cycle-schematic.png)
+open cycle OTEC
+
+![alt text](https://www.eeeguide.com/wp-content/uploads/2023/02/Schematic-Layout-of-OTEC-02.jpg)
+closed cycle OTEC
 
 ---
 
@@ -866,6 +905,11 @@ Device used for biomass gasification.
 | Cost           | High   | Very high  |
 
 > **diagram: true** – Search: `tidal barrage diagram`, `wave energy converter diagram`
+![alt text](https://ei.lehigh.edu/learners/energy/tidal/barrageDiagram.gif)
+Tidal Barrage Diagram
+
+![alt text](https://www.researchgate.net/publication/265007458/figure/fig15/AS%3A669463884099610%401536624036948/Conceptual-drawing-of-the-wave-energy-converter.jpg)
+Point Absorber
 
 ---
 
@@ -894,5 +938,6 @@ Device used for biomass gasification.
 * Suitable for **rural electrification**
 
 > **diagram: true** – Search: `mini hydel plant layout`, `run-of-river hydro system diagram`
+![alt text](https://www.researchgate.net/publication/304015266/figure/fig1/AS%3A373771417473024%401466125458590/Schematic-diagram-of-micro-hydro-power-plant.png)
 
 ---

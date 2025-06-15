@@ -223,3 +223,258 @@ Source_Code --> Lexical_Analyzer --> Parser --> Semantic_Analyzer
 
 <br><br>
 
+
+
+
+# ✅ **UNIT II – DATA, DATA TYPES, AND BASIC STATEMENTS**
+
+
+---
+
+## 🔤 **1. Names**
+
+* **Identifiers** used for variables, functions, arrays, classes, etc.
+* Names connect the programmer’s code to memory locations or values.
+* Must follow the language’s naming rules (e.g., no spaces, can't start with digits).
+* Internally represented in a **symbol table** during compilation.
+
+---
+
+## 📦 **2. Variables**
+
+* **Abstraction** of a memory location that stores a value.
+* Has three properties:
+
+  * **Name** (identifier)
+  * **Address** (memory location)
+  * **Value** (data stored)
+* Can be **mutable** (can change) or **immutable** (fixed after assignment).
+
+---
+
+## 🔗 **3. Binding**
+
+> *Binding = connection*
+
+* It’s the **association** between a variable and its attributes (like type, memory address, etc.).
+* **Static binding**: Done at compile time (e.g., C/C++)
+* **Dynamic binding**: Done at runtime (e.g., Python)
+* **Early binding** = better performance
+  **Late binding** = more flexibility
+
+---
+
+## ✅ **4. Type Checking**
+
+* Ensures that **operations are performed between compatible types**
+* Types prevent logic errors (e.g., adding a string to an integer)
+* **Static type checking**: At compile time (C, Java)
+* **Dynamic type checking**: At runtime (Python, JS)
+
+---
+
+## 🌐 **5. Scope**
+
+* **Scope = where a variable is accessible**
+* **Local scope**: Declared inside functions or blocks
+* **Global scope**: Declared outside functions; available everywhere
+* Avoid **naming conflicts** and control visibility.
+
+---
+
+## 🧾 **6. Scope Rules**
+
+* Defines how scopes are nested and resolved.
+* **Static (lexical) scope**: Based on program text (most common)
+* **Dynamic scope**: Based on the call stack at runtime (rare)
+* Helps determine **which variable** to use when names overlap.
+
+---
+
+## 🕓 **7. Lifetime & Garbage Collection**
+
+* **Lifetime**: Time from variable creation → destruction.
+* **Static lifetime**: Exists for entire program run
+* **Stack-dynamic**: Created when function is called; destroyed when it ends
+* **Garbage collection**: Automatic memory clean-up (used in Java, Python)
+
+  * Prevents **memory leaks**
+
+---
+
+## 🔢 **8. Primitive Data Types**
+
+* **Basic building blocks** of all other types.
+* Common primitives:
+
+  * Integer (`int`)
+  * Floating-point (`float`, `double`)
+  * Boolean (`true/false`)
+  * Character (`char`)
+* Supported by almost all programming languages.
+
+---
+
+## 🧵 **9. Strings**
+
+* **Sequence of characters**
+* Immutable in many languages (e.g., Java, Python)
+* May have built-in operators like concatenation (`+`), slicing, length functions.
+
+---
+
+## 🧱 **10. Array Types**
+
+* **Fixed-size**, indexed collection of elements (same type)
+* Indexing usually starts at 0
+* Static (fixed size) or dynamic (can resize)
+
+---
+
+## 🔎 **11. Associative Arrays**
+
+* Also known as **maps** or **dictionaries**
+* Stores **key-value pairs**
+* Keys can be strings, numbers, etc.
+* Example in Python:
+
+  ```python
+  student = {"name": "Alex", "age": 20}
+  ```
+
+---
+
+## 📚 **12. Record Types**
+
+* Collection of **different data types** grouped together
+* Like a **struct in C**, or an object without behavior
+* Used to represent real-world entities (e.g., student with name, ID, GPA)
+* Similar to classes, but **no methods**
+
+---
+
+## 🧪 **13. Union Types**
+
+* **Multiple types share the same memory**
+* At any time, only **one** of the fields holds a value
+* Saves memory, but you must track what's active manually
+
+---
+
+## 📍 **14. Pointers and References**
+
+* **Pointers**: Store memory addresses (C/C++)
+* **References**: Another name for a variable (e.g., C++, Java references)
+* Pointers allow **indirect access** to memory
+* Powerful but **can cause errors** if misused
+
+---
+
+## ➕ **15. Arithmetic Expressions**
+
+* Combine variables, constants, and operators like `+`, `-`, `*`, `/`
+* Must follow **operator precedence**
+* Evaluated left to right or based on brackets
+
+---
+
+## ➕➕ **16. Overloaded Operators**
+
+* **Same operator** behaves differently depending on the context
+* Example:
+
+  * `+` for numbers → addition
+  * `+` for strings → concatenation
+* Common in **C++, Python, Java**
+
+---
+
+## 🔄 **17. Type Conversions**
+
+* Converting one type to another (e.g., `int` to `float`)
+* **Implicit**: Done automatically (promotion)
+* **Explicit**: Manual casting by programmer
+
+---
+
+## 🧠 **18. Relational & Boolean Expressions**
+
+* **Relational**: Compare values → `==`, `!=`, `<`, `>`, etc.
+* **Boolean**: Combine comparisons → `&&`, `||`, `!`
+* Used in decision-making
+* Yes, `||` is logical OR (✅)
+
+---
+
+## 🧮 **19. Assignment Statements**
+
+* Used to **store a value in a variable**
+* Example: `x = 10;`
+* Can be **simple** or **chained** (`x = y = z = 5;`)
+
+---
+
+## ⚙️ **20. Mixed Mode Assignments**
+
+* Assigning value of one type to variable of another
+* e.g., `int x = 10.5;` — implicit conversion happens (10.5 → 10)
+
+---
+
+## 🔀 **21. Control Structures**
+
+Used to **control the flow** of program execution:
+
+* **Selection**: `if`, `if-else`, `switch`
+* **Iteration**: `for`, `while`, `do-while`
+* **Branching**: `break`, `continue`, `goto`
+* **Guarded Statements** (for advanced and concurrent flow)
+
+---
+
+## ✅ **22. Selection**
+
+* Choosing between two or more paths:
+
+  * `if (condition)`
+  * `if-else`
+  * `switch-case`
+
+---
+
+## 🔁 **23. Iteration**
+
+* Repeating a block of code:
+
+  * `for` → known number of times
+  * `while` → until condition false
+  * `do-while` → at least once
+
+---
+
+## 🚨 **24. Branching**
+
+* Change the flow inside loops:
+
+  * `break` → exits loop
+  * `continue` → skips to next iteration
+  * `goto` → jumps to a labeled statement (use with care)
+
+---
+
+## 🛡️ **25. Guarded Statements**
+
+* Advanced conditional structure with multiple guarded options
+* Guards = boolean conditions
+* Executes **only one** whose guard is true, sometimes **nondeterministically**
+* Example (pseudo):
+
+  ```text
+  if
+    [x > 0] -> y = 1
+  [] [x == 0] -> y = 0
+  fi
+  ```
+
+---
+

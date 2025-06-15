@@ -539,14 +539,14 @@
         // Autoloader config - loads whatever language you need
         Prism.plugins.autoloader.languages_path = 'https://cdn.jsdelivr.net/npm/prismjs/components/';
 
-        const markdownUrl = 'https://nakuldevmv.github.io/todos/ppl.md';
+        const markdownUrl = `https://nakuldevmv.github.io/todos/ppl.md?cb=${Date.now()}`;
 
         const contentDiv = document.getElementById('content');
         let light = false;
 
         async function loadMarkdown() {
             try {
-                const res = await fetch(markdownUrl);
+                const res = await fetch(markdownUrl, { cache: "no-cache" });
                 if (!res.ok) throw new Error('File not found: ' + res.status);
 
                 const md = await res.text();

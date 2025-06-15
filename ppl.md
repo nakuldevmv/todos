@@ -479,3 +479,224 @@ Used to **control the flow** of program execution:
 ---
 
 <br><br>
+
+# ✅ UNIT III – SUBPROGRAMS AND IMPLEMENTATIONS
+---
+
+## 🌟 Subprograms
+
+* A **subprogram** is a reusable block of code designed to perform a specific task.
+* Types:
+
+  * **Functions**: return a value (e.g., `int add(int a, int b)`)
+  * **Procedures**: perform an action but do **not** return a value (common in languages like Pascal)
+* Helps in:
+
+  * Reducing redundancy
+  * Improving modularity and readability
+  * Allowing recursive logic
+
+---
+
+## 🧩 Design Issues of Subprograms
+
+Important design questions while creating or analyzing subprograms:
+
+* How are **parameters** passed?
+* Are **local variables** static or dynamic?
+* Can subprograms be **overloaded** or **generic**?
+* Can they be **nested** inside other subprograms?
+* Are **side effects** (like modifying global variables) allowed?
+
+---
+
+## 🧠 Local Referencing Environments
+
+* Refers to what variables are **accessible** inside the subprogram.
+* Includes:
+
+  * **Formal parameters**
+  * **Locally declared variables**
+  * **Non-local variables** (based on scoping rules)
+* Depends on whether the language supports **static** or **dynamic scoping** (more on this later).
+
+---
+
+## 📤 Parameter Passing Mechanisms
+
+**diagram: true**
+Search: `parameter passing mechanisms diagram`
+
+Different ways arguments are passed into subprograms:
+
+* **Pass-by-Value**: Copies value. No effect on original.
+* **Pass-by-Reference**: Passes memory address. Changes reflect outside.
+* **Pass-by-Result**: Final value is copied back to caller.
+* **Pass-by-Value-Result**: Combination of value and result.
+* **Pass-by-Name**: Like macro. Expression is re-evaluated every time.
+
+Example:
+
+```cpp
+void update(int& x) { x = x + 10; }
+```
+
+* Here, `&x` means pass-by-reference.
+
+---
+
+## 🧠 Overloaded Methods
+
+* Methods/functions with the **same name** but **different parameter types or counts**.
+* Resolved at **compile time** (static polymorphism).
+
+Example:
+
+```cpp
+int area(int side);
+float area(float radius);
+```
+
+---
+
+## 👥 Generic Methods
+
+* Functions designed to work with **any data type**.
+* Improves **reusability** and **type safety**.
+
+Example in C++:
+
+```cpp
+template <typename T>
+T max(T a, T b) {
+    return (a > b) ? a : b;
+}
+```
+
+* Here, `T` can be any type (int, float, etc.)
+
+---
+
+## ⚙️ Design Issues for Functions
+
+While designing functions, consider:
+
+* Can the function return **more than one value**?
+* Are **side effects** allowed?
+* Are there **default or optional parameters**?
+* What **types** can be returned?
+
+Well-designed functions:
+
+* Have clear input and output
+* Avoid hidden side effects
+* Use meaningful names and pure logic (if possible)
+
+---
+
+## 🔁 Semantics of Call and Return
+
+**diagram: true**
+Search: `activation record function call diagram`
+
+* When a function is **called**:
+
+  * A **new activation record (stack frame)** is pushed onto the call stack.
+  * It contains return address, parameters, local variables, etc.
+* When a function **returns**:
+
+  * The activation record is popped
+  * Control jumps back to the return address
+
+---
+
+## 🧱 Implementing Simple Subprograms
+
+* Done using **stack-based memory allocation**:
+
+  * Every call gets a new **activation record**.
+  * It contains local variables, return address, and parameters.
+* Easy to implement and fast.
+* Most languages use a **runtime stack** to manage function calls.
+
+---
+
+## 🗂️ Stack and Dynamic Local Variables
+
+* **Stack-based locals**:
+
+  * Automatically allocated and destroyed.
+  * Exist only during subprogram execution.
+* **Dynamic locals** (heap-based):
+
+  * Exist beyond function calls
+  * Must be explicitly managed (`malloc/free` or `new/delete`)
+
+---
+
+## 🪆 Nested Subprograms
+
+**diagram: true**
+Search: `nested subprograms with static link diagram`
+
+* Subprograms defined **within** another subprogram.
+* Useful for:
+
+  * Encapsulation
+  * Creating helper methods with limited visibility
+* Needs a **static link** to access enclosing scope's variables.
+
+Example:
+
+```python
+def outer():
+    x = 10
+    def inner():
+        print(x)
+    inner()
+```
+
+---
+
+## 📦 Blocks
+
+* A **block** is a group of statements enclosed in `{ }` or `begin...end`
+* Not a full subprogram but can have its own **scope**
+* Used in loops, conditions, exception handling
+
+Example:
+
+```cpp
+if (x > 0) {
+    int y = x * 2;
+    cout << y;
+}
+```
+
+---
+
+## 🧠 Dynamic Scoping
+
+**diagram: true**
+Search: `static vs dynamic scoping diagram`
+
+* Variable bindings are determined **at runtime** based on **calling function**
+* Unlike static scoping, where you look at the code structure
+
+Example:
+
+```bash
+x=5
+foo() { echo $x; }
+bar() {
+    local x=10
+    foo  # prints 10 in dynamic scoping
+}
+```
+
+* Rare in modern languages, but still relevant in scripting (like Bash)
+
+---
+
+<br><br>
+

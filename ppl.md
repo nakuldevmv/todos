@@ -700,3 +700,254 @@ bar() {
 
 <br><br>
 
+
+
+# ✅ UNIT IV – OBJECT-ORIENTATION, CONCURRENCY & EVENT HANDLING
+
+**diagram: true**
+**Google These**
+
+* `object oriented programming diagram with class object inheritance`
+* `semaphore vs monitor in operating system diagram`
+* `event handling flowchart programming`
+
+---
+
+## 1️⃣ Object-Orientation (OOP)
+
+OOP is a paradigm built on the idea of **objects**—which are bundles of **data (attributes)** and **code (methods)**.
+
+### Core Pillars of OOP:
+
+* **Class:** Blueprint/Template. E.g., `class Animal`
+* **Object:** Instance of a class. E.g., `dog = Animal()`
+* **Encapsulation:** Wrap data + methods into one unit. Controls access with modifiers like `private`, `public`.
+* **Inheritance:** Reuse code from parent class. E.g., `class Dog extends Animal`
+* **Polymorphism:** Same method name behaves differently.
+  ➤ `speak()` could mean "bark", "meow", etc., depending on object.
+* **Abstraction:** Hides complex details. You call `.save()` without knowing what’s happening inside.
+
+🧠 **Real-Life Analogy:**
+Car = Object
+Car blueprint = Class
+Driving = Method
+Engine = Encapsulated Data
+
+---
+
+## 2️⃣ Design Issues for OOP Languages
+
+While building an OOP language (like Java, C++), designers must decide:
+
+* **How to manage visibility?** → `private`, `protected`, `public`
+* **How to implement inheritance?** → Single? Multiple? Interface-based?
+* **Should constructors/destructors exist?**
+  → For object creation and clean-up
+* **Support for polymorphism?** → Static (compile time) or Dynamic (run time)?
+* **Method Overloading Rules** → Can we have multiple `print()`s with different parameters?
+
+These design choices **affect how code behaves, runs, and is understood**.
+
+---
+
+## 3️⃣ Implementation of OOP Constructs
+
+This is where theory hits memory and the compiler cries.
+
+| Feature              | Behind the scenes magic                                              |
+| -------------------- | -------------------------------------------------------------------- |
+| **Objects**          | Stored in heap. Have fields and pointers to methods.                 |
+| **Methods**          | Looked up via **V-Table** (Virtual Table) if polymorphic.            |
+| **Inheritance**      | Child class layout includes parent’s attributes + new stuff.         |
+| **Dynamic Dispatch** | Used to choose correct overridden method at runtime.                 |
+| **Encapsulation**    | Achieved by storing access control flags + restricted method access. |
+
+> TL;DR: Every object has a footprint in memory, and compilers use tables & pointers to resolve class hierarchies and method calls.
+
+---
+
+## 4️⃣ Concurrency
+
+Concurrency = **Multiple tasks running in overlapping time**. Not always *at the same time* (parallel), but overlapping.
+
+🔧 Example:
+While loading a webpage, you can scroll and type—those are concurrent activities.
+
+Used in:
+
+* Multi-threaded programs
+* Operating systems
+* Games and UI apps
+
+---
+
+## 5️⃣ Semaphores
+
+**Semaphore** = A counter that helps manage access to **shared resources**.
+Used to avoid race conditions (2+ tasks accessing same resource).
+
+### Types:
+
+* **Binary Semaphore:** Only 0 or 1. Acts like a lock.
+* **Counting Semaphore:** Allows multiple accesses, based on a limit.
+
+### Two operations:
+
+* `wait()` or `P()` – Decrement the semaphore
+* `signal()` or `V()` – Increment it
+
+🧠 Think of it as a traffic light for threads.
+
+---
+
+## 6️⃣ Monitors
+
+Monitors = Advanced synchronization tools.
+They combine:
+
+* Shared data
+* Operations on that data
+* Automatic locking mechanism 🔐
+
+💡 Only one thread can execute inside a monitor at a time.
+They’re safer and easier to use than raw semaphores.
+
+Used in high-level languages like Java:
+
+```java
+synchronized void increment() {
+   counter++;
+}
+```
+
+---
+
+## 7️⃣ Message Passing
+
+When threads/processes can’t safely share memory → they **pass messages**.
+
+Used in:
+
+* Distributed systems 🌍
+* Actor model languages (e.g., Erlang, Go, Akka)
+
+### Key idea:
+
+Instead of threads fighting over memory, they **send each other data** safely.
+
+```python
+# Example (Python-like pseudocode)
+process1.send("hello")
+msg = process2.receive()
+```
+
+Benefits:
+
+* Safe
+* Scalable
+* Great for cloud and parallel computing ☁️⚙️
+
+---
+
+## 8️⃣ Threads
+
+A **thread** is like a mini-process that runs inside a bigger process.
+They share memory but run independently.
+
+### Why threads?
+
+* Faster than full-blown processes
+* Perfect for background tasks (e.g., downloading a file, loading UI, etc.)
+
+Example:
+
+```java
+Thread t = new Thread(() -> {
+   System.out.println("I run parallelly!");
+});
+t.start();
+```
+
+👾 Multi-threading helps make apps faster & more responsive, but too many threads can cause chaos (deadlocks, race conditions).
+
+---
+
+## 9️⃣ Statement-Level Concurrency
+
+This is the compiler’s job—**auto-parallelizing** independent statements.
+
+Example:
+
+```c
+a = b + c;
+d = e + f;
+```
+
+These can be computed in parallel since there’s no dependency between them.
+Used in:
+
+* Scientific computing
+* Compilers for optimization
+* SIMD (Single Instruction Multiple Data) architecture
+
+---
+
+## 🔥 10. Exception Handling
+
+When your code blows up, you don’t want the app to die.
+
+### Exception Handling helps:
+
+* Catch errors
+* Handle them gracefully
+* Continue or shut down cleanly
+
+Example in Java:
+
+```java
+try {
+  int x = 1 / 0;
+} catch (ArithmeticException e) {
+  System.out.println("Oops, can't divide by zero.");
+}
+```
+
+Types:
+
+* **Checked** (must handle)
+* **Unchecked** (runtime errors)
+
+Languages like Java, Python, C++ all support exception handling in some form.
+
+---
+
+## 🛎️ 11. Event Handling
+
+**Events** = Signals that something has happened
+(e.g., mouse click, button pressed, key typed)
+
+### Used in:
+
+* GUI apps
+* Web apps (e.g., `onClick`)
+* Real-time systems
+
+How it works:
+
+1. **Event Source:** The object that triggers an event (e.g., button)
+2. **Event Listener:** Watches for the event
+3. **Event Handler:** Code that responds to it
+
+💡 In JS:
+
+```js
+button.addEventListener("click", () => {
+   alert("Clicked!");
+});
+```
+
+Modern apps are **event-driven**—code responds to actions instead of running linearly.
+
+---
+
+<br><br>

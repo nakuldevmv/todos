@@ -1107,3 +1107,259 @@ class Dog:
 > * **Multi-paradigm languages** like Python and Scala allow mixing different programming styles for flexibility.
 
 ---
+
+# 2 Mark
+
+
+
+### **UNIT I – SYNTAX AND SEMANTICS**
+
+1. **What is syntax in a programming language?**
+   → Syntax is the set of rules that defines the structure and form of valid statements in a programming language.
+
+2. **Define semantics with an example.**
+   → Semantics defines the meaning of syntactically correct programs.
+   Example: `x = x + 1;` means increment the value of `x` by 1.
+
+3. **What are the stages of evolution of programming languages?**
+   → Machine language → Assembly → Procedural → Object-Oriented → Functional and Logic Languages.
+
+4. **What is the purpose of a context-free grammar?**
+   → It defines the syntax rules of programming languages using production rules.
+
+5. **Differentiate between syntax and semantics.**
+   → Syntax = structure/form. Semantics = meaning/purpose.
+
+6. **What is a terminal and non-terminal in CFG?**
+   → Terminals are actual symbols (e.g., `a`, `b`); Non-terminals are placeholders (e.g., `S`, `A`).
+
+7. **Define attribute grammar.**
+   → An extension of CFG that uses attributes to provide additional semantic info.
+
+8. **What is lexical analysis?**
+   → It's the first phase of a compiler that breaks code into tokens.
+
+9. **Mention any two tasks of a lexical analyzer.**
+   → Token generation, removing white spaces/comments.
+
+10. **Define parsing.**
+    → Parsing checks if the token sequence follows the grammar rules.
+
+11. **What is recursive-descent parsing?**
+    → A top-down parser where each non-terminal is implemented by a recursive function.
+
+12. **What is bottom-up parsing?**
+    → It constructs the parse tree from leaves to root using shift-reduce operations.
+
+13. **List any two examples of programming language syntax rules.**
+    → (1) Semicolon at the end of a statement.
+    (2) Parentheses for function calls.
+
+14. **What does a parse tree represent?**
+    → It represents the syntactic structure of a string according to a grammar.
+
+15. **What is ambiguity in grammar?**
+    → A grammar is ambiguous if a sentence can have more than one parse tree.
+
+---
+
+### **UNIT II – DATA, DATA TYPES, AND BASIC STATEMENTS**
+
+1. **Define a variable.**
+   → A variable is a named memory location used to store data.
+
+2. **What is the difference between name and variable?**
+   → A name is an identifier; a variable is the storage associated with that name.
+
+3. **What is binding in programming?**
+   → Binding is the association between variables and values, types, or storage.
+
+4. **Define static type checking.**
+   → Checking types at compile-time to detect type errors.
+
+5. **What is scope?**
+   → Scope defines the part of the program where a variable can be accessed.
+
+6. **Distinguish between static and dynamic scope.**
+   → Static scope: Based on program structure.
+   Dynamic scope: Based on call stack at runtime.
+
+7. **Define lifetime of a variable.**
+   → The time during which the variable exists in memory.
+
+8. **What is garbage collection?**
+   → Automatic memory management that frees memory occupied by unused objects.
+
+9. **List any two primitive data types.**
+   → Integer, Float.
+
+10. **What is an associative array?**
+    → A collection of key-value pairs, like a dictionary or map.
+
+11. **Define record type with an example.**
+    → A record is a collection of related fields.
+    Example: `struct Student { int id; char name[20]; };`
+
+12. **What is a union type?**
+    → A variable that can store different data types but only one at a time.
+
+13. **Differentiate between pointer and reference.**
+    → Pointer stores memory address explicitly; reference is an alias for another variable.
+
+14. **What is an arithmetic expression?**
+    → A combination of operands and operators like `a + b * c`.
+
+15. **What is a mixed-mode assignment?**
+    → Assigning values of different data types in a single expression, like `int x = 5.7;`.
+
+---
+
+### **UNIT III – SUBPROGRAMS AND IMPLEMENTATIONS**
+
+1. **What is a subprogram?**
+   → A reusable block of code that performs a specific task (e.g., functions, procedures).
+
+2. **Define parameter passing.**
+   → The process of providing input values to a subprogram.
+
+3. **Differentiate between actual and formal parameters.**
+   → Actual: real values passed. Formal: placeholders in subprogram.
+
+4. **What is local referencing environment?**
+   → It defines the scope and visibility of variables inside a subprogram.
+
+5. **Define overloaded method.**
+   → A method with the same name but different parameters.
+
+6. **What are generic methods?**
+   → Methods that work with different data types using type parameters.
+
+7. **Mention any two design issues in functions.**
+   → Parameter passing method, return values.
+
+8. **What is the semantic meaning of a call statement?**
+   → It transfers control to the subprogram and begins execution.
+
+9. **What is the purpose of a return statement?**
+   → To send back a value and control to the calling code.
+
+10. **Define stack-dynamic local variable.**
+    → A variable created at runtime when the subprogram is called.
+
+11. **What is a nested subprogram?**
+    → A function defined inside another function.
+
+12. **What is a block in programming?**
+    → A group of statements enclosed in `{}` or `begin-end`.
+
+13. **Define dynamic scoping.**
+    → Variable resolution based on the call sequence, not the program structure.
+
+14. **What are default parameters in subprograms?**
+    → Parameters with predefined values if no value is passed.
+
+15. **What is a subprogram protocol?**
+    → The interface that includes the name, parameter list, and return type.
+
+---
+
+### **UNIT IV – OBJECT-ORIENTATION, CONCURRENCY, AND EVENT HANDLING**
+
+1. **What are the basic principles of object-oriented programming?**
+   → Encapsulation, Inheritance, Polymorphism, Abstraction.
+
+2. **Define inheritance.**
+   → A mechanism where a class inherits properties of another class.
+
+3. **What is encapsulation?**
+   → Hiding internal details and exposing only essential features.
+
+4. **Mention any two design issues in OOP languages.**
+   → Object allocation/deallocation and inheritance type (single/multiple).
+
+5. **What is method overriding?**
+   → Redefining a base class method in a derived class.
+
+6. **Define constructor and destructor.**
+   → Constructor: Initializes objects.
+   Destructor: Cleans up when an object is destroyed.
+
+7. **What is concurrency?**
+   → Execution of multiple threads or processes at the same time.
+
+8. **Define semaphore.**
+   → A variable used for controlling access to a common resource in concurrent systems.
+
+9. **What is a monitor in concurrency?**
+   → A synchronization construct that allows safe access to shared resources.
+
+10. **What is message passing?**
+    → A method where processes communicate by sending and receiving messages.
+
+11. **Define a thread.**
+    → A lightweight process or unit of execution within a program.
+
+12. **What is statement-level concurrency?**
+    → Multiple statements executing simultaneously.
+
+13. **What is exception handling?**
+    → A mechanism to handle runtime errors.
+
+14. **What is an event in event-driven programming?**
+    → An action like a mouse click or key press that triggers code execution.
+
+15. **What is the difference between process and thread?**
+    → Process: Independent execution.
+    Thread: Lightweight, shares memory with other threads in the same process.
+
+---
+
+### **UNIT V – FUNCTIONAL AND LOGIC PROGRAMMING LANGUAGES**
+
+1. **What is lambda calculus?**
+   → A formal system for expressing computation using functions.
+
+2. **Define a lambda expression.**
+   → An anonymous function like `(x) => x + 1`.
+
+3. **Mention any two features of functional programming.**
+   → No side effects, functions as first-class citizens.
+
+4. **What is recursion in functional programming?**
+   → A function calling itself to solve a smaller subproblem.
+
+5. **Define referential transparency.**
+   → An expression can be replaced with its value without changing behavior.
+
+6. **What is Scheme?**
+   → A minimalist functional programming language based on Lisp.
+
+7. **What is ML in functional programming?**
+   → A statically typed functional language with type inference.
+
+8. **Mention one difference between Scheme and ML.**
+   → Scheme is dynamically typed; ML is statically typed.
+
+9. **What is logic programming?**
+   → Programming using formal logic to express facts and rules.
+
+10. **What is a proposition in symbolic logic?**
+    → A statement that can be either true or false.
+
+11. **What is Prolog?**
+    → A logic programming language used in AI and symbolic reasoning.
+
+12. **Define backtracking in logic programming.**
+    → Trying alternative solutions when the current one fails.
+
+13. **What is a fact and a rule in Prolog?**
+    → Fact: Known truth. Rule: Condition-based inference.
+
+14. **What are multi-paradigm languages?**
+    → Languages that support more than one programming paradigm.
+
+15. **Give an example of a logic programming language.**
+    → Prolog.
+
+---
+

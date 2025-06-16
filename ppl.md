@@ -951,3 +951,159 @@ Modern apps are **event-driven**—code responds to actions instead of running l
 ---
 
 <br><br>
+
+
+## 📚 UNIT V – Functional and Logic Programming Languages
+
+
+### 🔹 1. **Lambda Calculus – The Foundation of Functional Programming**
+
+* It’s a **mathematical model** used to define computation with functions
+* Introduced by **Alonzo Church**
+* Everything is based on **functions**, **function calls**, and **variable binding**
+
+**Basic Syntax:**
+
+```lambda
+λx.x      → Identity function  
+λx.λy.x+y → Adds two numbers
+```
+
+**Use in modern languages**: Underlies how **functional languages** and **anonymous functions** work
+e.g., Python, JavaScript, Haskell all secretly love lambda ❤
+
+📝 *Google:* `lambda calculus simple examples`
+
+---
+
+### 🔹 2. **Fundamentals of Functional Programming Languages**
+
+Functional programming is like treating your code like math equations – **no changing stuff**, just pure functions.
+
+**Core Concepts:**
+
+* **Pure Functions** → No side effects
+* **Immutability** → Variables can’t be changed
+* **First-class Functions** → Functions = variables
+* **Higher-order Functions** → Functions that take/return other functions
+* **Recursion** > Loops
+
+**Example in Python:**
+
+```python
+square = lambda x: x * x
+print(square(5))  # Output: 25
+```
+
+---
+
+### 🔹 3. **Programming with Scheme**
+
+* Scheme is a **minimal, clean** functional programming language
+* A **dialect of Lisp** – looks weird at first but very powerful
+
+**Key Points:**
+
+* Everything is in **prefix notation** `(operator operand1 operand2...)`
+* Supports **recursion**, **higher-order functions**
+* Used in teaching and AI
+
+**Example:**
+
+```scheme
+(define (square x) (* x x))
+(square 5) ; Output: 25
+```
+
+📝 *Google:* `scheme programming examples basic`
+
+---
+
+### 🔹 4. **Programming with ML (Meta Language)**
+
+* A **functional language** used in research, AI, and compilers
+* Known for:
+
+  * **Strong static typing**
+  * **Pattern matching**
+  * **Immutability**
+
+**Example (in Standard ML):**
+
+```ml
+fun square x = x * x;
+square 4; (* Output: 16 *)
+```
+
+📝 *Google:* `ML functional language example`
+
+---
+
+### 🔹 5. **Introduction to Logic and Logic Programming**
+
+Logic programming = “Declare facts, rules, and let the system figure it out” 🔍
+
+**Features:**
+
+* Based on **formal logic**
+* Uses **facts** (true statements), **rules**, and **queries**
+* The engine **infers results**
+
+---
+
+### 🔹 6. **Programming with Prolog**
+
+Prolog = OG logic programming language
+
+**Program =**
+
+* **Facts**: parent(john, sam).
+* **Rules**: grandparent(X, Y) :- parent(X, Z), parent(Z, Y).
+* **Query**: ?- grandparent(john, X).
+
+**Use cases**:
+
+* AI
+* Natural language processing
+* Expert systems
+
+📝 *Google:* `prolog logic programming examples`
+
+---
+
+### 🔹 7. **Multi-Paradigm Languages**
+
+These are languages that **mix multiple styles**: OOP, functional, logic, procedural
+
+| Language   | Paradigms Supported                           |
+| ---------- | --------------------------------------------- |
+| Python 🐍  | OOP, Functional, Procedural, Logic (via libs) |
+| JavaScript | Functional, Event-driven, OOP                 |
+| Scala      | OOP + Functional                              |
+| C++        | Procedural + OOP + Generic                    |
+| Rust 🦀    | Functional + Systems Programming              |
+
+**Example in Python:**
+
+```python
+# Functional
+double = lambda x: x * 2
+
+# OOP
+class Dog:
+    def bark(self): print("Woof!")
+```
+
+---
+
+## 🧾 Exam-Ready Summary 💯
+
+> Unit 5 focuses on **functional and logic programming paradigms**.
+>
+> * **Lambda calculus** is the theoretical foundation of functional languages.
+> * **Functional programming** emphasizes pure functions and immutability.
+> * **Languages like Scheme and ML** are used for function-based development.
+> * **Logic programming**, seen in **Prolog**, uses facts and rules to infer results.
+> * **Multi-paradigm languages** like Python and Scala allow mixing different programming styles for flexibility.
+
+---

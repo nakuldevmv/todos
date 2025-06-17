@@ -853,6 +853,11 @@ Device used for biomass gasification.
 > **diagram: true** – Search: `geothermal power plant types`, `flash steam geothermal plant`
 ![alt text](https://img.machinedesign.com/files/base/ebm/machinedesign/image/2018/04/www_machinedesign_com_sites_machinedesign.com_files_Plant_Designs.png?auto=format,compress&fit=max&q=45&w=640&width=640)
 
+![alt text](https://www.researchgate.net/publication/351120404/figure/fig2/AS%3A1027427102883843%401621969118649/Types-of-geothermal-power-plants-a-dry-steam-geothermal-plant-b-flash-steam.png)
+a) Dry Steam 
+b) Flash Steam
+c) Binary Steam
+
 ---
 
 ## 🌊 3. **OTEC – Ocean Thermal Energy Conversion**

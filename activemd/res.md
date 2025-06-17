@@ -433,6 +433,7 @@ Understanding these helps in better **site planning** and **performance predicti
 ![alt text](https://sciencediagrams.com/wp-content/uploads/2021/02/wind_turbine_diagram1.jpg)
 ![](res/windturbine.png)
 ![](res/wt.png)
+![alt text](https://ars.els-cdn.com/content/image/3-s2.0-B9780128095973005319-f0500531-79-9780128095973.jpg)
 
 ---
 

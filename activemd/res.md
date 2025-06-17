@@ -180,7 +180,7 @@ India is a **global leader in renewable energy adoption**.
 
 ![Pyreliometer](https://www.electroniclinic.com/wp-content/uploads/2021/01/pyreliometer.jpg)
 Pyreliometer
-![pyranometer](https://www.researchgate.net/profile/Joakim-Munkhammar-2/publication/332606005/figure/fig5/AS:751130078371844@1556094774809/A-schematic-illustration-of-a-pyranometer-a-and-a-pyrheliometer-b-based-on-9-and.png)
+![pyranometer](https://www.kippzonen.com/data/images/Coating.png)
 pyranometer
 ---
 

@@ -107,8 +107,8 @@ India is a **global leader in renewable energy adoption**.
 📌 **diagram: true**
 **Google search:** `india renewable energy potential graph`
 ![](https://www.statista.com/graphic/1/1401414/india-solar-power-generation.jpg)
-![](res\nonre.png)
-![](res\re.png)
+![](res/nonre.png)
+![](res/re.png)
 
 
 ---
@@ -221,8 +221,8 @@ pyranometer
 🔍 `diagram: true`
 **Google Search**: "Types of concentrating solar collectors diagram"
 ![alt text](https://energypedia.info/images/thumb/1/11/Greenpeace_International_Technologies_CSP.png/500px-Greenpeace_International_Technologies_CSP.png)
-![](res\fren.png)
-![](res\1.png)
+![](res/fren.png)
+![](res/1.png)
 ---
 
 ### 🔶 Efficiency & Performance of Collectors
@@ -264,7 +264,7 @@ pyranometer
 **Google Search**: "Solar photovoltaic working diagram"
 ![alt text](https://www.electroniclinic.com/wp-content/uploads/2022/04/Solar-Cell-or-Photo-Voltaic-Cell-768x547.jpg)
 ![alt text](https://cdn-jiihh.nitrocdn.com/okWzVIlsOZmwuKilUhYZsewvVnPbusQb/assets/images/optimized/rev-aa3e572/www.solarctrl.com/wp-content/uploads/2024/03/From-Solar-Cells-to-Solar-Panels1.png)
-![](res\2.png)
+![](res/2.png)
 
 ---
 
@@ -295,11 +295,11 @@ pyranometer
 🔍 `diagram: true`
 **Google Search**: "Solar PV applications diagram"
 ![alt text](https://media.geeksforgeeks.org/wp-content/uploads/20240206170916/ppdrawio.png)
-![](res\3.png)
-![](res\4.png)
-![](res\5.png)
-![](res\6.png)
-![](res\7.png)
+![](res/3.png)
+![](res/4.png)
+![](res/5.png)
+![](res/6.png)
+![](res/7.png)
 
 
 
@@ -429,8 +429,8 @@ Understanding these helps in better **site planning** and **performance predicti
 📌 **diagram: true**
 🔍 *Search:* `wind turbine components labeled diagram`
 ![alt text](https://sciencediagrams.com/wp-content/uploads/2021/02/wind_turbine_diagram1.jpg)
-![](res\windturbine.png)
-![](res\wt.png)
+![](res/windturbine.png)
+![](res/wt.png)
 
 ---
 
@@ -808,7 +808,7 @@ Device used for biomass gasification.
 * ❌ Hydrogen storage is complex
 
 > **diagram: true** – Search: `working of hydrogen fuel cell`, `PEMFC diagram`
-![](res\hfc.png)
+![](res/hfc.png)
 
 ---
 

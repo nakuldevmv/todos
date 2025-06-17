@@ -856,7 +856,7 @@ Device used for biomass gasification.
 ![alt text](https://www.researchgate.net/publication/351120404/figure/fig2/AS%3A1027427102883843%401621969118649/Types-of-geothermal-power-plants-a-dry-steam-geothermal-plant-b-flash-steam.png)
 a) Dry Steam 
 b) Flash Steam
-c) Binary Cycle
+c) Binary Steam
 
 ---
 
@@ -886,7 +886,7 @@ c) Binary Cycle
 ![text](https://www.researchgate.net/profile/S-Sadeghzadeh/publication/316784198/figure/fig1/AS:568798835953664@1512623618003/OTEC-open-cycle-schematic.png)
 open cycle OTEC
 
-![alt text](https://www.eeeguide.com/wp-content/uploads/2023/02/Schematic-Layout-of-OTEC-02.jpg)
+![alt text](https://www.researchgate.net/profile/Petter-Terenius/publication/328741842/figure/fig4/AS:689952073478152@1541508801466/The-working-principle-for-closed-cycle-OTEC-A-working-fluid-such-as-ammonia-vaporizes-in.png)
 closed cycle OTEC
 
 ---

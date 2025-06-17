@@ -452,6 +452,8 @@ A complete system that captures wind energy and converts it into electrical ener
 **💡 Working Flow:**
 Wind → Blades spin → Shaft → Gearbox → Generator → Output → Controller → Grid/Storage
 
+![alt text](https://ars.els-cdn.com/content/image/3-s2.0-B9780323886680000085-f06-07-9780323886680.jpg)
+
 ---
 
 ### 🔹 7. **Classification of WECS Devices**

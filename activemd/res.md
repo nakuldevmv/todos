@@ -692,7 +692,7 @@ Floating Drum
 
 ✅ diagram: true
 🔍 Search: `biomass gasification diagram`
-![alt text](https://ars.els-cdn.com/content/image/3-s2.0-B9780081026311000158-f15-03-9780081026311.jpg)
+![](https://i.ytimg.com/vi/fUKhsZlhF-Y/sddefault.jpg)
 
 #### 🔸 What is it?
 

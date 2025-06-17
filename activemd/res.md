@@ -619,7 +619,7 @@ Biogas = **Methane (CH₄)** + CO₂, made when organic matter decomposes anaero
 🔍 Search: `types of biogas plant diagrams`
 ![alt text](https://www.funscience.in/wp-content/uploads/2020/08/FixedDomeTypeBioGasPlant.png)
 Fixed Dome
-![alt text](https://www.researchgate.net/publication/232285040/figure/fig1/AS%3A393343138844678%401470791720575/Schematic-sketch-of-a-floating-drum-digester.png)
+![alt text](res/float.jpeg)
 Floating Drum
 
 #### 🔸 A. **Fixed Dome Type**:

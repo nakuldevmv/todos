@@ -1,5 +1,7 @@
 # Renewable Energy Systems (OEE351)
 
+> **Note:** Diagrams might be incorrect. Please check them yourself.
+
 <br><br>
 
 # 🌱 **UNIT I – INTRODUCTION**

@@ -692,8 +692,11 @@ Floating Drum
 
 ✅ diagram: true
 🔍 Search: `biomass gasification diagram`
-![](https://i.ytimg.com/vi/fUKhsZlhF-Y/sddefault.jpg)
+![text](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUc3aljO-i5d3r9Z4PxAeA28g72qIeevfTow&s)
+Updraft
 
+![text](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdEcZg8Hep4VZxFXUtJN7nP0G9GZEsWSjwsA&s)
+DownDraft
 #### 🔸 What is it?
 
 Converts solid biomass into **producer gas (CO, H₂, CH₄)** by reacting at **800–1000°C** with limited oxygen.

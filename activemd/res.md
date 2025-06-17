@@ -856,7 +856,7 @@ Device used for biomass gasification.
 ![alt text](https://www.researchgate.net/publication/351120404/figure/fig2/AS%3A1027427102883843%401621969118649/Types-of-geothermal-power-plants-a-dry-steam-geothermal-plant-b-flash-steam.png)
 a) Dry Steam 
 b) Flash Steam
-c) Binary Steam
+c) Binary Cycle
 
 ---
 

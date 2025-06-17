@@ -588,6 +588,8 @@ Wind → Blades spin → Shaft → Gearbox → Generator → Output → Controll
 | Thermo-chemical | Gas, heat       | High-temp burn   |
 | Bio-chemical    | Biogas, ethanol | Microbial action |
 
+
+![alt text](https://www.celignis.com/img/Picture6.png)
 ---
 
 ### 🔹 3. **Biogas Generation**

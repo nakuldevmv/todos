@@ -1,129 +1,242 @@
 # Embedded Systems and IoT (CS3691)
 
+<br><br>
 
-
-## 🌟 UNIT I – 8-BIT EMBEDDED PROCESSOR
-
-**Topics Covered:**
-
-* 8-Bit Microcontroller
-* Architecture
-* Instruction Set and Programming
-* Programming Parallel Ports
-* Timers and Serial Port
-* Interrupt Handling
+# ✅ UNIT I – 8-BIT EMBEDDED PROCESSOR
 
 ---
 
-### 🔹 1. 8-Bit Microcontroller
+## 🔹 1. **8-Bit Microcontroller (8051 Basics)**
 
-* A **microcontroller** is a compact integrated circuit designed to govern a specific operation in an embedded system.
-* “8-bit” means it can process 8 bits of data at a time (the size of its internal registers and ALU).
-* **8051** is the most commonly used 8-bit microcontroller.
+### What is it?
 
-📌 **Features of 8051:**
+* A **microcontroller** is a compact chip with:
 
-* 4K ROM, 128B RAM
-* 4 parallel I/O ports (each 8-bit wide)
-* 2 Timers
-* 1 Serial communication port
-* 5 Interrupts (2 external, 3 internal)
+  * CPU
+  * Memory (RAM & ROM)
+  * I/O Ports
+  * Timers
+  * Serial Communication Interface
+  * Interrupts
+* Used for **dedicated control applications** like washing machines, robots, cars.
+
+### 8051 Specifics:
+
+* **8-bit processor** → handles 8-bit data at a time.
+* Based on **Harvard Architecture** → separate memory for code and data.
+* CMOS-based, low power, used in embedded systems.
+
+### Core Features of 8051:
+
+* 4 KB ROM
+* 128 bytes RAM
+* 4 parallel I/O ports (P0–P3)
+* 2 Timers (Timer 0 and Timer 1)
+* Full-duplex UART Serial Port
+* 5 interrupt sources
+* 1 MHz to 12 MHz operation
+* 16-bit Program Counter
+* Bit-addressable RAM and SFRs
 
 ---
 
-### 🔹 2. Architecture of 8051
+## 🔹 2. **Architecture of 8051 Microcontroller**
 
 **diagram: true**
-🔍 Google: `8051 Microcontroller architecture diagram`
+Search: `8051 microcontroller block diagram`
 
-📌 **Key Components:**
+### Key Components:
 
-* **ALU** – Performs arithmetic/logic operations.
-* **Registers** – Includes accumulator (A), B register, R0–R7.
-* **ROM** – Stores program code (4K).
-* **RAM** – Stores temporary data (128 bytes).
-* **Program Counter (PC)** – Tracks instruction address.
-* **Timers/Counters** – Handle timing operations.
-* **I/O Ports** – P0–P3 used for interfacing with peripherals.
-* **Interrupt control unit** – Handles interrupts.
-* **Serial port** – For serial communication (TX/RX lines).
+* **CPU**: Executes instructions from memory.
+* **RAM (128 Bytes)**: Temporary data storage during execution.
+* **ROM (4 KB)**: Stores permanent program code.
+* **I/O Ports**:
+
+  * P0 to P3 (8-bit each)
+  * Used to connect peripherals like LEDs, switches.
+* **Timers/Counters**:
+
+  * Timer 0 and Timer 1 (16-bit each)
+  * Used for generating delays and counting events.
+* **Serial Port (UART)**:
+
+  * For sending/receiving serial data.
+* **Interrupt Control**:
+
+  * Handles high-priority tasks asynchronously.
+* **Oscillator**:
+
+  * Clock signal generator.
+* **Bus System**:
+
+  * Address Bus (16-bit), Data Bus (8-bit) for internal communication.
 
 ---
 
-### 🔹 3. Instruction Set & Programming
+## 🔹 3. **Instruction Set and Programming in 8051**
 
-📌 Divided into 4 groups:
+### Categories of Instructions:
 
-1. **Data Transfer Instructions** (`MOV`, `PUSH`, `POP`, etc.)
-2. **Arithmetic Instructions** (`ADD`, `SUBB`, `INC`, `DEC`)
-3. **Logical Instructions** (`ANL`, `ORL`, `XRL`, `CLR`)
-4. **Control Instructions** (`SJMP`, `ACALL`, `RET`, `NOP`)
+| Category             | Use                             | Examples               |
+| -------------------- | ------------------------------- | ---------------------- |
+| **Data Transfer**    | Move data between registers/mem | `MOV`, `XCH`, `PUSH`   |
+| **Arithmetic**       | Perform calculations            | `ADD`, `SUBB`, `INC`   |
+| **Logical**          | Logic operations                | `ANL`, `ORL`, `CPL`    |
+| **Branching**        | Control flow                    | `SJMP`, `AJMP`, `CALL` |
+| **Bit Manipulation** | Set/Clear/test bits             | `SETB`, `CLR`, `JB`    |
 
-✅ Example:
+### Example Code:
 
 ```asm
-MOV A, #45H ; Move 45H to accumulator
-ADD A, R2   ; Add register R2 to accumulator
+MOV A, #0AH       ; Load 10 into Accumulator
+ADD A, #14H       ; Add 20
+MOV R1, A         ; Store result in Register R1
+```
+
+### Important Registers:
+
+* **A (Accumulator)** – main register used in operations.
+* **B** – used for multiplication/division.
+* **DPTR** – Data Pointer (used in external memory).
+* **PSW** – Program Status Word (flags like Carry, Zero).
+* **PC** – Program Counter.
+
+---
+
+## 🔹 4. **Programming Parallel Ports (I/O Ports)**
+
+**diagram: false**
+
+8051 has **four 8-bit ports** (P0, P1, P2, P3), each can be:
+
+* Input
+* Output
+* Bi-directional
+* Also serve **alternate functions** (especially P3).
+
+| Port | Function             | Special Use                          |
+| ---- | -------------------- | ------------------------------------ |
+| P0   | Multiplexed I/O      | Address/Data bus for external memory |
+| P1   | Simple I/O           | No alternate function                |
+| P2   | I/O and High Address | Used in external memory access       |
+| P3   | I/O and Special Pins | Interrupts, Timers, Serial Comm.     |
+
+### Example:
+
+```asm
+MOV P1, #0FFH  ; Output: Set all pins of Port 1 HIGH
+MOV A, P2      ; Input: Read Port 2 into Accumulator
 ```
 
 ---
 
-### 🔹 4. Programming Parallel Ports
+## 🔹 5. **Timers and Serial Port**
 
-**Ports:** P0, P1, P2, P3
-
-📌 Each port is 8-bit wide and can be configured as input/output.
-✅ Example:
-
-```c
-P1 = 0xFF; // Make Port1 all high (input mode)
-P2 = 0x00; // Make Port2 all low (output mode)
-```
-
-🧠 Common Uses:
-
-* Interface LEDs, switches, LCDs, etc.
-
----
-
-### 🔹 5. Timers & Serial Port
-
-**Timers (T0, T1)**
-Used for delay generation, counting external pulses.
-
-📌 Timer Modes (M0 to M3)
-
-* Mode 0: 13-bit timer
-* Mode 1: 16-bit timer
-* Mode 2: 8-bit auto-reload
-* Mode 3: Split timer mode
-
-✅ Example use: Generate 1ms delay.
-
-**Serial Port**
-Used to send/receive data over serial communication (RS232, UART).
-
-📌 Registers:
-
-* `SBUF` – Serial buffer
-* `SCON` – Serial control
-* `TI` and `RI` – Transmit and Receive flags
-
----
-
-### 🔹 6. Interrupt Handling
-
-📌 8051 supports 5 interrupts:
-
-1. INT0 (External 0)
-2. TF0 (Timer 0 Overflow)
-3. INT1 (External 1)
-4. TF1 (Timer 1 Overflow)
-5. Serial communication (RI/TI)
-
-✅ **ISR** – Interrupt Service Routine
-💡 When an interrupt occurs, control jumps to ISR.
+### ⏲️ Timers in 8051
 
 **diagram: true**
-🔍 Google: `8051 interrupt vector table`
+Search: `8051 timer block diagram`
 
+* **Timer 0 & Timer 1** – can be used as **timers** (for delays) or **counters** (for event counting).
+* Controlled using registers:
+
+  * `TMOD` – Mode selection
+  * `TCON` – Control operations (start, overflow flags)
+  * `THx/TLx` – High and Low byte for count
+
+#### Modes of Timer:
+
+| Mode | Bit-size          | Use                     |
+| ---- | ----------------- | ----------------------- |
+| 0    | 13-bit            | Rarely used             |
+| 1    | 16-bit            | Normal timing           |
+| 2    | 8-bit auto-reload | Repeats automatically   |
+| 3    | Split mode        | Only Timer 0 gets split |
+
+### Example:
+
+```asm
+MOV TMOD, #01H     ; Timer 0, Mode 1 (16-bit)
+MOV TH0, #0FCH
+MOV TL0, #066H      ; Load count
+SETB TR0            ; Start Timer 0
+```
+
+---
+
+### 📡 Serial Port (UART)
+
+**diagram: true**
+Search: `8051 serial communication diagram`
+
+* Full-duplex asynchronous communication
+* **Registers:**
+
+  * `SBUF`: Buffer register
+  * `SCON`: Control (mode, transmit, receive)
+  * `TI/RI`: Transmit and receive complete flags
+
+### Baud Rate Setting:
+
+* Controlled via **Timer 1** in auto-reload mode
+
+### Serial Transmission Example:
+
+```asm
+MOV SCON, #50H     ; Mode 1, 8-bit UART
+MOV TMOD, #20H     ; Timer1, Mode2
+MOV TH1, #0FDH     ; Set baud rate (9600)
+SETB TR1           ; Start Timer1
+MOV SBUF, #'A'     ; Transmit char 'A'
+WAIT: JNB TI, WAIT ; Wait for complete
+CLR TI             ; Clear transmit flag
+```
+
+---
+
+## 🔹 6. **Interrupt Handling in 8051**
+
+**diagram: true**
+Search: `8051 interrupt flowchart` or `8051 interrupt handling diagram`
+
+### What is an Interrupt?
+
+* A signal that tells the CPU to pause the current task and run a **special routine** (ISR).
+* Used to handle **urgent tasks** like input signal, timer overflow, data received, etc.
+
+### 8051 Has 5 Interrupt Sources:
+
+| Interrupt | Vector Address | Trigger             |
+| --------- | -------------- | ------------------- |
+| INT0      | 0003H          | External pin (P3.2) |
+| TF0       | 000BH          | Timer 0 overflow    |
+| INT1      | 0013H          | External pin (P3.3) |
+| TF1       | 001BH          | Timer 1 overflow    |
+| Serial    | 0023H          | TX/RX complete      |
+
+### Registers:
+
+* **IE (Interrupt Enable):** Enable/disable specific interrupts
+* **IP (Interrupt Priority):** Set high or low priority
+* **TCON:** Edge/level control for external interrupts
+
+### ISR Flow:
+
+1. Interrupt occurs
+2. MCU finishes current instruction
+3. Saves return address (PC)
+4. Jumps to ISR (Interrupt Service Routine)
+5. Executes task
+6. Returns using `RETI`
+
+### Example:
+
+```asm
+ORG 0003H       ; INT0 vector
+CLR P1.0        ; ISR task
+RETI            ; Return to main
+```
+
+---
+
+<br><br>

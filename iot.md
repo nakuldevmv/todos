@@ -44,6 +44,7 @@
 
 **diagram: true**
 Search: `8051 microcontroller block diagram`
+![alt text](https://polynoteshub.co.in/wp-content/uploads/2024/12/polynoteshub-24.png)
 
 ### Key Components:
 
@@ -136,6 +137,7 @@ MOV A, P2      ; Input: Read Port 2 into Accumulator
 
 **diagram: true**
 Search: `8051 timer block diagram`
+[Timer And Counter GeeksForGeeks](https://www.geeksforgeeks.org/electronics-engineering/8051-timers-and-counters/)
 
 * **Timer 0 & Timer 1** – can be used as **timers** (for delays) or **counters** (for event counting).
 * Controlled using registers:
@@ -168,6 +170,7 @@ SETB TR0            ; Start Timer 0
 
 **diagram: true**
 Search: `8051 serial communication diagram`
+![alt text](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgveDwddlIOP_eHRhkg1xZ_FkNDAD4SS9EsU7BrG3P1FlOgHTU-ad_J1uy2C0EcVCjOhsnisxT5ual0UN6mGCbL2PjwU8Uf7J3KMbxzP0HNWYWfnXYlXb2Oz00n_o8HLK4nZqaC_50UuXQ5/s1600/13.jpg)
 
 * Full-duplex asynchronous communication
 * **Registers:**
@@ -198,6 +201,7 @@ CLR TI             ; Clear transmit flag
 
 **diagram: true**
 Search: `8051 interrupt flowchart` or `8051 interrupt handling diagram`
+![alt text](https://codembedded.wordpress.com/wp-content/uploads/2017/03/862ac-8051_interrupt.png)
 
 ### What is an Interrupt?
 

@@ -648,6 +648,9 @@ Boards differ in:
 
 **Toolchain** = Full process from code → hardware.
 
+diagram: true
+🔍 Google search: arduino toolchain workflow diagram
+
 | Stage                  | Function                           |
 | ---------------------- | ---------------------------------- |
 | **Editor (IDE)**       | Write code (`.ino` sketch)         |

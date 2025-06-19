@@ -2764,3 +2764,472 @@ Always check:
 * **Libraries** (some sensors like DHT11 need them)
 
 ---
+
+
+<br>
+<br>
+<br>
+
+# Unit 4
+
+
+
+
+## 📡 **1. IoT Communication Protocols**
+
+
+
+
+### 🔌 A. **Network Layer Protocols**
+
+These move data between devices & cloud.
+
+#### 🧊 **IP (Internet Protocol)**
+
+* Used in Internet-based communication.
+* IPv6 is more suitable due to IoT's large device count.
+
+---
+
+### 📨 B. **Transport Layer Protocols**
+
+#### 🌐 **TCP (Transmission Control Protocol)**
+
+* Reliable (guarantees delivery)
+* Slower.
+* Used for apps where data **must** arrive correctly (e.g., firmware updates).
+
+#### 📡 **UDP (User Datagram Protocol)**
+
+* Faster, but no guarantee of delivery.
+* Used in **real-time data** (e.g., live temperature streaming).
+
+---
+
+### 🔄 C. **Application Layer Protocols**
+
+These define *how* IoT devices share data.
+
+| Protocol                                     | Use Case             | Features                                       |
+| -------------------------------------------- | -------------------- | ---------------------------------------------- |
+| **MQTT** (Message Queue Telemetry Transport) | Smart homes, sensors | Lightweight, reliable, publish/subscribe model |
+| **CoAP** (Constrained Application Protocol)  | Low-power devices    | Works like HTTP but lightweight                |
+| **HTTP/HTTPS**                               | Web-based IoT apps   | Secure, familiar, heavy for small devices      |
+| **AMQP**                                     | Banking & industrial | Secure, queue-based                            |
+| **DDS** (Data Distribution Service)          | Real-time apps       | High performance, complex                      |
+
+---
+
+📸 **diagram: true**
+**Search:** `IoT communication protocols comparison table diagram`
+
+---
+
+## 🧭 **2. IoT Communication Models**
+
+These describe *who talks to whom* and *how often*. Think of it as the conversation flow in IoT.
+
+---
+
+[Communication model GeeksForGeeks](https://www.geeksforgeeks.org/computer-science-fundamentals/communication-models-in-iot-internet-of-things/)
+
+
+### ✅ 1. **Request-Response (Client-Server) Model**
+
+* **How it works:**
+  Client (device) sends a request ➡️ Server responds.
+  It’s synchronous — the client waits for a response.
+
+* **Example:**
+  Smart sensor sending temperature data to a cloud server and waiting for acknowledgment.
+
+* **Protocol used:** HTTP
+
+* **Use case:** REST APIs, sensor reading, control commands
+
+---
+
+### ✅ 2. **Publish-Subscribe Model**
+
+* **How it works:**
+  Devices (publishers) send messages to a **broker**.
+  Subscribers get updates from the broker **only for topics they subscribed to.**
+
+* **Example:**
+  Smart bulb subscribes to “room/light” topic.
+  App publishes “ON” to that topic → bulb receives it.
+
+* **Protocols used:** MQTT, AMQP
+
+* **Use case:** Real-time control, notifications, chat-like systems
+
+---
+
+### ✅ 3. **Push-Pull Model**
+
+* **How it works:**
+  Data producers (pushers) keep sending data to a queue.
+  Consumers (pullers) pick data when needed.
+
+* **Example:**
+  Weather sensors pushing data to a queue.
+  Analytics engine pulls only when needed.
+
+* **Protocols used:** AMQP, HTTP
+
+* **Use case:** Efficient data processing pipelines.
+
+---
+
+### ✅ 4. **Exclusive Pair Model (1:1 communication)**
+
+* **How it works:**
+  Direct connection between two endpoints for private, secure communication.
+
+* **Example:**
+  BLE communication between fitness band and smartphone.
+
+* **Use case:** Wearables, personal IoT gadgets
+
+---
+
+📸 **diagram: true**
+**Search:** `IoT communication models (request-response, publish-subscribe, push-pull) diagram`
+
+---
+
+---
+
+## ⚙️ **3. APIs (Application Programming Interfaces)**
+
+> 🔑 **APIs are the rules that allow software to talk to hardware/cloud/apps.**
+
+They help **IoT devices communicate with other systems**, like cloud servers, apps, and dashboards.
+
+---
+
+### A. **Types of APIs**
+
+| API Type            | Use                                                |
+| ------------------- | -------------------------------------------------- |
+| **REST API**        | Most common, uses HTTP                             |
+| **WebSocket API**   | For real-time updates                              |
+| **GraphQL API**     | Efficient data fetching                            |
+| **MQTT Broker API** | Used with MQTT for publishing/subscribing messages |
+
+---
+
+### B. **Why APIs Are Essential in IoT**
+
+* 📤 **Send data** from device → cloud/server
+* 📥 **Receive commands** from cloud → device
+* 🔄 **Update apps** with real-time info
+* 🔌 **Third-party integration** (e.g., Google Home, Alexa)
+
+---
+
+### 💡 Example:
+
+* Your smart bulb API might let a mobile app:
+
+  * Turn it on/off
+  * Change color
+  * Get current status
+
+---
+
+📸 **diagram: true**
+**Search:** `IoT REST API communication diagram`
+
+---
+
+
+<br><br>
+
+
+
+## 📡 **Bluetooth Architecture – CS3691 Unit IV**
+
+### 📍What is Bluetooth?
+
+Bluetooth is a **short-range wireless communication protocol** used in IoT devices for data exchange — like your phone talking to a smartwatch, or wireless headphones syncing with a laptop.
+
+---
+
+## 🧠 Core Concepts of Bluetooth Architecture
+
+### 1. **Piconet**
+
+* A **small ad-hoc network** formed by **1 master + up to 7 active slaves**.
+* All communication happens through the master.
+* 🧠 *Think of it like a group chat where only the admin can send messages, and others reply via the admin.*
+
+### 2. **Scatternet**
+
+* A combination of multiple piconets.
+* A device can be part of **multiple piconets** (master in one, slave in another).
+* Enables **larger and more flexible** Bluetooth networks.
+
+![alt text](https://media.geeksforgeeks.org/wp-content/uploads/20240413085123/Untitled-Diagram---2024-04-13T085111331.webp)
+
+### 📘 Use this in your answer:
+
+> Bluetooth supports *Piconets* (1-to-many) and *Scatternets* (many interconnected Piconets) for network formation.
+
+---
+
+## 🧩 Bluetooth Protocol Stack (Optional but good for 13-marks)
+
+### 📌 Layered View (Bottom to Top):
+
+| Layer                                                  | Description                                                |
+| ------------------------------------------------------ | ---------------------------------------------------------- |
+| **Radio Layer**                                        | Handles the physical wireless transmission (2.4 GHz band). |
+| **Baseband**                                           | Manages physical links, addresses, error correction.       |
+| **Link Manager Protocol (LMP)**                        | Handles link setup, authentication, encryption.            |
+| **Host Controller Interface (HCI)**                    | Acts as bridge between hardware and software.              |
+| **Logical Link Control & Adaptation Protocol (L2CAP)** | Data multiplexing, segmentation, reassembly.               |
+| **RFCOMM**                                             | Emulates serial ports for legacy compatibility.            |
+| **SDP (Service Discovery Protocol)**                   | Lets devices discover each other’s services.               |
+
+🧠 Easy way to remember:
+**Radio ➝ Baseband ➝ LMP ➝ HCI ➝ L2CAP ➝ RFCOMM ➝ SDP**
+
+But if you forget, don't panic — just explain **Piconet, Scatternet, and basic data flow**.
+
+---
+
+### 📍Working Steps:
+
+1. Devices **discover** each other (Inquiry).
+2. **Connection request** sent to master.
+3. Master sets frequency hopping and syncs all devices.
+4. Devices **pair** (authentication).
+5. Data transfer begins (with encryption if needed).
+
+---
+
+## 💡 Real-Life Applications:
+
+* Wireless earbuds
+* Smartwatches
+* Fitness trackers
+* IoT home devices (Bluetooth smart bulbs, locks)
+
+---
+
+## 🔍 diagram: true
+
+**Google search phrase:**
+`Bluetooth architecture protocol stack diagram`
+Or
+`Bluetooth piconet and scatternet diagram`
+
+---
+
+<br><br>
+
+
+
+## 🌐 **Wi-Fi Architecture**
+
+### 📍What is Wi-Fi?
+
+Wi-Fi (Wireless Fidelity) is a **wireless networking technology** that uses radio waves to provide high-speed **internet and network connections** without cables.
+
+---
+
+## 🏗️ Components of Wi-Fi Architecture
+
+### 1. **Station (STA)**
+
+* Any Wi-Fi-enabled device (e.g. laptop, smartphone, IoT sensor).
+* It contains a **wireless network interface card (NIC)**.
+
+### 2. **Access Point (AP)**
+
+* Acts as a **central transmitter and receiver**.
+* Provides wireless connectivity to the devices.
+* Think of it like a router or hotspot.
+
+### 3. **Wireless Medium**
+
+* Uses **radio waves** (2.4 GHz or 5 GHz band) to transmit data.
+* Works based on **IEEE 802.11 standards**.
+
+### 4. **Distribution System (DS)**
+
+* Connects **multiple access points** using a **wired** or **wireless** backbone (Ethernet, fiber).
+* Helps extend coverage area like in campuses or multi-floor buildings.
+
+---
+
+## 📶 Modes of Operation
+
+### 🔹 **Infrastructure Mode** (most common)
+
+* Devices (STAs) connect to an **Access Point**.
+* Access Point connects to **internet or other networks**.
+* Used in homes, colleges, offices.
+
+### 🔹 **Ad-Hoc Mode**
+
+* No Access Point needed.
+* Devices communicate **directly** with each other.
+* Useful in temporary or emergency networks.
+
+![alt text](https://www.researchgate.net/publication/316175326/figure/fig1/AS:495727332610048@1495202014846/Ad-hoc-mode-vs-Infrastructure-mode-IEEE80211-introduced-many-types-of-the-Wi-Fi.png)
+---
+
+## 💻 Internal Layers in Wi-Fi (IEEE 802.11 stack)
+
+| Layer                    | Function                                                   |
+| ------------------------ | ---------------------------------------------------------- |
+| **Physical Layer (PHY)** | Transmission via radio waves                               |
+| **MAC Layer**            | Medium Access Control (handles collisions, frame delivery) |
+| **Network Layer**        | IP addressing & routing                                    |
+| **Transport Layer**      | Ensures error-free delivery (TCP/UDP)                      |
+| **Application Layer**    | User applications (browsers, IoT apps)                     |
+
+🧠 For IoT focus more on PHY and MAC layers.
+
+---
+
+## 🛜 How Wi-Fi Works
+
+1. **STA scans** for nearby APs.
+2. Connects via **SSID (network name)** and password.
+3. AP assigns an **IP address** using DHCP.
+4. Devices communicate using **TCP/IP** over radio waves.
+
+---
+
+## 📲 Applications of Wi-Fi in IoT
+
+* Smart homes (lights, locks, thermostats)
+* Surveillance systems (IP cameras)
+* Healthcare (patient monitoring devices)
+* Smart agriculture (sensor networks)
+* Wearable IoT gadgets
+
+---
+
+## ✍️ diagram: true
+
+**Google Search Phrase**:
+`Wi-Fi architecture diagram IEEE 802.11`
+or
+`Wi-Fi infrastructure mode vs ad-hoc diagram`
+
+---
+
+<br><br>
+
+
+## 🌐 Zigbee Architecture
+
+### 🔍 What is Zigbee?
+
+Zigbee is a **low-power, low-data rate, wireless communication protocol** built on **IEEE 802.15.4** standard. It’s designed for **short-range communication** in IoT devices like smart lighting, energy meters, home automation, etc.
+
+---
+
+## 🧠 Key Features:
+
+* **Range**: \~10 to 100 meters
+* **Data Rate**: 20 Kbps – 250 Kbps
+* **Frequency**: 2.4 GHz (global), 868 MHz (EU), 915 MHz (USA)
+* **Power Usage**: Super low 🔋
+* **Ideal for**: Sensor networks, home automation, industrial monitoring
+
+---
+
+## 🏗️ Zigbee Network Architecture
+
+Zigbee networks use a **star**, **tree**, or **mesh** topology.
+
+### 1. **Zigbee Coordinator (ZC)**
+
+* Only one per network
+* Starts the network, assigns PAN ID
+* Stores info about the network
+
+### 2. **Zigbee Router (ZR)**
+
+* Extends network range
+* Forwards data to other nodes
+* Can connect with other routers or end devices
+
+### 3. **Zigbee End Device (ZED)**
+
+* Has limited functionality
+* Communicates only with its parent (ZC or ZR)
+* Lowest power consumption (used in sensors, remotes)
+
+🧠 Think of ZC as the "brain", ZRs as the "roads", and ZEDs as the "houses"!
+
+---
+
+## 🔄 Types of Topologies
+
+### 🌟 Star Topology:
+
+* All devices talk to the Coordinator directly
+* Easy, but range-limited
+
+### 🌳 Tree Topology:
+
+* Routers help build a tree structure
+* More scalable than star
+
+### 🕸️ Mesh Topology:
+
+* Devices can communicate with many neighbors
+* Highly reliable, self-healing
+
+![alt text](https://www.blackhillsinfosec.com/wp-content/uploads/2021/08/Picture4.png)
+
+---
+
+## 🗂️ Zigbee Protocol Stack (4 Layers)
+
+| Layer                 | Description                                     |
+| --------------------- | ----------------------------------------------- |
+| **Application Layer** | Defines how apps use the network                |
+| **Network Layer**     | Handles routing, device addressing              |
+| **MAC Layer**         | Controls access to the wireless channel         |
+| **Physical Layer**    | Modulates and transmits signals (IEEE 802.15.4) |
+
+![alt text](https://www.researchgate.net/publication/265150617/figure/fig2/AS:353974063517705@1461405401407/EEE820154-ZigBee-protocol-stack-architecture.png)
+
+📌 Zigbee is light on resources and heavy on networking. Super useful in **battery-powered IoT devices**.
+
+---
+
+## 📶 Working of Zigbee Network
+
+1. **Coordinator forms network**, assigns PAN ID.
+2. **Routers join** to relay data and expand range.
+3. **End Devices join** under routers/coordinator.
+4. Devices exchange data using short-range radio and sleep often to save power.
+
+---
+
+## 🖼️ diagram: true
+
+**Google search query:**
+`Zigbee architecture with coordinator router end device diagram`
+or
+`Zigbee protocol stack and network topology diagram`
+
+---
+
+## 🔧 Applications of Zigbee
+
+* Smart homes (lights, fans, security)
+* Industrial automation
+* Smart agriculture (soil moisture sensors)
+* Healthcare wearables
+* Street lighting systems
+
+---

@@ -2068,3 +2068,211 @@ RTOS will:
 ---
 
 <br><br>
+
+
+
+---
+
+### 🔷 What is Context Switching?
+
+**Context Switching** is the process where the CPU **pauses one task**, **saves its current state**, and **switches to another task**.
+It’s like a **bookmark** for the CPU — it marks where it left off and continues from there later.
+
+**diagram: true**
+🔍 Google: `context switching in RTOS diagram`
+
+---
+
+### 🔷 Why is Context Switching Needed?
+
+Because embedded systems often run **multiple tasks**, and we need to:
+
+* **Switch quickly** between tasks based on **priority**
+* **Pause one task**, run a **more urgent task**
+* **Avoid data loss** when switching
+
+💡 Used heavily in **RTOS**, where task switching happens based on **schedulers**.
+
+---
+
+### 🔷 How It Works (Step-by-Step)
+
+Let’s say Task A is running, and Task B becomes ready:
+
+1. **Save current state** of Task A
+   (Registers, Program Counter, Stack, etc.)
+2. **Load saved state** of Task B
+3. CPU resumes execution of Task B from where it left off
+4. Later, switch back to Task A (from saved state)
+
+⏱️ This whole process happens in **microseconds** but has a small **overhead**.
+
+---
+
+### 🔷 Key Components Involved
+
+* **Program Counter (PC)** – stores current instruction location
+* **Stack Pointer (SP)** – tracks function call stack
+* **Register values** – all active data in use
+* **Task Control Block (TCB)** – where all this info is stored for each task
+
+---
+
+### 🔷 Example for Better Clarity
+
+Imagine you’re running:
+
+* Task 1: Read temperature sensor
+* Task 2: Display data on screen
+
+If Task 1 is reading and suddenly an **interrupt** fires from Task 2 (user pressed a button), the RTOS will:
+
+* Save Task 1’s context
+* Execute Task 2
+* After completion, **restore Task 1’s state** and continue as if nothing happened
+
+---
+
+### 🔷 Context Switching in RTOS
+
+In RTOS, **context switching** is handled by the **scheduler** and is based on:
+
+* **Priorities** (e.g., Task A is more urgent than B)
+* **Scheduling Policy** (Round Robin, Rate Monotonic, etc.)
+* **Interrupts** (which may force switch instantly)
+
+---
+
+### 🔷 Overhead of Context Switching
+
+| Pros                     | Cons                         |
+| ------------------------ | ---------------------------- |
+| Enables multitasking     | Uses CPU time (overhead)     |
+| Handles priority         | Slight performance loss      |
+| Supports real-time needs | Complex in low-power systems |
+
+🔌 In **real-time systems**, the **overhead must be minimal**, or it can miss deadlines.
+
+---
+
+### 🔷 Real-Life Analogy 🎮
+
+Imagine you're playing a video game (Task A), and your mom calls you (Task B):
+
+* You **pause the game** (save state)
+* You **attend the call**
+* After the call, you **resume the game from where you left off**
+
+That’s **context switching**. Simple but powerful.
+
+---
+
+<br><br>
+
+
+---
+
+
+## 🔷 What is Embedded C?
+
+Embedded C is a **special version of the C language**, designed for **programming microcontrollers** (like the 8051 or Arduino) and **interfacing directly with hardware**.
+
+> 🧠 TL;DR: It’s C with the ability to talk to sensors, control LEDs, motors, etc.
+
+---
+
+## 🔷 Why Use C in Embedded Systems?
+
+* 🪶 **Lightweight** – Runs on low-memory devices
+* 🛠️ **Hardware-oriented** – Directly accesses ports and memory
+* ⚙️ **Fast & efficient** – Less overhead, perfect for real-time needs
+* 👨‍💻 **Portable** – Code can be reused on different MCUs with slight tweaks
+
+---
+
+## 🔷 What Makes Embedded C Special?
+
+| Regular C                 | Embedded C                           |
+| ------------------------- | ------------------------------------ |
+| Runs on PCs               | Runs on microcontrollers             |
+| Uses standard libraries   | Uses microcontroller-specific libs   |
+| No hardware access needed | Direct hardware access via registers |
+| No timing constraints     | Must meet real-time deadlines        |
+
+---
+
+## 🔷 Key Concepts in Embedded C
+
+### 1. **Direct Register Access**
+
+Used to control I/O ports:
+
+```c
+P1 = 0xFF;  // Set Port 1 pins as HIGH
+```
+
+### 2. **Bitwise Operations**
+
+Used to toggle, set, or clear specific pins:
+
+```c
+P1 |= (1<<0);  // Set bit 0 of Port 1
+```
+
+### 3. **Delay Functions**
+
+Used to create pauses:
+
+```c
+for(int i=0; i<10000; i++);  // crude delay
+```
+
+### 4. **Interrupt Service Routines**
+
+Embedded C allows using ISRs (interrupt service routines) directly:
+
+```c
+void timer0_ISR(void) interrupt 1 {
+   // Code when Timer 0 overflows
+}
+```
+
+---
+
+## 🔷 Structure of Embedded C Program
+
+```c
+#include <reg51.h>        // MCU-specific header file
+
+void main() {
+   P1 = 0x00;             // Initialize Port 1
+   while(1) {
+      P1 = 0xFF;          // Turn all LEDs ON
+      delay();
+      P1 = 0x00;          // Turn all LEDs OFF
+      delay();
+   }
+}
+
+void delay() {
+   int i;
+   for(i=0;i<30000;i++); // simple delay
+}
+```
+
+✅ **Main()** function
+✅ **Initialization**
+✅ **Continuous loop (while(1))**
+✅ **Hardware control using registers**
+
+---
+
+## 🔷 Applications of Embedded C
+
+* Controlling LEDs, sensors, motors
+* Reading data from peripherals
+* Writing logic for real-time systems (RTOS)
+* Automating industrial machines, home appliances
+
+---
+

@@ -3233,3 +3233,124 @@ or
 * Street lighting systems
 
 ---
+
+<br>
+
+
+
+
+## 📡 GSM Architecture and GSM Modules
+
+**Unit IV – IoT Communication and Open Platforms**
+
+---
+
+### 📞 What is GSM?
+
+GSM stands for **Global System for Mobile Communications**. It’s a **standard** developed to describe **protocols for 2G digital cellular networks**, mainly used for **voice calls, SMS, and data**.
+
+In IoT, **GSM modules** are used for **wireless communication**, especially when Wi-Fi isn't available. Think: sending data from a weather station or vehicle to the cloud.
+
+---
+
+## 🧱 GSM System Architecture
+
+![](img/gsm.png)
+
+GSM system has **three major subsystems**:
+
+### 1. **Mobile Station (MS)**
+
+* The **mobile device** or **IoT hardware** with GSM module.
+* Includes:
+
+  * **Mobile Equipment (ME)** – like your Arduino + GSM module
+  * **SIM card** – holds user identity
+
+### 2. **Base Station Subsystem (BSS)**
+
+Handles **communication between mobile and network**.
+
+* **Base Transceiver Station (BTS)**
+
+  * Transmits and receives signals to/from MS
+  * One BTS = one cell tower
+
+* **Base Station Controller (BSC)**
+
+  * Manages multiple BTSs
+  * Handles handovers and frequency assignments
+
+### 3. **Network and Switching Subsystem (NSS)**
+
+This is the **core brain** of GSM.
+
+* **Mobile Switching Centre (MSC)**
+
+  * Connects calls
+  * Manages call routing and handovers
+
+* **HLR (Home Location Register)**
+
+  * Stores permanent user info (like your home address)
+
+* **VLR (Visitor Location Register)**
+
+  * Stores temporary data about users roaming
+
+* **EIR (Equipment Identity Register)**
+
+  * Checks if the mobile device is valid or stolen
+
+* **AuC (Authentication Center)**
+
+  * Handles SIM authentication and encryption
+
+---
+
+### 🖼️ diagram: true
+
+🔍 Google Search Query:
+`GSM architecture with MS, BSS, NSS diagram`
+or
+`GSM system block diagram for IoT`
+
+---
+
+## 📦 GSM Modules in IoT
+
+GSM modules help **IoT devices send/receive SMS, make calls, or use mobile data**. They're perfect for **remote locations** with no Wi-Fi.
+
+### ✅ Popular GSM Modules:
+
+* **SIM800/SIM900** (very common with Arduino)
+* **SIM808** (also supports GPS)
+* **SIM5320** (3G + GPS)
+
+### 💡 Features:
+
+* Supports **AT commands** to control via serial
+* Can **send SMS**, **make calls**, **connect to internet**
+* Used via **UART (Serial communication)**
+
+---
+
+## ⚙️ Working of GSM Module in IoT
+
+1. **IoT board (e.g., Arduino)** sends AT commands via UART
+2. **GSM module** uses SIM to connect to cellular network
+3. It sends data (SMS, HTTP request, etc.) over 2G/3G
+4. Can receive SMS or even calls if programmed
+
+---
+
+## 🛠️ Applications in IoT
+
+* **Remote monitoring** (e.g., weather stations, irrigation)
+* **Smart meters** (data sent via SMS)
+* **Vehicle tracking systems**
+* **Home automation via SMS**
+* **Security systems (alert via SMS)**
+
+---
+

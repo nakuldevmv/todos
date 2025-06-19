@@ -2355,4 +2355,412 @@ P1 = 0xFF;  // Turns ON all pins in Port 1
 
 # Unit 3
 
+
+
+## 📘 **IoT Architecture and Functional Components**
+
+**diagram: true**
+🔍 Google search: `IoT architecture 4 layer model diagram` or `IoT functional architecture diagram`
+
 ![](img\iot.png)
+IoT block diagram
+
+---
+
+### 🌐 **What is IoT Architecture?**
+
+IoT architecture refers to the **structured framework** that connects physical devices, networks, and software to enable **smart communication** and **automation**.
+
+It’s the **backbone of IoT systems**, showing **how data flows**, **where it’s processed**, and **how devices interact**.
+
+---
+
+## 🏗️ **IoT 4-Layer Architecture (Standard Model)**
+
+### 1️⃣ **Perception Layer (aka Sensing Layer)**
+
+* 🌱 **What it does:** Collects data from the physical world
+* 📦 **Components:** Sensors, actuators, RFID, cameras
+* 🧠 **Example:** A temperature sensor in a smart AC system
+* ❗It’s the **eyes and ears** of IoT
+  **diagram: true**
+  🔍 Google: `Perception layer in IoT diagram`
+
+---
+
+### 2️⃣ **Network Layer (aka Transmission Layer)**
+
+* 📡 **What it does:** Transfers data from perception to processing
+* 🔌 **Technologies used:** Wi-Fi, Bluetooth, ZigBee, GSM, 5G
+* 🌐 Handles **routing, transmission, and encryption**
+  **diagram: true**
+  🔍 Google: `Network layer in IoT architecture diagram`
+
+---
+
+### 3️⃣ **Middleware Layer (or Processing Layer)**
+
+* 🖥️ **What it does:** Stores, processes, and analyzes data
+* ☁️ **Tools used:** Cloud platforms, edge computing, data analytics
+* 🧠 Performs **decision-making using AI/ML**
+* Acts like a **smart brain** that thinks what to do next
+  **diagram: true**
+  🔍 Google: `Middleware layer IoT cloud edge`
+
+---
+
+### 4️⃣ **Application Layer**
+
+* 📱 **What it does:** Delivers specific services to end users
+* 🧩 **Examples:**
+
+  * Smart homes
+  * Smart agriculture
+  * Healthcare monitoring apps
+* It’s the **face of IoT**, where users interact
+  **diagram: true**
+  🔍 Google: `IoT application layer with examples`
+
+---
+
+## 🧩 **Functional Components of IoT**
+
+| Component               | Function                                                      |
+| ----------------------- | ------------------------------------------------------------- |
+| **Sensors & Actuators** | Collect data / Act upon commands                              |
+| **Embedded Systems**    | Microcontrollers process data (e.g. Arduino, ESP32)           |
+| **Connectivity**        | Network for data transfer (WiFi, ZigBee, GSM)                 |
+| **Data Processing**     | Cloud or Edge devices that store, analyze, and make decisions |
+| **User Interface**      | Mobile/web apps where users monitor & control devices         |
+
+---
+
+### 💬 Real-Life Example: Smart Agriculture 🌾
+
+* **Sensors** check soil moisture
+* **Network** (ZigBee) sends data to cloud
+* **Cloud processing** decides to turn ON water pump
+* **Actuator** (relay) triggers irrigation
+* **User** sees status via smartphone app
+
+---
+
+<br><br>
+
+
+
+## 💡 **Arduino – Features, Types, Sketch Structure, and Pin Structures**
+
+**diagram: true**
+🔍 Google Search: `Arduino Uno pin diagram`, `Arduino sketch structure example`, `Types of Arduino board comparison`
+
+---
+
+### 🚀 What is Arduino?
+
+**Arduino** is an **open-source microcontroller platform** used to build electronics projects. It includes:
+
+* A **hardware board** (like Arduino Uno)
+* A **programming environment (IDE)** to write code
+* It is beginner-friendly and widely used in **IoT**, **automation**, and **robotics**.
+
+---
+
+## 🧩 1. **Features of Arduino**
+
+| 🔹 Feature               | 🔍 Explanation                                      |
+| ------------------------ | --------------------------------------------------- |
+| **Open Source**          | Anyone can use or modify both software and hardware |
+| **Cross-Platform**       | Works on Windows, Linux, and macOS                  |
+| **USB Interface**        | Easy connection to PC for programming               |
+| **Analog & Digital I/O** | Can read sensor values and control devices          |
+| **Wide Library Support** | Tons of in-built libraries (e.g. Servo, LCD, etc.)  |
+| **Low Power**            | Suitable for battery-powered embedded projects      |
+
+---
+
+## 📦 2. **Types of Arduino Boards (with examples)**
+
+| 🔧 Type              | ✨ Key Features                        | 🧠 Use Case                          |
+| -------------------- | ------------------------------------- | ------------------------------------ |
+| **Arduino Uno**      | Most common; 14 digital I/O, 6 analog | Beginners, basic projects            |
+| **Arduino Nano**     | Compact version of Uno, USB mini port | Space-limited projects               |
+| **Arduino Mega**     | More memory and I/O pins              | Large projects, multiple sensors     |
+| **Arduino Leonardo** | USB communication built-in            | Emulates keyboard/mouse              |
+| **LilyPad Arduino**  | Soft, wearable electronics            | Wearable tech, e-textiles            |
+| **Arduino Due**      | 32-bit ARM Cortex processor           | Advanced projects, real-time systems |
+| **Arduino Pro Mini** | Very small, no USB, low power         | Embedded/sleep-mode applications     |
+
+> ☝️ These names pop up in exams, so know **1-line features + use case**.
+
+---
+
+## 🧠 3. **Sketch Structure in Arduino Programming**
+
+Arduino programs are called **sketches**. They always have **two main functions**:
+
+```cpp
+void setup() {
+  // This runs ONCE at the start
+}
+
+void loop() {
+  // This runs repeatedly like a loop
+}
+```
+
+### 📄 Sketch Sections:
+
+| Section              | Use                                                   |
+| -------------------- | ----------------------------------------------------- |
+| **Comments**         | Start with `//` or `/* */`, used for documentation    |
+| **Libraries**        | Like `#include <Servo.h>` – adds prewritten functions |
+| **Setup()**          | For initialization (e.g. setting pinMode)             |
+| **Loop()**           | Runs continuously, where logic goes                   |
+| **Custom Functions** | You can define your own functions for readability     |
+
+---
+
+## 🔌 4. **Arduino Pin Structure**
+
+**diagram: true**
+🔍 Google: `Arduino Uno pin diagram`
+
+Arduino Uno (most common) pinout includes:
+
+| 🔢 Pin Type                    | 📋 Description                                    |
+| ------------------------------ | ------------------------------------------------- |
+| **Digital I/O (0–13)**         | Can be input or output (LED, switch)              |
+| **Analog Inputs (A0–A5)**      | Reads values like temperature or light            |
+| **PWM Pins (\~3,5,6,9,10,11)** | Used for analog-like output using `analogWrite()` |
+| **Power Pins**                 | 3.3V, 5V, GND                                     |
+| **AREF**                       | Analog reference pin for sensors                  |
+| **Reset Pin**                  | Resets the board manually                         |
+| **Serial Pins (0=RX, 1=TX)**   | For communication with other devices              |
+
+![alt text](https://media.geeksforgeeks.org/wp-content/uploads/20240422180102/Arduino-Board.webp)
+---
+
+## 🧠 Example Program (Full Sketch):
+
+```cpp
+// Blink LED on pin 13
+void setup() {
+  pinMode(13, OUTPUT); // Set pin 13 as output
+}
+
+void loop() {
+  digitalWrite(13, HIGH); // Turn ON LED
+  delay(1000);            // Wait 1 second
+  digitalWrite(13, LOW);  // Turn OFF LED
+  delay(1000);            // Wait 1 second
+}
+```
+
+---
+
+
+<br><br>
+
+
+
+
+## 🧠 **Arduino Programming Structure**
+
+**diagram: false** (you can draw the structure as a simple block layout with `setup()` and `loop()` functions)
+
+Arduino programs are written in **C/C++ style** and are called **sketches**. These sketches always follow a specific structure made of **two core functions**.
+
+---
+
+### 🧱 **1. Basic Structure of an Arduino Sketch**
+
+```cpp
+void setup() {
+  // Runs once when the board is powered ON or reset
+}
+
+void loop() {
+  // Runs continuously after setup()
+}
+```
+
+| 🔧 Section  | 📖 Description                                                                                      |
+| ----------- | --------------------------------------------------------------------------------------------------- |
+| **setup()** | - Runs only **once** at the beginning. <br> - Used to **initialize** pins, libraries, or variables. |
+| **loop()**  | - Runs **repeatedly in a cycle**.<br> - Contains the **main program logic** that keeps executing.   |
+
+---
+
+### 🧩 **2. Additional Elements in Arduino Sketch**
+
+| Component            | Use                                                               |
+| -------------------- | ----------------------------------------------------------------- |
+| `#include <Library>` | To include external libraries (e.g., Servo, LCD, WiFi).           |
+| `// Comments`        | Lines starting with `//` are ignored by the compiler (for notes). |
+| Global Variables     | Declared **above setup()** and used throughout the sketch.        |
+| Custom Functions     | You can create your own functions to organize complex code.       |
+
+---
+
+### 🧪 **3. Sample Arduino Sketch with All Sections**
+
+```cpp
+int ldr = A0;     // LDR sensor connected to A0
+int led = 9;      // LED connected to pin 9
+
+void setup() {
+  pinMode(led, OUTPUT);   // Set LED pin as output
+}
+
+void loop() {
+  int light = analogRead(ldr);  // Read light level
+
+  if (light < 500) {        // If it's dark
+    digitalWrite(led, HIGH);  // Turn ON LED
+  } else {
+    digitalWrite(led, LOW);   // Turn OFF LED
+  }
+
+  delay(100);  // Small pause
+}
+```
+
+---
+
+### 🧠 **Structure Breakdown**
+
+| Block         | What it does                                                   |
+| ------------- | -------------------------------------------------------------- |
+| `#include`    | Adds a library                                                 |
+| `Global Var`  | Declares variables before setup                                |
+| `setup()`     | Initializes servo and serial connection                        |
+| `loop()`      | Moves the servo back and forth continuously                    |
+| `Custom Code` | Uses `for` loops inside loop to change servo angle dynamically |
+
+---
+
+
+---
+## Integration of Sensors and Actuators
+
+## 🧠 What Does “Integration” Mean?
+
+It means **connecting sensors and actuators to the Arduino**, and writing the code so they **talk to each other** — like:
+
+* **Sensors**: Give data (e.g., temperature, light, motion).
+* **Actuators**: Do stuff based on that data (e.g., turn on fan, light, motor).
+
+---
+
+## 🧩 Types of Integration
+
+### 1. **Digital Sensors**
+
+* Sensors that give only `HIGH` or `LOW` values.
+* Example: **IR sensor**, **PIR motion sensor**
+
+```cpp
+int pir = 2;
+int led = 13;
+
+void setup() {
+  pinMode(pir, INPUT);
+  pinMode(led, OUTPUT);
+}
+
+void loop() {
+  int motion = digitalRead(pir);
+  if (motion == HIGH) {
+    digitalWrite(led, HIGH); // Motion detected: Turn ON LED
+  } else {
+    digitalWrite(led, LOW);  // No motion: Turn OFF LED
+  }
+}
+```
+
+---
+
+### 2. **Analog Sensors**
+
+* Gives a **range of values** (0–1023).
+* Example: **LDR**, **Potentiometer**, **Temp sensors (LM35)**
+
+```cpp
+int sensor = A0;
+int led = 9;
+
+void loop() {
+  int val = analogRead(sensor);
+  analogWrite(led, val / 4); // Convert 0–1023 to 0–255 for brightness
+}
+```
+
+---
+
+### 3. **Actuators**
+
+* Devices that **perform actions** based on commands.
+* Common ones:
+
+  * **LEDs** (light)
+  * **Buzzers** (sound)
+  * **Motors** (motion)
+  * **Relays** (switch bigger things like fans)
+
+---
+
+## 🔄 Full Integration Example
+
+Let’s say:
+
+* **Input**: LDR senses darkness
+* **Output**: Motor (fan) runs in dark
+
+```cpp
+int ldr = A0;
+int motor = 8;
+
+void setup() {
+  pinMode(motor, OUTPUT);
+}
+
+void loop() {
+  int light = analogRead(ldr);
+  if (light < 500) {
+    digitalWrite(motor, HIGH);  // It's dark: Turn ON motor
+  } else {
+    digitalWrite(motor, LOW);   // Bright: Turn OFF
+  }
+}
+```
+
+---
+
+## ⚙️ How Arduino Handles It
+
+| Arduino Does...  | Example                                  |
+| ---------------- | ---------------------------------------- |
+| `analogRead()`   | Reads sensor input                       |
+| `digitalWrite()` | Turns actuators ON/OFF                   |
+| `analogWrite()`  | Controls actuator speed (like dim light) |
+| `pinMode()`      | Sets up pin direction                    |
+
+---
+
+## 📸 Diagram: `diagram: true`
+
+**Google this:**
+`Arduino sensors and actuators circuit diagram`
+
+---
+
+## 📦 Pro Tip
+
+Always check:
+
+* **Power** (does the sensor need 5V or 3.3V?)
+* **Pin type** (digital or analog?)
+* **Libraries** (some sensors like DHT11 need them)
+
+---

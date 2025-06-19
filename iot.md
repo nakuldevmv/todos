@@ -1815,9 +1815,256 @@ CPL 20H      ; Complement (toggle)
 <br><br>
 <br>
 
+
+
 # Unit 2
 
 
 
 
+## 🧠 **Priority-Based Scheduling Policies**
 
+**Subject:** Embedded Systems & IoT (CS3691)
+**Unit II – Embedded C Programming**
+**Exam Marks:** 13-mark style
+**diagram: true**
+🔍 *Google Search:* `RTOS priority scheduling diagram`, `task scheduling in embedded systems`
+
+---
+
+### 🔷 1. **What is Scheduling in RTOS?**
+
+In **Real-Time Operating Systems (RTOS)**, **scheduling** is the mechanism that decides *which task runs at what time* based on its **priority, timing constraints, and system state**.
+
+* Embedded systems run **multiple tasks**
+* Not all tasks are equal → some are **time-sensitive**
+* RTOS uses scheduling policies to pick **which task runs first**
+
+---
+
+### 🔷 2. **What is Priority-Based Scheduling?**
+
+It’s a **task scheduling method** where each task is assigned a **priority number**.
+🟢 Higher-priority task = runs before lower-priority ones
+🔴 If multiple tasks are ready → the scheduler picks the **one with the highest priority**
+
+---
+
+### 🔷 3. **Types of Priority-Based Scheduling**
+
+Let’s break it down into two main categories:
+
+#### ✅ **A. Static Priority Scheduling**
+
+* Priority is **fixed** at the time of task creation
+* Cannot be changed during execution
+* Common in **hard real-time systems** (e.g., medical monitors)
+
+💡 *Example:*
+Task A (priority 1), Task B (priority 2)
+–> Task B always gets the CPU first
+
+#### ✅ **B. Dynamic Priority Scheduling**
+
+* Task priorities can **change at runtime**
+* Based on rules like **deadline**, **execution time**, etc.
+* More flexible for **soft real-time systems**
+
+💡 *Example:* Earliest Deadline First (EDF)
+–> Task closest to its deadline gets CPU
+
+---
+
+### 🔷 4. **Common Priority-Based Scheduling Policies**
+
+| Policy                              | Description                                                                  |
+| ----------------------------------- | ---------------------------------------------------------------------------- |
+| **Preemptive Priority**             | Higher priority task *interrupts* the currently running lower one            |
+| **Non-Preemptive Priority**         | Running task completes first, even if a higher priority task becomes ready   |
+| **Rate Monotonic Scheduling (RMS)** | Priority assigned based on task frequency (shorter period = higher priority) |
+| **Earliest Deadline First (EDF)**   | Dynamic; task with earliest deadline runs first                              |
+
+---
+
+### 🔷 5. **Preemptive vs Non-Preemptive – Key Difference**
+
+| Aspect            | Preemptive                              | Non-Preemptive  |
+| ----------------- | --------------------------------------- | --------------- |
+| Interruption      | Allowed if higher priority task appears | Not allowed     |
+| Context Switching | More frequent                           | Less frequent   |
+| Use Case          | Time-critical systems                   | Simpler systems |
+
+---
+
+### 🔷 6. **Diagram Explanation**
+
+**diagram: true**
+🔍 *Google:* `Preemptive vs Non-preemptive priority scheduling RTOS`
+
+![text](https://open4tech.com/wp-content/uploads/2019/10/preemptive_scheduling.jpg)
+Preemptive Scheduling
+
+![alt text](https://www.tutorialspoint.com/operating_system/images/categories_of_process_scheduling.jpg)
+
+Show a timeline with Task A, B, and C executing based on priorities to explain:
+
+* Task B preempts Task C
+* Task A runs first if highest priority
+* Context switch markers between tasks
+
+---
+
+### 🔷 7. **Priority Inversion Problem (Hot Topic!)**
+
+🧨 **What is it?**
+Lower-priority task **holds a resource** needed by a higher-priority task → higher-priority task is stuck
+
+🛠️ **Solution:**
+
+* **Priority Inheritance Protocol** → temporarily boost the priority of lower-priority task
+
+---
+
+### 🔷 8. **Real-Life Embedded Example**
+
+👉 In a **smart home** device:
+
+* Fire alarm sensor task (high priority)
+* Data logging task (medium)
+* LED blinking task (low priority)
+
+➡️ Scheduler ensures fire alarm task **preempts everything else**
+
+---
+
+### 🔷 9. **Why Priority-Based Scheduling is Used in Embedded Systems**
+
+* Ensures **real-time deadlines** are met
+* Gives control over **task execution**
+* Suitable for **resource-constrained** environments
+* Avoids unnecessary CPU load
+
+---
+
+<br><br>
+
+
+## 🧠 **Real-Time Operating System (RTOS)**
+
+---
+![alt text](https://tridentinfosol.com/assets/img/portfolio/rtos.jpg)
+### 🔷 1. **What is an RTOS?**
+
+An **RTOS** is an operating system designed to **run tasks within strict timing constraints**.
+It ensures that tasks are **executed predictably and on time**, which is crucial in **embedded systems** like:
+
+* Pacemakers
+* Car airbags
+* Industrial robots
+* Smartwatches
+
+⏱️ **Real-time = deterministic behavior**
+
+---
+
+### 🔷 2. **Why Do We Need an RTOS?**
+
+RTOS is needed because:
+
+✅ Embedded systems often handle **multiple tasks** simultaneously
+✅ Tasks may have **different urgency levels**
+✅ Delays in response can cause **failures** (e.g., delay in airbag = disaster)
+
+**Benefits:**
+
+* Predictable response time (deterministic)
+* Efficient task management
+* Multitasking support
+* Time sharing & real-time scheduling
+
+---
+
+### 🔷 3. **How Does an RTOS Work? (Simplified)**
+
+RTOS works by:
+
+1. Maintaining a **task table** (with all tasks and their priorities)
+2. Using a **scheduler** to decide which task runs next
+3. Handling **context switching** to switch between tasks
+4. Using **inter-process communication (IPC)** methods (like semaphores, queues)
+5. Running **interrupts** instantly when external events occur
+
+**diagram: true**
+🔍 Google: `RTOS architecture block diagram`
+
+---
+
+### 🔷 4. **Types of RTOS**
+
+| Type          | Description                                    | Use Case                     |
+| ------------- | ---------------------------------------------- | ---------------------------- |
+| **Hard RTOS** | Strict deadlines; delay = failure              | Pacemakers, Anti-lock brakes |
+| **Soft RTOS** | Deadlines preferred but not critical           | Music player, Messaging app  |
+| **Firm RTOS** | Occasional delays okay, but may reduce quality | Video calls, Streaming       |
+
+---
+
+### 🔷 5. **RTOS Task States**
+
+Every task in RTOS exists in one of the following **states**:
+
+**diagram: true**
+🔍 Google: `RTOS task state diagram`
+
+![text](https://www.digikey.com/maker-media/85de44fb-1e6d-4234-a6d4-e10e4dce1111)
+
+
+| State          | Meaning                                        |
+| -------------- | ---------------------------------------------- |
+| **Ready**      | Task is ready to run, waiting for CPU          |
+| **Running**    | Task is currently executing                    |
+| **Blocked**    | Waiting for event/resource (e.g., input, data) |
+| **Suspended**  | Task is paused manually or by system           |
+| **Terminated** | Task has finished execution                    |
+
+🌀 **Scheduler** is the component that switches tasks between these states.
+
+---
+
+### 🔷 6. **Key Components of an RTOS**
+
+* **Scheduler** → picks which task runs
+* **Task/Thread Manager** → manages multiple tasks
+* **Inter-Process Communication (IPC)** → tasks talk via queues, mailboxes
+* **Clock Manager** → tracks time, delays
+* **Interrupt Handler** → handles real-time interrupts
+
+---
+
+### 🔷 7. **Context Switching in RTOS**
+
+When the CPU switches from one task to another:
+
+* **Saves the state** (registers, PC, etc.) of current task
+* **Loads the state** of the next task
+  🔁 Happens **fast**, but adds some **overhead**
+
+---
+
+### 🔷 8. **Real-Life Example**
+
+Let’s say you’re building a **smart home security system**:
+
+* Task 1: Monitor door sensor (high priority)
+* Task 2: Record video (medium)
+* Task 3: Blink LED (low priority)
+
+RTOS will:
+
+* Ensure **Task 1 always runs first**
+* Preempt others if needed
+* Handle all smoothly and in **real-time**
+
+---
+
+<br><br>

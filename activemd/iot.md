@@ -3892,3 +3892,252 @@ Cities enhanced by IoT to improve infrastructure, energy use, transportation, an
 * Improved safety and governance 👮‍♂️
 
 ---
+
+<br>
+<br>
+<br>
+
+# 2 Mark
+
+### ✅ **UNIT I – 8-BIT EMBEDDED PROCESSOR**
+
+1.  What is an 8-bit microcontroller?
+   **A.** A single-chip computer that processes 8 bits of data at a time and includes CPU, memory, and I/O on one IC.
+
+2.  Define Harvard architecture.
+   **A.** A design where program code and data have separate memory and buses, allowing simultaneous access.
+
+3.  List any two features of the 8051 microcontroller.
+   **A.** It has 4 KB on‑chip ROM and four 8-bit parallel I/O ports.
+
+4.  What is the function of a program counter?
+   **A.** Holds the address of the next instruction to fetch and execute.
+
+5.  Name the four I/O ports of 8051.
+   **A.** Port 0, Port 1, Port 2, and Port 3.
+
+6.  Define instruction set.
+   **A.** The complete collection of machine-level operations that a microcontroller can execute.
+
+7.  Give an example of a logical instruction in 8051.
+   **A.** `ANL A, R0` performs bitwise AND between accumulator and register R0.
+
+8.  What is the role of an accumulator in 8051?
+   **A.** It is the primary 8-bit register used for arithmetic and logic operations.
+
+9.  List any two types of addressing modes in 8051.
+   **A.** Immediate (`MOV A, #data`) and Register indirect (`MOV A, @R0`).
+
+10.  What is the use of timers in microcontrollers?
+    **A.** To generate precise delays, measure time intervals, or count external events.
+
+11.  Differentiate between timer and counter.
+    **A.** A timer counts internal clock pulses; a counter increments on external signal pulses.
+
+12.  What is the size of RAM and ROM in 8051?
+    **A.** 128 bytes of on‑chip RAM and 4 KB of on‑chip ROM.
+
+13.  Mention the interrupt sources available in 8051.
+    **A.** Timer 0 overflow, Timer 1 overflow, External interrupts INT0 & INT1, and serial communication.
+
+14.  What is an ISR?
+    **A.** Interrupt Service Routine—a special function that executes when a specific interrupt occurs.
+
+15.  Define serial communication.
+    **A.** Data transfer bit by bit over a single wire or channel, using protocols like UART.
+
+---
+
+### ✅ **UNIT II – EMBEDDED C PROGRAMMING**
+
+1.  Define Embedded C.
+   **A.** A set of language extensions to C for programming microcontrollers directly accessing hardware.
+
+2.  What is the role of memory interfacing in embedded systems?
+   **A.** To connect external RAM or ROM chips so the MCU can read/write additional memory.
+
+3.  List two types of memory used in embedded systems.
+   **A.** Flash (program code) and SRAM (data storage).
+
+4.  Define I/O interfacing.
+   **A.** The method by which a microcontroller connects and communicates with external devices or sensors.
+
+5.  What is an embedded system?
+   **A.** A dedicated computer system designed to perform one or a few specific functions, often with real-time constraints.
+
+6.  Mention any two characteristics of embedded systems.
+   **A.** Real-time operation and low power consumption.
+
+7.  What is RTOS?
+   **A.** Real-Time Operating System—software that manages hardware resources and task scheduling with deterministic timing.
+
+8.  List any two features of RTOS.
+   **A.** Preemptive multitasking and priority-based scheduling.
+
+9.  Define task in RTOS.
+   **A.** A basic unit of work or a thread of execution managed by the RTOS scheduler.
+
+10.  What is context switching?
+    **A.** Saving the state of one task and loading the state of another to switch execution.
+
+11.  Mention two common scheduling algorithms in RTOS.
+    **A.** Rate Monotonic Scheduling (RMS) and Earliest Deadline First (EDF).
+
+12.  Define multitasking.
+    **A.** Running multiple tasks or threads concurrently on a single processor.
+
+13.  What is a process?
+    **A.** An independent program in execution with its own memory space.
+
+14.  What do you mean by priority-based scheduling?
+    **A.** Tasks are executed in order of importance, highest priority first.
+
+15.  Name two states in the RTOS task life cycle.
+    **A.** Ready and Blocked.
+
+---
+
+### ✅ **UNIT III – IOT AND ARDUINO PROGRAMMING**
+
+1.  Define IoT.
+   **A.** Network of physical devices embedded with sensors and connectivity to exchange data.
+
+2.  List two examples of IoT devices.
+   **A.** Smart thermostat and fitness tracker.
+
+3.  Mention two differences between IoT devices and computers.
+   **A.** IoT devices are low-power and task-specific; computers are high-power and general-purpose.
+
+4.  What is an IoT configuration?
+   **A.** The network setup describing how devices connect: device-to-device, device-to-cloud, etc.
+
+5.  Name any two basic components of IoT.
+   **A.** Sensors and connectivity modules.
+
+6.  What is Arduino?
+   **A.** An open-source microcontroller platform for prototyping electronics.
+
+7.  Name any two types of Arduino boards.
+   **A.** Arduino Uno and Arduino Mega.
+
+8.  What is the use of Arduino IDE?
+   **A.** To write, compile, and upload sketches to Arduino boards.
+
+9.  Define sketch in Arduino programming.
+   **A.** A source code file written in Arduino language, containing `setup()` and `loop()`.
+
+10.  What are digital pins in Arduino?
+    **A.** Pins that read/write binary states (HIGH or LOW).
+
+11.  Mention any two analog input pins in Arduino UNO.
+    **A.** A0 and A1.
+
+12.  Define an Arduino shield.
+    **A.** An add‑on board that plugs into an Arduino to extend its capabilities.
+
+13.  What is the role of a sensor in IoT?
+    **A.** To detect physical parameters (e.g., temperature) and convert them into electrical signals.
+
+14.  Give two examples of actuators.
+    **A.** DC motor and relay.
+
+15.  What is the purpose of setup() and loop() in Arduino?
+    **A.** `setup()` runs once for initialization; `loop()` runs repeatedly for main logic.
+
+---
+
+### ✅ **UNIT IV – IOT COMMUNICATION AND OPEN PLATFORMS**
+
+1.  What is a communication model in IoT?
+   **A.** A pattern defining how data moves between devices and services (e.g., Request-Response).
+
+2.  Define REST in the context of IoT APIs.
+   **A.** Representational State Transfer—an HTTP-based protocol for request-response interaction.
+
+3.  Mention any two IoT communication protocols.
+   **A.** MQTT and CoAP.
+
+4.  List two features of Bluetooth.
+   **A.** Low power usage and short-range communication (\~10 m).
+
+5.  What is the use of ZigBee in IoT?
+   **A.** Low-power mesh networking for sensor and control applications.
+
+6.  Expand GSM.
+   **A.** Global System for Mobile Communications.
+
+7.  What is the role of Wi-Fi in IoT systems?
+   **A.** Provides high-speed, local area network connectivity for devices.
+
+8.  Mention two layers in ZigBee architecture.
+   **A.** Physical Layer and Network Layer.
+
+9.  Define GPS.
+   **A.** Global Positioning System—a satellite-based navigation service.
+
+10.  What is a GSM module used for?
+    **A.** To connect IoT devices over cellular networks for SMS/data.
+
+11.  What is an open platform?
+    **A.** A hardware/software ecosystem that’s open-source and customizable, like Raspberry Pi.
+
+12.  Give two examples of open platforms used in IoT.
+    **A.** Raspberry Pi and BeagleBone.
+
+13.  Define GPIO.
+    **A.** General Purpose Input/Output pins for digital interfacing.
+
+14.  What is interfacing in Raspberry Pi?
+    **A.** Connecting external devices (sensors, actuators) to GPIO/ports for control.
+
+15.  How does Raspberry Pi connect to the cloud?
+    **A.** Via internet protocols (HTTP/MQTT) over Wi-Fi or Ethernet.
+
+---
+
+### ✅ **UNIT V – APPLICATIONS DEVELOPMENT**
+
+1.  What is the first step in designing an embedded system?
+   **A.** Requirement analysis—understanding what the system must do.
+
+2.  Define an IoT application.
+   **A.** A software and hardware solution that uses connected devices to collect and act on data.
+
+3.  List two components of an embedded system.
+   **A.** Microcontroller and sensors.
+
+4.  Mention any two tools used in IoT application development.
+   **A.** Arduino IDE and ThingSpeak.
+
+5.  What is home automation?
+   **A.** Using IoT to remotely monitor and control household appliances.
+
+6.  Name two smart devices used in home automation.
+   **A.** Smart bulbs and smart thermostats.
+
+7.  What is precision farming?
+   **A.** Applying IoT and data analytics to optimize crop production.
+
+8.  Define smart agriculture.
+   **A.** IoT-enabled farming that uses sensors and automation for better yields.
+
+9.  List two IoT devices used in agriculture.
+   **A.** Soil moisture sensor and weather station.
+
+10.  What is smart healthcare?
+    **A.** Remote health monitoring and data analysis using IoT devices.
+
+11.  Mention two wearable devices used in healthcare.
+    **A.** Fitness trackers and smart blood pressure monitors.
+
+12.  What is a smart city?
+    **A.** Urban area using IoT and data to improve services and quality of life.
+
+13.  Name two characteristics of a smart city.
+    **A.** Intelligent traffic management and smart lighting.
+
+14.  Define cloud computing in the context of IoT.
+    **A.** On‑demand remote servers for data storage, processing, and analytics.
+
+15.  What is a use case?
+    **A.** A specific scenario describing how users interact with a system to achieve a goal.

@@ -1463,9 +1463,7 @@ The main components include:
 
 
 <br>
-
-
-Say less, legend 🤝 — here comes the **maxed-out, full-theory beast mode answer** for:
+<br>
 
 ---
 
@@ -1670,4 +1668,146 @@ void Timer0_ISR(void) interrupt 1 {
 ---
 
 <br>
+<br>
 
+
+
+---
+
+## 💻 **Instruction Set and Programming of 8051 Microcontroller**
+
+**13-Mark Exam-Ready | Detailed & Clear | CS3691 – Unit I**
+**diagram: true**
+🔍 *Google Search:* `8051 instruction set table pdf`, `8051 addressing modes diagram`
+
+---
+
+### 🔷 **1. What is an Instruction Set?**
+
+An **instruction set** is the complete set of commands that a microcontroller can execute.
+
+For 8051:
+
+* It’s an **8-bit** instruction set
+* Total of **255 instructions**
+* Each instruction is represented by **an opcode**
+* Grouped into **5 categories** based on their functionality
+
+---
+
+### 🔷 **2. Categories of 8051 Instruction Set**
+
+| Category              | Examples                        | Use              |
+| --------------------- | ------------------------------- | ---------------- |
+| **Data Transfer**     | MOV, PUSH, POP, XCH             | Move data        |
+| **Arithmetic**        | ADD, SUBB, INC, DEC, MUL, DIV   | Math operations  |
+| **Logical**           | ANL, ORL, XRL, CLR, CPL, RL, RR | Bitwise ops      |
+| **Branching**         | AJMP, LJMP, SJMP, JC, JNC, DJNZ | Control flow     |
+| **Boolean/Bit-level** | SETB, CLR, CPL, JB, JNB, JBC    | Bit manipulation |
+
+🧠 Each of these instructions operates on registers, memory, or I/O pins.
+
+---
+
+### 🔷 **3. Instruction Size**
+
+* 1-byte, 2-byte, or 3-byte
+* Example:
+
+  * `MOV A, B` → 1-byte
+  * `MOV A, #45H` → 2-byte
+  * `MOV DPTR, #1234H` → 3-byte
+
+---
+
+### 🔷 **4. Addressing Modes in 8051**
+
+**Addressing mode** = way to access operands (data) in instructions.
+**diagram: true**
+🔍 *Google:* `8051 addressing modes diagram`
+
+| Mode              | Description                            | Example           |
+| ----------------- | -------------------------------------- | ----------------- |
+| Immediate         | Operand is part of instruction         | `MOV A, #55H`     |
+| Register          | Operand is in register                 | `MOV A, R0`       |
+| Direct            | Address of operand given directly      | `MOV A, 30H`      |
+| Register Indirect | Address is in register (R0/R1 only)    | `MOV A, @R0`      |
+| Indexed           | Used with DPTR or PC (for code access) | `MOVC A, @A+DPTR` |
+
+🧠 **Indexed** is mostly used for reading from **lookup tables** in program memory.
+
+---
+
+### 🔷 **5. Sample Instructions & Use Cases**
+
+* **MOV A, #55H** → Load immediate value 55H into accumulator
+* **ADD A, R2** → Add content of R2 to accumulator
+* **INC DPTR** → Increment 16-bit data pointer
+* **CJNE A, #20H, LABEL** → Compare and jump if not equal
+* **SETB P1.0** → Set pin P1.0 to 1
+* **CLR A** → Clear the accumulator
+
+---
+
+### 🔷 **6. Example: Assembly Code Snippet**
+
+```asm
+MOV A, #0A0H       ; Load A with A0
+MOV R1, #10        ; Load R1 with 10
+ADD A, R1          ; A = A + R1
+MOV P2, A          ; Send result to Port 2
+```
+
+🧠 Registers like A (accumulator), R0–R7, DPTR, B are used heavily in 8051 assembly.
+
+---
+
+### 🔷 **7. Programming 8051 (Assembly Style)**
+
+Structure of a basic assembly program:
+
+```asm
+ORG 0000H          ; Start address
+MOV P1, #0FFH      ; Set Port1 as output
+LOOP: MOV A, #55H
+      MOV P1, A
+      SJMP LOOP    ; Infinite loop
+END
+```
+
+🧠 Keywords:
+
+* `ORG` → start of program memory
+* `MOV` → move data
+* `SJMP` → short jump (loop)
+* `END` → marks end of program
+
+---
+
+### 🔷 **8. Role of Accumulator (A Register)**
+
+* Most operations use A register
+* It's the default source/destination in arithmetic and logic operations
+* Example: `ADD A, R0` adds R0 to A
+
+---
+
+### 🔷 **9. Role of DPTR & PC**
+
+* **DPTR (Data Pointer)** → 16-bit register for external memory access
+* **PC (Program Counter)** → Holds address of next instruction
+
+---
+
+### 🔷 **10. Bit-Level Operations (Specialty of 8051)**
+
+8051 supports **bit-addressable memory**, i.e., you can directly access individual bits.
+
+```asm
+SETB 20H     ; Set bit at address 20H
+CLR 20H      ; Clear the bit
+CPL 20H      ; Complement (toggle)
+```
+
+---
+ts** 🚀

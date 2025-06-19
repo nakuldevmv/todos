@@ -536,4 +536,297 @@ RTOS makes sure Task 1 **always runs first**, ensuring the crops get watered at 
 
 <br><br>
 
+
+
+
+# ✅ UNIT III – IoT AND ARDUINO PROGRAMMING
+
+
+
+## 1️⃣ **Introduction to the Concept of IoT Devices**
+
+* IoT (Internet of Things) = network of smart devices with sensors, processors, and connectivity.
+* Purpose: To sense → compute → communicate.
+* Used in home automation, agriculture, industries, healthcare.
+
+**Key Properties:**
+
+* **Connectivity**: Wireless (WiFi, GSM, ZigBee)
+* **Data Processing**: Locally (microcontroller) or on cloud
+* **Remote Control**: Access/control via apps or dashboards
+* **Automation**: Based on logic or AI rules
+
+---
+
+## 2️⃣ **IoT Devices vs Computers**
+
+| Aspect       | IoT Device                  | Computer          |
+| ------------ | --------------------------- | ----------------- |
+| Task         | Specific                    | General-purpose   |
+| Size         | Small/embedded              | Large             |
+| OS           | Often none / RTOS           | Full OS           |
+| Interface    | Sensors/Actuators           | Mouse/Keyboard    |
+| Connectivity | WiFi, GSM, ZigBee           | LAN, WiFi         |
+| Power        | Battery or low power        | Plugged-in or UPS |
+| Example      | Smart bulb, fitness tracker | Laptop, desktop   |
+
+---
+
+## 3️⃣ **IoT Configurations**
+
+**diagram: true**
+🔍 *Google Search:* `IoT network configurations diagram`
+
+### 🧷 Types:
+
+* **Device-to-Device (D2D)**: Local communication (e.g., IR sensor triggering a motor).
+* **Device-to-Cloud**: Sends data to a cloud server (e.g., temp sensor uploads to Firebase).
+* **Device-to-Gateway**: Data goes via a gateway (e.g., mobile app acts as bridge).
+* **Back-End Data Sharing**: Data from one cloud platform shared with another service or app.
+
+Each config depends on:
+
+* Application needs (local vs remote)
+* Network availability
+* Power constraints
+
+---
+
+## 4️⃣ **Basic Components of an IoT System**
+
+| Component                | Role                          |
+| ------------------------ | ----------------------------- |
+| **Sensor**               | Detects data (input)          |
+| **Actuator**             | Performs action (output)      |
+| **Microcontroller**      | Processes logic               |
+| **Connectivity Module**  | WiFi, GSM, Bluetooth          |
+| **Power Source**         | Battery/AC                    |
+| **Cloud/Server**         | Stores data, runs analytics   |
+| **Mobile/Web Interface** | For monitoring or controlling |
+
+These work in a loop:
+**Sense → Process → Act → Communicate → Store**
+
+---
+
+## 5️⃣ **Introduction to Arduino**
+
+* Open-source platform with microcontroller + IDE.
+* Used in DIY projects and prototyping of IoT.
+* Supports **Embedded C** & many useful libraries.
+
+**Why Arduino for IoT?**
+
+* Simple to program
+* GPIO pins for sensors/actuators
+* USB upload + Serial monitor
+* Compatible with shields/modules
+
+---
+
+## 6️⃣ **Types of Arduino Boards**
+
+| Board        | Features                     | Use Case                    |
+| ------------ | ---------------------------- | --------------------------- |
+| **Uno**      | ATmega328P, 14 digital pins  | Standard IoT projects       |
+| **Nano**     | Compact version of Uno       | Space-limited projects      |
+| **Mega**     | 54 digital pins, 16 analog   | Complex multi-device setups |
+| **Leonardo** | Acts as HID (keyboard/mouse) | Human interface apps        |
+| **Due**      | 32-bit ARM Cortex-M3         | High-speed, complex apps    |
+| **LilyPad**  | Soft and round, sewable      | Wearable tech & e-textiles  |
+| **Pro Mini** | No USB port, low power       | Battery-operated sensors    |
+
+Boards differ in:
+
+* Memory (Flash, SRAM)
+* Number of I/O pins
+* Speed & size
+
+---
+
+## 7️⃣ **Arduino Toolchain**
+
+**Toolchain** = Full process from code → hardware.
+
+| Stage                  | Function                           |
+| ---------------------- | ---------------------------------- |
+| **Editor (IDE)**       | Write code (`.ino` sketch)         |
+| **Preprocessor**       | Handles `#include` & functions     |
+| **Compiler (AVR-GCC)** | Converts to machine code           |
+| **Linker**             | Joins all files and libraries      |
+| **Uploader**           | Loads binary to Arduino via USB    |
+| **Serial Monitor**     | Debugging & viewing real-time data |
+
+Libraries like `WiFi.h`, `Servo.h`, `Adafruit_Sensor.h` are added using `#include`.
+
+---
+
+## 8️⃣ **Arduino Programming Structure**
+
+```cpp
+void setup() {
+  // Initial settings – runs once
+}
+
+void loop() {
+  // Main logic – runs again and again
+}
+```
+
+* **setup()**: Used to initialize sensors, pins, serial communication.
+* **loop()**: Keeps running as long as the Arduino is powered.
+
+🧩 Additional Elements:
+
+* **Functions**: Custom reusable code blocks
+* **Libraries**: External modules for WiFi, LCDs, etc.
+* **Comments (`//`)**: Document your code
+
+---
+
+## 9️⃣ **Sketches / Pins / Input/Output From Pins Using Sketches**
+
+* A **Sketch** = Arduino code file (`.ino`)
+* **Digital Pins**: Used for ON/OFF (e.g., `digitalWrite(13, HIGH);`)
+* **Analog Pins**: Read variable signals (0–5V) with `analogRead()`
+
+| Function                   | Use                                                           |
+| -------------------------- | ------------------------------------------------------------- |
+| `pinMode(pin, mode)`       | Set pin as INPUT/OUTPUT                                       |
+| `digitalRead(pin)`         | Read ON/OFF (1/0)                                             |
+| `digitalWrite(pin, state)` | Set pin HIGH/LOW                                              |
+| `analogRead(pin)`          | Get values from 0–1023                                        |
+| `analogWrite(pin, value)`  | Output PWM (0–255) – used on PWM pins only (e.g., D3, D5, D6) |
+
+Note: No actual analog output – `analogWrite()` uses PWM for simulating it.
+
+---
+
+## 🔟 **Introduction to Arduino Shields**
+
+**diagram: true**
+🔍 *Google Search:* `arduino shields types with functions`
+
+* **Shields** = Expansion boards that "plug in" to Arduino.
+* Used for extending features like:
+
+  * Connectivity (WiFi, GSM, Ethernet)
+  * Motor driving
+  * Display control (LCD, TFT)
+  * Sensing (GPS, GSM, RFID)
+
+**Common Shields:**
+
+| Shield       | Purpose                     |
+| ------------ | --------------------------- |
+| WiFi Shield  | Internet communication      |
+| GSM Shield   | SMS/call capabilities       |
+| Motor Shield | Controls DC, stepper motors |
+| Relay Shield | Switch high-power devices   |
+| GPS Shield   | Location tracking           |
+
+Shields simplify interfacing → no need for many wires or complex code.
+
+---
+
+## 🔹 **11. Sensors in IoT & Arduino**
+
+**What is a Sensor?**
+A sensor is a device that detects changes in the environment and sends the data to a microcontroller for processing.
+
+### 🧠 Key Points:
+
+* Converts physical signals into electrical signals.
+* Mostly used as **INPUT devices**.
+* Interfaced using **analog** or **digital** pins.
+
+### 📊 Common Types of Sensors:
+
+| Sensor                             | Type                     | Purpose                       | Arduino Pin |
+| ---------------------------------- | ------------------------ | ----------------------------- | ----------- |
+| **LDR (Light Dependent Resistor)** | Analog                   | Detects light intensity       | A0          |
+| **IR Sensor**                      | Digital                  | Detects obstacles             | D2, D3      |
+| **Temperature Sensor (LM35)**      | Analog                   | Measures temperature          | A1          |
+| **Ultrasonic Sensor**              | Digital (Trigger + Echo) | Measures distance             | D9, D10     |
+| **Gas Sensor (MQ2)**               | Analog                   | Detects gases like smoke, LPG | A2          |
+| **DHT11**                          | Digital                  | Temp + Humidity               | D7          |
+
+### 📌 Notes:
+
+* Use `analogRead()` for analog sensors.
+* Use `digitalRead()` for digital sensors.
+
+---
+
+## 🔹 **2. Actuators in IoT & Arduino**
+
+**What is an Actuator?**
+An actuator is a device that **performs an action** in response to a signal from the microcontroller.
+
+### 🔧 Key Points:
+
+* Converts electrical signals into physical motion or output.
+* Mostly used as **OUTPUT devices**.
+* Controlled using **digital** or **PWM** pins.
+
+### ⚙️ Common Types of Actuators:
+
+| Actuator         | Purpose             | Arduino Pin          | Function Used        |
+| ---------------- | ------------------- | -------------------- | -------------------- |
+| **LED**          | Lighting/Indicator  | D13                  | `digitalWrite()`     |
+| **Buzzer**       | Sound alert         | D8                   | `digitalWrite()`     |
+| **Relay Module** | Switch AC devices   | D7                   | `digitalWrite()`     |
+| **DC Motor**     | Continuous rotation | D3/D5 + Motor Driver | `analogWrite()`      |
+| **Servo Motor**  | Angle control       | D9 + `Servo.h`       | `servo.write(angle)` |
+
+---
+
+## 🔹 **3. Integration of Sensors & Actuators with Arduino**
+
+**diagram: true**
+🔍 *Google Search:* `arduino sensor and actuator interfacing diagram`
+
+### ✅ Basic Steps to Interface:
+
+1. **Connect Sensor**
+
+   * Sensor OUT → Arduino analog/digital pin
+   * VCC & GND → Arduino 5V/GND
+2. **Connect Actuator**
+
+   * Actuator IN → Arduino digital/PWM pin
+   * Use transistor/relay/motor driver if high current
+3. **Code Flow**
+
+   * Read sensor value
+   * Use conditions to control actuator
+
+---
+
+### 🧪 Simple Example:
+
+**IR Sensor controlling a Buzzer:**
+
+```cpp
+int sensor = 2;      // IR Sensor output pin
+int buzzer = 9;      // Buzzer pin
+
+void setup() {
+  pinMode(sensor, INPUT);
+  pinMode(buzzer, OUTPUT);
+}
+
+void loop() {
+  int value = digitalRead(sensor);
+  if (value == 0) {            // 0 means object detected
+    digitalWrite(buzzer, HIGH); // Turn buzzer ON
+  } else {
+    digitalWrite(buzzer, LOW);  // Turn buzzer OFF
+  }
+}
+```
+
+---
+
+
 The next unit will be updated soon...

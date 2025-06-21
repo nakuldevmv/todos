@@ -546,3 +546,246 @@ Shared printer system – multiple users sending print jobs.
 
 ---
 
+<br><br>
+
+
+# 🧠 **UNIT III – SOFTWARE DESIGN**
+
+> *Design is not just what it looks like, but how it works.*
+> This unit dives deep into the blueprint stage of software — how it’s structured, how its pieces fit, and how it all runs smoothly behind the scenes.
+
+---
+
+## 🧱 1. Software Design
+
+**Definition:**
+The process of **transforming requirements** into a detailed design blueprint to guide implementation.
+
+**Goals:**
+
+* Satisfy functional & non-functional requirements
+* Promote reusability, reliability, and simplicity
+* Make code modular, scalable, and maintainable
+
+**Outcome:**
+
+* Design Documents
+* Architecture Diagrams
+* Component Specifications
+
+---
+
+## 🔧 2. Design Process
+
+A step-by-step method to structure the design of software from requirements to components.
+
+### 🌀 Phases:
+
+1. **Architectural Design**
+
+   * High-level structure of the system
+   * Defines major modules & how they interact
+   * *Output*: Architecture Diagram
+2. **Component-Level Design**
+
+   * Internal logic & structure of each module
+   * Interfaces, data flow, algorithms
+3. **Interface Design**
+
+   * User interfaces (UID)
+   * Interfaces between components
+4. **Data Design**
+
+   * Structures for input, output, and internal data
+   * Database schema, file formats, etc.
+
+> `diagram: true`
+> Google: `software design process diagram`
+
+---
+
+## 💡 3. Design Concepts
+
+| Concept                     | Meaning                                                   |
+| --------------------------- | --------------------------------------------------------- |
+| **Abstraction**             | Focus only on essential details; hide complexity          |
+| **Modularity**              | Divide software into small, manageable parts (modules)    |
+| **Information Hiding**      | Hide inner logic from other modules                       |
+| **Refinement**              | Develop from general ideas to detailed steps              |
+| **Functional Independence** | Keep modules independent via low coupling + high cohesion |
+| **Design for Change**       | Build in flexibility for future changes                   |
+
+---
+
+## 🔗 4. Coupling and Cohesion
+
+### 🔌 Coupling (Between modules – should be low)
+
+* **High coupling = Bad** → Modules depend too much on each other
+* **Low coupling = Good** → Easy to change one without breaking others
+
+**Types of Coupling:**
+
+* Content (worst)
+* Common
+* Control
+* Stamp
+* Data
+* No coupling (best)
+
+### 🧬 Cohesion (Within a module – should be high)
+
+* **High cohesion = Good** → Module does one thing well
+* **Low cohesion = Bad** → Unrelated responsibilities
+
+**Types of Cohesion:**
+
+* Coincidental (worst)
+* Logical
+* Temporal
+* Procedural
+* Communicational
+* Sequential
+* Functional (best)
+
+✅ **Golden Rule:**
+**High Cohesion + Low Coupling = Clean Design**
+
+---
+
+## 🧠 5. Functional Independence
+
+**Meaning:**
+Modules should work independently — **self-contained, focused, and loosely connected**.
+
+**Achieved by:**
+
+* Designing for single responsibility
+* Minimizing coupling
+* Maximizing cohesion
+
+**Benefits:**
+
+* Easier debugging
+* Reusability
+* Parallel development possible
+
+---
+
+## 🧩 6. Design Patterns
+
+Pre-tested solutions to common design problems.
+
+### 🌐 Model-View-Controller (MVC) – `diagram: true`
+
+Google: `mvc architecture diagram`
+
+* **Model** – Manages data and logic
+* **View** – UI/display to the user
+* **Controller** – Takes input and updates model/view
+
+Example: In a shopping app
+
+* View = Product page
+* Controller = “Add to cart” logic
+* Model = Cart data
+
+---
+
+### 🔀 Common Design Patterns
+
+| Pattern               | Purpose & Real-Life Example                                        |
+| --------------------- | ------------------------------------------------------------------ |
+| **Observer**          | Notify many objects when one changes (📢 News update system)       |
+| **Strategy**          | Choose algorithm at runtime (💳 Payment method selection)          |
+| **Command**           | Encapsulate requests as objects (🧾 Undo/Redo in Word)             |
+| **Adapter**           | Convert interface to another (🔌 Laptop charger adapter)           |
+| **Facade**            | Simplified interface to complex system (🏨 Hotel front desk)       |
+| **Proxy**             | Placeholder that controls access (🛡️ Firewall or caching server)  |
+| **Publish-Subscribe** | Loose communication via events (📬 Newsletter system, event buses) |
+
+---
+
+## 🏛️ 7. Architectural Styles
+
+### 1. **Layered Architecture**
+
+* Stack of layers (Presentation → Business Logic → Data Access → DB)
+* Easy to manage, test, scale
+* `diagram: true`
+  Google: `layered architecture software engineering`
+
+---
+
+### 2. **Client–Server Architecture**
+
+* Clients request, servers respond
+* Used in most internet/web systems
+* `diagram: true`
+  Google: `client server architecture diagram simple`
+
+---
+
+### 3. **Tiered (N-Tier) Architecture**
+
+* Like Layered but deployed on **different machines**
+* Eg: UI on mobile, logic on server, DB in cloud
+* `diagram: true`
+  Google: `n-tier architecture diagram`
+
+---
+
+### 4. **Pipe and Filter Architecture**
+
+* Data flows through processing units (filters) in sequence
+* Eg: Audio/Video processing, Compilers
+* `diagram: true`
+  Google: `pipe and filter architecture diagram`
+
+---
+
+## 🎨 8. User Interface Design (UID)
+
+**Goal:**
+Make the system **easy, clear, and enjoyable** to use.
+
+### ✨ UID Principles:
+
+* **Clarity**: Everything should be obvious
+* **Consistency**: Keep similar designs across screens
+* **Feedback**: Let users know something happened
+* **Affordance**: Buttons should look like buttons
+* **Error Recovery**: Undo options, helpful error messages
+* **Responsiveness**: Fast UI, no lag
+
+### 🧪 UID Design Process:
+
+1. Understand the user (age, skills, goals)
+2. Create use cases
+3. Design layout (wireframes)
+4. Build prototype
+5. Test & Improve
+
+> `diagram: true`
+> Google: `user interface design process diagram`
+
+---
+
+## 🧾 9. Case Study (Example: ATM System)
+
+**Architecture Used:** Layered
+**Patterns Used:**
+
+* MVC for screen flow
+* Strategy for transaction types (Withdraw, Deposit)
+* Observer to update balance on screen
+
+**UID Elements:**
+
+* Clear button layout
+* Error messages for invalid PIN
+* Feedback for transaction success
+
+---
+
+<br><br>

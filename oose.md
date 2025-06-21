@@ -272,3 +272,277 @@ Best for: Projects with **changing requirements** and **tight deadlines**
 ---
 
 <br><br>
+
+
+
+# ✅ UNIT II – REQUIREMENTS ANALYSIS AND SPECIFICATION
+
+---
+
+## 1. 🔍 **Requirement Analysis and Specification**
+
+### 💡 Purpose:
+
+To understand what the customer needs and translate that into clear, structured requirements that developers can actually build.
+
+### 🔑 Steps:
+
+1. **Requirements Elicitation** – Finding out what the user wants
+2. **Requirements Analysis** – Removing contradictions, resolving ambiguity
+3. **Specification** – Writing the requirements formally (→ SRS)
+4. **Validation** – Making sure the requirements are complete and correct
+
+### 🎯 Goal:
+
+Make sure **everyone** (client + devs) knows **exactly** what’s being built. No surprises later.
+
+---
+
+## 2. 🧠 **Requirements Gathering and Analysis**
+
+### 📌 Gathering Techniques:
+
+* **Interviews** – 1-on-1 with users
+* **Questionnaires** – Mass data collection
+* **Observation** – Watch how current systems work
+* **Prototyping** – Show rough version, get feedback
+* **Brainstorming** – Get ideas from stakeholders
+
+### 🧠 Analysis Techniques:
+
+* Identify conflicts between user expectations
+* Classify into:
+
+  * **Functional Requirements** – What system should do
+  * **Non-Functional Requirements** – How well it should do it (speed, security)
+* Use **prioritization**, **traceability**, and **feasibility checks**
+
+---
+
+## 3. 📄 **Software Requirement Specification (SRS)** 🔥 (Very Important)
+
+### 💡 What it is:
+
+A detailed **document** that describes the complete functionality, behavior, and constraints of the software system.
+
+### ✍️ Contents of SRS:
+
+* Introduction (scope, purpose)
+* Overall description
+* Functional requirements
+* Non-functional requirements
+* External interface requirements
+* Constraints (legal, safety, hardware, etc.)
+
+### ✅ Qualities of a good SRS:
+
+* **Complete**
+* **Unambiguous**
+* **Consistent**
+* **Modifiable**
+* **Verifiable**
+* **Traceable**
+
+### 🔥 Example Functional Requirement:
+
+> "The system shall allow users to log in with a valid username and password."
+
+> diagram: true
+> Google: `SRS document format software engineering`
+
+---
+
+## 4. 📐 **Formal System Specification**
+
+### 💡 Definition:
+
+Writing requirements in **mathematical logic** form using formal methods like:
+
+* Predicate logic
+* Set theory
+* Z notation, VDM, or B-methods
+
+### 📌 Used when:
+
+* System is **mission-critical**
+* You need to **mathematically prove** correctness
+
+### 🔥 Example:
+
+```
+∀ user (validPIN(user) → allowAccess(user))
+```
+
+> diagram: true
+> Google: `formal specification example Z notation`
+
+---
+
+## 5. 🔄 **Finite State Machines (FSM)**
+
+### 💡 What it is:
+
+A model that describes a system that **changes state** based on **inputs**.
+
+### 🧱 Components:
+
+* States (circles)
+* Transitions (arrows)
+* Inputs
+* Start & End states
+
+### 📌 Example:
+
+**ATM**:
+Idle → (Insert Card) → Auth → (Enter PIN) → Transaction → Exit
+
+### 🔥 Use Cases:
+
+* Traffic lights 🚦
+* Login systems
+* Protocols
+
+> diagram: true
+> Google: `FSM ATM system example`
+
+---
+
+## 6. 🧩 **Petri Nets**
+
+### 💡 What it is:
+
+Used for modeling **concurrent** or **parallel** systems.
+
+### 🧠 Components:
+
+* **Places** – Conditions (circles)
+* **Transitions** – Events (rectangles)
+* **Tokens** – Represent data/state (dots)
+* **Arcs** – Show direction
+
+### 📌 System example:
+
+Shared printer system – multiple users sending print jobs.
+
+### 🎯 Use for:
+
+* Workflow control
+* Parallel process tracking
+* Avoiding deadlocks
+
+> diagram: true
+> Google: `petri net printer example`
+
+---
+
+## 7. 🧠 **Object Modelling Using UML**
+
+> UML = Unified Modeling Language
+> Used to **visualize**, **design**, and **document** OO systems.
+
+### 🔥 Core Diagrams You Should Know:
+
+---
+
+### 7.1 👤 Use Case Diagram
+
+* Shows **who does what** (Actor → Use case)
+* Great for capturing **functional requirements**
+
+> Example: Passport system – Apply, Upload docs, Track status
+
+> diagram: true
+> Google: `UML use case diagram passport`
+
+---
+
+### 7.2 📦 Class Diagram
+
+* Shows **classes**, **attributes**, **methods**, and relationships
+* Use for **object-oriented structure**
+
+> Example: ATM: Account, Card, Transaction classes
+
+> diagram: true
+> Google: `UML class diagram ATM system`
+
+---
+
+### 7.3 🔄 Activity Diagram
+
+* Like a flowchart but better
+* Used to model **logic/workflows**
+
+> Example: User login → validate → show dashboard
+
+> diagram: true
+> Google: `UML activity diagram login system`
+
+---
+
+### 7.4 🧬 Sequence Diagram
+
+* Focuses on **message flow** between objects over time
+* Vertical = time
+* Horizontal = participants
+
+> diagram: true
+> Google: `UML sequence diagram online shopping`
+
+---
+
+### 7.5 🔄 State Chart Diagram
+
+* Shows how an object **changes state over time**
+* Good for modeling **lifecycle**
+
+> Example: Order → Packed → Shipped → Delivered
+
+> diagram: true
+> Google: `state chart diagram order process UML`
+
+---
+
+## 8. 🔁 **Functional Modelling (DFD)**
+
+> Shows how **data moves** and how it is **processed** in a system
+
+### 📊 Data Flow Diagram (DFD)
+
+* **Level 0** – Big Picture (context)
+* **Level 1** – Sub-processes
+* Components:
+
+  * Processes (circles)
+  * Data Stores
+  * External Entities
+  * Arrows (data flow)
+
+> Example: ATM – Card insert → Auth → Show balance → Withdraw
+
+> diagram: true
+> Google: `DFD level 0 and level 1 ATM`
+
+---
+
+## 9. 🧰 **CASE Tools (Computer Aided Software Engineering)**
+
+### 💻 What They Do:
+
+* Help in **designing**, **analyzing**, **coding**, **testing**, **documenting**
+
+### 🔧 Types:
+
+* **Upper CASE** – Planning, analysis, design (e.g., StarUML)
+* **Lower CASE** – Coding, testing (e.g., Selenium, JUnit)
+* **Integrated CASE** – Full support (e.g., Visual Paradigm)
+
+### ✅ Benefits:
+
+* Save time
+* Reduce error
+* Automate routine tasks
+* Ensure documentation consistency
+
+---
+

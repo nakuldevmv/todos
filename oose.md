@@ -1305,3 +1305,155 @@ Let’s say a **food delivery app** like Zomato went DevOps-mode.
 * Communication: Slack + JIRA
 
 ---
+
+<br><br>
+<br><br>
+
+# PYQ Answers
+---
+
+
+# ✅11 a) **Perspective Process Models – Detailed Explanation**
+
+`diagram: true`
+Google: `software perspective process models waterfall spiral incremental diagram`
+
+---
+
+## 🔹 What are Perspective Process Models?
+
+> **Perspective process models** are the **traditional, plan-driven models** that follow a **linear or structured approach** to software development.
+
+They’re called **"perspective"** because they give a **particular viewpoint or strategy** on how to manage the **software development life cycle (SDLC)**.
+
+---
+
+## 🔹 Major Perspective Process Models
+
+### 1. **Waterfall Model**
+
+**diagram: true**
+Google: `waterfall model in software engineering diagram`
+
+* Linear, step-by-step model
+* Each phase must be **fully completed** before the next begins
+
+#### 📌 Phases:
+
+1. Requirements
+2. Design
+3. Implementation
+4. Testing
+5. Deployment
+6. Maintenance
+
+#### ✅ Advantages:
+
+* Simple to understand and manage
+* Easy to schedule and track progress
+* Good for **small, well-understood projects**
+
+#### ❌ Disadvantages:
+
+* No flexibility to go back
+* Late discovery of issues
+* Poor for projects with evolving requirements
+
+---
+
+### 2. **Incremental Model**
+
+**diagram: true**
+Google: `incremental model in software engineering diagram`
+
+* Software is developed in **small parts (increments)**
+* Each increment adds functionality
+
+#### ✅ Advantages:
+
+* Delivers working software quickly
+* Easier to test and debug
+* More flexible than waterfall
+
+#### ❌ Disadvantages:
+
+* Needs good planning and architecture
+* Integration complexity increases over time
+
+---
+
+### 3. **Spiral Model**
+
+**diagram: true**
+Google: `spiral model in software engineering diagram`
+
+* Combines **design + prototyping + risk analysis**
+* Project moves in **spirals (loops)** through 4 major phases
+
+#### 📌 Phases in Each Spiral:
+
+1. Objective setting
+2. Risk analysis and reduction
+3. Development and validation
+4. Planning next iteration
+
+#### ✅ Advantages:
+
+* Great for **large, complex projects**
+* Strong focus on **risk management**
+* Flexible to changes
+
+#### ❌ Disadvantages:
+
+* Expensive and time-consuming
+* Needs **expert project management**
+* Not suitable for small projects
+
+---
+
+### 4. **V-Model (Verification & Validation Model)**
+
+**diagram: true**
+Google: `v model in software engineering diagram`
+
+* Extension of the waterfall model
+* Every dev stage has a corresponding **testing phase**
+
+#### ✅ Advantages:
+
+* Good for projects requiring high reliability (ex: medical, aerospace)
+* Emphasizes early testing
+
+#### ❌ Disadvantages:
+
+* Rigid and not flexible
+* Costly for changes mid-cycle
+
+---
+
+## 🔹 Comparison Table (Quick Recap)
+
+| Model       | Best For                | Flexibility | Risk Handling | Delivery Style   |
+| ----------- | ----------------------- | ----------- | ------------- | ---------------- |
+| Waterfall   | Small, defined projects | Low         | Weak          | Single delivery  |
+| Incremental | Medium, modular systems | Medium      | Medium        | Partial delivery |
+| Spiral      | Large, risky projects   | High        | Strong        | Iterative        |
+| V-Model     | Critical systems        | Low         | Medium        | Rigid structure  |
+
+---
+
+## 🧠 Exam-Ready Definition:
+
+> “Perspective process models represent traditional software development strategies that focus on structured planning, linear execution, and phase-wise progress. These include models like Waterfall, Incremental, Spiral, and V-Model, each with specific strengths and trade-offs.”
+
+---
+
+## ✅ When to Use Perspective Models:
+
+* When requirements are **clear and stable**
+* When working on **well-defined domains** (like banking, embedded systems)
+* When **risk tolerance is low**
+
+---
+
+<br><br>

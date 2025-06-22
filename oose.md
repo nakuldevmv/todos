@@ -2127,3 +2127,118 @@ These phases catch **big-picture bugs** → and you can’t fix everything at on
 <br>
 <br>
 
+
+---
+
+# ✅14 b) **Model Checking – Concepts & Steps to Execute It**
+
+`diagram: true`
+Google: `model checking process diagram in software testing`
+
+---
+
+## 🔹 What is Model Checking?
+
+> **Model Checking** is an **automated technique** used to **verify if a system model behaves correctly** with respect to a given set of **formal specifications** (usually written in logic).
+
+Basically, it’s like:
+🔍 "Let me take your system model... and go full Sherlock Holmes to check if it breaks under any condition."
+
+---
+
+## 🔹 Why Do We Use It?
+
+Because testing alone **can’t cover every possible state**, especially in complex systems (like embedded systems, communication protocols, etc.)
+
+Model checking helps to:
+
+* 🧠 Explore **all possible states** of a system
+* ❌ Detect logic errors, deadlocks, unreachable code, race conditions
+* ✅ Ensure it **meets the formal spec**
+
+---
+
+## 🔹 Fundamental Concepts
+
+| Concept 🧩            | What It Means 📘                                                                |
+| --------------------- | ------------------------------------------------------------------------------- |
+| **System Model**      | A mathematical abstraction of the system behavior (states + transitions)        |
+| **Specification**     | What the system should do (usually in Temporal Logic like LTL or CTL)           |
+| **State Space**       | All possible states the system can be in during execution                       |
+| **Transition System** | A graph-like representation of how the system moves from one state to another   |
+| **Property Checking** | Verifying whether certain properties (like safety, liveness) always hold true   |
+| **Counterexample**    | If the system fails a check, it gives an **exact path** that caused the failure |
+
+---
+
+## 🔹 Steps in Performing Model Checking
+
+### 🔹 Step 1: **Model the System**
+
+* Create a finite-state model of the system
+* Represent the system as states and transitions
+* Tools: SPIN, NuSMV, UPPAAL
+
+### 🔹 Step 2: **Specify Properties to Verify**
+
+* Write specifications using formal logic
+* Examples:
+
+  * 🛡️ “Deadlock should never occur”
+  * 🌀 “A login request is always followed by authentication”
+* Use **LTL (Linear Temporal Logic)** or **CTL (Computation Tree Logic)**
+
+### 🔹 Step 3: **Generate State Space**
+
+* System automatically generates all possible system states & paths
+* This is called **state-space exploration**
+
+### 🔹 Step 4: **Run the Model Checker**
+
+* The tool checks if the model satisfies the given spec
+* If it fails: You get a **counterexample trace** → helps in debugging
+
+### 🔹 Step 5: **Interpret Results**
+
+* ✅ If the system satisfies the properties → You’re good
+* ❌ If not → Analyze the counterexample & fix the model/code
+
+---
+
+## 🔥 Example (Easy Real-Life Style):
+
+> **Elevator System:**
+
+* Model: floors, doors, movement
+* Spec: “Door should never open between floors”
+* Model checker will explore ALL states and tell you if there’s any path where door opens mid-air 💀
+
+---
+
+## 🔥 Advantages
+
+* 100% **automation**
+* Finds bugs **early**, even before coding
+* Works great for **concurrent or real-time systems**
+* Gives **exact failure trace** (not just a test fail)
+
+---
+
+## ⚠️ Limitations
+
+| Limitation 🧱                | Why It’s a Problem 📌                         |
+| ---------------------------- | --------------------------------------------- |
+| **State Explosion**          | Too many states = performance hit             |
+| **Needs formal specs**       | Must be written in logic (not everyone’s fav) |
+| **Limited to finite models** | Can't handle infinite state systems directly  |
+
+---
+
+## 🧠 Exam-Ready Summary:
+
+> “Model Checking is a formal verification technique that automatically checks whether a system model satisfies certain specifications. It involves modeling the system, writing logic-based properties, generating a state space, and running checks using tools. It is particularly useful in verifying correctness, safety, and reliability in critical systems by exploring all possible system states and detecting errors through counterexamples.”
+
+---
+
+<br>
+<br>

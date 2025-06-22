@@ -2018,3 +2018,112 @@ Each filter = 1 function. Each pipe = 1 direction of data flow.
 
 ---
 
+<br>
+<br>
+
+
+---
+
+# ✅14 a) **Defect Triage – What It Is & Why It Matters**
+
+`diagram: false`
+
+---
+
+## 🔹 What is Defect Triage?
+
+> **Defect triage** is the process of reviewing, prioritizing, and assigning **reported bugs (defects)** based on:
+
+* **Severity** (how bad it is)
+* **Priority** (how soon it needs to be fixed)
+* **Impact** (which modules/users are affected)
+
+It’s like the **emergency room** of software bugs:
+
+* 🩸 "This bug’s bleeding out" → fix now
+* 😴 "This bug’s chillin'" → fix later
+
+---
+
+## 🔹 When Does It Happen?
+
+* **During Integration Testing** and **System Testing**
+* After testers start finding bugs, the dev/test/QA team must triage them regularly
+
+---
+
+## 🔹 Main Goals of Defect Triage
+
+| Goal 🧠                     | Why It Matters 📌                              |
+| --------------------------- | ---------------------------------------------- |
+| 🥇 Prioritize critical bugs | Fix the most dangerous issues first            |
+| 🗂️ Classify bugs           | Group them by module, severity, etc.           |
+| 👨‍💻 Assign ownership      | Make sure each bug is assigned to a dev        |
+| 🚫 Avoid duplicate bugs     | Identify and merge duplicates                  |
+| 📆 Keep deadlines intact    | Prevent delays by fixing only what’s essential |
+
+---
+
+## 🔹 Who Does It?
+
+Usually a **Triage Team** made up of:
+
+* QA Lead 👩‍🔬
+* Dev Lead 👨‍💻
+* Project Manager 📋
+* Sometimes: Product Owner 👑
+
+They sit together and discuss each bug like a **courtroom trial** 😂
+
+---
+
+## 🔹 How Are Bugs Prioritized?
+
+They look at:
+
+* **Severity**:
+
+  * Crash? 🔥 High Severity
+  * UI typo? 💤 Low Severity
+
+* **Priority**:
+
+  * Release-blocker? 🎯 High Priority
+  * Can fix after release? 🧊 Low Priority
+
+They use tags like:
+
+* **P1 / S1** = High Priority / High Severity
+* **P3 / S2** = Low Priority / Medium Severity
+
+---
+
+## 🔹 Example Scenario
+
+> In an **Online Banking App**, during system testing:
+
+* Bug 1: App crashes after login = **P1 S1** → Fix immediately 🔥
+* Bug 2: “Balance” is misspelled = **P4 S3** → Can wait ⏳
+* Bug 3: Password reset email not sent = **P2 S1** → Urgent
+
+---
+
+## 🔥 Why It’s Important in System & Integration Testing
+
+* Integration Testing = tests how modules work together
+* System Testing = tests the full application
+
+These phases catch **big-picture bugs** → and you can’t fix everything at once.
+**Defect triage makes sure critical paths are clean before release.**
+
+---
+
+## 🧠 Exam-Ready Summary:
+
+> “Defect triage is the process of reviewing and prioritizing software defects based on their severity, priority, and impact. It helps the team decide which bugs to fix first during integration and system testing. This ensures critical issues are resolved quickly, project timelines are maintained, and the product is stable before release.”
+
+---
+
+<br>
+<br>
+

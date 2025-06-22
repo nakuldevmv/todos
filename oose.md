@@ -789,3 +789,210 @@ Make the system **easy, clear, and enjoyable** to use.
 ---
 
 <br><br>
+
+
+# ✅ **UNIT IV – SOFTWARE TESTING AND MAINTENANCE**
+
+---
+
+## 🔹 1. **Testing**
+
+> Testing is the process of executing software to detect bugs and verify correctness.
+
+* Ensures software meets user needs
+* Detects defects early = cheaper fixes
+* Done before release and after updates
+
+**Types of Testing:**
+
+* Manual vs Automated
+* Static vs Dynamic
+* Functional vs Non-functional
+
+**diagram: false**
+
+---
+
+## 🔹 2. **Unit Testing**
+
+> Testing the **smallest testable parts of code** (functions, methods).
+
+* Done by developers
+* Focuses on **individual components**
+* Usually uses **White Box Testing**
+
+**Tools**: JUnit (Java), NUnit (.NET)
+
+**diagram: false**
+
+---
+
+## 🔹 3. **Integration Testing**
+
+> Testing combined modules to ensure they work together.
+
+### Types of Integration Testing:
+
+* **Top-Down**: Start with high-level modules; use **stubs**
+* **Bottom-Up**: Start with low-level modules; use **drivers**
+* **Big Bang**: All modules integrated at once
+
+  > High risk but easy setup
+
+**diagram: true**
+Google: `top down vs bottom up integration testing diagram`
+
+---
+
+## 🔹 4. **System Testing**
+
+> Test the **entire system** as a whole.
+> Simulates real-world use by end users.
+
+* Checks compliance with requirements
+* Includes performance, load, usability, etc.
+* Done after integration testing
+
+**diagram: false**
+
+---
+
+## 🔹 5. **Regression Testing**
+
+> Re-testing software after code changes to ensure **existing features still work**.
+
+* Detects side-effects of new code
+* Often automated
+* Critical for maintenance
+
+✅ Example: Fix in login module → Check if dashboard, logout, etc., still work
+
+**diagram: false**
+
+---
+
+## 🔹 6. **Black Box Testing**
+
+> Tester checks **input → output** without seeing internal code.
+
+* Focus on **functionality**
+* Tests user interface, features
+* Used in **System & Acceptance Testing**
+
+### Techniques:
+
+* Equivalence Partitioning
+* Boundary Value Analysis
+
+**diagram: true**
+Google: `black box testing diagram input output`
+
+---
+
+## 🔹 7. **White Box Testing**
+
+> Tester knows the **code and internal logic**
+
+* Used in Unit Testing
+* Focus on conditions, branches, loops
+* Done by developers
+
+### Techniques:
+
+* Statement Coverage
+* Branch Coverage
+* Loop Testing
+* Path Testing
+
+**diagram: true**
+Google: `white box testing flow diagram`
+
+---
+
+## 🔹 8. **Debugging**
+
+> Process of **identifying and fixing bugs** after testing.
+
+### Techniques:
+
+* Print statements/logs
+* Breakpoints
+* Step-by-step execution
+* Watching variables
+* IDE Debugging tools
+
+✅ It’s like a doctor diagnosing and treating code sickness 🧑‍⚕️
+
+**diagram: false**
+
+---
+
+## 🔹 9. **Program Analysis**
+
+> Examining the source code to detect issues — with or without execution.
+
+### Types:
+
+* **Static Analysis**: Without running code
+  e.g. Lint tools
+* **Dynamic Analysis**: During execution
+  e.g. Memory profilers
+
+✅ Helps find unused variables, unreachable code, memory leaks
+
+**diagram: false**
+
+---
+
+## 🔹 10. **Symbolic Execution**
+
+> Program is executed with **symbolic inputs** (like `x`, `y`) instead of real values to explore **all possible paths**.
+
+* Builds **path conditions**
+* Detects deep logic errors
+* Used in **security & verification tools**
+
+✅ Example: `if (x > 0)` explored as both true and false
+
+**diagram: true**
+Google: `symbolic execution path tree example`
+
+---
+
+## 🔹 11. **Model Checking**
+
+> Exhaustively verifies if a system model satisfies properties like **safety** and **liveness**.
+
+* Uses finite state machines
+* Explores **all possible system states**
+* Used in **critical systems** like aircraft, banking, etc.
+
+✅ Example: Check if a train system never allows two trains on the same track
+
+**Tools**: SPIN, NuSMV
+
+**diagram: true**
+Google: `model checking finite state machine example`
+
+---
+
+## 🔹 12. **Case Study Example: Railway Reservation System**
+
+### Applies:
+
+* **Unit Testing**: Login, seat selection
+* **Integration Testing**: Search → Book → Payment
+* **System Testing**: Full user journey
+* **Regression Testing**: After bug fix in payment
+* **Black Box**: Tester checks error handling, UI
+* **White Box**: Dev checks internal logic
+* **Debugging**: Fix for double-booking issue
+* **Maintenance**:
+
+  * **Corrective**: Fix printing bug
+  * **Adaptive**: Add UPI support
+  * **Perfective**: Speed up search
+  * **Preventive**: Refactor seat allocation logic
+
+---
+

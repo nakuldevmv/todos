@@ -2242,3 +2242,241 @@ Model checking helps to:
 
 <br>
 <br>
+
+
+---
+
+# ✅15 a) **Version Control in Software Configuration Management (SCM)**
+
+`diagram: true`
+Google: `version control diagram git branching timeline`
+
+![alt text](https://blog.cpanel.com/wp-content/uploads/2018/05/image2018-2-8_17-46-1.png)
+---
+
+## 🔹 What is Version Control?
+
+> **Version Control** is a system that tracks and manages changes to software **artifacts** (like code, documents, config files) over time.
+
+It’s like a **time machine for your project** ⏳
+
+* You can see who changed what
+* Go back to previous versions
+* Avoid conflicts in team collaboration
+
+---
+
+## 🔹 Why Is It Part of SCM?
+
+**SCM = Software Configuration Management**, and it ensures that software doesn’t spiral into chaos when:
+
+* Multiple devs work on the same code
+* Updates happen across multiple versions
+* Releases need to be controlled
+
+**Version control** is a major component that tracks every change made to the "configuration items" (source code, build scripts, etc.)
+
+---
+
+## 🔹 Two Types of Version Control Systems
+
+| Type 🧩         | Meaning 📘                                    | Examples 🔧        |
+| --------------- | --------------------------------------------- | ------------------ |
+| **Centralized** | One main server stores all versions           | CVS, Subversion    |
+| **Distributed** | Everyone has a copy; commits are synced later | **Git**, Mercurial |
+
+Most modern teams use **Git** (distributed) 🌍
+
+---
+
+## 🔹 Key Concepts in Version Control
+
+| Concept               | What It Means                                                         |
+| --------------------- | --------------------------------------------------------------------- |
+| **Repository (Repo)** | Where all versions & files are stored                                 |
+| **Commit**            | A snapshot of changes                                                 |
+| **Branch**            | A separate line of development (experiment without ruining main code) |
+| **Merge**             | Combining two branches                                                |
+| **Tag/Release**       | Marking a stable version for release                                  |
+| **Diff**              | Shows changes between two versions                                    |
+| **Revert/Rollback**   | Undo changes if something breaks                                      |
+
+---
+
+## 🔹 How Version Control Helps in Managing Changes
+
+### ✅ 1. **Tracks Every Change**
+
+* Shows **who** made the change, **when**, and **why**
+* Great for accountability & debugging
+
+### ✅ 2. **Avoids Overwriting**
+
+* Multiple developers can work on the same files via **branches**
+* No "I overwrote your code" disasters 😭
+
+### ✅ 3. **Supports Rollbacks**
+
+* Buggy update? → Just roll back to previous version
+
+### ✅ 4. **Helps in Release Management**
+
+* Use **tags** or **branches** to create stable releases
+* Supports parallel dev of v1, v2, v3...
+
+### ✅ 5. **Audit & Compliance**
+
+* Full change history = essential in **critical systems**
+
+---
+
+## 🔹 Real-Life Example (Git Style):
+
+> You’re building an **E-commerce website**
+
+* Dev A creates a branch for “Add to Cart”
+* Dev B works on “Checkout Flow”
+* Both finish → Merge their changes into the **main branch**
+* Something breaks → Use Git to revert the last commit
+
+Boom — project saved 🙌
+
+---
+
+## 🔥 Benefits Summary
+
+| Benefit 💡             | Description 🔎                              |
+| ---------------------- | ------------------------------------------- |
+| **Clarity**            | Track changes with comments + timestamps    |
+| **Team collaboration** | Everyone works on their own branches safely |
+| **Accountability**     | Know who made what changes and why          |
+| **Backup & Recovery**  | Never lose progress                         |
+| **Supports DevOps**    | Essential for CI/CD pipelines               |
+
+---
+
+## 🧠 Exam-Ready Summary:
+
+> “Version control is the process of managing changes to software artifacts over time. It enables tracking of revisions, supports collaboration through branching and merging, and provides the ability to revert to earlier versions. As a part of Software Configuration Management, it ensures consistency, stability, and traceability in software development projects, making it a fundamental tool for modern software teams.”
+
+---
+
+<br>
+<br>
+
+
+---
+
+# ✅15 b) **Deployment Pipeline – Key Components & Their Roles**
+
+`diagram: true`
+Google: `devops deployment pipeline architecture diagram`
+![alt text](https://spaceliftio.wpcomstaging.com/wp-content/uploads/2023/05/devops-pipeline-diagram.png)
+
+---
+
+## 🔹 What Is a Deployment Pipeline?
+
+> A **Deployment Pipeline** is an **automated workflow** that takes code from **source control** all the way to **production**, with **builds, tests, and deployments** happening automatically or semi-automatically.
+
+It’s the **heart of DevOps** – keeps releases **fast, repeatable, reliable** ⚙️⚡
+
+---
+
+## 🔹 Key Components of a Deployment Pipeline
+
+Let’s break it into the main stages/components:
+
+---
+
+### 1. 🗃️ **Source Control**
+
+> 💡 Where all the code lives, versioned and safe
+
+* Tools: Git, GitHub, GitLab, Bitbucket
+* Tracks code changes
+* Supports branching, merging, and rollback
+* Acts as the **trigger point** for the pipeline
+
+✅ **Why it's important**: Ensures codebase integrity, enables collaboration
+
+---
+
+### 2. 🧱 **Build Automation**
+
+> 💡 Converts source code into executable format (compiles, packages)
+
+* Tools: Maven, Gradle, Make, Ant
+* Builds are triggered automatically after a code commit
+* May also run lint checks, code formatters, etc.
+
+✅ **Why it's important**: Guarantees that every build is consistent, clean, and fast
+
+---
+
+### 3. 🧪 **Automated Testing**
+
+> 💡 Ensures the build actually works and doesn’t break stuff
+
+Types of testing involved:
+
+* **Unit Tests** 🧠 – test individual functions/classes
+* **Integration Tests** 🔗 – test module interactions
+* **UI/End-to-End Tests** 🧑‍💻 – test user flows
+
+Tools: JUnit, Selenium, TestNG, Mocha, Cypress
+
+✅ **Why it's important**: Catches bugs early in the pipeline before they go live
+
+---
+
+### 4. 🚀 **Deployment Automation**
+
+> 💡 Pushes the app to testing, staging, or production environments
+
+* Tools: Jenkins, GitHub Actions, Ansible, Docker, Kubernetes, Helm
+* Supports **blue-green deployments**, **canary releases**, or **rolling updates**
+* Automatically deploys successful builds to dev/test/staging/prod
+
+✅ **Why it's important**: Removes manual errors, speeds up release cycles
+
+---
+
+### 5. 📈 **Monitoring and Feedback**
+
+> 💡 Keeps an eye on deployed systems & sends alerts if something goes wrong
+
+* Tools: Prometheus, Grafana, Datadog, ELK Stack, New Relic
+* Collects logs, metrics, errors, and performance data
+* Alerts developers when failures occur
+
+✅ **Why it's important**: Helps detect and fix issues in production FAST
+
+---
+
+## 🔁 Bonus: Continuous Feedback Loop
+
+> Once monitoring kicks in, teams can:
+
+* Spot real user issues
+* Refactor code
+* Push improved versions again through the pipeline
+
+And that’s the **DevOps cycle** baby 🔄
+
+---
+
+## 🔥 Real-World Example:
+
+> A dev commits code to GitHub → GitHub Actions runs a build → JUnit runs tests → If tests pass, the app is Dockerized and deployed to staging → Prometheus tracks server health → Alert if memory spikes → Dev fixes and recommits 🔄
+
+---
+
+## 🧠 Exam-Ready Summary:
+
+> “A deployment pipeline is an automated sequence of steps that enables rapid, reliable, and repeatable delivery of software. Its key components include source control for managing code, build automation to compile and package, automated testing for quality assurance, deployment automation for delivering code to environments, and monitoring for feedback and incident detection. Together, these components streamline DevOps practices and support continuous integration and continuous deployment (CI/CD).”
+
+---
+
+<br>
+<br>

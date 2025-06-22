@@ -2681,3 +2681,264 @@ Using both ensures:
 > “In the case of ABC Inc., an e-commerce company, both black box and white box testing are essential to ensure quality. Black box testing focuses on user-facing functionalities like login, payments, and checkout, while white box testing validates backend logic such as inventory management and discount calculations. Combined, they ensure the application meets user expectations and operates reliably under all conditions.”
 
 ---
+
+<br><br>
+
+# 2 Marks
+
+
+---
+
+### ✅ UNIT I – Software Process and Agile Development
+
+1. **What is software engineering?**
+   Ans. Software engineering is the process of designing, developing, testing, and maintaining software in a structured and efficient way.
+
+2. **Define software process.**
+   Ans. A software process is a set of activities used to develop software, like planning, designing, coding, and testing.
+
+3. **What are the key characteristics of a good software process?**
+   Ans. It should be repeatable, efficient, measurable, flexible, and produce high-quality software.
+
+4. **Mention two perspective process models.**
+   Ans. Waterfall model and Spiral model.
+
+5. **What is a specialized process model?**
+   Ans. A process model tailored for specific types of software like component-based or concurrent systems.
+
+6. **Define agility in software development.**
+   Ans. Agility means being flexible and fast in responding to changes during software development.
+
+7. **State any two principles of agile development.**
+   Ans. 1) Customer collaboration over contract negotiation. 2) Responding to change over following a fixed plan.
+
+8. **What is the role of customer feedback in Agile?**
+   Ans. Customer feedback helps teams adjust and improve the product quickly to meet real user needs.
+
+9. **Name any two Agile methodologies.**
+   Ans. Scrum and Extreme Programming (XP).
+
+10. **What is Extreme Programming (XP)?**
+    Ans. XP is an agile method that focuses on frequent releases, customer involvement, and simple design.
+
+11. **List any two phases in the XP process.**
+    Ans. Planning and Coding.
+
+12. **What is pair programming in XP?**
+    Ans. Two developers work together on the same code—one writes, the other reviews in real time.
+
+13. **Differentiate between iterative and incremental models.**
+    Ans. Iterative improves the same part again and again. Incremental adds new features step by step.
+
+14. **Mention any two benefits of using agile methods.**
+    Ans. Faster delivery and better customer satisfaction.
+
+15. **What is a case study in the context of software engineering?**
+    Ans. A real-world example used to explain how a software concept or model works in practice.
+
+---
+
+
+
+### ✅ UNIT II – Requirements Analysis and Specification
+
+1. **What is requirement analysis?**
+   Ans. It is the process of understanding what the user needs from the software system.
+
+2. **Define software requirement specification (SRS).**
+   Ans. SRS is a document that describes what the software should do, how it should behave, and its constraints.
+
+3. **Name two types of requirements.**
+   Ans. Functional requirements and non-functional requirements.
+
+4. **What is the purpose of formal system specification?**
+   Ans. It provides a mathematically precise description of software behavior for better clarity and correctness.
+
+5. **What is a finite state machine?**
+   Ans. It's a model that shows how a system transitions between different states based on inputs.
+
+6. **What is a Petri net?**
+   Ans. A Petri net is a graphical tool used to model concurrent and distributed systems.
+
+7. **Define object modeling.**
+   Ans. Object modeling is the process of identifying and representing objects and their relationships in a system.
+
+8. **What is a use case in UML?**
+   Ans. A use case shows how users interact with the system to achieve a goal.
+
+9. **Name two types of interaction diagrams in UML.**
+   Ans. Sequence diagram and collaboration diagram.
+
+10. **What is the use of a class diagram?**
+    Ans. It shows the system's classes, attributes, methods, and relationships.
+
+11. **Define activity diagram.**
+    Ans. An activity diagram shows the flow of activities or operations in a process.
+
+12. **What is a state chart diagram used for?**
+    Ans. It models the different states of an object and how it changes state due to events.
+
+13. **What is functional modeling?**
+    Ans. It shows how data moves through the system using processes and transformations.
+
+14. **What is a data flow diagram (DFD)?**
+    Ans. DFD shows how data enters, moves, and exits a system through different processes.
+
+15. **Name any two CASE tools.**
+    Ans. Rational Rose and Enterprise Architect.
+
+---
+
+
+
+### ✅ UNIT III – Software Design 
+
+1. **What is software design?**
+   Ans. Software design is the process of converting requirements into a blueprint for building software.
+
+2. **List the main activities of the design process.**
+   Ans. Architectural design, interface design, component design, and database design.
+
+3. **Define coupling.**
+   Ans. Coupling is the degree of dependency between software modules. Lower coupling is better.
+
+4. **Define cohesion.**
+   Ans. Cohesion measures how closely related the functions in a module are. Higher cohesion is better.
+
+5. **What is functional independence?**
+   Ans. It means designing modules that perform a single function and work independently of others.
+
+6. **What is a design pattern?**
+   Ans. A design pattern is a reusable solution to a common software design problem.
+
+7. **Name the components of the Model-View-Controller (MVC) pattern.**
+   Ans. Model, View, and Controller.
+
+8. **What is the purpose of the Publish-Subscribe pattern?**
+   Ans. It allows components to communicate without being tightly connected.
+
+9. **What does the Adapter pattern do?**
+   Ans. It converts one interface into another that the client expects.
+
+10. **Define the Command pattern.**
+    Ans. It encapsulates a request as an object, allowing undo or queue of actions.
+
+11. **What is the Observer pattern used for?**
+    Ans. It notifies dependent objects automatically when the state of one object changes.
+
+12. **What is the use of the Facade pattern?**
+    Ans. It provides a simple interface to a complex system.
+
+13. **Name any two architectural styles.**
+    Ans. Layered architecture and Client-Server architecture.
+
+14. **Differentiate between layered and client-server architecture.**
+    Ans. Layered divides system into layers; client-server has separate client and server roles.
+
+15. **What is user interface design?**
+    Ans. It involves creating interfaces that are easy and efficient for users to interact with.
+
+---
+
+
+
+### ✅ UNIT IV – Software Testing and Maintenance 
+
+1. **Define software testing.**
+   Ans. Software testing is the process of checking whether a software system works as expected.
+
+2. **What is unit testing?**
+   Ans. Unit testing is testing individual components or modules of a software.
+
+3. **Differentiate between black box and white box testing.**
+   Ans. Black box tests without looking at internal code; white box tests by examining internal logic and structure.
+
+4. **What is integration testing?**
+   Ans. It checks how different modules work together after being combined.
+
+5. **What is system testing?**
+   Ans. It tests the complete system to ensure it meets the requirements.
+
+6. **Define regression testing.**
+   Ans. It’s testing to make sure new changes didn’t break old functionality.
+
+7. **What is debugging?**
+   Ans. Debugging is the process of finding and fixing errors in the code.
+
+8. **What is symbolic execution?**
+   Ans. It’s a program analysis technique that uses symbols instead of actual inputs to explore all possible paths.
+
+9. **What is program analysis?**
+   Ans. It involves examining the program to find errors or performance issues, either statically or dynamically.
+
+10. **Define model checking.**
+    Ans. Model checking is a method to verify system properties by exploring all possible states.
+
+11. **What is alpha testing?**
+    Ans. Alpha testing is done by the developers in-house before the software is released.
+
+12. **What is beta testing?**
+    Ans. Beta testing is done by selected external users before the final release.
+
+13. **What is the goal of verification?**
+    Ans. To ensure the software is built correctly according to design and specs.
+
+14. **What is meant by test coverage?**
+    Ans. It measures how much of the code is tested by the test cases.
+
+15. **Name any two types of software maintenance.**
+    Ans. Corrective maintenance and adaptive maintenance.
+
+---
+
+
+
+### ✅ UNIT V – Project Management 
+
+1. **What is software project management?**
+   Ans. It is the process of planning, organizing, and controlling software projects to meet goals, time, and budget.
+
+2. **What are the main responsibilities of a project manager?**
+   Ans. Managing time, cost, quality, risks, communication, and team coordination.
+
+3. **Define software configuration management (SCM).**
+   Ans. SCM is the process of tracking and controlling changes in software during development.
+
+4. **What is version control?**
+   Ans. Version control manages changes to code and documents by saving different versions over time.
+
+5. **What is project scheduling?**
+   Ans. It involves planning the timeline and sequence of tasks in a project.
+
+6. **What is a Gantt chart?**
+   Ans. A Gantt chart is a visual tool that shows project tasks and their timelines.
+
+7. **What is DevOps?**
+   Ans. DevOps is a set of practices that combine development and operations to deliver software faster and more reliably.
+
+8. **Mention any two goals of DevOps.**
+   Ans. Faster delivery and better collaboration between dev and ops teams.
+
+9. **What is continuous integration?**
+   Ans. It is the practice of automatically building and testing code every time a change is made.
+
+10. **What is a deployment pipeline?**
+    Ans. A deployment pipeline automates the process of building, testing, and deploying software.
+
+11. **Name two tools used in deployment pipelines.**
+    Ans. Jenkins and GitLab CI.
+
+12. **What is the purpose of cloud as a platform?**
+    Ans. To provide on-demand access to computing resources like storage, servers, and applications.
+
+13. **What is containerization?**
+    Ans. It is packaging software with its dependencies into isolated units called containers.
+
+14. **Define risk in project management.**
+    Ans. Risk is any potential problem that can affect the success of a project.
+
+15. **What is earned value analysis (EVA)?**
+    Ans. EVA is a method to measure project performance by comparing planned vs. actual work and cost.
+
+---
+

@@ -214,6 +214,8 @@
     </style>
     <style>
         .wrapper {
+            display: flex;
+            align-items: center;
             position: fixed;
             top: -15px;
             right: -45px;
@@ -516,11 +518,41 @@
             }
         }
     </style>
+    <style>
+        .round-color-picker {
+            appearance: none;
+            -webkit-appearance: none;
+            border: 8px solid #000000a3;
+            /* Adjust thickness and color here */
+            border-radius: 100%;
+            width: 90px;
+            height: 90px;
+            padding: 0;
+            margin-right: 10px;
+            cursor: pointer;
+            overflow: hidden;
+            box-sizing: border-box;
+            /* ensures border doesn’t break the shape */
+        }
+
+        /* Remove weird Chrome swatch wrapper padding */
+        .round-color-picker::-webkit-color-swatch-wrapper {
+            padding: 0;
+        }
+
+        /* Round the actual color swatch and remove default border */
+        .round-color-picker::-webkit-color-swatch {
+            border: none;
+            border-radius: 50%;
+        }
+    </style>
 </head>
 
 <body>
 
     <div class="wrapper">
+        <input type="color" id="colorPicker" name="colorPicker" class="round-color-picker" value="#9673ff" />
+
         <input type="checkbox" id="hide-checkbox">
         <label for="hide-checkbox" class="toggle">
             <span class="toggle-button">
@@ -610,6 +642,15 @@
     </script>
     <!-- vercel analytics -->
     <script defer src="/_vercel/insights/script.js"></script>
+    <script>
+        const colorPicker = document.getElementById('colorPicker');
+
+        colorPicker.addEventListener('input', function () {
+            const selectedColor = this.value;
+            document.documentElement.style.setProperty('--accent', selectedColor);
+        });
+
+    </script>
 
 
 </body>

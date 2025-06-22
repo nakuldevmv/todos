@@ -1335,6 +1335,8 @@ They’re called **"perspective"** because they give a **particular viewpoint or
 **diagram: true**
 Google: `waterfall model in software engineering diagram`
 
+![alt text](https://www.tutorialspoint.com/sdlc/images/sdlc_waterfall_model.jpg)
+
 * Linear, step-by-step model
 * Each phase must be **fully completed** before the next begins
 
@@ -1365,6 +1367,7 @@ Google: `waterfall model in software engineering diagram`
 
 **diagram: true**
 Google: `incremental model in software engineering diagram`
+![alt text](https://radhikaclasses.com/wp-content/uploads/2021/03/Incremental-model-image-new.png)
 
 * Software is developed in **small parts (increments)**
 * Each increment adds functionality
@@ -1386,6 +1389,7 @@ Google: `incremental model in software engineering diagram`
 
 **diagram: true**
 Google: `spiral model in software engineering diagram`
+![alt text](https://www.bdtask.com/blog/assets/plugins/ckfinder/core/connector/php/uploads/images/what-is-spiral-model-for-software-development.webp)
 
 * Combines **design + prototyping + risk analysis**
 * Project moves in **spirals (loops)** through 4 major phases
@@ -1415,6 +1419,7 @@ Google: `spiral model in software engineering diagram`
 
 **diagram: true**
 Google: `v model in software engineering diagram`
+![alt text](https://media.geeksforgeeks.org/wp-content/uploads/20231030123258/software-Testing-SDLC-V-model.webp)
 
 * Extension of the waterfall model
 * Every dev stage has a corresponding **testing phase**

@@ -996,3 +996,312 @@ Google: `model checking finite state machine example`
 
 ---
 
+<br><br>
+
+
+
+# ✅ UNIT V – PROJECT MANAGEMENT
+
+**Subject: Object Oriented Software Engineering – CCS356**
+**Focus:** Software Project Management + DevOps (full-stack breakdown, no fluff, only that real stuff)
+**diagram: true** (for project scheduling + deployment pipeline)
+
+---
+
+## 💼 1. **Software Project Management (SPM)**
+
+### 🔍 What is SPM?
+
+SPM is the art and science of **planning, executing, monitoring, and closing software projects** — making sure the product is delivered on time, within budget, and with the desired quality.
+
+### 🧱 Key Objectives:
+
+* **On-time delivery**
+* **Budget control**
+* **Scope clarity**
+* **Stakeholder satisfaction**
+
+### 🧠 Core Activities in SPM:
+
+1. **Project Planning**
+
+   * Define scope, goals, budget, timeline
+   * Create Work Breakdown Structure (WBS)
+   * Identify resources and constraints
+   * Risk analysis & mitigation planning
+
+2. **Project Execution**
+
+   * Assign tasks to team members
+   * Coordinate efforts, hold standups
+   * Communicate status to stakeholders
+
+3. **Monitoring and Controlling**
+
+   * Track progress (time, cost, scope)
+   * Manage changes
+   * Control risks
+   * Update plans based on project health
+
+4. **Project Closure**
+
+   * Final delivery
+   * Project documentation
+   * Lessons learned
+   * Post-mortem analysis
+
+### 💥 Challenges in SPM:
+
+* Scope creep
+* Budget overruns
+* Poor communication
+* Underestimated timelines
+* Inexperienced teams
+
+---
+
+## 🗂️ 2. **Software Configuration Management (SCM)**
+
+### 🎯 Purpose:
+
+SCM is all about **controlling changes** to software to maintain integrity and traceability.
+
+### 🧩 SCM = Control + Trace + Audit
+
+### 🧰 Key Components:
+
+1. **Version Control**
+
+   * Track file changes over time
+   * Enable team collaboration without conflict
+   * Examples: Git, SVN, Mercurial
+
+2. **Configuration Identification**
+
+   * Label all config items (source code, docs, libs)
+   * Define structure of software system
+
+3. **Change Control**
+
+   * Set process for reviewing, approving, and tracking changes
+   * Change requests → Impact analysis → Approval/rejection
+
+4. **Configuration Status Accounting**
+
+   * Record/report on status of config items
+   * Version history, who changed what & when
+
+5. **Configuration Auditing**
+
+   * Ensure system conforms to requirements
+   * Verify approved changes are applied correctly
+
+### 💡 Benefits of SCM:
+
+* Prevents overwriting
+* Maintains system stability
+* Easier debugging with version history
+* Accountability and traceability
+
+---
+
+## 📆 3. **Project Scheduling**
+
+### 🧠 What It Means:
+
+Project scheduling is the process of defining **when tasks happen**, **who does them**, and **how long they take**, so that the entire project gets done smoothly.
+
+### 🧰 Steps in Scheduling:
+
+1. **Identify activities**
+   Break the project into small tasks using WBS.
+
+2. **Determine dependencies**
+   Figure out what tasks must be done before others.
+
+3. **Estimate time & resources**
+   Calculate how long each task takes and what tools/people are needed.
+
+4. **Create the schedule**
+   Use tools like Gantt charts and CPM to visualize the plan.
+
+5. **Track & update**
+   Continuously monitor and tweak schedule during the project.
+
+### 🧩 Techniques & Tools:
+
+* **Gantt Chart**
+  Visual timeline with task bars (📌 diagram: true)
+  Use Google: `Gantt chart project scheduling software engineering`
+
+* **PERT (Program Evaluation Review Technique)**
+  Graph that shows task dependencies with estimated times
+  Optimistic, Pessimistic, Most likely times
+
+* **Critical Path Method (CPM)**
+  Find the sequence of tasks that directly affects project duration
+  If a task on this path delays → whole project delays
+
+### 🛠️ Terms You Gotta Know:
+
+* **Slack/Float**: Extra time a task can take without delaying project
+* **Milestone**: Key checkpoints in the schedule
+* **Baseline Schedule**: Original timeline used for comparison
+
+---
+
+## 🛠️ 4. **DevOps** (The Real MVP)
+
+---
+
+### a) ⚡ **Motivation for DevOps**
+
+Before DevOps, dev and ops were two separate worlds.
+
+* Devs: "It works on my machine!"
+* Ops: "But it's crashing in prod!"
+
+#### DevOps Fixes That With:
+
+* **Automation over manual processes**
+* **Fast, frequent, reliable deployments**
+* **Collaboration and feedback loops**
+* **Continuous delivery of value**
+
+### 🤝 Dev + Ops + QA + Security = One Team
+
+It’s a **culture shift** powered by tools and mindset.
+
+---
+
+### b) ☁️ **Cloud as a Platform**
+
+Cloud platforms make DevOps scalable, flexible, and powerful.
+Examples: **AWS, Azure, Google Cloud**
+
+### 🚀 Benefits of Cloud in DevOps:
+
+* **On-demand infrastructure**: Spin servers up/down anytime
+* **Auto-scaling**: Handle traffic spikes
+* **Global deployments**: Launch services worldwide
+* **Service integrations**: Databases, AI, storage, etc.
+
+### 🧠 Cloud Features Used:
+
+* Infrastructure as a Service (IaaS)
+* Platform as a Service (PaaS)
+* Serverless Functions (like AWS Lambda)
+* Virtual Machines and Containers
+
+---
+
+### c) 🔧 **Operations in DevOps**
+
+### 👨‍💻 Key Ops Tasks:
+
+1. **Infrastructure Provisioning**
+
+   * Automate server setup using Terraform/CloudFormation
+
+2. **Environment Management**
+
+   * Maintain Dev, QA, Staging, Production separately
+
+3. **Monitoring & Alerting**
+
+   * Use tools like Prometheus, Datadog, or ELK stack
+   * Detect issues before users do
+
+4. **Security Management**
+
+   * Ensure secure deployments
+   * Handle secrets, credentials, and vulnerability scanning
+
+5. **Log Management**
+
+   * Centralized logs = faster debugging and root cause analysis
+
+---
+
+### d) 🚀 **Deployment Pipeline**
+
+A DevOps pipeline is an automated sequence from **code commit → production deployment**.
+(📌 diagram: true)
+Search: `CI CD DevOps pipeline diagram`
+
+### ⚙️ Stages in the Pipeline:
+
+1. **Source**
+
+   * Dev commits code to repo (GitHub, GitLab)
+
+2. **Build**
+
+   * Code compiled, dependencies installed
+
+3. **Test**
+
+   * Run unit/integration tests (e.g., JUnit, Selenium)
+
+4. **Package**
+
+   * Bundle into deployable artifact or Docker image
+
+5. **Release**
+
+   * Move package to artifact repo (e.g., DockerHub)
+
+6. **Deploy**
+
+   * Automatic/Manual push to production (Kubernetes, Ansible)
+
+7. **Operate & Monitor**
+
+   * Alerting, logging, uptime checks
+
+### 🧠 Benefits:
+
+* Faster delivery
+* Fewer bugs in production
+* Easier rollback
+* Confidence in deployments
+
+---
+
+### e) 🔧 **DevOps Tools**
+
+| **Purpose**              | **Popular Tools**              |
+| ------------------------ | ------------------------------ |
+| Version Control          | Git, GitHub, Bitbucket         |
+| CI/CD                    | Jenkins, CircleCI, TravisCI    |
+| Containerization         | Docker, Podman                 |
+| Container Orchestration  | Kubernetes, Docker Swarm       |
+| Configuration Management | Ansible, Puppet, Chef          |
+| Infra as Code (IaC)      | Terraform, CloudFormation      |
+| Monitoring & Logging     | Prometheus, Grafana, ELK Stack |
+| Collaboration & Tracking | JIRA, Slack, Teams             |
+| Code Quality & Testing   | SonarQube, Selenium, JUnit     |
+
+---
+
+### f) 📘 **Case Study – DevOps in Action**
+
+Let’s say a **food delivery app** like Zomato went DevOps-mode.
+
+### ⚙️ Problems Faced:
+
+* Crashes during promo hours
+* Bugs going unnoticed
+* Delays in deploying new features
+
+### 🛠️ DevOps Implementation:
+
+* Source Code: GitHub
+* CI/CD: Jenkins → automated builds and tests
+* Containerization: Docker
+* Deployment: Kubernetes
+* Infra Mgmt: Terraform (IaC)
+* Monitoring: Prometheus + Grafana
+* Communication: Slack + JIRA
+
+---

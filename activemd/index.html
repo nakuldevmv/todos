@@ -5,8 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Markdown Viewer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
     <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/github-dark.min.css">
     <link rel="icon" href="ico/icon.png" type="image/png">
 
@@ -59,7 +62,7 @@
         body {
             margin: 0;
             padding: 2rem;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Rubik', sans-serif;
             background-color: var(--bg);
             color: var(--fg);
             line-height: 1.7;
@@ -104,7 +107,7 @@
             font-family: 'Courier New', Courier, monospace;
         }
 
-        
+
         table {
             width: 100%;
             border-spacing: 0;
@@ -603,6 +606,7 @@
 
     <script>
         const markdownUrl = `https://nakuldevmv.github.io/todos/oose.md?cb=${Date.now()}`;
+
         const contentDiv = document.getElementById('content');
 
         async function loadMarkdown() {

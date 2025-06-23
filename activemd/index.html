@@ -6,11 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Markdown Viewer</title>
 
-    <!-- Inter font for a clean look -->
+    <!-- Inter font for a clean look
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
     <!-- Prism Tomorrow theme -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.min.css" /> -->
+     <!-- Inter font for a clean look -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Highlight.js GitHub Dark theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github-dark.min.css">
+
     <link rel="icon" href="ico/icon.png" type="image/png">
 
     <style>
@@ -54,7 +60,7 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            
+
         }
 
         body {
@@ -70,11 +76,11 @@
         h1,
         h2,
         h3,
-        h4 { 
+        h4 {
             color: var(--accent);
             margin-top: 2rem;
             margin-bottom: 1rem;
-              transition: all 0.5s ease;
+            transition: all 0.5s ease;
 
         }
 
@@ -113,7 +119,7 @@
             border-radius: 10px;
             overflow: hidden;
             outline: 2px solid var(--accent);
-              transition: all 0.5s ease;
+            transition: all 0.5s ease;
 
         }
 
@@ -139,7 +145,7 @@
         th {
             background-color: var(--accent);
             color: var(--fg);
-              transition: all 0.5s ease;
+            transition: all 0.5s ease;
 
         }
 
@@ -159,7 +165,7 @@
             background: rgba(255, 255, 255, 0.05);
             padding: 1rem;
             border-radius: 4px;
-              transition: all 0.5s ease;
+            transition: all 0.5s ease;
 
         }
 
@@ -219,7 +225,7 @@
             height: 100vh;
             font-size: 1.5rem;
             color: var(--accent);
-              transition: all 0.5s ease;
+            transition: all 0.5s ease;
 
         }
     </style>
@@ -593,14 +599,10 @@
         Made with ❤️ by <a style="text-decoration:none;" href="https://github.com/nakuldevmv">Nakul</a>
     </h4>
 
-    <!-- Marked.js for Markdown parsing -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-
-    <!-- PrismJS core + Autoloader plugin -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/autoloader/prism-autoloader.min.js"></script>
     <script>
-        // Autoloader config - loads whatever language you need
         Prism.plugins.autoloader.languages_path = 'https://cdn.jsdelivr.net/npm/prismjs/components/';
 
         const markdownUrl = `https://nakuldevmv.github.io/todos/oose.md?cb=${Date.now()}`;
@@ -628,7 +630,41 @@
         }
 
         loadMarkdown();
-    </script>
+    </script> -->
+ <!-- core scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/common.min.js"></script>
+
+  <script>
+    // fetch + render with auto syntax highlighting
+    const markdownUrl = `https://nakuldevmv.github.io/todos/oose.md?cb=${Date.now()}`;
+    const contentDiv = document.getElementById('content');
+
+    async function loadMarkdown() {
+      try {
+        const res = await fetch(markdownUrl, { cache: 'no-cache' });
+        if (!res.ok) throw new Error('File not found: ' + res.status);
+
+        const md = await res.text();
+        const html = marked.parse(md, {
+          breaks: true,
+          smartypants: true,
+          highlight: (code, lang) => {
+            if (hljs.getLanguage(lang)) {
+              return hljs.highlight(code, { language: lang }).value;
+            }
+            return hljs.highlightAuto(code).value;
+          }
+        });
+
+        contentDiv.innerHTML = html;
+      } catch (e) {
+        contentDiv.innerHTML = `<div id="error">⚠️ Failed to load Markdown file: ${e.message}</div>`;
+      }
+    }
+
+    loadMarkdown();
+  </script>
     <script>
         const toggleCheckbox = document.getElementById('hide-checkbox')
 
@@ -652,21 +688,14 @@
             toggleCheckbox.checked = useLight;
             applyTheme(useLight);
         });
-    </script>
-    <script>
-        const colorPicker = document.getElementById('colorPicker');
-
+         const colorPicker = document.getElementById('colorPicker');
         colorPicker.addEventListener('input', function () {
             const selectedColor = this.value;
             document.documentElement.style.setProperty('--accent', selectedColor);
         });
-
     </script>
+
     <!-- vercel analytics -->
     <script defer src="/_vercel/insights/script.js"></script>
-    
-
-
 </body>
-
 </html>

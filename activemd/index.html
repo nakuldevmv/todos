@@ -7,7 +7,6 @@
     <title>Markdown Viewer</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github-dark.min.css"> -->
     <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/github-dark.min.css">
     <link rel="icon" href="ico/icon.png" type="image/png">
 
@@ -21,6 +20,8 @@
             --light-bg: #f4f4f4;
             --light-fg: #111;
             --light-accent: #333;
+            --bw: #e4d6ff;
+            --bb: #24D7F7;
         }
 
         ::-webkit-scrollbar {
@@ -225,12 +226,12 @@
         .wrapper {
             display: flex;
             align-items: center;
-            justify-content: end;
-            align-content: end;
+            justify-content: center;
+            align-content: center;
             position: fixed;
             top: -15px;
             right: -80px;
-            transform: scale(0.4);
+            transform: scale(0.38);
             /* makes it small */
             z-index: 9999;
         }
@@ -251,6 +252,7 @@
             border-radius: 50px;
             transition: 500ms;
             overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.644);
         }
 
         .toggle-button {
@@ -533,16 +535,18 @@
         .round-color-picker {
             appearance: none;
             -webkit-appearance: none;
-            border: 8px solid #000000a3;
+            border: 10px solid var(--bw);
             /* Adjust thickness and color here */
             border-radius: 100%;
             width: 90px;
             height: 90px;
             padding: 0;
-            margin-right: 10px;
+            margin-right: 20px;
             cursor: pointer;
-            overflow: hidden;
             box-sizing: border-box;
+            background-color: transparent;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.644);
             /* ensures border doesn’t break the shape */
         }
 
@@ -554,7 +558,7 @@
         /* Round the actual color swatch and remove default border */
         .round-color-picker::-webkit-color-swatch {
             border: none;
-            border-radius: 50%;
+            border-radius: 100%;
         }
     </style>
 </head>
@@ -591,8 +595,8 @@
         Made with ❤️ by <a style="text-decoration:none;" href="https://github.com/nakuldevmv">Nakul</a>
     </h4>
 
-   
-  
+
+
     <!-- core scripts -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
@@ -632,6 +636,7 @@
         function applyTheme(light) {
             document.body.style.backgroundColor = light ? 'var(--light-bg)' : 'var(--bg)';
             document.body.style.color = light ? 'var(--light-fg)' : 'var(--fg)';
+            document.getElementById('colorPicker').style.borderColor = light ? 'var(--bb)' : 'var(--bw)';
             localStorage.setItem('theme', light ? 'light' : 'dark');
         }
 

@@ -6,17 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Markdown Viewer</title>
 
-    <!-- Inter font for a clean look
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-
-    <!-- Prism Tomorrow theme -->
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.min.css" /> -->
-     <!-- Inter font for a clean look -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-
-  <!-- Highlight.js GitHub Dark theme -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github-dark.min.css">
-
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github-dark.min.css"> -->
+    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/github-dark.min.css">
     <link rel="icon" href="ico/icon.png" type="image/png">
 
     <style>
@@ -599,23 +591,22 @@
         Made with ❤️ by <a style="text-decoration:none;" href="https://github.com/nakuldevmv">Nakul</a>
     </h4>
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/autoloader/prism-autoloader.min.js"></script>
+   
+  
+    <!-- core scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
+
     <script>
-        Prism.plugins.autoloader.languages_path = 'https://cdn.jsdelivr.net/npm/prismjs/components/';
-
         const markdownUrl = `https://nakuldevmv.github.io/todos/oose.md?cb=${Date.now()}`;
-        // const markdownUrl = `https://raw.githubusercontent.com/nakuldevmv/nakuldevmv/refs/heads/main/README.md`;
-
         const contentDiv = document.getElementById('content');
-        let light = false;
 
         async function loadMarkdown() {
             try {
-                const res = await fetch(markdownUrl, { cache: "no-cache" });
-                if (!res.ok) throw new Error('File not found: ' + res.status);
+                const res = await fetch(markdownUrl, { cache: 'no-cache' });
+                if (!res.ok) throw new Error(res.statusText);
 
+                // parse md → html
                 const md = await res.text();
                 const html = marked.parse(md, {
                     breaks: true,
@@ -623,48 +614,18 @@
                 });
 
                 contentDiv.innerHTML = html;
-                Prism.highlightAll();
+
+                // 🔥 highlight everything
+                hljs.highlightAll();
             } catch (e) {
-                contentDiv.innerHTML = `<div id="error">⚠️ Failed to load Markdown file: ${e.message}</div>`;
+                contentDiv.innerHTML = `<div id="error">⚠️ Failed to load Markdown: ${e.message}</div>`;
             }
         }
 
         loadMarkdown();
-    </script> -->
- <!-- core scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/common.min.js"></script>
+    </script>
 
-  <script>
-    // fetch + render with auto syntax highlighting
-    const markdownUrl = `https://nakuldevmv.github.io/todos/oose.md?cb=${Date.now()}`;
-    const contentDiv = document.getElementById('content');
 
-    async function loadMarkdown() {
-      try {
-        const res = await fetch(markdownUrl, { cache: 'no-cache' });
-        if (!res.ok) throw new Error('File not found: ' + res.status);
-
-        const md = await res.text();
-        const html = marked.parse(md, {
-          breaks: true,
-          smartypants: true,
-          highlight: (code, lang) => {
-            if (hljs.getLanguage(lang)) {
-              return hljs.highlight(code, { language: lang }).value;
-            }
-            return hljs.highlightAuto(code).value;
-          }
-        });
-
-        contentDiv.innerHTML = html;
-      } catch (e) {
-        contentDiv.innerHTML = `<div id="error">⚠️ Failed to load Markdown file: ${e.message}</div>`;
-      }
-    }
-
-    loadMarkdown();
-  </script>
     <script>
         const toggleCheckbox = document.getElementById('hide-checkbox')
 
@@ -688,7 +649,7 @@
             toggleCheckbox.checked = useLight;
             applyTheme(useLight);
         });
-         const colorPicker = document.getElementById('colorPicker');
+        const colorPicker = document.getElementById('colorPicker');
         colorPicker.addEventListener('input', function () {
             const selectedColor = this.value;
             document.documentElement.style.setProperty('--accent', selectedColor);
@@ -698,4 +659,5 @@
     <!-- vercel analytics -->
     <script defer src="/_vercel/insights/script.js"></script>
 </body>
+
 </html>

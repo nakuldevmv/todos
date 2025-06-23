@@ -104,42 +104,45 @@
             font-family: 'Courier New', Courier, monospace;
         }
 
+        
         table {
-            border-collapse: collapse;
             width: 100%;
-            margin: 1rem 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            border-spacing: 0;
+            border-radius: 0.625rem;
             overflow: hidden;
-            outline: 2px solid var(--accent);
-            transition: all 0.5s ease;
-
+            box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 0.125rem solid var(--accent);
+            margin-bottom: 0.625rem;
         }
 
-        th,
-        td {
-            border: 1px solid #444;
-            border-left: none;
-            border-top: none;
-            padding: 0.5rem;
-            text-align: left;
-        }
-
-        th:first-child,
-        td:first-child {
-            border-left: none;
-        }
-
-        tr:first-child th,
-        tr:first-child td {
-            border-top: none;
+        thead tr {
+            background: var(--accent);
         }
 
         th {
-            background-color: var(--accent);
-            color: var(--fg);
-            transition: all 0.5s ease;
+            padding: 0.75rem 1rem;
+            text-align: left;
+            letter-spacing: 0.05em;
+        }
 
+        tbody td {
+            padding: 0.75rem 1rem;
+            /* only the inner lines: bottom + right */
+            border-bottom: 1px solid rgb(138, 138, 138);
+            border-right: 1px solid rgb(138, 138, 138);
+        }
+
+        tbody td:last-child {
+            border-right: none;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr:hover td {
+            background: rgba(150, 115, 255, 0.05);
         }
 
         img {
@@ -595,9 +598,6 @@
         Made with ❤️ by <a style="text-decoration:none;" href="https://github.com/nakuldevmv">Nakul</a>
     </h4>
 
-
-
-    <!-- core scripts -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
 

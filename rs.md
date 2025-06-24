@@ -198,12 +198,15 @@ Used to compare:
 | **Jaccard Index**       | Set overlap ratio (e.g., clicks, views) | 0 to 1   | Binary implicit data |
 
 Cosine Similarity
+
 ![alt text](https://miro.medium.com/v2/resize:fit:824/1*GK56xmDIWtNQAD_jnBIt2g.png)
 
 Pearson Correlation
+
 ![text](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaixvuidbAU3iM-CBoemg57yTceXUzfCuAUA&s)
 
 Jaccard Index
+
 ![alt text](https://media.geeksforgeeks.org/wp-content/uploads/20211223145401/Jaccard.jpg)
 
 ---

@@ -1,5 +1,6 @@
 # Recommender System (CCS360)
 
+<br>
 
 ---
 
@@ -269,7 +270,8 @@ $$
 ---
 
 <br>
-<br>
+<br><br>
+
 
 ---
 
@@ -514,7 +516,8 @@ Use supervised ML to **predict if a user will like** an item or not, based on it
 ---
 
 <br>
-<br>
+<br><br>
+
 
 
 ---
@@ -738,7 +741,8 @@ Instead of finding neighbors, we **learn hidden user/item features**.
 ---
 
 <br>
-<br>
+<br><br>
+
 
 
 ---
@@ -957,7 +961,8 @@ Attackers inject **fake user profiles** to manipulate recommendations.
 ---
 
 <br>
-<br>
+<br><br>
+
 
 
 ---

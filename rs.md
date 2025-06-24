@@ -46,6 +46,8 @@ A **Recommender System (RS)** is an intelligent software tool designed to **sugg
 **diagram: true**
 **Google search:** `types of recommender systems diagram`
 
+![alt text](https://www.researchgate.net/publication/353416188/figure/fig2/AS:1134447600640000@1647484793982/Taxonomy-of-recommender-system.png)
+
 ### ▶️ 2.1 Content-Based Filtering (CBF)
 
 * Uses **item features** (genre, category, tags) to find similar items

@@ -197,6 +197,7 @@ Used to compare:
 | **Pearson Correlation** | Linear relationship between ratings     | -1 to +1 | CF                   |
 | **Jaccard Index**       | Set overlap ratio (e.g., clicks, views) | 0 to 1   | Binary implicit data |
 
+
 Cosine Similarity
 
 ![alt text](https://miro.medium.com/v2/resize:fit:824/1*GK56xmDIWtNQAD_jnBIt2g.png)

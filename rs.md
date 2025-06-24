@@ -736,3 +736,7 @@ Instead of finding neighbors, we **learn hidden user/item features**.
 * Matrix factorization
 
 ---
+
+<br>
+<br>
+

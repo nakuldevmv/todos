@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Markdown Viewer</title>
 
     <!-- SEO Meta Tags -->
@@ -46,19 +46,13 @@
       "applicationCategory": "DeveloperTool"
     }
     </script>
-
-    <script>
-        window.MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']],
-                displayMath: [['$$', '$$']],
-                processEscapes: true
-            },
-            svg: { fontCache: 'global' }
-        };
-    </script>
-    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
+    <!-- Load necessary libraries from CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it@13.0.1/dist/markdown-it.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it-texmath@1.0.0/texmath.min.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -625,7 +619,6 @@
 </head>
 
 <body>
-
     <div class="wrapper">
         <input type="color" id="colorPicker" name="colorPicker" class="round-color-picker" value="#9673ff" />
 
@@ -651,54 +644,86 @@
         </label>
     </div>
 
-    <div id="content" aria-live="polite">Loading markdown...</div>
-    <h4 style="font-size:small; text-align: center; margin-top: 2rem; color: var(--accent);">
-        Made with ❤️ by <a style="text-decoration:none;" href="https://github.com/nakuldevmv">Nakul</a>
-    </h4>
+    <!-- Content will be rendered here -->
+    <div id="content" aria-live="polite" class="loading">
+        <div class="spinner"></div>
+        <p>Loading markdown content...</p>
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
 
     <script>
-        const markdownUrl = `https://nakuldevmv.github.io/todos/rs.md?cb=${Date.now()}`;
-
-        const contentDiv = document.getElementById('content');
-
-        async function loadMarkdown() {
-            try {
-                const res = await fetch(markdownUrl, { cache: 'no-cache' });
-                if (!res.ok) throw new Error(res.statusText);
-
-                // parse md → html
-                const md = await res.text();
-                const html = marked.parse(md, {
-                    breaks: true,
-                    smartypants: true,
-                    mangle: false,
-                    headerIds: false
-                });
-
-                contentDiv.innerHTML = html;
-
-                hljs.highlightAll(); // highlight.js
-                if (window.MathJax) {
-                    MathJax.typesetPromise().catch((err) => console.error("MathJax fail:", err));
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize markdown parser with plugins
+            const md = window.markdownit({
+                html: true,
+                linkify: true,
+                typographer: true,
+                highlight: function (str, lang) {
+                    if (lang && hljs.getLanguage(lang)) {
+                        try {
+                            return '<pre class="hljs"><code>' +
+                                hljs.highlight(str, { language: lang, ignoreIllegals: true }).value +
+                                '</code></pre>';
+                        } catch (__) { }
+                    }
+                    return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
                 }
-                setTimeout(() => {
-                    if (window.MathJax) MathJax.typesetPromise();
-                }, 200);
+            }).use(window.texmath, {
+                engine: window.katex,
+                delimiters: 'dollars',
+                katexOptions: {
+                    macros: { "\\RR": "\\mathbb{R}" },
+                    throwOnError: false
+                }
+            });
 
+            // Get the content div
+            const contentDiv = document.getElementById('content');
 
+            // Define markdown URL with cache buster
+            const markdownUrl = `https://nakuldevmv.github.io/todos/rs.md?cb=${Date.now()}`;
 
-            } catch (e) {
-                contentDiv.innerHTML = `<div id="error">⚠️ Failed to load Markdown: ${e.message}</div>`;
+            // Render markdown from URL
+            async function renderMarkdown() {
+                try {
+                    // Fetch the markdown content
+ 
+                    const response = await fetch(markdownUrl, { cache: 'no-cache' });
+
+                    if (!response.ok) {
+                        throw new Error(`Failed to fetch: ${response.status} ${response.statusText}`);
+                    }
+
+                    const markdown = await response.text();
+
+                    // Render to HTML
+                    const html = md.render(markdown);
+
+                    // Display the result
+                    contentDiv.innerHTML = `
+                        <div class="markdown-content">${html}</div>
+                    `;
+
+                    // Apply syntax highlighting to code blocks
+                    document.querySelectorAll('pre code').forEach((block) => {
+                        hljs.highlightElement(block);
+                    });
+
+                } catch (error) {
+                    contentDiv.innerHTML = `
+                        <div class="error">
+                            <h3>Error Loading Content</h3>
+                            <p>${error.message}</p>
+                            <p>Failed to load markdown from: ${markdownUrl}</p>
+                        </div>
+                    `;
+                }
             }
-        }
 
-        loadMarkdown();
+            // Start rendering immediately
+            renderMarkdown();
+        });
     </script>
-
-
     <script>
         const toggleCheckbox = document.getElementById('hide-checkbox')
 
@@ -733,6 +758,7 @@
 
     <!-- vercel analytics -->
     <script defer src="/_vercel/insights/script.js"></script>
+
 </body>
 
 </html>

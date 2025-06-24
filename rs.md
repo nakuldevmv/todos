@@ -544,6 +544,7 @@ Use supervised ML to **predict if a user will like** an item or not, based on it
 **diagram: true**
 **Search query:** `Collaborative filtering architecture diagram user item based`
 
+![](https://www.mdpi.com/applsci/applsci-11-00843/article_deploy/html/images/applsci-11-00843-g001.png)
 ---
 
 ## 🔷 1. What is Collaborative Filtering (CF)?

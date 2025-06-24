@@ -958,3 +958,286 @@ Attackers inject **fake user profiles** to manipulate recommendations.
 
 <br>
 <br>
+
+
+---
+
+# ✅ UNIT V – EVALUATING RECOMMENDER SYSTEMS
+
+
+---
+
+## 🔷 1. Evaluation Paradigms
+
+**diagram: true**
+**Search this:** `recommender system evaluation paradigms diagram`
+
+### 📊 Definition:
+
+Evaluation paradigms are **broad strategies** used to assess how well a recommender system performs.
+
+Each paradigm is suitable for **different use cases and stages** of system development.
+
+---
+
+### 💡 Types of Paradigms:
+
+| Type                   | Description                                                          |
+| ---------------------- | -------------------------------------------------------------------- |
+| **User Studies**       | Controlled environments where real users interact with the RS        |
+| **Online Evaluation**  | Live deployment using real-time user interaction (e.g., A/B testing) |
+| **Offline Evaluation** | Lab-based testing using historical data (no live users)              |
+
+---
+
+### 🔁 Workflow Comparison:
+
+| Step             | User Study           | Online Eval        | Offline Eval           |
+| ---------------- | -------------------- | ------------------ | ---------------------- |
+| Data Source      | Real-time user input | Live site/app data | Pre-collected datasets |
+| User Involved?   | Yes                  | Yes                | No                     |
+| Metrics Measured | Satisfaction, Trust  | Engagement, CTR    | Accuracy, Ranking      |
+| Use Case         | Early testing        | Deployed system    | Model tuning           |
+
+---
+
+## 🔷 2. User Studies
+
+**diagram: false**
+
+### 🔬 What is it?
+
+A **qualitative** approach. Real users interact with your RS and give feedback via surveys, interviews, or ratings.
+
+---
+
+### 🎯 What it Evaluates:
+
+* User satisfaction 😊
+* Ease of use
+* Trust in recommendations
+* Perceived relevance
+* UX design effectiveness
+
+---
+
+### 💻 Working:
+
+1. Build prototype/system
+2. Recruit participants
+3. Let them use RS in a test scenario
+4. Collect feedback via:
+
+   * Likert scales
+   * Observations
+   * Follow-up interviews
+
+---
+
+### ✅ Advantages:
+
+* Deep insights into human behavior
+* Can capture trust, transparency, explainability
+
+### ❌ Limitations:
+
+* Expensive
+* Time-consuming
+* Small sample size = not always generalizable
+
+---
+
+## 🔷 3. Online Evaluation
+
+**diagram: true**
+**Search this:** `A/B testing recommender systems`
+
+### 🖥️ What is it?
+
+Real-time testing of RS **with real users** in a production system (like Amazon or Netflix).
+
+---
+
+### 🔧 Working:
+
+1. Deploy multiple versions of RS (Model A vs Model B)
+2. Split traffic randomly → send some users to each version
+3. Track user behavior (clicks, purchases, time spent)
+4. Compare performance using online metrics
+
+---
+
+### ⚙️ Methods:
+
+| Method                 | Description                                                  |
+| ---------------------- | ------------------------------------------------------------ |
+| **A/B Testing**        | Users split into groups, each sees different model           |
+| **Interleaving**       | Merge results from 2 models into 1 ranked list shown to user |
+| **Multi-Armed Bandit** | Dynamically picks best model during testing                  |
+
+---
+
+### 📏 Metrics Measured:
+
+* Click Through Rate (CTR)
+* Conversion Rate
+* Bounce Rate
+* Average Session Time
+* Purchase Rate
+
+---
+
+### ✅ Advantages:
+
+* Real-world effectiveness
+* Captures live behavior + context
+
+### ❌ Limitations:
+
+* Needs high user traffic
+* Risky if model performs poorly
+* Ethical concerns (user testing unknowingly)
+
+---
+
+## 🔷 4. Offline Evaluation
+
+**diagram: true**
+**Search this:** `train test split recommender evaluation`
+
+### 🗂️ What is it?
+
+Simulated evaluation of RS using **historical data** (no real-time interaction).
+
+---
+
+### ⚙️ Working:
+
+1. Take a dataset (e.g., MovieLens)
+2. **Split** into training + test sets
+
+   * Common splits: 80-20, 70-30
+3. Train RS on training set
+4. Predict ratings or rankings in test set
+5. Compare predictions with actual values
+6. Evaluate with metrics like MAE, RMSE, Precision
+
+---
+
+### 🧪 Example:
+
+User rated:
+
+* Titanic: ⭐⭐⭐⭐
+* Interstellar: ⭐⭐⭐⭐⭐
+* Matrix: ⭐⭐⭐⭐
+  (Hidden: Inception: ⭐⭐⭐⭐)
+
+Train RS → Predict rating for Inception → Compare with actual (4 stars)
+
+---
+
+### ✅ Pros:
+
+* Fast, low-cost, repeatable
+* Good for early development + benchmarking
+
+### ❌ Cons:
+
+* Can’t simulate real-time behavior
+* Cold start, novelty, UX can't be evaluated
+
+---
+
+## 🔷 5. Goals of Evaluation Design
+
+**diagram: false**
+
+### 🎯 What Should We Measure?
+
+Recommender Systems aren't just about accuracy. We need to measure things that improve **user experience**, **system performance**, and **business value**.
+
+---
+
+### 📋 Key Goals:
+
+| Goal                   | Description                           |
+| ---------------------- | ------------------------------------- |
+| **Accuracy**           | Predict right items/ratings           |
+| **Coverage**           | Handle all users & items              |
+| **Diversity**          | Recommend varied content              |
+| **Novelty**            | Suggest new, unknown items            |
+| **Serendipity**        | Surprise + delight users              |
+| **User Satisfaction**  | Keep users happy and engaged          |
+| **Scalability**        | Perform well at scale                 |
+| **Trust/Transparency** | Recommendations should be explainable |
+
+---
+
+## 🔷 6. Design Issues in Evaluation
+
+**diagram: false**
+
+### 🚨 Why evaluation often fails in real-world:
+
+| Issue                       | Impact                                 |
+| --------------------------- | -------------------------------------- |
+| **Cold Start**              | RS fails for new users/items (no data) |
+| **Sparsity**                | Too few interactions = poor learning   |
+| **User Behavior is Random** | Clicks ≠ preferences                   |
+| **Bias in Data**            | Popular items dominate results         |
+| **No Context**              | Doesn’t factor in time, mood, device   |
+| **Overfitting to Metrics**  | Optimizes numbers, not experience      |
+| **Slow Algorithms**         | Accurate but unscalable models         |
+
+---
+
+## 🔷 7. Accuracy Metrics
+
+**diagram: true**
+**Search this:** `recommender evaluation metrics RMSE MAE Precision Recall`
+
+### 🧮 1. Rating Prediction Metrics
+
+| Metric   | Formula                           | Use                      |
+| -------- | --------------------------------- | ------------------------ |
+| **MAE**  | Avg. of absolute errors           | Measures general error   |
+| **RMSE** | Square root of mean squared error | Penalizes large mistakes |
+
+---
+
+### 🎯 2. Top-N Recommendation Metrics
+
+| Metric        | Meaning                                      |
+| ------------- | -------------------------------------------- |
+| **Precision** | % of relevant items in top-N list            |
+| **Recall**    | % of relevant items successfully recommended |
+| **F1 Score**  | Harmonic mean of Precision & Recall          |
+| **nDCG**      | Cares about rank/order of relevant items     |
+| **MAP**       | Average Precision across all users           |
+
+---
+
+### ✅ Other Metrics:
+
+* **Hit Rate** → Did user click at least one recommended item?
+* **Coverage** → % of users/items the RS gives predictions for
+
+---
+
+## 🔷 8. Limitations of Evaluation Measures
+
+**diagram: false**
+
+### 🚫 Why metrics can lie:
+
+| Limitation      | Impact                                  |
+| --------------- | --------------------------------------- |
+| Ignores Emotion | MAE ≠ User Delight                      |
+| Offline Bias    | Uses old behavior, can't test new       |
+| No Context      | Can’t factor in time, location, mood    |
+| Cold Start      | Metrics assume data exists              |
+| Overfitting     | Models can cheat metrics                |
+| Not Scalable    | Accurate models may lag on real servers |
+
+---

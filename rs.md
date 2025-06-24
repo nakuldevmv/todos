@@ -147,30 +147,31 @@ A **Recommender System (RS)** is an intelligent software tool designed to **sugg
 ### ▶️ Key Techniques:
 
 #### 📌 4.1 Clustering
-
+![text](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM2A6A5Ae-Q1KP4nSIhn-6woZsXkM6fRxXqg&s)
 * Groups **similar users or items**
 * Algorithm: K-Means, DBSCAN
 * Use: Create **user segments**, e.g., “Horror Lovers,” “Binge Watchers”
 
 #### 📌 4.2 Classification
-
+![alt text](https://miro.medium.com/v2/resize:fit:663/1*xGsYc6aXehD7lyoLEn-mMA.png)
 * Predicts if a user will **like/dislike** an item
 * Algorithm: Decision Trees, Naive Bayes
 * Use: Show item if probability of liking is high
 
 #### 📌 4.3 Association Rule Mining
-
+![text](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIlroj0Apm_ZEfMzXA8o3aUoSdfD8CvAbaLg&s)
 * Finds rules between co-occurring items
 * Algorithm: Apriori, FP-Growth
 * Use: “Users who bought X also bought Y”
 
 #### 📌 4.4 Regression
-
+![text](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYhrSGO_2PMNrKLD4udTC3gD-_oqa9v5pIQQ&s)
 * Predicts **numerical ratings** (e.g., out of 5 stars)
 * Algorithm: Linear Regression
 * Use: Rank items by predicted rating
 
 #### 📌 4.5 Matrix Factorization
+![alt text](https://miro.medium.com/v2/resize:fit:1024/1*QuK-dyK7j8equezsRYZ9hQ.png)
 
 * Converts large sparse matrix into **low-rank approximations**
 * Leads to **latent features**, which improve predictions
@@ -196,13 +197,22 @@ Used to compare:
 | **Pearson Correlation** | Linear relationship between ratings     | -1 to +1 | CF                   |
 | **Jaccard Index**       | Set overlap ratio (e.g., clicks, views) | 0 to 1   | Binary implicit data |
 
+Cosine Similarity
+![alt text](https://miro.medium.com/v2/resize:fit:824/1*GK56xmDIWtNQAD_jnBIt2g.png)
+
+Pearson Correlation
+![text](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaixvuidbAU3iM-CBoemg57yTceXUzfCuAUA&s)
+
+Jaccard Index
+![alt text](https://media.geeksforgeeks.org/wp-content/uploads/20211223145401/Jaccard.jpg)
+
 ---
 
 ## 🔶 6. DIMENSIONALITY REDUCTION
 
 **diagram: true**
 **Google search:** `dimensionality reduction recommender systems`
-
+![alt text](https://media.geeksforgeeks.org/wp-content/uploads/20250526125548648108/What-is-Dimensionality-Reduction-.webp)
 ### ▶️ Problem It Solves:
 
 * User-item matrices are **huge and sparse**
@@ -231,7 +241,7 @@ Used to compare:
 
 **diagram: true**
 **Google search:** `SVD recommender systems matrix factorization`
-
+![alt text](https://miro.medium.com/v2/resize:fit:1400/1*F5RM9oMnJcWi1oxaEhF0mg.png)
 ### ▶️ What is it?
 
 SVD is a **matrix factorization** technique used to decompose a **user-item matrix (R)** into three matrices:
@@ -1535,3 +1545,465 @@ In an e-commerce app, recommend products based on what users with similar purcha
 
 **📄 Example:**
 A system with high accuracy might still show boring or irrelevant recommendations due to lack of novelty.
+
+---
+
+<br>
+<br>
+<br>
+
+# 2 Marks
+
+<br>
+<br>
+
+
+---
+
+## ✅ UNIT I – INTRODUCTION 
+
+---
+
+**1. What is a recommender system?**
+A. A recommender system is a software tool that suggests relevant items (like movies, products, music) to users based on their preferences, behavior, or past interactions.
+
+---
+
+**2. List any two real-world applications of recommender systems.**
+A.
+
+1. Netflix – recommends shows based on viewing history
+2. Amazon – suggests products based on previous purchases
+
+---
+
+**3. Define collaborative filtering.**
+A. Collaborative filtering is a recommendation method that predicts a user’s interest by analyzing preferences of similar users or items.
+
+---
+
+**4. What is a non-personalized recommender system?**
+A. A non-personalized recommender system recommends the same set of popular or trending items to all users, regardless of individual preferences.
+
+---
+
+**5. List two types of traditional recommender systems.**
+A.
+
+1. Content-based filtering
+2. Collaborative filtering
+
+---
+
+**6. What is taxonomy in the context of RS?**
+A. Taxonomy in RS refers to the classification of different types of recommender systems such as collaborative, content-based, hybrid, and non-personalized systems.
+
+---
+
+**7. Differentiate between personalized and non-personalized RS.**
+A.
+
+* Personalized RS: Gives recommendations tailored to user preferences.
+* Non-personalized RS: Shows same popular items to everyone.
+
+---
+
+**8. What is the role of data mining in recommender systems?**
+A. Data mining helps discover patterns and trends in user data, which can be used to improve recommendation accuracy.
+
+---
+
+**9. Define similarity measure.**
+A. A similarity measure quantifies how similar two users or two items are, usually based on their ratings or features.
+
+---
+
+**10. Mention two popular similarity metrics used in RS.**
+A.
+
+1. Cosine Similarity
+2. Pearson Correlation
+
+---
+
+**11. What is dimensionality reduction?**
+A. Dimensionality reduction is the process of reducing the number of features or variables in the user-item matrix to make computations faster and remove noise.
+
+---
+
+**12. Why is dimensionality reduction important in RS?**
+A. It reduces storage and computation costs, improves performance, and helps deal with sparsity in the user-item matrix.
+
+---
+
+**13. What is Singular Value Decomposition (SVD)?**
+A. SVD is a matrix factorization technique used to break the user-item matrix into three lower-dimensional matrices, uncovering hidden patterns for better recommendations.
+
+---
+
+**14. What is a latent feature in the context of SVD?**
+A. Latent features are hidden characteristics (like genre, style, brand) inferred from user-item interactions that influence preferences.
+
+---
+
+**15. How does SVD help in solving the sparsity problem?**
+A. SVD fills in missing values in sparse user-item matrices by approximating the matrix using latent features, enabling prediction of unrated items.
+
+---
+
+
+---
+
+## ✅ UNIT II – CONTENT-BASED RECOMMENDATION SYSTEMS 
+
+---
+
+**1. What is content-based filtering?**
+A. Content-based filtering recommends items by comparing item features with the user’s preferences, selecting items similar to what the user liked before.
+
+---
+
+**2. Mention any two components of a content-based system.**
+A.
+
+1. User profile
+2. Item profile
+
+---
+
+**3. Define item profile.**
+A. An item profile is a structured representation of an item that includes its features or attributes (e.g., genre, director, tags for a movie).
+
+---
+
+**4. How is an item profile represented?**
+A. Item profiles are typically represented as feature vectors using methods like TF-IDF, one-hot encoding, or embeddings.
+
+---
+
+**5. What is a user profile in content-based RS?**
+A. A user profile summarizes a user’s preferences based on their interactions, such as liked items, preferred categories, or rated content.
+
+---
+
+**6. What is TF-IDF used for in RS?**
+A. TF-IDF (Term Frequency-Inverse Document Frequency) is used to weight features (like keywords) in item profiles, highlighting important but unique terms.
+
+---
+
+**7. Mention two feature representation techniques.**
+A.
+
+1. One-hot encoding
+2. TF-IDF vectorization
+
+---
+
+**8. Define one-hot encoding.**
+A. One-hot encoding represents categorical variables as binary vectors, where only one bit is ‘1’ and all others are ‘0’.
+
+---
+
+**9. What is vector space model (VSM)?**
+A. VSM is a model where items and user profiles are represented as vectors in a multi-dimensional space, enabling similarity comparison using angles or distances.
+
+---
+
+**10. Name one method to learn a user profile.**
+A. A common method is aggregation of item profiles that the user has rated or interacted with.
+
+---
+
+**11. What is implicit feedback? Give an example.**
+A. Implicit feedback is user behavior that indirectly indicates preference, like clicks or time spent.
+**Example:** Watching a full movie without rating it.
+
+---
+
+**12. Define similarity-based retrieval.**
+A. It is the process of retrieving items that are most similar to the user’s preferences or profile based on similarity metrics.
+
+---
+
+**13. Mention any two similarity measures used in content-based filtering.**
+A.
+
+1. Cosine similarity
+2. Jaccard similarity
+
+---
+
+**14. What is a classification algorithm?**
+A. A classification algorithm predicts categories or labels — in RS, it predicts whether a user will like or dislike an item.
+
+---
+
+**15. Name two classification algorithms used in RS.**
+A.
+
+1. Naive Bayes
+2. k-Nearest Neighbors (k-NN)
+
+---
+
+
+
+---
+
+## ✅ UNIT III – COLLABORATIVE FILTERING 
+
+---
+
+**1. Define collaborative filtering.**
+A. Collaborative filtering recommends items by analyzing user interactions and identifying patterns among similar users or items.
+
+---
+
+**2. What is user-based CF?**
+A. User-based CF recommends items to a user based on preferences of other users with similar tastes.
+
+---
+
+**3. What is item-based CF?**
+A. Item-based CF recommends items that are similar to what the user has already liked or rated highly.
+
+---
+
+**4. What is a neighborhood in CF?**
+A. A neighborhood is a group of users or items that are most similar to the target user or item, used for making predictions.
+
+---
+
+**5. Mention any two components of neighborhood methods.**
+A.
+
+1. Similarity weight computation
+2. Rating normalization
+
+---
+
+**6. What is rating normalization?**
+A. Rating normalization adjusts user ratings to remove bias, such as a user consistently rating items higher or lower than average.
+
+---
+
+**7. What is similarity weight computation?**
+A. It’s the process of calculating how similar two users or items are, typically using cosine similarity or Pearson correlation.
+
+---
+
+**8. What is the role of cosine similarity in CF?**
+A. Cosine similarity is used to measure the angle between two user/item vectors to determine how similar they are.
+
+---
+
+**9. List two challenges in collaborative filtering.**
+A.
+
+1. Cold start problem
+2. Data sparsity
+
+---
+
+**10. What is the systematic approach in CF?**
+A. It involves defining a model pipeline: collect ratings → compute similarities → select neighborhood → predict missing ratings.
+
+---
+
+**11. Give one example where user-based CF is better than item-based CF.**
+A. In a social app, recommending events based on friend preferences (user similarity) may work better than item similarity.
+
+---
+
+**12. What is cold start problem in CF?**
+A. The cold start problem occurs when the system has little to no data for new users or new items, making it hard to generate recommendations.
+
+---
+
+**13. What is the purpose of matrix factorization in CF?**
+A. Matrix factorization reduces the high-dimensional user-item matrix into lower dimensions to uncover hidden (latent) user and item features.
+
+---
+
+**14. How does SVD apply to collaborative filtering?**
+A. SVD decomposes the user-item matrix into smaller matrices to estimate missing ratings using latent features.
+
+---
+
+**15. Define sparsity in the user-item matrix.**
+A. Sparsity refers to the large number of missing entries in the user-item matrix due to users rating only a few items.
+
+---
+
+
+---
+
+## ✅ UNIT IV – ATTACK-RESISTANT RECOMMENDER SYSTEMS 
+---
+
+**1. What is an attack on a recommender system?**
+A. An attack on a recommender system is a deliberate manipulation of ratings or behavior data to influence the system’s output unfairly.
+
+---
+
+**2. Define shilling attack.**
+A. A shilling attack is when fake user profiles are injected into the system to promote or demote certain items.
+
+---
+
+**3. What is a push attack?**
+A. A push attack aims to artificially increase the recommendation rank of a specific item by injecting high ratings for it.
+
+---
+
+**4. What is a nuke attack?**
+A. A nuke attack tries to decrease an item’s popularity or visibility by giving it low ratings through fake profiles.
+
+---
+
+**5. Name any two types of attacks on RS.**
+A.
+
+1. Push attack
+2. Nuke attack
+
+---
+
+**6. What is an individual attack?**
+A. An individual attack is carried out by a single attacker using one or more fake profiles to influence recommendations.
+
+---
+
+**7. What is a group attack?**
+A. A group attack involves multiple attackers or fake profiles coordinating to manipulate the system.
+
+---
+
+**8. Mention one difference between individual and group attacks.**
+A. Group attacks involve many fake profiles acting together, while individual attacks are done by one user or a few fake accounts.
+
+---
+
+**9. What is attack detection in RS?**
+A. Attack detection is the process of identifying suspicious or abnormal user profiles that may be trying to manipulate the RS.
+
+---
+
+**10. Define robust recommender system.**
+A. A robust RS is designed to resist attacks and maintain recommendation quality even when manipulated data is present.
+
+---
+
+**11. What is a trust-based recommender approach?**
+A. Trust-based RS uses trust relationships or reputation scores between users to filter or weigh recommendations more securely.
+
+---
+
+**12. What is a profile injection attack?**
+A. A profile injection attack occurs when attackers add fake user profiles with specific rating patterns to bias the system.
+
+---
+
+**13. Name one strategy to design a robust RS.**
+A. One strategy is to use anomaly detection to filter out fake or suspicious user profiles before training the RS.
+
+---
+
+**14. What is the purpose of robust algorithms?**
+A. Robust algorithms aim to maintain reliable and accurate recommendations even when the data has been tampered with.
+
+---
+
+**15. Mention one real-world example of an RS attack.**
+A. On Amazon, sellers may use bots to upvote their products or downvote competitors to manipulate rankings.
+
+---
+
+
+---
+
+## ✅ UNIT V – EVALUATING RECOMMENDER SYSTEMS
+
+---
+
+**1. What is the goal of evaluating a recommender system?**
+A. The goal is to measure the effectiveness, accuracy, and usefulness of the recommendations provided to users.
+
+---
+
+**2. Define offline evaluation.**
+A. Offline evaluation uses historical user interaction data to test recommendation algorithms without involving real users.
+
+---
+
+**3. Define online evaluation.**
+A. Online evaluation is performed in real-time with active users, measuring user response to live recommendations (e.g., clicks, purchases).
+
+---
+
+**4. What is A/B testing?**
+A. A/B testing compares two or more recommendation algorithms by exposing each to different user groups and observing their performance.
+
+---
+
+**5. What is interleaving in RS evaluation?**
+A. Interleaving mixes results from two algorithms and presents them to users to determine which algorithm performs better in a fair comparison.
+
+---
+
+**6. What is a user study?**
+A. A user study involves directly asking users for feedback on the recommendations via surveys, interviews, or experiments.
+
+---
+
+**7. Mention any two goals of evaluation design.**
+A.
+
+1. Measure accuracy of recommendations
+2. Assess user satisfaction and trust
+
+---
+
+**8. What is precision in RS evaluation?**
+A. Precision measures the proportion of recommended items that are relevant to the user.
+
+---
+
+**9. Define recall in recommender systems.**
+A. Recall measures the proportion of relevant items that were successfully recommended to the user.
+
+---
+
+**10. What is RMSE?**
+A. Root Mean Square Error (RMSE) calculates the square root of the average squared difference between predicted and actual ratings.
+
+---
+
+**11. Define MAE with formula.**
+A.
+**Mean Absolute Error (MAE)** =
+$\text{MAE} = \frac{1}{N} \sum_{i=1}^{N} |P_i - A_i|$
+Where $P_i$ is predicted rating, $A_i$ is actual rating, and N is total predictions.
+
+---
+
+**12. What is serendipity in RS evaluation?**
+A. Serendipity measures how surprising and unexpectedly relevant the recommendations are — it adds the “wow” factor.
+
+---
+
+**13. What is coverage in RS?**
+A. Coverage refers to the percentage of items or users for which the RS is able to make recommendations.
+
+---
+
+**14. Mention one limitation of accuracy metrics.**
+A. Accuracy metrics (like RMSE, MAE) don’t capture user satisfaction or novelty — a model can be accurate but boring.
+
+---
+
+**15. What is the cold start issue in evaluation?**
+A. The cold start issue arises when evaluating RS with new users or items that don’t have enough historical data, leading to unreliable results.
+
+---
+

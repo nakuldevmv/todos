@@ -740,3 +740,221 @@ Instead of finding neighbors, we **learn hidden user/item features**.
 <br>
 <br>
 
+
+---
+
+# 🎯 UNIT IV – ATTACK-RESISTANT RECOMMENDER SYSTEMS
+
+*Protecting recommendation systems from spam, fake users, manipulation, and trust issues*
+
+---
+
+## 🔷 1. INTRODUCTION TO ATTACK-RESISTANT RS
+
+**diagram: false**
+
+### ❓ Why this matters:
+
+* Recommender Systems (RS) rely heavily on **user-generated data** (ratings, reviews, interactions)
+* Attackers can **manipulate** this data to:
+
+  * Promote their own product/content
+  * Sabotage others
+  * Game the system for visibility or financial gain
+
+### 🎯 Goal of Attack-Resistant RS:
+
+* **Detect**, **mitigate**, and **withstand** attacks on the system
+* Ensure fair, unbiased, and accurate recommendations
+* Maintain **user trust and system integrity**
+
+---
+
+## 🔷 2. TYPES OF ATTACKS ON RS
+
+**diagram: true**
+*Google search:* `types of shilling attacks recommender systems`
+
+### 2.1 Profile Injection (Shilling Attacks):
+
+Attackers inject **fake user profiles** to manipulate recommendations.
+
+#### Subtypes of Shilling Attacks:
+
+| Attack Type          | Description                                         | Goal                   |
+| -------------------- | --------------------------------------------------- | ---------------------- |
+| **Push Attack**      | Fake profiles give high ratings to a target item    | Boost ranking          |
+| **Nuke Attack**      | Fake profiles give low ratings to a target item     | Damage reputation      |
+| **Random Attack**    | Fill fake profile with random ratings + target item | Bypass detection       |
+| **Average Attack**   | Use average ratings + push target item              | Appear realistic       |
+| **Bandwagon Attack** | Rate popular items + target item                    | Blend into legit users |
+
+---
+
+### 2.2 Behavior-Based Attack Types:
+
+| Type                     | Description                                         |
+| ------------------------ | --------------------------------------------------- |
+| **Individual Attack**    | One user creates a single fake profile to push/nuke |
+| **Group (Sybil) Attack** | Multiple fake users act together to game the RS     |
+
+---
+
+## 🔷 3. DETECTING ATTACKS IN RECOMMENDER SYSTEMS
+
+**diagram: true**
+*Google search:* `anomaly detection recommender system`
+
+### 🧠 Key Methods to Detect Malicious Behavior:
+
+#### 3.1 Statistical Analysis
+
+* Detect **outliers** in rating behavior
+* Look for users with very high/low mean ratings
+* Spot users with unusual rating variance
+
+#### 3.2 Time-Based Behavior Monitoring
+
+* Identify **suspiciously fast or batch-like rating activity**
+* Sudden spikes in ratings = bot-like behavior
+
+#### 3.3 Rating Pattern Analysis
+
+* Users who rate only:
+
+  * One category
+  * One item (always 5 or 1 stars)
+  * Never interact with content
+
+#### 3.4 Similarity-Based Clustering
+
+* Use clustering algorithms (k-means, DBSCAN)
+* If a group of users have **very similar** behavior → red flag 🚩
+
+#### 3.5 Trust Scoring / Credibility Checks
+
+* Assign trust score based on:
+
+  * Account age
+  * Purchase history
+  * Consistency of ratings
+  * Engagement behavior
+
+#### 3.6 Anomaly Detection Models
+
+* Use **machine learning** to identify suspicious profiles based on multi-dimensional features
+
+---
+
+## 🔷 4. INDIVIDUAL VS GROUP ATTACK
+
+**diagram: true**
+*Google search:* `individual vs sybil attack recommender system`
+
+| Feature             | Individual Attack                | Group (Sybil) Attack            |
+| ------------------- | -------------------------------- | ------------------------------- |
+| Number of attackers | One fake profile                 | Many fake profiles              |
+| Execution           | Simple, low effort               | Coordinated, scripted           |
+| Detectability       | Easier to detect (clear anomaly) | Harder (mimics real behavior)   |
+| Impact              | Localized                        | Large-scale manipulation        |
+| Behavior pattern    | Obvious                          | Distributed and camouflaged     |
+| Defense             | Outlier detection                | Clustering, behavioral analysis |
+
+---
+
+## 🔷 5. STRATEGIES FOR ROBUST RECOMMENDER DESIGN
+
+**diagram: false**
+
+### 5.1 Trust-Aware System Design
+
+* Assign **reputation scores** to users
+* Base recommendations on **trusted ratings** only
+* Ignore/discount ratings from new or suspicious accounts
+
+### 5.2 Weighted Ratings
+
+* Give more importance to users with:
+
+  * Longer platform history
+  * Verified purchases
+  * Normal rating behavior
+
+### 5.3 Outlier Detection and Filtering
+
+* Identify and **remove extreme/abnormal profiles** before training the RS model
+
+### 5.4 Rating Restrictions
+
+* Put caps on:
+
+  * How many ratings a user can give per day
+  * How often the same item can be rated
+  * What categories they can rate initially
+
+### 5.5 Hybrid Recommender Models
+
+* Use **multiple techniques** (CF + content + demographic)
+* If one fails (e.g., collaborative filtering gets attacked), the others act as fallback
+
+### 5.6 Clustering-Based Filtering
+
+* Detect groups of **suspiciously similar** profiles
+* Flag/remove clusters of fake users
+
+### 5.7 Time-Based Decay
+
+* Older ratings lose influence over time
+* Prevents old spam attacks from still affecting recommendations
+
+### 5.8 Behavior Monitoring & CAPTCHA Defense
+
+* Track:
+
+  * IP address
+  * Device fingerprint
+  * Login time
+* Block or flag suspicious bot-like behavior
+
+---
+
+## 🔷 6. ROBUST RECOMMENDATION ALGORITHMS
+
+**diagram: optional**
+
+### 6.1 Trust-Aware Collaborative Filtering
+
+* Use trust score to weigh user ratings
+* Reduces impact of fake/new profiles
+
+### 6.2 Probabilistic Matrix Factorization (PMF)
+
+* Models ratings as:
+  `Observed Rating = True Preference + Noise`
+* Filters out noisy/fake data automatically
+
+### 6.3 Bayesian User Modeling
+
+* Models user preferences with **probability**
+* Adjusts recommendations based on **confidence level**
+
+### 6.4 Robust SVD
+
+* Variation of Singular Value Decomposition
+* Ignores or down-weights **outlier values** during factorization
+
+### 6.5 Clustering-Based Filtering
+
+* Groups users into clusters
+* Only uses **legit, clean clusters** for generating recommendations
+
+### 6.6 Adversarial Learning-Based Models
+
+* Simulate **attacks during training**
+* Help RS learn how to defend itself
+* Makes it resilient to unknown future attacks
+
+---
+
+<br>
+<br>

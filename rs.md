@@ -303,6 +303,7 @@ $$
 
 **diagram: true**
 **Google this:** `content-based recommender system architecture diagram`
+![alt text](https://media.geeksforgeeks.org/wp-content/uploads/20200501010023/my4.png)
 
 ### 🎯 Objective:
 

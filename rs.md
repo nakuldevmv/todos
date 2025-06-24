@@ -203,7 +203,7 @@ Cosine Similarity
 
 Pearson Correlation
 
-![text](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaixvuidbAU3iM-CBoemg57yTceXUzfCuAUA&s)
+![alt text](https://www.questionpro.com/blog/wp-content/uploads/2020/04/Pearson-correlation-coefficient-1.jpg)
 
 Jaccard Index
 

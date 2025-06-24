@@ -794,6 +794,8 @@ Instead of finding neighbors, we **learn hidden user/item features**.
 
 ## 🔷 2. TYPES OF ATTACKS ON RS
 
+![alt text](https://www.researchgate.net/profile/Manpreet-Kaur-124/publication/374812843/figure/fig1/AS:11431281199832538@1697699596858/arious-attacks-on-Recommender-System.jpg)
+
 **diagram: true**
 *Google search:* `types of shilling attacks recommender systems`
 

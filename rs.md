@@ -381,13 +381,13 @@ To turn raw item data into a **structured vector** format so the recommender sys
 ### 🧠 Key Techniques:
 
 1. **Vector Space Model (VSM)**
-
+![alt text](https://i0.wp.com/spotintelligence.com/wp-content/uploads/2023/09/vector-space-model.jpg?fit=960%2C540&ssl=1)
    * Most basic & widely used
    * Each feature = dimension
    * Vector = 1 if item has that feature, 0 otherwise
 
 2. **One-Hot Encoding**
-
+![alt text](https://i.imgur.com/mtimFxh.png)
    * Converts categorical data to binary columns
    * Example: Genre → Action = \[1, 0, 0], Romance = \[0, 1, 0]
 

@@ -513,3 +513,223 @@ Use supervised ML to **predict if a user will like** an item or not, based on it
 
 ---
 
+<br>
+<br>
+
+
+---
+
+# ✅ UNIT III: COLLABORATIVE FILTERING 
+
+**diagram: true**
+**Search query:** `Collaborative filtering architecture diagram user item based`
+
+---
+
+## 🔷 1. What is Collaborative Filtering (CF)?
+
+Collaborative Filtering =
+
+> “People like you also liked...”
+> This is based on the idea that **users with similar tastes will like similar items.**
+
+CF doesn't care what the item *is*, only how **users interact** with it.
+
+### ✅ Example:
+
+If you and I both rated “Inception” and “Interstellar” high, and you also liked “Tenet”, then I’m probably gonna love “Tenet” too.
+
+---
+
+## 🔷 2. Systematic Approach to CF
+
+This is the step-by-step pipeline every collaborative filtering model follows.
+
+### 🪛 Steps (in order):
+
+1. **Collect User-Item Interaction Data**
+   Like rating matrix (users as rows, items as columns)
+
+2. **Preprocess Data**
+   Normalize ratings, remove noise (e.g. super old ratings)
+
+3. **Calculate Similarities**
+   Between users (user-based CF) or items (item-based CF)
+
+4. **Find Neighbors**
+   Choose top-N most similar users/items
+
+5. **Predict Missing Ratings**
+   Use weighted averages or matrix methods
+
+6. **Recommend Top-N Items**
+   Show the items with highest predicted ratings
+
+### ✅ Subtopics to remember:
+
+* Similarity metrics (cosine, Pearson)
+* Rating prediction formula
+* Cold start handling
+
+**diagram: true** — Google: `collaborative filtering step by step diagram`
+
+---
+
+## 🔷 3. Nearest-Neighbor Collaborative Filtering
+
+This is OG CF method — find your closest peeps or fav items, and steal recos from them 😎
+
+### 🎯 Two types:
+
+| Type           | Based on...   | Key Idea              |
+| -------------- | ------------- | --------------------- |
+| **User-based** | Similar users | "People like you"     |
+| **Item-based** | Similar items | "Items like this one" |
+
+### ✅ Example:
+
+* User-based:
+  *You like A, B → find users who also like A, B → recommend what they liked*
+* Item-based:
+  *You liked A → find items similar to A → recommend those*
+
+🧠 Use cosine similarity or Pearson correlation to find closeness.
+
+**diagram: true** — Google: `user based vs item based collaborative filtering diagram`
+
+---
+
+## 🔷 4. Components of Neighborhood Methods
+
+### 🧩 (a) Rating Normalization
+
+Users have different rating habits. Normalizing = fair game.
+
+| Method             | Description            |
+| ------------------ | ---------------------- |
+| **Mean-centering** | Subtract user average: |
+
+$$
+r'_{ui} = r_{ui} - \bar{r_u}
+$$
+
+\| **Z-score normalization** | Subtract mean & divide by standard deviation
+
+### ✅ Example:
+
+If user always gives 4s & 5s → raw scores misleading
+→ Normalize before comparing with others
+
+---
+
+### 🧩 (b) Similarity Weight Computation
+
+To find **how similar** two users/items are.
+
+| Similarity | Formula (Short)            | When to Use            |
+| ---------- | -------------------------- | ---------------------- |
+| Cosine     | angle between vectors      | Default                |
+| Pearson    | correlation (removes bias) | Better for rating data |
+| Jaccard    | (A ∩ B) / (A ∪ B)          | Binary preferences     |
+
+### ✅ In exams: write at least 2 with tiny example.
+
+**Formula (Cosine):**
+
+$$
+sim(u, v) = \frac{u \cdot v}{||u|| \cdot ||v||}
+$$
+
+---
+
+### 🧩 (c) Neighborhood Selection
+
+* Select top-N similar users or items (N = 5, 10, 20)
+* These are the “trusted” neighbors used for prediction
+
+### ✅ Pro tip:
+
+In real-world, N is small to reduce noise & overfitting.
+
+---
+
+## 🔷 5. Rating Prediction in CF
+
+Once you’ve got neighbors, time to predict missing rating:
+
+### ✅ User-based prediction formula:
+
+$$
+\hat{r}_{ui} = \bar{r_u} + \frac{\sum_{v \in N} sim(u, v) \cdot (r_{vi} - \bar{r_v})}{\sum_{v \in N} |sim(u, v)|}
+$$
+
+### ✅ Item-based prediction formula:
+
+$$
+\hat{r}_{ui} = \frac{\sum_{j \in N} sim(i, j) \cdot r_{uj}}{\sum_{j \in N} |sim(i, j)|}
+$$
+
+✅ Keep formulas short in exam — no need to derive.
+
+---
+
+## 🔷 6. Matrix Factorization in CF
+
+This is the advanced CF — done using **SVD, ALS, or Funk-SVD**
+Instead of finding neighbors, we **learn hidden user/item features**.
+
+| Technique | What It Does                              |
+| --------- | ----------------------------------------- |
+| SVD       | Factorize rating matrix into 3 (U, Σ, Vᵗ) |
+| ALS       | Alternate Least Squares, used at scale    |
+| Funk-SVD  | Optimized version used in Netflix Prize   |
+
+✅ Already covered in Unit 1 — mention it in hybrid models.
+
+---
+
+## 🔷 7. Advantages of Collaborative Filtering
+
+* Content-free — works even when item data is missing
+* Adapts over time — learns as user behavior changes
+* Uncovers surprising patterns (latent preferences)
+
+---
+
+## 🔷 8. Limitations of Collaborative Filtering
+
+| Issue               | Description                                        |
+| ------------------- | -------------------------------------------------- |
+| **Cold Start**      | New users/items = no data, can’t recommend         |
+| **Data Sparsity**   | Most users rate very few items, matrix is empty AF |
+| **Scalability**     | With millions of users/items, similarity calc = 🥲 |
+| **Popularity Bias** | Recommends popular stuff more than diverse stuff   |
+
+✅ Mitigation: hybrid systems, matrix factorization, attack-resistant design (Unit 4)
+
+---
+
+## 🔷 9. Real-World Applications
+
+| Platform    | Uses CF for...                               |
+| ----------- | -------------------------------------------- |
+| **Netflix** | Shows based on similar viewers               |
+| **Amazon**  | "People who bought this also bought…"        |
+| **Spotify** | "Users like you are vibing to..."            |
+| **YouTube** | Up next queue personalized via watch history |
+
+---
+
+## 📘 KEY TERMS TO REMEMBER (drop these in every answer):
+
+* User-based CF
+* Item-based CF
+* Cosine similarity
+* Normalization
+* Top-N recommendation
+* Cold start
+* Rating prediction
+* Neighborhood
+* Matrix factorization
+
+---

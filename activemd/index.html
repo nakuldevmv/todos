@@ -659,9 +659,9 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
 
-    
     <script>
         const markdownUrl = `https://nakuldevmv.github.io/todos/rs.md?cb=${Date.now()}`;
+
         const contentDiv = document.getElementById('content');
 
         async function loadMarkdown() {
@@ -669,6 +669,7 @@
                 const res = await fetch(markdownUrl, { cache: 'no-cache' });
                 if (!res.ok) throw new Error(res.statusText);
 
+                // parse md → html
                 const md = await res.text();
                 const html = marked.parse(md, {
                     breaks: true,
@@ -678,20 +679,25 @@
                 });
 
                 contentDiv.innerHTML = html;
-                hljs.highlightAll();
 
-                // now MathJax is guaranteed to be loaded/configured
+                hljs.highlightAll(); // highlight.js
                 if (window.MathJax) {
-                    MathJax.typesetPromise().catch(err => console.error("MathJax:", err));
+                    MathJax.typesetPromise().catch((err) => console.error("MathJax fail:", err));
                 }
+                setTimeout(() => {
+                    if (window.MathJax) MathJax.typesetPromise();
+                }, 200);
+
+
+
             } catch (e) {
                 contentDiv.innerHTML = `<div id="error">⚠️ Failed to load Markdown: ${e.message}</div>`;
             }
         }
 
-        // call AFTER everything’s loaded
-        window.addEventListener('DOMContentLoaded', loadMarkdown);
+        loadMarkdown();
     </script>
+
 
     <script>
         const toggleCheckbox = document.getElementById('hide-checkbox')

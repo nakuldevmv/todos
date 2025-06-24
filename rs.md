@@ -660,8 +660,9 @@ Once you’ve got neighbors, time to predict missing rating:
 ### ✅ User-based prediction formula:
 
 $$
-\hat{r}_{ui} = \bar{r_u} + \frac{\sum_{v \in N} sim(u, v) \cdot (r_{vi} - \bar{r_v})}{\sum_{v \in N} |sim(u, v)|}
+\hat{r}_{ui} = \bar{r}_u + \frac{\sum_{v \in N} sim(u, v) \cdot (r_{vi} - \bar{r}_v)}{\sum_{v \in N} |sim(u, v)|}
 $$
+
 
 ### ✅ Item-based prediction formula:
 

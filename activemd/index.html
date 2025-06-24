@@ -703,6 +703,13 @@
             document.documentElement.style.setProperty('--accent', selectedColor);
         });
     </script>
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
     <!-- vercel analytics -->
     <script defer src="/_vercel/insights/script.js"></script>
